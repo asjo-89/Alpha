@@ -3,22 +3,50 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Alpha Project Management</title>
+    <title>@ViewData["Title"] - Alpha</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Alpha_Mvc.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-    </header>
-    
-    <main>
-        @RenderBody()
-    </main>
+    <div class="wrapper">
+        <div class="container">            
+            <header>
+                <div class="topbar">
+                    <form class="search-form" action="" method="">
+                        <input class="search-input" name="query" type="text" placeholder="Search..." />
+                    </form>
+                    <div class="user-menu">
+                        <img src="/images/Icons/Notification_inactive.svg" class="notification" />
+                        <img src="/images/Icons/Settings.svg" class="settings" />
+                        <div class="stroke">|</div>
+                        <img src="/images/Profiles/Img_profile_1.svg" class="profile-small" />
+                    </div>
+                </div>
+            </header>
 
-    <footer>
-    </footer>
-
+            <aside class="sidebar">
+                <a class="logo" href="#">
+                    <img src="/images/Icons/Logo.svg" alt="">
+                    <p class="logo-text">alpha</p>
+                </a>
+                <a href="#" class="link">
+                    <img src="/images/Icons/Briefcase_blue.svg">
+                    Projects
+                </a>
+                <a href="#" class="link">
+                    <img src="/images/Icons/Members_black.svg">
+                    Team Members
+                </a>
+            </aside>
+            
+            <main>
+                <div class="main-container">
+                    @RenderBody()   
+                </div>
+            </main>        
+        </div>
+    </div>
 
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
