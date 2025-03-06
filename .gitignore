@@ -1,0 +1,54 @@
+# ASP.NET Core
+## Den här raden ser till att Git ignorerar kompileringar och objektmappar
+bin/
+obj/
+
+# Konfigurationsfiler (lägga till mer om du vill exkludera dev eller prod)
+appsettings.json
+appsettings.*.json
+# Exkludera också appsettings om du inte vill ha miljö-specifika inställningar versionhanterade.
+# Exempel: appsettings.Development.json kan vara undantaget om du vill hålla den
+
+# Visual Studio
+.vs/
+.vscode/
+
+# Windows specifika
+Thumbs.db
+Desktop.ini
+
+# macOS specifika
+.DS_Store
+
+# JetBrains Rider och andra IDEs
+.idea/
+
+# .NET Core / .NET Standard / .NET 5+ specific
+.project/
+.vscode/
+
+# NPM / Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Paket relaterade
+.nuget/
+packages/
+
+# Testfiler
+coverage/
+test-results/
+
+# User-specific files
+.idea/
+.vscode/
+
+# Publish Output
+publish/
+
+# Other files you might want to ignore
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
