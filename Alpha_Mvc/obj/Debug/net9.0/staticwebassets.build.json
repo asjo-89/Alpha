@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uaEvjd50ENmd1ERs3xRFqdLSghy4dkr8ZxG3mANOcaA=",
+  "Hash": "/zjYmP7IKmXZ3NJMbHxsjjb/XL0KK+CjhKik3rCNfWM=",
   "Source": "Alpha_Mvc",
   "BasePath": "_content/Alpha_Mvc",
   "Mode": "Default",
@@ -332,12 +332,12 @@
       "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Logo.svg"
     },
     {
-      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-oc0ncpu7xn.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-fpind0v6xv.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Computed",
       "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
-      "RelativePath": "Alpha_Mvc#[.{fingerprint=oc0ncpu7xn}]?.styles.css.gz",
+      "RelativePath": "Alpha_Mvc#[.{fingerprint=fpind0v6xv}]?.styles.css.gz",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -346,8 +346,8 @@
       "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "3fl86pebxt",
-      "Integrity": "kXdxnLT2YNitYun9DcXCuns6VsI970bP7bVCoucdM64=",
+      "Fingerprint": "czod66cg5c",
+      "Integrity": "uB0BVZZ6hHxGw71qciXM1bEvfRVVw4/UkDuJr0iVLks=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css"
@@ -437,12 +437,12 @@
       "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Background.svg"
     },
     {
-      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-oc0ncpu7xn.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-fpind0v6xv.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Computed",
       "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
-      "RelativePath": "Alpha_Mvc#[.{fingerprint=oc0ncpu7xn}]!.bundle.scp.css.gz",
+      "RelativePath": "Alpha_Mvc#[.{fingerprint=fpind0v6xv}]!.bundle.scp.css.gz",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -451,8 +451,8 @@
       "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "3fl86pebxt",
-      "Integrity": "kXdxnLT2YNitYun9DcXCuns6VsI970bP7bVCoucdM64=",
+      "Fingerprint": "czod66cg5c",
+      "Integrity": "uB0BVZZ6hHxGw71qciXM1bEvfRVVw4/UkDuJr0iVLks=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css"
@@ -605,12 +605,12 @@
       "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_inactive.svg"
     },
     {
-      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-jsyns89qsu.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-46mv8rwym2.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
-      "RelativePath": "css/site#[.{fingerprint=jsyns89qsu}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=46mv8rwym2}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -619,8 +619,8 @@
       "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "gmh9mryl3d",
-      "Integrity": "eEN8J1O5/sg2KX3JstPUY0vO/vJJJrlx2Q5XmxKGago=",
+      "Fingerprint": "a739r1prsf",
+      "Integrity": "iphpR5ieEPP2otSvd7qcsQ8u/G9ZhkzDk6uTtl3aGFo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css"
@@ -787,8 +787,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "oc0ncpu7xn",
-      "Integrity": "eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM=",
+      "Fingerprint": "fpind0v6xv",
+      "Integrity": "c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css"
@@ -808,8 +808,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "oc0ncpu7xn",
-      "Integrity": "eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM=",
+      "Fingerprint": "fpind0v6xv",
+      "Integrity": "c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css"
@@ -829,8 +829,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jsyns89qsu",
-      "Integrity": "49vxUbh/maYlWsvtuUL1n4hNYAy5wm6MI/4okgS4Z4k=",
+      "Fingerprint": "46mv8rwym2",
+      "Integrity": "BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1532,12 +1532,12 @@
   "Endpoints": [
     {
       "Route": "Alpha_Mvc.bundle.scp.css",
-      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-oc0ncpu7xn.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-fpind0v6xv.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003436426117"
+          "Quality": "0.001644736842"
         }
       ],
       "ResponseHeaders": [
@@ -1547,15 +1547,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "290"
+          "Value": "607"
         },
         {
           "Name": "ETag",
-          "Value": "\"kXdxnLT2YNitYun9DcXCuns6VsI970bP7bVCoucdM64=\""
+          "Value": "\"uB0BVZZ6hHxGw71qciXM1bEvfRVVw4/UkDuJr0iVLks=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:24 GMT"
+          "Value": "Fri, 07 Mar 2025 09:19:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1575,13 +1575,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM=\""
+          "Value": "W/\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM="
+          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
         }
       ]
     },
@@ -1596,7 +1596,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "469"
+          "Value": "1623"
         },
         {
           "Name": "Content-Type",
@@ -1604,11 +1604,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM=\""
+          "Value": "\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:24 GMT"
+          "Value": "Fri, 07 Mar 2025 09:19:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1618,13 +1618,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM="
+          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
         }
       ]
     },
     {
       "Route": "Alpha_Mvc.bundle.scp.css.gz",
-      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-oc0ncpu7xn.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-fpind0v6xv.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1633,7 +1633,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "290"
+          "Value": "607"
         },
         {
           "Name": "Content-Type",
@@ -1641,11 +1641,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kXdxnLT2YNitYun9DcXCuns6VsI970bP7bVCoucdM64=\""
+          "Value": "\"uB0BVZZ6hHxGw71qciXM1bEvfRVVw4/UkDuJr0iVLks=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:24 GMT"
+          "Value": "Fri, 07 Mar 2025 09:19:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1663,18 +1663,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-kXdxnLT2YNitYun9DcXCuns6VsI970bP7bVCoucdM64="
+          "Value": "sha256-uB0BVZZ6hHxGw71qciXM1bEvfRVVw4/UkDuJr0iVLks="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.oc0ncpu7xn.bundle.scp.css",
-      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-oc0ncpu7xn.gz",
+      "Route": "Alpha_Mvc.fpind0v6xv.bundle.scp.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-fpind0v6xv.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003436426117"
+          "Quality": "0.001644736842"
         }
       ],
       "ResponseHeaders": [
@@ -1684,15 +1684,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "290"
+          "Value": "607"
         },
         {
           "Name": "ETag",
-          "Value": "\"kXdxnLT2YNitYun9DcXCuns6VsI970bP7bVCoucdM64=\""
+          "Value": "\"uB0BVZZ6hHxGw71qciXM1bEvfRVVw4/UkDuJr0iVLks=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:24 GMT"
+          "Value": "Fri, 07 Mar 2025 09:19:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1712,13 +1712,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM=\""
+          "Value": "W/\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "oc0ncpu7xn"
+          "Value": "fpind0v6xv"
         },
         {
           "Name": "label",
@@ -1726,12 +1726,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM="
+          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.oc0ncpu7xn.bundle.scp.css",
+      "Route": "Alpha_Mvc.fpind0v6xv.bundle.scp.css",
       "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1741,7 +1741,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "469"
+          "Value": "1623"
         },
         {
           "Name": "Content-Type",
@@ -1749,11 +1749,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM=\""
+          "Value": "\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:24 GMT"
+          "Value": "Fri, 07 Mar 2025 09:19:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1763,7 +1763,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "oc0ncpu7xn"
+          "Value": "fpind0v6xv"
         },
         {
           "Name": "label",
@@ -1771,13 +1771,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM="
+          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.oc0ncpu7xn.bundle.scp.css.gz",
-      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-oc0ncpu7xn.gz",
+      "Route": "Alpha_Mvc.fpind0v6xv.bundle.scp.css.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-fpind0v6xv.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1786,7 +1786,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "290"
+          "Value": "607"
         },
         {
           "Name": "Content-Type",
@@ -1794,11 +1794,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kXdxnLT2YNitYun9DcXCuns6VsI970bP7bVCoucdM64=\""
+          "Value": "\"uB0BVZZ6hHxGw71qciXM1bEvfRVVw4/UkDuJr0iVLks=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:24 GMT"
+          "Value": "Fri, 07 Mar 2025 09:19:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1816,7 +1816,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "oc0ncpu7xn"
+          "Value": "fpind0v6xv"
         },
         {
           "Name": "label",
@@ -1824,18 +1824,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-kXdxnLT2YNitYun9DcXCuns6VsI970bP7bVCoucdM64="
+          "Value": "sha256-uB0BVZZ6hHxGw71qciXM1bEvfRVVw4/UkDuJr0iVLks="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.oc0ncpu7xn.styles.css",
-      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-oc0ncpu7xn.gz",
+      "Route": "Alpha_Mvc.fpind0v6xv.styles.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-fpind0v6xv.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003436426117"
+          "Quality": "0.001644736842"
         }
       ],
       "ResponseHeaders": [
@@ -1845,15 +1845,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "290"
+          "Value": "607"
         },
         {
           "Name": "ETag",
-          "Value": "\"kXdxnLT2YNitYun9DcXCuns6VsI970bP7bVCoucdM64=\""
+          "Value": "\"uB0BVZZ6hHxGw71qciXM1bEvfRVVw4/UkDuJr0iVLks=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:24 GMT"
+          "Value": "Fri, 07 Mar 2025 09:19:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1873,13 +1873,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM=\""
+          "Value": "W/\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "oc0ncpu7xn"
+          "Value": "fpind0v6xv"
         },
         {
           "Name": "label",
@@ -1887,12 +1887,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM="
+          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.oc0ncpu7xn.styles.css",
+      "Route": "Alpha_Mvc.fpind0v6xv.styles.css",
       "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1902,7 +1902,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "469"
+          "Value": "1623"
         },
         {
           "Name": "Content-Type",
@@ -1910,11 +1910,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM=\""
+          "Value": "\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:24 GMT"
+          "Value": "Fri, 07 Mar 2025 09:19:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1924,7 +1924,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "oc0ncpu7xn"
+          "Value": "fpind0v6xv"
         },
         {
           "Name": "label",
@@ -1932,13 +1932,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM="
+          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.oc0ncpu7xn.styles.css.gz",
-      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-oc0ncpu7xn.gz",
+      "Route": "Alpha_Mvc.fpind0v6xv.styles.css.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-fpind0v6xv.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1947,7 +1947,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "290"
+          "Value": "607"
         },
         {
           "Name": "Content-Type",
@@ -1955,11 +1955,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kXdxnLT2YNitYun9DcXCuns6VsI970bP7bVCoucdM64=\""
+          "Value": "\"uB0BVZZ6hHxGw71qciXM1bEvfRVVw4/UkDuJr0iVLks=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:24 GMT"
+          "Value": "Fri, 07 Mar 2025 09:19:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1977,7 +1977,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "oc0ncpu7xn"
+          "Value": "fpind0v6xv"
         },
         {
           "Name": "label",
@@ -1985,18 +1985,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-kXdxnLT2YNitYun9DcXCuns6VsI970bP7bVCoucdM64="
+          "Value": "sha256-uB0BVZZ6hHxGw71qciXM1bEvfRVVw4/UkDuJr0iVLks="
         }
       ]
     },
     {
       "Route": "Alpha_Mvc.styles.css",
-      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-oc0ncpu7xn.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-fpind0v6xv.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003436426117"
+          "Quality": "0.001644736842"
         }
       ],
       "ResponseHeaders": [
@@ -2006,15 +2006,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "290"
+          "Value": "607"
         },
         {
           "Name": "ETag",
-          "Value": "\"kXdxnLT2YNitYun9DcXCuns6VsI970bP7bVCoucdM64=\""
+          "Value": "\"uB0BVZZ6hHxGw71qciXM1bEvfRVVw4/UkDuJr0iVLks=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:24 GMT"
+          "Value": "Fri, 07 Mar 2025 09:19:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2034,13 +2034,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM=\""
+          "Value": "W/\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM="
+          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
         }
       ]
     },
@@ -2055,7 +2055,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "469"
+          "Value": "1623"
         },
         {
           "Name": "Content-Type",
@@ -2063,11 +2063,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM=\""
+          "Value": "\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:24 GMT"
+          "Value": "Fri, 07 Mar 2025 09:19:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2077,13 +2077,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-eG79I23EzNDakSq36lFvRBxKq1KmT9CXSo/c++7BZAM="
+          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
         }
       ]
     },
     {
       "Route": "Alpha_Mvc.styles.css.gz",
-      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-oc0ncpu7xn.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-fpind0v6xv.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2092,7 +2092,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "290"
+          "Value": "607"
         },
         {
           "Name": "Content-Type",
@@ -2100,11 +2100,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kXdxnLT2YNitYun9DcXCuns6VsI970bP7bVCoucdM64=\""
+          "Value": "\"uB0BVZZ6hHxGw71qciXM1bEvfRVVw4/UkDuJr0iVLks=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:24 GMT"
+          "Value": "Fri, 07 Mar 2025 09:19:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2122,18 +2122,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-kXdxnLT2YNitYun9DcXCuns6VsI970bP7bVCoucdM64="
+          "Value": "sha256-uB0BVZZ6hHxGw71qciXM1bEvfRVVw4/UkDuJr0iVLks="
         }
       ]
     },
     {
-      "Route": "css/site.css",
-      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-jsyns89qsu.gz",
+      "Route": "css/site.46mv8rwym2.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-46mv8rwym2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000703729768"
+          "Quality": "0.000661375661"
         }
       ],
       "ResponseHeaders": [
@@ -2143,19 +2143,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1420"
+          "Value": "1511"
         },
         {
           "Name": "ETag",
-          "Value": "\"eEN8J1O5/sg2KX3JstPUY0vO/vJJJrlx2Q5XmxKGago=\""
+          "Value": "\"iphpR5ieEPP2otSvd7qcsQ8u/G9ZhkzDk6uTtl3aGFo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:44 GMT"
+          "Value": "Fri, 07 Mar 2025 09:15:16 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -2171,18 +2171,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"49vxUbh/maYlWsvtuUL1n4hNYAy5wm6MI/4okgS4Z4k=\""
+          "Value": "W/\"BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "46mv8rwym2"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-49vxUbh/maYlWsvtuUL1n4hNYAy5wm6MI/4okgS4Z4k="
+          "Value": "sha256-BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48="
         }
       ]
     },
     {
-      "Route": "css/site.css",
+      "Route": "css/site.46mv8rwym2.css",
       "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2192,7 +2200,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4903"
+          "Value": "5499"
         },
         {
           "Name": "Content-Type",
@@ -2200,121 +2208,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"49vxUbh/maYlWsvtuUL1n4hNYAy5wm6MI/4okgS4Z4k=\""
+          "Value": "\"BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-49vxUbh/maYlWsvtuUL1n4hNYAy5wm6MI/4okgS4Z4k="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css.gz",
-      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-jsyns89qsu.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1420"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"eEN8J1O5/sg2KX3JstPUY0vO/vJJJrlx2Q5XmxKGago=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-eEN8J1O5/sg2KX3JstPUY0vO/vJJJrlx2Q5XmxKGago="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.jsyns89qsu.css",
-      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-jsyns89qsu.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000703729768"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1420"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"eEN8J1O5/sg2KX3JstPUY0vO/vJJJrlx2Q5XmxKGago=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:44 GMT"
+          "Value": "Fri, 07 Mar 2025 09:15:16 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"49vxUbh/maYlWsvtuUL1n4hNYAy5wm6MI/4okgS4Z4k=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "jsyns89qsu"
+          "Value": "46mv8rwym2"
         },
         {
           "Name": "label",
@@ -2322,13 +2230,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-49vxUbh/maYlWsvtuUL1n4hNYAy5wm6MI/4okgS4Z4k="
+          "Value": "sha256-BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48="
         }
       ]
     },
     {
-      "Route": "css/site.jsyns89qsu.css",
-      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css",
+      "Route": "css/site.46mv8rwym2.css.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-46mv8rwym2.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2337,7 +2245,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4903"
+          "Value": "1511"
         },
         {
           "Name": "Content-Type",
@@ -2345,56 +2253,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"49vxUbh/maYlWsvtuUL1n4hNYAy5wm6MI/4okgS4Z4k=\""
+          "Value": "\"iphpR5ieEPP2otSvd7qcsQ8u/G9ZhkzDk6uTtl3aGFo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jsyns89qsu"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-49vxUbh/maYlWsvtuUL1n4hNYAy5wm6MI/4okgS4Z4k="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.jsyns89qsu.css.gz",
-      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-jsyns89qsu.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1420"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"eEN8J1O5/sg2KX3JstPUY0vO/vJJJrlx2Q5XmxKGago=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 18:24:44 GMT"
+          "Value": "Fri, 07 Mar 2025 09:15:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2412,7 +2275,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "jsyns89qsu"
+          "Value": "46mv8rwym2"
         },
         {
           "Name": "label",
@@ -2420,7 +2283,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-eEN8J1O5/sg2KX3JstPUY0vO/vJJJrlx2Q5XmxKGago="
+          "Value": "sha256-iphpR5ieEPP2otSvd7qcsQ8u/G9ZhkzDk6uTtl3aGFo="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-46mv8rwym2.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000661375661"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1511"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iphpR5ieEPP2otSvd7qcsQ8u/G9ZhkzDk6uTtl3aGFo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 09:15:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5499"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 09:15:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-46mv8rwym2.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1511"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iphpR5ieEPP2otSvd7qcsQ8u/G9ZhkzDk6uTtl3aGFo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 07 Mar 2025 09:15:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iphpR5ieEPP2otSvd7qcsQ8u/G9ZhkzDk6uTtl3aGFo="
         }
       ]
     },

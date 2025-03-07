@@ -65,6 +65,6 @@ c:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\qq3ebh
 c:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\12pradtohx-0v2smmfq68.gz
 c:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\zfz5pu3do3-ultdqida8i.gz
 c:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\scopedcss\Views\Admin\Index.cshtml.rz.scp.css
-c:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\f6mb4myalt-oc0ncpu7xn.gz
-c:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\kymh4m423b-oc0ncpu7xn.gz
-c:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\qb27abya29-jsyns89qsu.gz
+c:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\qb27abya29-46mv8rwym2.gz
+c:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\f6mb4myalt-fpind0v6xv.gz
+c:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\kymh4m423b-fpind0v6xv.gz
