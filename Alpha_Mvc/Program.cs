@@ -25,4 +25,16 @@ app.MapControllerRoute(
     pattern: "{controller=Admin}/{action=Index}/{id?}")
     .WithStaticAssets();
 
+//var AllowedConnections = "_allowedConnections";
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: AllowedConnections,
+//        policy =>
+//        {
+//            policy.WithOrigins("http://localhost:7003", "http://localhost:5173")
+//                  .AllowAnyMethod()
+//                  .AllowAnyHeader();
+//        });
+//});
+
 app.Run();
