@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\Alpha_Mvc.csproj": {}
+    "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\Alpha_Mvc.csproj": {}
   },
   "projects": {
-    "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\Alpha_Mvc.csproj": {
+    "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\Alpha_Mvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\Alpha_Mvc.csproj",
+        "projectUniqueName": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\Alpha_Mvc.csproj",
         "projectName": "Alpha_Mvc",
-        "projectPath": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\Alpha_Mvc.csproj",
+        "projectPath": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\Alpha_Mvc.csproj",
         "packagesPath": "C:\\Users\\asaj1\\.nuget\\packages\\",
-        "outputPath": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\",
+        "outputPath": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
