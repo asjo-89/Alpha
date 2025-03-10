@@ -55,9 +55,10 @@
     --button-font-size: 1rem;
 }
 
-body {
+body, html {
     font-family: var(--font-main);
     font-size: 1rem;
+    font-weight: var(--font-regular);
 }
 
 .wrapper {
@@ -255,6 +256,12 @@ h3 {
 h4 {
     color: var(--color-heading);
     font-size: 1.2rem;
+    font-weight: var(--font-semibold);
+}
+
+h6 {
+    color: var(--color-heading);
+    font-size: 1.1rem;
     font-weight: var(--font-semibold);
 }
 
