@@ -142,7 +142,6 @@ C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\Alpha_Mvc.sourcel
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\scopedcss\Views\Admin\Index.cshtml.rz.scp.css
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\scopedcss\bundle\Alpha_Mvc.styles.css
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\scopedcss\projectbundle\Alpha_Mvc.bundle.scp.css
-C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\qb27abya29-46mv8rwym2.gz
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\jn6wne6fd1-rg2hps3w7w.gz
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\6mlkq65vai-i1ihvrnvhf.gz
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\qq3ebhq7le-w05og1pvz2.gz
@@ -176,8 +175,6 @@ C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\fypc9q
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\u7ukdn7da1-54rhde9kl6.gz
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\n30ueenssc-ox3lsyyulw.gz
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\0bvfn1gfwg-3r8b2a0bt1.gz
-C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\f6mb4myalt-fpind0v6xv.gz
-C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\kymh4m423b-fpind0v6xv.gz
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\staticwebassets.build.json
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\staticwebassets.development.json
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -187,10 +184,12 @@ C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\staticwebassets\m
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.Alpha_Mvc.props
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Alpha_Mvc.props
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\staticwebassets.pack.json
-C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\Alpha_Mvc.csproj.Up2Date
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\Alpha_Mvc.dll
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\refint\Alpha_Mvc.dll
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\Alpha_Mvc.pdb
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\Alpha_Mvc.genruntimeconfig.cache
 C:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\ref\Alpha_Mvc.dll
+c:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\qb27abya29-wtvciqg8yr.gz
+c:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\f6mb4myalt-v747nb660y.gz
+c:\WIN24\VS_Code\ASP.NET\Assignment\Alpha_Mvc\obj\Debug\net9.0\compressed\kymh4m423b-v747nb660y.gz

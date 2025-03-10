@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AqVQ9rt1GCet6KsngPnHQ4hBze5tRHWFMfZH3YUWuyA=",
+  "Hash": "iujfyNzUSzPHpsdM4P4fVLBK/NDFBPqOdoV3E6gqzBQ=",
   "Source": "Alpha_Mvc",
   "BasePath": "_content/Alpha_Mvc",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Alpha_Mvc\\wwwroot",
       "Source": "Alpha_Mvc",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\0bvfn1gfwg-3r8b2a0bt1.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\0bvfn1gfwg-3r8b2a0bt1.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "js/site#[.{fingerprint=3r8b2a0bt1}]?.js.gz",
       "AssetKind": "All",
@@ -28,20 +28,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\js\\site.js",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\js\\site.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "7t0uxwsjr0",
       "Integrity": "Zd+4tKe+YyWXvSCQtbmshsT5I0pKoALzyCu8fniaMWo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\js\\site.js"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\12pradtohx-0v2smmfq68.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\12pradtohx-0v2smmfq68.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Members_black#[.{fingerprint=0v2smmfq68}]?.svg.gz",
       "AssetKind": "All",
@@ -49,20 +49,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_black.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_black.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "ot9bsrpmbt",
       "Integrity": "hAFKiWcMhMeKLjVRy5W5dj7y3/KlQMSc430UkZUOXyA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_black.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_black.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\22w7zttwlc-jzax56bjc7.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\22w7zttwlc-jzax56bjc7.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Profiles/Img_profile_6#[.{fingerprint=jzax56bjc7}]?.svg.gz",
       "AssetKind": "All",
@@ -70,20 +70,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_6.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_6.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "lnzfh6dkai",
       "Integrity": "QbvxFsOYsCVrTJeStbh6assnPFFhujnJyqCeEl4xMcU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_6.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_6.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\3apfwyhe7n-3a8h636sbz.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\3apfwyhe7n-3a8h636sbz.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_3#[.{fingerprint=3a8h636sbz}]?.svg.gz",
       "AssetKind": "All",
@@ -91,20 +91,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_3.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_3.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "pt0a32f1a5",
       "Integrity": "U4JYjq4zI/n12OZnHh7MiGFs+E/qkemavb/RqYJq53s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_3.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_3.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\5ivl3fdtb5-u2bkixnzlq.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\5ivl3fdtb5-u2bkixnzlq.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_2#[.{fingerprint=u2bkixnzlq}]?.svg.gz",
       "AssetKind": "All",
@@ -112,20 +112,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_2.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_2.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "8kmz9rwr5y",
       "Integrity": "+BGfhWjfWNAHLnNWSBp4Ou9TYokkwJSSv54+q0a/JEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_2.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_2.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6aac5mldsp-sj5b0y76s3.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6aac5mldsp-sj5b0y76s3.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Calendar#[.{fingerprint=sj5b0y76s3}]?.svg.gz",
       "AssetKind": "All",
@@ -133,20 +133,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Calendar.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Calendar.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "bxx40cjur9",
       "Integrity": "QRvkacSCs1/twqpWY1fYFqin56WyR/ykapzA83P3NjY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Calendar.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Calendar.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6mlkq65vai-i1ihvrnvhf.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6mlkq65vai-i1ihvrnvhf.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Briefcase_black#[.{fingerprint=i1ihvrnvhf}]?.svg.gz",
       "AssetKind": "All",
@@ -154,20 +154,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_black.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_black.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "3mw597gdnu",
       "Integrity": "pWaBQicG3Oiw8TVvnBoQ5vN3diJnrYc0iN9/1V1onGk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_black.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_black.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6pblm9wzvi-l4ur7tl0da.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6pblm9wzvi-l4ur7tl0da.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Notification_active#[.{fingerprint=l4ur7tl0da}]?.svg.gz",
       "AssetKind": "All",
@@ -175,20 +175,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_active.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_active.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "p4zca2354i",
       "Integrity": "2T4/UAOOLz90ivgNRSPbygFELc+hhLrp0nXOzStXQOQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_active.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_active.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\804kyd65d9-9p5ga0h2q8.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\804kyd65d9-9p5ga0h2q8.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Settings#[.{fingerprint=9p5ga0h2q8}]?.svg.gz",
       "AssetKind": "All",
@@ -196,20 +196,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Settings.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Settings.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "rywzmorpsa",
       "Integrity": "o7dbJhNmv8xfirSIbY8cXkEB4rMb4YezJprbssFsBmM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Settings.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Settings.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\862xd6cn2n-r2xtxq9cbw.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\862xd6cn2n-r2xtxq9cbw.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Search#[.{fingerprint=r2xtxq9cbw}]?.svg.gz",
       "AssetKind": "All",
@@ -217,20 +217,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Search.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Search.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "hvluh0il3t",
       "Integrity": "wyTFNFdn5+LVGZyXXKeHiw8SyHNa59MAHhTzFCtERFo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Search.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Search.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8jerw1l0ku-b6f5x7aode.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8jerw1l0ku-b6f5x7aode.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Dots#[.{fingerprint=b6f5x7aode}]?.svg.gz",
       "AssetKind": "All",
@@ -238,20 +238,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dots.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dots.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "8yw6ks6gmh",
       "Integrity": "sC/4Yc///hSoHOer9U1xWLrHEOtm4Mq2LJL9af0jC40=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dots.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dots.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8yhmc16ue3-ppgf51z3o2.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8yhmc16ue3-ppgf51z3o2.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Dollar#[.{fingerprint=ppgf51z3o2}]?.svg.gz",
       "AssetKind": "All",
@@ -259,20 +259,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dollar.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dollar.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "9rml0vvdyy",
       "Integrity": "dXJvBvzbgmlEnrKRaP8WvA0DuHjPbmtygUL1iRPrIBQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dollar.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dollar.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\c3r1wdikgb-5k3xnlwuuo.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\c3r1wdikgb-5k3xnlwuuo.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Photo#[.{fingerprint=5k3xnlwuuo}]?.svg.gz",
       "AssetKind": "All",
@@ -280,20 +280,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Photo.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Photo.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "ndjzyi1kja",
       "Integrity": "20bnKXu6wn8vb7LUyTwWiA4iFuniE6eCziaeXwL7YVs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Photo.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Photo.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\da8udnzqey-btaf9gmiba.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\da8udnzqey-btaf9gmiba.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/X#[.{fingerprint=btaf9gmiba}]?.svg.gz",
       "AssetKind": "All",
@@ -301,20 +301,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\X.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\X.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "u4f7vodx7q",
       "Integrity": "XjdIkO7NwcFIYW4r5nLK13gVque19JzOCLbMKXSzxZw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\X.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\X.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\exunzkiuvj-dw16yrjq3e.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\exunzkiuvj-dw16yrjq3e.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Logo#[.{fingerprint=dw16yrjq3e}]?.svg.gz",
       "AssetKind": "All",
@@ -322,41 +322,41 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Logo.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Logo.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "inh4wryx3l",
       "Integrity": "Xv6jtn8wv7lPCnvLNGB9nGj/wAMasITW8dFNVnNauVM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Logo.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Logo.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-fpind0v6xv.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-v747nb660y.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
-      "RelativePath": "Alpha_Mvc#[.{fingerprint=fpind0v6xv}]?.styles.css.gz",
+      "RelativePath": "Alpha_Mvc#[.{fingerprint=v747nb660y}]?.styles.css.gz",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ui9rzehlqo",
-      "Integrity": "CkxxdEN5yJbtvG1WCbWsJ5Sa/D1B3w+0QkzDRczKOnI=",
+      "Fingerprint": "gxxm68joyv",
+      "Integrity": "RGvREGfXYW1V7rIDUqgYVytjE1x5QFE5xfqDSnSxKQc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\fypc9q77ow-gv0p74l2i6.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\fypc9q77ow-gv0p74l2i6.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_7#[.{fingerprint=gv0p74l2i6}]?.svg.gz",
       "AssetKind": "All",
@@ -364,20 +364,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_7.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_7.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "wgyte7wjnw",
       "Integrity": "QKKhnqUmwavAYWiBBxTurBeL27RadJ4I+kzJQ+UrZ7Y=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_7.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_7.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\h2up92azln-1xevg65aiq.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\h2up92azln-1xevg65aiq.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_5#[.{fingerprint=1xevg65aiq}]?.svg.gz",
       "AssetKind": "All",
@@ -385,20 +385,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_5.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_5.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "e0zzitb94t",
       "Integrity": "/nG5H3Tlq5ZYgcHSPQVRg6nZ/tjaGmARU/54f8/9fMU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_5.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_5.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\igiut47mmi-dnt5pmksi5.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\igiut47mmi-dnt5pmksi5.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_4#[.{fingerprint=dnt5pmksi5}]?.svg.gz",
       "AssetKind": "All",
@@ -406,20 +406,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_4.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_4.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "8wtv1ft8dh",
       "Integrity": "6Em4EYSCNee6w7ze1P2VXZpviKY2V4fWJPM35u28n8A=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_4.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_4.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\jn6wne6fd1-rg2hps3w7w.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\jn6wne6fd1-rg2hps3w7w.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Background#[.{fingerprint=rg2hps3w7w}]?.svg.gz",
       "AssetKind": "All",
@@ -427,41 +427,41 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Background.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Background.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "2x2cxgu2v8",
       "Integrity": "OgXQJE90o8necytWet9LIL/a9zwKRbsLauSDen9jVrw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Background.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Background.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-fpind0v6xv.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-v747nb660y.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
-      "RelativePath": "Alpha_Mvc#[.{fingerprint=fpind0v6xv}]!.bundle.scp.css.gz",
+      "RelativePath": "Alpha_Mvc#[.{fingerprint=v747nb660y}]!.bundle.scp.css.gz",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ui9rzehlqo",
-      "Integrity": "CkxxdEN5yJbtvG1WCbWsJ5Sa/D1B3w+0QkzDRczKOnI=",
+      "Fingerprint": "gxxm68joyv",
+      "Integrity": "RGvREGfXYW1V7rIDUqgYVytjE1x5QFE5xfqDSnSxKQc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lefaf9awnx-494ki1x6sw.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lefaf9awnx-494ki1x6sw.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Profiles/Img_profile_4#[.{fingerprint=494ki1x6sw}]?.svg.gz",
       "AssetKind": "All",
@@ -469,20 +469,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_4.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_4.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "9m5nt1lg1b",
       "Integrity": "z1LgShJnqWe/GDfHCV6UtvoX6B6IgF0Jtji3+ovC1cA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_4.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_4.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lxs5a3auza-ig7f5ekv7d.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lxs5a3auza-ig7f5ekv7d.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Profiles/Img_profile_2#[.{fingerprint=ig7f5ekv7d}]?.svg.gz",
       "AssetKind": "All",
@@ -490,20 +490,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_2.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_2.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "eb6pdofpfo",
       "Integrity": "OqkjMvP3VYIFjhVZ05X2czDtfxIjneJYGpaUNVtbhtQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_2.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_2.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\n30ueenssc-ox3lsyyulw.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\n30ueenssc-ox3lsyyulw.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_9#[.{fingerprint=ox3lsyyulw}]?.svg.gz",
       "AssetKind": "All",
@@ -511,20 +511,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_9.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_9.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "8yqdjhmj0f",
       "Integrity": "UD80v4QT9aDLCnkKyodgfZpD2iQcDMgE0ZqMCpC3ALA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_9.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_9.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\naofy6mmeo-1175nh8rdp.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\naofy6mmeo-1175nh8rdp.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Profiles/Img_profile_1#[.{fingerprint=1175nh8rdp}]?.svg.gz",
       "AssetKind": "All",
@@ -532,20 +532,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_1.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_1.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "7stnrtgbmo",
       "Integrity": "h0VNZxdp6qoVa5p/wmyI+e5wMh21IEdvIq21KiXyQ04=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_1.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_1.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\nregxspgiw-jblly6uyw9.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\nregxspgiw-jblly6uyw9.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Profiles/Img_profile_5#[.{fingerprint=jblly6uyw9}]?.svg.gz",
       "AssetKind": "All",
@@ -553,20 +553,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_5.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_5.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "uzfn1ycdvy",
       "Integrity": "uhmp56/nVUYr0rkdTYEWpM0Z1FKNOrNBXaX3TERvw8s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_5.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_5.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\o1pnbfes72-ahmqnegdrb.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\o1pnbfes72-ahmqnegdrb.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_1#[.{fingerprint=ahmqnegdrb}]?.svg.gz",
       "AssetKind": "All",
@@ -574,20 +574,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_1.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_1.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "f2tm3vq1y5",
       "Integrity": "WSTt+2hcasPlPLkpsXUX/wapxePsqAScOVrtceZDHxs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_1.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_1.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\plrc3lnf6h-oy4rwtmrvs.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\plrc3lnf6h-oy4rwtmrvs.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Notification_inactive#[.{fingerprint=oy4rwtmrvs}]?.svg.gz",
       "AssetKind": "All",
@@ -595,41 +595,41 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_inactive.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_inactive.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "94jm8qalnz",
       "Integrity": "SZpWIk9YwTsdaUgFz1qgmsf1FL+kCWLl8xwzJsieRV4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_inactive.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_inactive.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-46mv8rwym2.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-wtvciqg8yr.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
-      "RelativePath": "css/site#[.{fingerprint=46mv8rwym2}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=wtvciqg8yr}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "zka9etrfed",
-      "Integrity": "LZCPamGIQ/vbmvJkbRR3/QIATruH7LYch7s6UFk4CjY=",
+      "Fingerprint": "89b3sdf1bm",
+      "Integrity": "RIQiv46EgpqxfNecyn1HfsmN96fkx5AtcSmilTdlyzc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qq3ebhq7le-w05og1pvz2.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qq3ebhq7le-w05og1pvz2.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Briefcase_blue#[.{fingerprint=w05og1pvz2}]?.svg.gz",
       "AssetKind": "All",
@@ -637,20 +637,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_blue.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_blue.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "erujop61to",
       "Integrity": "hiFbUDTchNyfeGFCLkHeqAa4k97d49oUvNSMvrtNl3Y=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_blue.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_blue.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\u7ukdn7da1-54rhde9kl6.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\u7ukdn7da1-54rhde9kl6.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_8#[.{fingerprint=54rhde9kl6}]?.svg.gz",
       "AssetKind": "All",
@@ -658,20 +658,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_8.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_8.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "cvxuelh4mc",
       "Integrity": "CKeEkibrajHj80XP4Gj0bPPO8ypsN54KhK1sr5KieGU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_8.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_8.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\v1a1uh9jwq-er61nabrse.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\v1a1uh9jwq-er61nabrse.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Time#[.{fingerprint=er61nabrse}]?.svg.gz",
       "AssetKind": "All",
@@ -679,20 +679,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Time.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Time.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "22tvu8zyjl",
       "Integrity": "Jq3IAyBdPUeitthdEIECxFsPy/AiawNvVtep3UU1acI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Time.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Time.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\w92340z3x6-o0pflwvi9m.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\w92340z3x6-o0pflwvi9m.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Profiles/Img_profile_3#[.{fingerprint=o0pflwvi9m}]?.svg.gz",
       "AssetKind": "All",
@@ -700,20 +700,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_3.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_3.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "zi8ygxpnf0",
       "Integrity": "q+MgTpC9ihdxVJwN4ADJirMB5Gbjh7q19CYD7YMZzec=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_3.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_3.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zfz5pu3do3-ultdqida8i.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zfz5pu3do3-ultdqida8i.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Members_blue#[.{fingerprint=ultdqida8i}]?.svg.gz",
       "AssetKind": "All",
@@ -721,20 +721,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_blue.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_blue.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "opei0xyopc",
       "Integrity": "/F57By0EaAlkEL+8lWO3/msuVcE4mMTZJlkKp1mc+cc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_blue.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_blue.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zh1vjm0vy2-bs3gkjqva1.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zh1vjm0vy2-bs3gkjqva1.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_6#[.{fingerprint=bs3gkjqva1}]?.svg.gz",
       "AssetKind": "All",
@@ -742,20 +742,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_6.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_6.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "6effremxdc",
       "Integrity": "ro4ieIoPxOU7k3t3pUlohLwi1/4XJ/2T4TARE/noVss=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_6.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_6.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zpim0qmu45-a5r252ntst.gz",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zpim0qmu45-a5r252ntst.gz",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Edit#[.{fingerprint=a5r252ntst}]?.svg.gz",
       "AssetKind": "All",
@@ -763,20 +763,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Edit.svg",
+      "RelatedAsset": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Edit.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "iwf2adnz8t",
       "Integrity": "AoulEslW6ZR298fBNym7wIpu79ePpW+9+t+9x8gaLUo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Edit.svg"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Edit.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "Alpha_Mvc#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
@@ -787,17 +787,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "fpind0v6xv",
-      "Integrity": "c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=",
+      "Fingerprint": "v747nb660y",
+      "Integrity": "G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "Alpha_Mvc#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
@@ -808,17 +808,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "fpind0v6xv",
-      "Integrity": "c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=",
+      "Fingerprint": "v747nb660y",
+      "Integrity": "G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css"
+      "OriginalItemSpec": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "css/site#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -829,17 +829,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "46mv8rwym2",
-      "Integrity": "BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48=",
+      "Fingerprint": "wtvciqg8yr",
+      "Integrity": "JCYM1ibyAeNPBBLLb2kr48puUm4bW6nOVwYE/7Nw4Ao=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Background.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Background.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Background#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -857,10 +857,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Background.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_black.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_black.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Briefcase_black#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -878,10 +878,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Briefcase_black.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_blue.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_blue.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Briefcase_blue#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -899,10 +899,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Briefcase_blue.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Calendar.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Calendar.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Calendar#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -920,10 +920,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Calendar.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dollar.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dollar.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Dollar#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -941,10 +941,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Dollar.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dots.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dots.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Dots#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -962,10 +962,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Dots.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Edit.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Edit.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Edit#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -983,10 +983,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Edit.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Logo.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Logo.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Logo#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1004,10 +1004,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Logo.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_black.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_black.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Members_black#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1025,10 +1025,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Members_black.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_blue.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_blue.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Members_blue#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1046,10 +1046,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Members_blue.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_active.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_active.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Notification_active#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1067,10 +1067,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Notification_active.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_inactive.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_inactive.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Notification_inactive#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Notification_inactive.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Photo.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Photo.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Photo#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1109,10 +1109,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Photo.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Search.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Search.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Search#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1130,10 +1130,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Search.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Settings.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Settings.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Settings#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1151,10 +1151,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Settings.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Time.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Time.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/Time#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1172,10 +1172,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\Time.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\X.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\X.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Icons/X#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1193,10 +1193,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Icons\\X.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_1.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_1.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Profiles/Img_profile_1#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Profiles\\Img_profile_1.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_2.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_2.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Profiles/Img_profile_2#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1235,10 +1235,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Profiles\\Img_profile_2.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_3.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_3.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Profiles/Img_profile_3#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1256,10 +1256,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Profiles\\Img_profile_3.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_4.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_4.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Profiles/Img_profile_4#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1277,10 +1277,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Profiles\\Img_profile_4.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_5.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_5.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Profiles/Img_profile_5#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1298,10 +1298,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Profiles\\Img_profile_5.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_6.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_6.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Profiles/Img_profile_6#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1319,10 +1319,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Profiles\\Img_profile_6.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_1.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_1.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_1#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1340,10 +1340,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Projects\\Img_proj_1.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_2.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_2.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_2#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1361,10 +1361,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Projects\\Img_proj_2.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_3.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_3.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_3#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1382,10 +1382,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Projects\\Img_proj_3.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_4.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_4.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_4#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1403,10 +1403,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Projects\\Img_proj_4.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_5.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_5.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_5#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1424,10 +1424,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Projects\\Img_proj_5.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_6.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_6.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_6#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Projects\\Img_proj_6.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_7.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_7.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_7#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1466,10 +1466,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Projects\\Img_proj_7.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_8.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_8.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_8#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1487,10 +1487,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Projects\\Img_proj_8.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_9.svg",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_9.svg",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "images/Projects/Img_proj_9#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -1508,10 +1508,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Projects\\Img_proj_9.svg"
     },
     {
-      "Identity": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\js\\site.js",
+      "Identity": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\js\\site.js",
       "SourceId": "Alpha_Mvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
+      "ContentRoot": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\",
       "BasePath": "_content/Alpha_Mvc",
       "RelativePath": "js/site#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1532,12 +1532,12 @@
   "Endpoints": [
     {
       "Route": "Alpha_Mvc.bundle.scp.css",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-fpind0v6xv.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-v747nb660y.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001655629139"
+          "Quality": "0.001663893511"
         }
       ],
       "ResponseHeaders": [
@@ -1547,15 +1547,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "603"
+          "Value": "600"
         },
         {
           "Name": "ETag",
-          "Value": "\"CkxxdEN5yJbtvG1WCbWsJ5Sa/D1B3w+0QkzDRczKOnI=\""
+          "Value": "\"RGvREGfXYW1V7rIDUqgYVytjE1x5QFE5xfqDSnSxKQc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 12:31:41 GMT"
+          "Value": "Mon, 10 Mar 2025 11:51:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1575,19 +1575,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
+          "Value": "W/\"G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
+          "Value": "sha256-G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg="
         }
       ]
     },
     {
       "Route": "Alpha_Mvc.bundle.scp.css",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1596,7 +1596,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1623"
+          "Value": "1604"
         },
         {
           "Name": "Content-Type",
@@ -1604,11 +1604,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
+          "Value": "\"G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 12:31:41 GMT"
+          "Value": "Mon, 10 Mar 2025 11:51:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1618,13 +1618,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
+          "Value": "sha256-G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg="
         }
       ]
     },
     {
       "Route": "Alpha_Mvc.bundle.scp.css.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-fpind0v6xv.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-v747nb660y.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1633,7 +1633,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "603"
+          "Value": "600"
         },
         {
           "Name": "Content-Type",
@@ -1641,11 +1641,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"CkxxdEN5yJbtvG1WCbWsJ5Sa/D1B3w+0QkzDRczKOnI=\""
+          "Value": "\"RGvREGfXYW1V7rIDUqgYVytjE1x5QFE5xfqDSnSxKQc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 12:31:41 GMT"
+          "Value": "Mon, 10 Mar 2025 11:51:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1663,18 +1663,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-CkxxdEN5yJbtvG1WCbWsJ5Sa/D1B3w+0QkzDRczKOnI="
+          "Value": "sha256-RGvREGfXYW1V7rIDUqgYVytjE1x5QFE5xfqDSnSxKQc="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.fpind0v6xv.bundle.scp.css",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-fpind0v6xv.gz",
+      "Route": "Alpha_Mvc.styles.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-v747nb660y.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001655629139"
+          "Quality": "0.001663893511"
         }
       ],
       "ResponseHeaders": [
@@ -1684,15 +1684,152 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "603"
+          "Value": "600"
         },
         {
           "Name": "ETag",
-          "Value": "\"CkxxdEN5yJbtvG1WCbWsJ5Sa/D1B3w+0QkzDRczKOnI=\""
+          "Value": "\"RGvREGfXYW1V7rIDUqgYVytjE1x5QFE5xfqDSnSxKQc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 12:31:41 GMT"
+          "Value": "Mon, 10 Mar 2025 11:51:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg="
+        }
+      ]
+    },
+    {
+      "Route": "Alpha_Mvc.styles.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1604"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Mar 2025 11:51:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg="
+        }
+      ]
+    },
+    {
+      "Route": "Alpha_Mvc.styles.css.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-v747nb660y.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "600"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RGvREGfXYW1V7rIDUqgYVytjE1x5QFE5xfqDSnSxKQc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Mar 2025 11:51:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RGvREGfXYW1V7rIDUqgYVytjE1x5QFE5xfqDSnSxKQc="
+        }
+      ]
+    },
+    {
+      "Route": "Alpha_Mvc.v747nb660y.bundle.scp.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-v747nb660y.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001663893511"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "600"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RGvREGfXYW1V7rIDUqgYVytjE1x5QFE5xfqDSnSxKQc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Mar 2025 11:51:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1712,13 +1849,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
+          "Value": "W/\"G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fpind0v6xv"
+          "Value": "v747nb660y"
         },
         {
           "Name": "label",
@@ -1726,13 +1863,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
+          "Value": "sha256-G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.fpind0v6xv.bundle.scp.css",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css",
+      "Route": "Alpha_Mvc.v747nb660y.bundle.scp.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Alpha_Mvc.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1741,7 +1878,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1623"
+          "Value": "1604"
         },
         {
           "Name": "Content-Type",
@@ -1749,11 +1886,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
+          "Value": "\"G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 12:31:41 GMT"
+          "Value": "Mon, 10 Mar 2025 11:51:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1763,7 +1900,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fpind0v6xv"
+          "Value": "v747nb660y"
         },
         {
           "Name": "label",
@@ -1771,13 +1908,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
+          "Value": "sha256-G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.fpind0v6xv.bundle.scp.css.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-fpind0v6xv.gz",
+      "Route": "Alpha_Mvc.v747nb660y.bundle.scp.css.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\kymh4m423b-v747nb660y.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1786,7 +1923,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "603"
+          "Value": "600"
         },
         {
           "Name": "Content-Type",
@@ -1794,11 +1931,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"CkxxdEN5yJbtvG1WCbWsJ5Sa/D1B3w+0QkzDRczKOnI=\""
+          "Value": "\"RGvREGfXYW1V7rIDUqgYVytjE1x5QFE5xfqDSnSxKQc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 12:31:41 GMT"
+          "Value": "Mon, 10 Mar 2025 11:51:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1816,7 +1953,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fpind0v6xv"
+          "Value": "v747nb660y"
         },
         {
           "Name": "label",
@@ -1824,18 +1961,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-CkxxdEN5yJbtvG1WCbWsJ5Sa/D1B3w+0QkzDRczKOnI="
+          "Value": "sha256-RGvREGfXYW1V7rIDUqgYVytjE1x5QFE5xfqDSnSxKQc="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.fpind0v6xv.styles.css",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-fpind0v6xv.gz",
+      "Route": "Alpha_Mvc.v747nb660y.styles.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-v747nb660y.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001655629139"
+          "Quality": "0.001663893511"
         }
       ],
       "ResponseHeaders": [
@@ -1845,15 +1982,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "603"
+          "Value": "600"
         },
         {
           "Name": "ETag",
-          "Value": "\"CkxxdEN5yJbtvG1WCbWsJ5Sa/D1B3w+0QkzDRczKOnI=\""
+          "Value": "\"RGvREGfXYW1V7rIDUqgYVytjE1x5QFE5xfqDSnSxKQc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 12:31:41 GMT"
+          "Value": "Mon, 10 Mar 2025 11:51:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1873,13 +2010,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
+          "Value": "W/\"G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fpind0v6xv"
+          "Value": "v747nb660y"
         },
         {
           "Name": "label",
@@ -1887,13 +2024,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
+          "Value": "sha256-G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.fpind0v6xv.styles.css",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css",
+      "Route": "Alpha_Mvc.v747nb660y.styles.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1902,7 +2039,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1623"
+          "Value": "1604"
         },
         {
           "Name": "Content-Type",
@@ -1910,11 +2047,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
+          "Value": "\"G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 12:31:41 GMT"
+          "Value": "Mon, 10 Mar 2025 11:51:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1924,7 +2061,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fpind0v6xv"
+          "Value": "v747nb660y"
         },
         {
           "Name": "label",
@@ -1932,13 +2069,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
+          "Value": "sha256-G3Q/XdUFmq0JY1L//eopW7CXPUhGWAX47iPG3t9uOMg="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.fpind0v6xv.styles.css.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-fpind0v6xv.gz",
+      "Route": "Alpha_Mvc.v747nb660y.styles.css.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-v747nb660y.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1947,7 +2084,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "603"
+          "Value": "600"
         },
         {
           "Name": "Content-Type",
@@ -1955,11 +2092,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"CkxxdEN5yJbtvG1WCbWsJ5Sa/D1B3w+0QkzDRczKOnI=\""
+          "Value": "\"RGvREGfXYW1V7rIDUqgYVytjE1x5QFE5xfqDSnSxKQc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 12:31:41 GMT"
+          "Value": "Mon, 10 Mar 2025 11:51:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1977,7 +2114,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fpind0v6xv"
+          "Value": "v747nb660y"
         },
         {
           "Name": "label",
@@ -1985,18 +2122,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-CkxxdEN5yJbtvG1WCbWsJ5Sa/D1B3w+0QkzDRczKOnI="
+          "Value": "sha256-RGvREGfXYW1V7rIDUqgYVytjE1x5QFE5xfqDSnSxKQc="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.styles.css",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-fpind0v6xv.gz",
+      "Route": "css/site.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-wtvciqg8yr.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001655629139"
+          "Quality": "0.000609384522"
         }
       ],
       "ResponseHeaders": [
@@ -2006,15 +2143,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "603"
+          "Value": "1640"
         },
         {
           "Name": "ETag",
-          "Value": "\"CkxxdEN5yJbtvG1WCbWsJ5Sa/D1B3w+0QkzDRczKOnI=\""
+          "Value": "\"RIQiv46EgpqxfNecyn1HfsmN96fkx5AtcSmilTdlyzc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 12:31:41 GMT"
+          "Value": "Mon, 10 Mar 2025 11:49:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2034,19 +2171,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
+          "Value": "W/\"JCYM1ibyAeNPBBLLb2kr48puUm4bW6nOVwYE/7Nw4Ao=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
+          "Value": "sha256-JCYM1ibyAeNPBBLLb2kr48puUm4bW6nOVwYE/7Nw4Ao="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.styles.css",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Alpha_Mvc.styles.css",
+      "Route": "css/site.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2055,7 +2192,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1623"
+          "Value": "6041"
         },
         {
           "Name": "Content-Type",
@@ -2063,11 +2200,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps=\""
+          "Value": "\"JCYM1ibyAeNPBBLLb2kr48puUm4bW6nOVwYE/7Nw4Ao=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 12:31:41 GMT"
+          "Value": "Mon, 10 Mar 2025 11:49:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2077,13 +2214,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-c1sjct/Z1AlV0YsxJIMNdpuQCSk2IWk7k6LGHndEJps="
+          "Value": "sha256-JCYM1ibyAeNPBBLLb2kr48puUm4bW6nOVwYE/7Nw4Ao="
         }
       ]
     },
     {
-      "Route": "Alpha_Mvc.styles.css.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\f6mb4myalt-fpind0v6xv.gz",
+      "Route": "css/site.css.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-wtvciqg8yr.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2092,7 +2229,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "603"
+          "Value": "1640"
         },
         {
           "Name": "Content-Type",
@@ -2100,11 +2237,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"CkxxdEN5yJbtvG1WCbWsJ5Sa/D1B3w+0QkzDRczKOnI=\""
+          "Value": "\"RIQiv46EgpqxfNecyn1HfsmN96fkx5AtcSmilTdlyzc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 12:31:41 GMT"
+          "Value": "Mon, 10 Mar 2025 11:49:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2122,18 +2259,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-CkxxdEN5yJbtvG1WCbWsJ5Sa/D1B3w+0QkzDRczKOnI="
+          "Value": "sha256-RIQiv46EgpqxfNecyn1HfsmN96fkx5AtcSmilTdlyzc="
         }
       ]
     },
     {
-      "Route": "css/site.46mv8rwym2.css",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-46mv8rwym2.gz",
+      "Route": "css/site.wtvciqg8yr.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-wtvciqg8yr.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000662690524"
+          "Quality": "0.000609384522"
         }
       ],
       "ResponseHeaders": [
@@ -2143,15 +2280,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1508"
+          "Value": "1640"
         },
         {
           "Name": "ETag",
-          "Value": "\"LZCPamGIQ/vbmvJkbRR3/QIATruH7LYch7s6UFk4CjY=\""
+          "Value": "\"RIQiv46EgpqxfNecyn1HfsmN96fkx5AtcSmilTdlyzc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 09:15:16 GMT"
+          "Value": "Mon, 10 Mar 2025 11:49:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2171,13 +2308,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48=\""
+          "Value": "W/\"JCYM1ibyAeNPBBLLb2kr48puUm4bW6nOVwYE/7Nw4Ao=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "46mv8rwym2"
+          "Value": "wtvciqg8yr"
         },
         {
           "Name": "label",
@@ -2185,13 +2322,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48="
+          "Value": "sha256-JCYM1ibyAeNPBBLLb2kr48puUm4bW6nOVwYE/7Nw4Ao="
         }
       ]
     },
     {
-      "Route": "css/site.46mv8rwym2.css",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css",
+      "Route": "css/site.wtvciqg8yr.css",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2200,7 +2337,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5499"
+          "Value": "6041"
         },
         {
           "Name": "Content-Type",
@@ -2208,11 +2345,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48=\""
+          "Value": "\"JCYM1ibyAeNPBBLLb2kr48puUm4bW6nOVwYE/7Nw4Ao=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 09:15:16 GMT"
+          "Value": "Mon, 10 Mar 2025 11:49:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2222,7 +2359,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "46mv8rwym2"
+          "Value": "wtvciqg8yr"
         },
         {
           "Name": "label",
@@ -2230,13 +2367,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48="
+          "Value": "sha256-JCYM1ibyAeNPBBLLb2kr48puUm4bW6nOVwYE/7Nw4Ao="
         }
       ]
     },
     {
-      "Route": "css/site.46mv8rwym2.css.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-46mv8rwym2.gz",
+      "Route": "css/site.wtvciqg8yr.css.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-wtvciqg8yr.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2245,7 +2382,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1508"
+          "Value": "1640"
         },
         {
           "Name": "Content-Type",
@@ -2253,11 +2390,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"LZCPamGIQ/vbmvJkbRR3/QIATruH7LYch7s6UFk4CjY=\""
+          "Value": "\"RIQiv46EgpqxfNecyn1HfsmN96fkx5AtcSmilTdlyzc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 09:15:16 GMT"
+          "Value": "Mon, 10 Mar 2025 11:49:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2275,7 +2412,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "46mv8rwym2"
+          "Value": "wtvciqg8yr"
         },
         {
           "Name": "label",
@@ -2283,150 +2420,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-LZCPamGIQ/vbmvJkbRR3/QIATruH7LYch7s6UFk4CjY="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-46mv8rwym2.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000662690524"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1508"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LZCPamGIQ/vbmvJkbRR3/QIATruH7LYch7s6UFk4CjY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 09:15:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5499"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 09:15:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-BKroFDDHBgjMoUusYhDoY4cRibyg+FX3oQmd+Hu/j48="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qb27abya29-46mv8rwym2.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1508"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LZCPamGIQ/vbmvJkbRR3/QIATruH7LYch7s6UFk4CjY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 07 Mar 2025 09:15:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-LZCPamGIQ/vbmvJkbRR3/QIATruH7LYch7s6UFk4CjY="
+          "Value": "sha256-RIQiv46EgpqxfNecyn1HfsmN96fkx5AtcSmilTdlyzc="
         }
       ]
     },
     {
       "Route": "images/Background.rg2hps3w7w.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\jn6wne6fd1-rg2hps3w7w.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\jn6wne6fd1-rg2hps3w7w.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -2489,7 +2489,7 @@
     },
     {
       "Route": "images/Background.rg2hps3w7w.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Background.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Background.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2534,7 +2534,7 @@
     },
     {
       "Route": "images/Background.rg2hps3w7w.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\jn6wne6fd1-rg2hps3w7w.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\jn6wne6fd1-rg2hps3w7w.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2587,7 +2587,7 @@
     },
     {
       "Route": "images/Background.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\jn6wne6fd1-rg2hps3w7w.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\jn6wne6fd1-rg2hps3w7w.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -2642,7 +2642,7 @@
     },
     {
       "Route": "images/Background.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Background.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Background.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2679,7 +2679,7 @@
     },
     {
       "Route": "images/Background.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\jn6wne6fd1-rg2hps3w7w.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\jn6wne6fd1-rg2hps3w7w.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2724,7 +2724,7 @@
     },
     {
       "Route": "images/Icons/Briefcase_black.i1ihvrnvhf.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6mlkq65vai-i1ihvrnvhf.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6mlkq65vai-i1ihvrnvhf.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -2787,7 +2787,7 @@
     },
     {
       "Route": "images/Icons/Briefcase_black.i1ihvrnvhf.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_black.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_black.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2832,7 +2832,7 @@
     },
     {
       "Route": "images/Icons/Briefcase_black.i1ihvrnvhf.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6mlkq65vai-i1ihvrnvhf.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6mlkq65vai-i1ihvrnvhf.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2885,7 +2885,7 @@
     },
     {
       "Route": "images/Icons/Briefcase_black.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6mlkq65vai-i1ihvrnvhf.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6mlkq65vai-i1ihvrnvhf.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -2940,7 +2940,7 @@
     },
     {
       "Route": "images/Icons/Briefcase_black.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_black.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_black.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2977,7 +2977,7 @@
     },
     {
       "Route": "images/Icons/Briefcase_black.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6mlkq65vai-i1ihvrnvhf.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6mlkq65vai-i1ihvrnvhf.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3022,7 +3022,7 @@
     },
     {
       "Route": "images/Icons/Briefcase_blue.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qq3ebhq7le-w05og1pvz2.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qq3ebhq7le-w05og1pvz2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -3077,7 +3077,7 @@
     },
     {
       "Route": "images/Icons/Briefcase_blue.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_blue.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_blue.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3114,7 +3114,7 @@
     },
     {
       "Route": "images/Icons/Briefcase_blue.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qq3ebhq7le-w05og1pvz2.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qq3ebhq7le-w05og1pvz2.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3159,7 +3159,7 @@
     },
     {
       "Route": "images/Icons/Briefcase_blue.w05og1pvz2.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qq3ebhq7le-w05og1pvz2.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qq3ebhq7le-w05og1pvz2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -3222,7 +3222,7 @@
     },
     {
       "Route": "images/Icons/Briefcase_blue.w05og1pvz2.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_blue.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Briefcase_blue.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3267,7 +3267,7 @@
     },
     {
       "Route": "images/Icons/Briefcase_blue.w05og1pvz2.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qq3ebhq7le-w05og1pvz2.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\qq3ebhq7le-w05og1pvz2.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3320,7 +3320,7 @@
     },
     {
       "Route": "images/Icons/Calendar.sj5b0y76s3.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6aac5mldsp-sj5b0y76s3.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6aac5mldsp-sj5b0y76s3.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -3383,7 +3383,7 @@
     },
     {
       "Route": "images/Icons/Calendar.sj5b0y76s3.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Calendar.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Calendar.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3428,7 +3428,7 @@
     },
     {
       "Route": "images/Icons/Calendar.sj5b0y76s3.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6aac5mldsp-sj5b0y76s3.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6aac5mldsp-sj5b0y76s3.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3481,7 +3481,7 @@
     },
     {
       "Route": "images/Icons/Calendar.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6aac5mldsp-sj5b0y76s3.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6aac5mldsp-sj5b0y76s3.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -3536,7 +3536,7 @@
     },
     {
       "Route": "images/Icons/Calendar.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Calendar.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Calendar.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3573,7 +3573,7 @@
     },
     {
       "Route": "images/Icons/Calendar.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6aac5mldsp-sj5b0y76s3.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6aac5mldsp-sj5b0y76s3.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3618,7 +3618,7 @@
     },
     {
       "Route": "images/Icons/Dollar.ppgf51z3o2.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8yhmc16ue3-ppgf51z3o2.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8yhmc16ue3-ppgf51z3o2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -3681,7 +3681,7 @@
     },
     {
       "Route": "images/Icons/Dollar.ppgf51z3o2.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dollar.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dollar.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3726,7 +3726,7 @@
     },
     {
       "Route": "images/Icons/Dollar.ppgf51z3o2.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8yhmc16ue3-ppgf51z3o2.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8yhmc16ue3-ppgf51z3o2.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3779,7 +3779,7 @@
     },
     {
       "Route": "images/Icons/Dollar.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8yhmc16ue3-ppgf51z3o2.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8yhmc16ue3-ppgf51z3o2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -3834,7 +3834,7 @@
     },
     {
       "Route": "images/Icons/Dollar.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dollar.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dollar.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3871,7 +3871,7 @@
     },
     {
       "Route": "images/Icons/Dollar.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8yhmc16ue3-ppgf51z3o2.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8yhmc16ue3-ppgf51z3o2.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3916,7 +3916,7 @@
     },
     {
       "Route": "images/Icons/Dots.b6f5x7aode.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8jerw1l0ku-b6f5x7aode.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8jerw1l0ku-b6f5x7aode.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -3979,7 +3979,7 @@
     },
     {
       "Route": "images/Icons/Dots.b6f5x7aode.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dots.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dots.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4024,7 +4024,7 @@
     },
     {
       "Route": "images/Icons/Dots.b6f5x7aode.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8jerw1l0ku-b6f5x7aode.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8jerw1l0ku-b6f5x7aode.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4077,7 +4077,7 @@
     },
     {
       "Route": "images/Icons/Dots.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8jerw1l0ku-b6f5x7aode.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8jerw1l0ku-b6f5x7aode.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -4132,7 +4132,7 @@
     },
     {
       "Route": "images/Icons/Dots.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dots.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Dots.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4169,7 +4169,7 @@
     },
     {
       "Route": "images/Icons/Dots.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8jerw1l0ku-b6f5x7aode.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\8jerw1l0ku-b6f5x7aode.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4214,7 +4214,7 @@
     },
     {
       "Route": "images/Icons/Edit.a5r252ntst.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zpim0qmu45-a5r252ntst.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zpim0qmu45-a5r252ntst.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -4277,7 +4277,7 @@
     },
     {
       "Route": "images/Icons/Edit.a5r252ntst.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Edit.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Edit.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4322,7 +4322,7 @@
     },
     {
       "Route": "images/Icons/Edit.a5r252ntst.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zpim0qmu45-a5r252ntst.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zpim0qmu45-a5r252ntst.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4375,7 +4375,7 @@
     },
     {
       "Route": "images/Icons/Edit.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zpim0qmu45-a5r252ntst.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zpim0qmu45-a5r252ntst.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -4430,7 +4430,7 @@
     },
     {
       "Route": "images/Icons/Edit.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Edit.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Edit.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4467,7 +4467,7 @@
     },
     {
       "Route": "images/Icons/Edit.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zpim0qmu45-a5r252ntst.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zpim0qmu45-a5r252ntst.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4512,7 +4512,7 @@
     },
     {
       "Route": "images/Icons/Logo.dw16yrjq3e.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\exunzkiuvj-dw16yrjq3e.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\exunzkiuvj-dw16yrjq3e.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -4575,7 +4575,7 @@
     },
     {
       "Route": "images/Icons/Logo.dw16yrjq3e.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Logo.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Logo.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4620,7 +4620,7 @@
     },
     {
       "Route": "images/Icons/Logo.dw16yrjq3e.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\exunzkiuvj-dw16yrjq3e.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\exunzkiuvj-dw16yrjq3e.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4673,7 +4673,7 @@
     },
     {
       "Route": "images/Icons/Logo.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\exunzkiuvj-dw16yrjq3e.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\exunzkiuvj-dw16yrjq3e.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -4728,7 +4728,7 @@
     },
     {
       "Route": "images/Icons/Logo.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Logo.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Logo.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4765,7 +4765,7 @@
     },
     {
       "Route": "images/Icons/Logo.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\exunzkiuvj-dw16yrjq3e.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\exunzkiuvj-dw16yrjq3e.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4810,7 +4810,7 @@
     },
     {
       "Route": "images/Icons/Members_black.0v2smmfq68.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\12pradtohx-0v2smmfq68.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\12pradtohx-0v2smmfq68.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -4873,7 +4873,7 @@
     },
     {
       "Route": "images/Icons/Members_black.0v2smmfq68.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_black.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_black.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4918,7 +4918,7 @@
     },
     {
       "Route": "images/Icons/Members_black.0v2smmfq68.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\12pradtohx-0v2smmfq68.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\12pradtohx-0v2smmfq68.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4971,7 +4971,7 @@
     },
     {
       "Route": "images/Icons/Members_black.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\12pradtohx-0v2smmfq68.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\12pradtohx-0v2smmfq68.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -5026,7 +5026,7 @@
     },
     {
       "Route": "images/Icons/Members_black.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_black.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_black.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5063,7 +5063,7 @@
     },
     {
       "Route": "images/Icons/Members_black.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\12pradtohx-0v2smmfq68.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\12pradtohx-0v2smmfq68.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5108,7 +5108,7 @@
     },
     {
       "Route": "images/Icons/Members_blue.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zfz5pu3do3-ultdqida8i.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zfz5pu3do3-ultdqida8i.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -5163,7 +5163,7 @@
     },
     {
       "Route": "images/Icons/Members_blue.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_blue.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_blue.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5200,7 +5200,7 @@
     },
     {
       "Route": "images/Icons/Members_blue.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zfz5pu3do3-ultdqida8i.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zfz5pu3do3-ultdqida8i.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5245,7 +5245,7 @@
     },
     {
       "Route": "images/Icons/Members_blue.ultdqida8i.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zfz5pu3do3-ultdqida8i.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zfz5pu3do3-ultdqida8i.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -5308,7 +5308,7 @@
     },
     {
       "Route": "images/Icons/Members_blue.ultdqida8i.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_blue.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Members_blue.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5353,7 +5353,7 @@
     },
     {
       "Route": "images/Icons/Members_blue.ultdqida8i.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zfz5pu3do3-ultdqida8i.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zfz5pu3do3-ultdqida8i.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5406,7 +5406,7 @@
     },
     {
       "Route": "images/Icons/Notification_active.l4ur7tl0da.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6pblm9wzvi-l4ur7tl0da.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6pblm9wzvi-l4ur7tl0da.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -5469,7 +5469,7 @@
     },
     {
       "Route": "images/Icons/Notification_active.l4ur7tl0da.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_active.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_active.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5514,7 +5514,7 @@
     },
     {
       "Route": "images/Icons/Notification_active.l4ur7tl0da.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6pblm9wzvi-l4ur7tl0da.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6pblm9wzvi-l4ur7tl0da.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5567,7 +5567,7 @@
     },
     {
       "Route": "images/Icons/Notification_active.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6pblm9wzvi-l4ur7tl0da.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6pblm9wzvi-l4ur7tl0da.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -5622,7 +5622,7 @@
     },
     {
       "Route": "images/Icons/Notification_active.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_active.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_active.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5659,7 +5659,7 @@
     },
     {
       "Route": "images/Icons/Notification_active.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6pblm9wzvi-l4ur7tl0da.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\6pblm9wzvi-l4ur7tl0da.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5704,7 +5704,7 @@
     },
     {
       "Route": "images/Icons/Notification_inactive.oy4rwtmrvs.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\plrc3lnf6h-oy4rwtmrvs.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\plrc3lnf6h-oy4rwtmrvs.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -5767,7 +5767,7 @@
     },
     {
       "Route": "images/Icons/Notification_inactive.oy4rwtmrvs.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_inactive.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_inactive.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5812,7 +5812,7 @@
     },
     {
       "Route": "images/Icons/Notification_inactive.oy4rwtmrvs.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\plrc3lnf6h-oy4rwtmrvs.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\plrc3lnf6h-oy4rwtmrvs.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5865,7 +5865,7 @@
     },
     {
       "Route": "images/Icons/Notification_inactive.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\plrc3lnf6h-oy4rwtmrvs.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\plrc3lnf6h-oy4rwtmrvs.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -5920,7 +5920,7 @@
     },
     {
       "Route": "images/Icons/Notification_inactive.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_inactive.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Notification_inactive.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5957,7 +5957,7 @@
     },
     {
       "Route": "images/Icons/Notification_inactive.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\plrc3lnf6h-oy4rwtmrvs.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\plrc3lnf6h-oy4rwtmrvs.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6002,7 +6002,7 @@
     },
     {
       "Route": "images/Icons/Photo.5k3xnlwuuo.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\c3r1wdikgb-5k3xnlwuuo.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\c3r1wdikgb-5k3xnlwuuo.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -6065,7 +6065,7 @@
     },
     {
       "Route": "images/Icons/Photo.5k3xnlwuuo.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Photo.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Photo.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6110,7 +6110,7 @@
     },
     {
       "Route": "images/Icons/Photo.5k3xnlwuuo.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\c3r1wdikgb-5k3xnlwuuo.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\c3r1wdikgb-5k3xnlwuuo.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6163,7 +6163,7 @@
     },
     {
       "Route": "images/Icons/Photo.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\c3r1wdikgb-5k3xnlwuuo.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\c3r1wdikgb-5k3xnlwuuo.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -6218,7 +6218,7 @@
     },
     {
       "Route": "images/Icons/Photo.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Photo.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Photo.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6255,7 +6255,7 @@
     },
     {
       "Route": "images/Icons/Photo.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\c3r1wdikgb-5k3xnlwuuo.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\c3r1wdikgb-5k3xnlwuuo.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6300,7 +6300,7 @@
     },
     {
       "Route": "images/Icons/Search.r2xtxq9cbw.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\862xd6cn2n-r2xtxq9cbw.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\862xd6cn2n-r2xtxq9cbw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -6363,7 +6363,7 @@
     },
     {
       "Route": "images/Icons/Search.r2xtxq9cbw.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Search.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Search.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6408,7 +6408,7 @@
     },
     {
       "Route": "images/Icons/Search.r2xtxq9cbw.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\862xd6cn2n-r2xtxq9cbw.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\862xd6cn2n-r2xtxq9cbw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6461,7 +6461,7 @@
     },
     {
       "Route": "images/Icons/Search.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\862xd6cn2n-r2xtxq9cbw.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\862xd6cn2n-r2xtxq9cbw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -6516,7 +6516,7 @@
     },
     {
       "Route": "images/Icons/Search.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Search.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Search.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6553,7 +6553,7 @@
     },
     {
       "Route": "images/Icons/Search.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\862xd6cn2n-r2xtxq9cbw.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\862xd6cn2n-r2xtxq9cbw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6598,7 +6598,7 @@
     },
     {
       "Route": "images/Icons/Settings.9p5ga0h2q8.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\804kyd65d9-9p5ga0h2q8.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\804kyd65d9-9p5ga0h2q8.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -6661,7 +6661,7 @@
     },
     {
       "Route": "images/Icons/Settings.9p5ga0h2q8.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Settings.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Settings.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6706,7 +6706,7 @@
     },
     {
       "Route": "images/Icons/Settings.9p5ga0h2q8.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\804kyd65d9-9p5ga0h2q8.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\804kyd65d9-9p5ga0h2q8.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6759,7 +6759,7 @@
     },
     {
       "Route": "images/Icons/Settings.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\804kyd65d9-9p5ga0h2q8.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\804kyd65d9-9p5ga0h2q8.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -6814,7 +6814,7 @@
     },
     {
       "Route": "images/Icons/Settings.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Settings.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Settings.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6851,7 +6851,7 @@
     },
     {
       "Route": "images/Icons/Settings.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\804kyd65d9-9p5ga0h2q8.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\804kyd65d9-9p5ga0h2q8.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6896,7 +6896,7 @@
     },
     {
       "Route": "images/Icons/Time.er61nabrse.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\v1a1uh9jwq-er61nabrse.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\v1a1uh9jwq-er61nabrse.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -6959,7 +6959,7 @@
     },
     {
       "Route": "images/Icons/Time.er61nabrse.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Time.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Time.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7004,7 +7004,7 @@
     },
     {
       "Route": "images/Icons/Time.er61nabrse.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\v1a1uh9jwq-er61nabrse.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\v1a1uh9jwq-er61nabrse.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7057,7 +7057,7 @@
     },
     {
       "Route": "images/Icons/Time.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\v1a1uh9jwq-er61nabrse.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\v1a1uh9jwq-er61nabrse.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -7112,7 +7112,7 @@
     },
     {
       "Route": "images/Icons/Time.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Time.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\Time.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7149,7 +7149,7 @@
     },
     {
       "Route": "images/Icons/Time.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\v1a1uh9jwq-er61nabrse.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\v1a1uh9jwq-er61nabrse.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7194,7 +7194,7 @@
     },
     {
       "Route": "images/Icons/X.btaf9gmiba.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\da8udnzqey-btaf9gmiba.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\da8udnzqey-btaf9gmiba.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -7257,7 +7257,7 @@
     },
     {
       "Route": "images/Icons/X.btaf9gmiba.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\X.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\X.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7302,7 +7302,7 @@
     },
     {
       "Route": "images/Icons/X.btaf9gmiba.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\da8udnzqey-btaf9gmiba.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\da8udnzqey-btaf9gmiba.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7355,7 +7355,7 @@
     },
     {
       "Route": "images/Icons/X.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\da8udnzqey-btaf9gmiba.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\da8udnzqey-btaf9gmiba.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -7410,7 +7410,7 @@
     },
     {
       "Route": "images/Icons/X.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\X.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Icons\\X.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7447,7 +7447,7 @@
     },
     {
       "Route": "images/Icons/X.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\da8udnzqey-btaf9gmiba.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\da8udnzqey-btaf9gmiba.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7492,7 +7492,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_1.1175nh8rdp.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\naofy6mmeo-1175nh8rdp.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\naofy6mmeo-1175nh8rdp.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -7555,7 +7555,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_1.1175nh8rdp.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_1.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_1.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7600,7 +7600,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_1.1175nh8rdp.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\naofy6mmeo-1175nh8rdp.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\naofy6mmeo-1175nh8rdp.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7653,7 +7653,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_1.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\naofy6mmeo-1175nh8rdp.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\naofy6mmeo-1175nh8rdp.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -7708,7 +7708,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_1.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_1.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_1.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7745,7 +7745,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_1.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\naofy6mmeo-1175nh8rdp.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\naofy6mmeo-1175nh8rdp.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7790,7 +7790,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_2.ig7f5ekv7d.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lxs5a3auza-ig7f5ekv7d.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lxs5a3auza-ig7f5ekv7d.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -7853,7 +7853,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_2.ig7f5ekv7d.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_2.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_2.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7898,7 +7898,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_2.ig7f5ekv7d.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lxs5a3auza-ig7f5ekv7d.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lxs5a3auza-ig7f5ekv7d.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7951,7 +7951,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_2.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lxs5a3auza-ig7f5ekv7d.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lxs5a3auza-ig7f5ekv7d.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -8006,7 +8006,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_2.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_2.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_2.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8043,7 +8043,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_2.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lxs5a3auza-ig7f5ekv7d.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lxs5a3auza-ig7f5ekv7d.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8088,7 +8088,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_3.o0pflwvi9m.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\w92340z3x6-o0pflwvi9m.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\w92340z3x6-o0pflwvi9m.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -8151,7 +8151,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_3.o0pflwvi9m.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_3.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_3.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8196,7 +8196,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_3.o0pflwvi9m.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\w92340z3x6-o0pflwvi9m.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\w92340z3x6-o0pflwvi9m.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8249,7 +8249,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_3.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\w92340z3x6-o0pflwvi9m.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\w92340z3x6-o0pflwvi9m.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -8304,7 +8304,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_3.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_3.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_3.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8341,7 +8341,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_3.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\w92340z3x6-o0pflwvi9m.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\w92340z3x6-o0pflwvi9m.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8386,7 +8386,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_4.494ki1x6sw.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lefaf9awnx-494ki1x6sw.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lefaf9awnx-494ki1x6sw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -8449,7 +8449,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_4.494ki1x6sw.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_4.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_4.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8494,7 +8494,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_4.494ki1x6sw.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lefaf9awnx-494ki1x6sw.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lefaf9awnx-494ki1x6sw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8547,7 +8547,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_4.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lefaf9awnx-494ki1x6sw.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lefaf9awnx-494ki1x6sw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -8602,7 +8602,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_4.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_4.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_4.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8639,7 +8639,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_4.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lefaf9awnx-494ki1x6sw.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\lefaf9awnx-494ki1x6sw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8684,7 +8684,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_5.jblly6uyw9.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\nregxspgiw-jblly6uyw9.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\nregxspgiw-jblly6uyw9.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -8747,7 +8747,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_5.jblly6uyw9.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_5.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_5.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8792,7 +8792,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_5.jblly6uyw9.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\nregxspgiw-jblly6uyw9.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\nregxspgiw-jblly6uyw9.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8845,7 +8845,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_5.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\nregxspgiw-jblly6uyw9.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\nregxspgiw-jblly6uyw9.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -8900,7 +8900,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_5.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_5.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_5.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8937,7 +8937,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_5.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\nregxspgiw-jblly6uyw9.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\nregxspgiw-jblly6uyw9.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8982,7 +8982,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_6.jzax56bjc7.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\22w7zttwlc-jzax56bjc7.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\22w7zttwlc-jzax56bjc7.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -9045,7 +9045,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_6.jzax56bjc7.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_6.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_6.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9090,7 +9090,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_6.jzax56bjc7.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\22w7zttwlc-jzax56bjc7.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\22w7zttwlc-jzax56bjc7.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9143,7 +9143,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_6.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\22w7zttwlc-jzax56bjc7.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\22w7zttwlc-jzax56bjc7.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -9198,7 +9198,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_6.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_6.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Profiles\\Img_profile_6.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9235,7 +9235,7 @@
     },
     {
       "Route": "images/Profiles/Img_profile_6.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\22w7zttwlc-jzax56bjc7.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\22w7zttwlc-jzax56bjc7.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9280,7 +9280,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_1.ahmqnegdrb.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\o1pnbfes72-ahmqnegdrb.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\o1pnbfes72-ahmqnegdrb.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -9343,7 +9343,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_1.ahmqnegdrb.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_1.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_1.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9388,7 +9388,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_1.ahmqnegdrb.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\o1pnbfes72-ahmqnegdrb.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\o1pnbfes72-ahmqnegdrb.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9441,7 +9441,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_1.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\o1pnbfes72-ahmqnegdrb.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\o1pnbfes72-ahmqnegdrb.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -9496,7 +9496,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_1.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_1.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_1.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9533,7 +9533,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_1.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\o1pnbfes72-ahmqnegdrb.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\o1pnbfes72-ahmqnegdrb.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9578,7 +9578,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_2.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\5ivl3fdtb5-u2bkixnzlq.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\5ivl3fdtb5-u2bkixnzlq.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -9633,7 +9633,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_2.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_2.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_2.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9670,7 +9670,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_2.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\5ivl3fdtb5-u2bkixnzlq.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\5ivl3fdtb5-u2bkixnzlq.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9715,7 +9715,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_2.u2bkixnzlq.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\5ivl3fdtb5-u2bkixnzlq.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\5ivl3fdtb5-u2bkixnzlq.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -9778,7 +9778,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_2.u2bkixnzlq.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_2.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_2.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9823,7 +9823,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_2.u2bkixnzlq.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\5ivl3fdtb5-u2bkixnzlq.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\5ivl3fdtb5-u2bkixnzlq.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9876,7 +9876,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_3.3a8h636sbz.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\3apfwyhe7n-3a8h636sbz.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\3apfwyhe7n-3a8h636sbz.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -9939,7 +9939,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_3.3a8h636sbz.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_3.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_3.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9984,7 +9984,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_3.3a8h636sbz.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\3apfwyhe7n-3a8h636sbz.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\3apfwyhe7n-3a8h636sbz.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10037,7 +10037,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_3.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\3apfwyhe7n-3a8h636sbz.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\3apfwyhe7n-3a8h636sbz.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -10092,7 +10092,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_3.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_3.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_3.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10129,7 +10129,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_3.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\3apfwyhe7n-3a8h636sbz.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\3apfwyhe7n-3a8h636sbz.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10174,7 +10174,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_4.dnt5pmksi5.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\igiut47mmi-dnt5pmksi5.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\igiut47mmi-dnt5pmksi5.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -10237,7 +10237,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_4.dnt5pmksi5.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_4.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_4.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10282,7 +10282,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_4.dnt5pmksi5.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\igiut47mmi-dnt5pmksi5.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\igiut47mmi-dnt5pmksi5.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10335,7 +10335,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_4.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\igiut47mmi-dnt5pmksi5.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\igiut47mmi-dnt5pmksi5.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -10390,7 +10390,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_4.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_4.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_4.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10427,7 +10427,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_4.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\igiut47mmi-dnt5pmksi5.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\igiut47mmi-dnt5pmksi5.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10472,7 +10472,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_5.1xevg65aiq.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\h2up92azln-1xevg65aiq.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\h2up92azln-1xevg65aiq.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -10535,7 +10535,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_5.1xevg65aiq.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_5.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_5.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10580,7 +10580,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_5.1xevg65aiq.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\h2up92azln-1xevg65aiq.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\h2up92azln-1xevg65aiq.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10633,7 +10633,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_5.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\h2up92azln-1xevg65aiq.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\h2up92azln-1xevg65aiq.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -10688,7 +10688,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_5.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_5.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_5.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10725,7 +10725,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_5.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\h2up92azln-1xevg65aiq.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\h2up92azln-1xevg65aiq.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10770,7 +10770,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_6.bs3gkjqva1.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zh1vjm0vy2-bs3gkjqva1.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zh1vjm0vy2-bs3gkjqva1.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -10833,7 +10833,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_6.bs3gkjqva1.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_6.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_6.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10878,7 +10878,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_6.bs3gkjqva1.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zh1vjm0vy2-bs3gkjqva1.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zh1vjm0vy2-bs3gkjqva1.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10931,7 +10931,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_6.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zh1vjm0vy2-bs3gkjqva1.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zh1vjm0vy2-bs3gkjqva1.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -10986,7 +10986,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_6.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_6.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_6.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11023,7 +11023,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_6.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zh1vjm0vy2-bs3gkjqva1.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\zh1vjm0vy2-bs3gkjqva1.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11068,7 +11068,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_7.gv0p74l2i6.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\fypc9q77ow-gv0p74l2i6.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\fypc9q77ow-gv0p74l2i6.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -11131,7 +11131,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_7.gv0p74l2i6.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_7.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_7.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11176,7 +11176,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_7.gv0p74l2i6.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\fypc9q77ow-gv0p74l2i6.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\fypc9q77ow-gv0p74l2i6.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11229,7 +11229,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_7.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\fypc9q77ow-gv0p74l2i6.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\fypc9q77ow-gv0p74l2i6.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -11284,7 +11284,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_7.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_7.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_7.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11321,7 +11321,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_7.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\fypc9q77ow-gv0p74l2i6.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\fypc9q77ow-gv0p74l2i6.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11366,7 +11366,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_8.54rhde9kl6.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\u7ukdn7da1-54rhde9kl6.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\u7ukdn7da1-54rhde9kl6.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -11429,7 +11429,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_8.54rhde9kl6.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_8.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_8.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11474,7 +11474,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_8.54rhde9kl6.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\u7ukdn7da1-54rhde9kl6.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\u7ukdn7da1-54rhde9kl6.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11527,7 +11527,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_8.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\u7ukdn7da1-54rhde9kl6.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\u7ukdn7da1-54rhde9kl6.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -11582,7 +11582,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_8.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_8.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_8.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11619,7 +11619,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_8.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\u7ukdn7da1-54rhde9kl6.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\u7ukdn7da1-54rhde9kl6.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11664,7 +11664,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_9.ox3lsyyulw.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\n30ueenssc-ox3lsyyulw.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\n30ueenssc-ox3lsyyulw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -11727,7 +11727,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_9.ox3lsyyulw.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_9.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_9.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11772,7 +11772,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_9.ox3lsyyulw.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\n30ueenssc-ox3lsyyulw.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\n30ueenssc-ox3lsyyulw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11825,7 +11825,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_9.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\n30ueenssc-ox3lsyyulw.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\n30ueenssc-ox3lsyyulw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -11880,7 +11880,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_9.svg",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_9.svg",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\images\\Projects\\Img_proj_9.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11917,7 +11917,7 @@
     },
     {
       "Route": "images/Projects/Img_proj_9.svg.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\n30ueenssc-ox3lsyyulw.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\n30ueenssc-ox3lsyyulw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11962,7 +11962,7 @@
     },
     {
       "Route": "js/site.3r8b2a0bt1.js",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\0bvfn1gfwg-3r8b2a0bt1.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\0bvfn1gfwg-3r8b2a0bt1.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -12025,7 +12025,7 @@
     },
     {
       "Route": "js/site.3r8b2a0bt1.js",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\js\\site.js",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -12070,7 +12070,7 @@
     },
     {
       "Route": "js/site.3r8b2a0bt1.js.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\0bvfn1gfwg-3r8b2a0bt1.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\0bvfn1gfwg-3r8b2a0bt1.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -12123,7 +12123,7 @@
     },
     {
       "Route": "js/site.js",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\0bvfn1gfwg-3r8b2a0bt1.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\0bvfn1gfwg-3r8b2a0bt1.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -12178,7 +12178,7 @@
     },
     {
       "Route": "js/site.js",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\js\\site.js",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -12215,7 +12215,7 @@
     },
     {
       "Route": "js/site.js.gz",
-      "AssetFile": "C:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\0bvfn1gfwg-3r8b2a0bt1.gz",
+      "AssetFile": "c:\\WIN24\\VS_Code\\ASP.NET\\Assignment\\Alpha_Mvc\\obj\\Debug\\net9.0\\compressed\\0bvfn1gfwg-3r8b2a0bt1.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
