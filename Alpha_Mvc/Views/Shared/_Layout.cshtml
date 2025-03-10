@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Alpha</title>
     <script type="importmap"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Alpha_Mvc.styles.css" asp-append-version="true" />
 </head>
@@ -31,11 +32,13 @@
                     <p class="logo-text">alpha</p>
                 </a>
                 <a href="#" class="link">
-                    <img src="/images/Icons/Briefcase_blue.svg">
+                    @* <img src="/images/Icons/Briefcase_blue.svg"> *@
+                    <i class="fa-solid fa-briefcase"></i>
                     Projects
                 </a>
-                <a href="#" class="link">
-                    <img src="/images/Icons/Members_black.svg">
+                <a href="#" class="link active">
+                    @* <img src="/images/Icons/Members_black.svg"> *@
+                    <i class="fa-solid fa-user"></i>
                     Team Members
                 </a>
             </aside>
