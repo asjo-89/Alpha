@@ -1,0 +1,7 @@
+﻿.container {
+    width: 600px;
+    height: 700px;
+    background-color: var(--surface);
+    border-radius: 1rem;
+    box-shadow: 0 8px 8px var(--grey-400);
+}

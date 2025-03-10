@@ -65,8 +65,6 @@ body, html {
     width: 100svw;
     height: 100svh;
     background-color: var(--bg-wrapper);
-    display: flex;
-    flex-direction: column;
 }
 
 .container {
@@ -80,6 +78,15 @@ body, html {
     grid-template-areas:
         "sidebar header"
         "sidebar content";
+}
+
+.signin-container {
+    width: 100svw;
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
 }
 
 .topbar {
