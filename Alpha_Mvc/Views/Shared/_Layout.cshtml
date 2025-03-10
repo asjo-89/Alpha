@@ -27,17 +27,15 @@
             </header>
 
             <aside class="sidebar">
-                <a class="logo" href="#">
+                <a class="logo" asp-action="Index" asp-controller="Home">
                     <img src="/images/Icons/Logo.svg" alt="">
                     <p class="logo-text">alpha</p>
                 </a>
-                <a href="#" class="link">
-                    @* <img src="/images/Icons/Briefcase_blue.svg"> *@
+                <a class="link @(Context.Request.Path == "/" ? "active" : "")" asp-action="Index" asp-controller="Home">
                     <i class="fa-solid fa-briefcase"></i>
                     Projects
                 </a>
-                <a href="#" class="link active">
-                    @* <img src="/images/Icons/Members_black.svg"> *@
+                <a class="link @(Context.Request.Path == "/admin" ? "active" : "")" asp-action="Index" asp-controller="Admin">
                     <i class="fa-solid fa-user"></i>
                     Team Members
                 </a>
@@ -45,6 +43,13 @@
             
             <main>
                 <div class="main-container">
+                    <div class="top">
+                        <h2>@ViewData["Header"]</h2>
+                        <button class="btn">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Add Project</span>
+                        </button>
+                    </div>
                     @RenderBody()   
                 </div>
             </main>        
