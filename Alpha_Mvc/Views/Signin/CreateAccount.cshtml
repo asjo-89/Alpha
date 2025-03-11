@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "_SigninLayout";
+}
+
+<div class="container container-create">
+    <h1 class="title title-create">Create Account</h1>
+    <button type="button" class="btn-google">
+        <img src="/images/Icons/google-icon.svg" alt="Google icon." />
+        <span class="text-google">Sign Up with Google</span>
+    </button>
+    <div class="alternative">
+        <div class="line"></div>
+        <span class="or">OR</span>
+        <div class="line"></div>
+    </div>
+    <form class="login-form create-form">
+        <div class="form-group-double">
+            <label class="label first-label" for="firstName">First Name</label>
+            <input type="text" class="input first-input" name="firstName" placeholder="First Name" />
+            <label class="label last-label" for="lastName">Last Name</label>
+            <input type="text" class="input last-input" name="lastName" placeholder="Last Name" />
+        </div>
+        <div class="form-group">
+            <label class="label" for="email">Email</label>
+            <input type="text" class="input" name="email" placeholder="Your email address" />
+        </div>
+        <div class="form-group-double">
+            <label class="label first-label" for="password">Password</label>
+            <input type="text" class="input first-input" name="password" placeholder="Enter your password" />
+            <label class="label last-label" for="confirmed">Confirm Password</label>
+            <input type="text" class="input last-input" name="confirmed" placeholder="Confirm your password" />
+        </div>
+        <div class="form-group-check">
+            <label for="remember">
+                <input type="checkbox" name="remember" id="remember" value="" />
+                <span class="checkmark"></span>
+            </label>
+            <span>I accept <a href="#" class="forgot">Terms and Conditions</a></span>
+        </div>
+        <button type="submit" class="btn">
+            <span>Create Account</span>
+        </button>
+    </form>
+
+    <div class="group-signup">
+        <p>Already have an account?</p>
+        <a href="#" class="sign-up">Log in</a>
+    </div>
+</div>

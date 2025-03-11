@@ -11,5 +11,12 @@ namespace Alpha_Mvc.Controllers
             ViewData["Title"] = "Sign In";
             return View();
         }
+
+        [Route("create")]
+        public IActionResult CreateAccount()
+        {
+            ViewData["Title"] = "Sign In";
+            return View();
+        }
     }
 }

@@ -14,8 +14,16 @@
     gap: 2rem;
 }
 
+.container-create {
+    gap: 1rem;
+}
+
 .title {
     margin-top: 4rem;
+}
+
+.title-create {
+    margin-top: .7rem;
 }
 
 .btn-google {
@@ -73,7 +81,38 @@
     align-items: flex-start;
 }
 
+.form-group-double {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: start;
+    align-items: center;
+    column-gap: .7rem;
+}
+
+.first-label {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.last-label {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.first-input {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.last-input {
+    grid-column: 2;
+    grid-row: 2;
+}
+
 .label {
+    padding-left: .5rem;
     font-size: 1rem;
     font-weight: 600;
 }
@@ -123,7 +162,6 @@
     background-color: var(--grey-400);
 }
 
-/* När checkboxen är checkad */
 input:checked + .checkmark {
     background-color: var(--accent);
     border: 2px solid var(--accent);
@@ -134,7 +172,6 @@ input:checked + .checkmark:hover {
     border: 2px solid var(--accent-dark);
 }
 
-/* Skapa checkmark */
 .checkmark::after {
     content: "";
     position: absolute;
@@ -148,7 +185,6 @@ input:checked + .checkmark:hover {
     transform: rotate(45deg);
 }
 
-/* Visa checkmark vid `checked` */
 input:checked + .checkmark::after {
     display: block;
 }
