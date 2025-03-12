@@ -16,43 +16,16 @@
     <div class="wrapper">
         <div class="container">            
             <header>
-                <div class="topbar">
-                    <form class="search-form" action="" method="">
-                        <input class="search-input" name="query" type="text" placeholder="Search..." />
-                    </form>
-                    <div class="user-menu">
-                        <img src="/images/Icons/Notification_inactive.svg" class="notification" />
-                        <img src="/images/Icons/Settings.svg" class="settings" />
-                        <div class="stroke">|</div>
-                        <img src="/images/Profiles/Img_profile_1.svg" class="profile-small" />
-                    </div>
-                </div>
+                @await Html.PartialAsync("Partials/_Header")
             </header>
 
             <aside class="sidebar">
-                <a class="logo" asp-action="Index" asp-controller="Home">
-                    <img src="/images/Icons/Logo.svg" alt="">
-                    <p class="logo-text">alpha</p>
-                </a>
-                <a class="link @(Context.Request.Path == "/" ? "active" : "")" asp-action="Index" asp-controller="Home">
-                    <i class="fa-solid fa-briefcase"></i>
-                    Projects
-                </a>
-                <a class="link @(Context.Request.Path == "/admin" ? "active" : "")" asp-action="Index" asp-controller="Admin">
-                    <i class="fa-solid fa-user"></i>
-                    Team Members
-                </a>
+                @await Html.PartialAsync("Partials/_SideBar")
             </aside>
             
             <main>
                 <div class="main-container">
-                    <div class="top">
-                        <h2>@ViewData["Header"]</h2>
-                        <button class="btn">
-                            <i class="fa-solid fa-plus"></i>
-                            <span>Add Project</span>
-                        </button>
-                    </div>
+                    @await Html.PartialAsync("Partials/_TitleBar")
                     @RenderBody()   
                 </div>
             </main>        

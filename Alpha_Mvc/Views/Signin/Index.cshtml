@@ -4,10 +4,9 @@
 
 <div class="container">
     <h1 class="title">Log In</h1>
-    <button type="button" class="btn-google">
-        <img src="/images/Icons/google-icon.svg" alt="Google icon." />
-        <span class="text-google">Log In with Google</span>
-    </button>
+    
+    @await Html.PartialAsync("Components/_GoogleButton")
+
     <div class="alternative">
         <div class="line"></div>
         <span class="or">OR</span>
@@ -24,13 +23,12 @@
             <input class="input" type="password" name="password" id="password" value="" placeholder="Enter your password" />
         </div>
         <div class="form-group-check">
-            <label for="remember">
-                <input type="checkbox" name="remember" id="remember" value="" />
-                <span class="checkmark"></span>
-            </label>
+            
+            @await Html.PartialAsync("Components/_Checkbox")
+            <p>Remember me</p>
             <a href="#" class="forgot">Forgot password?</a>
         </div>
-        <button type="submit" class="btn">
+        <button type="submit" class="btn" asp-controller="Home" asp-action="Index">
             <span>Log In</span>
         </button>
     </form>

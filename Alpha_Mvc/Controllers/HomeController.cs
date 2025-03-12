@@ -2,10 +2,9 @@
 
 namespace Alpha_Mvc.Controllers
 {
-    [Route("")]
+    [Route("projects")]
     public class HomeController : Controller
     {
-        [Route("")]
         public IActionResult Index()
         {
             ViewData["Title"] = "Home";

@@ -126,9 +126,15 @@
 
 .form-group-check {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    justify-content: center;
     align-items: center;
+    gap: .7rem;
+
+    & p {
+        font-weight: var(--font-regular);
+    }
 }
 
 .form-group-check label {

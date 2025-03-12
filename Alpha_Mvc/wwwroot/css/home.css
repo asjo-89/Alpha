@@ -1,4 +1,25 @@
-﻿.content {
+﻿.filter-bar {
+    display: grid;
+    grid-template-columns: repeat(3, auto) 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: .7rem;
+}
+
+.alternative {
+    color: var(--body-light);
+    font-weight: var(--font-bold);
+}
+
+.active {
+    color: var(--accent);
+}
+
+hr {
+    border: 1px solid var(--border-200);
+}
+
+.content {
     flex-grow: 1;
     height: calc(100svh - 160px);
     display: flex;

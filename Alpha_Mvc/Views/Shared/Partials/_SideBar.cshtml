@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Css"] = "~/css/home.css";
+}
+
+<a class="logo" asp-action="Index" asp-controller="Home">
+    <img src="/images/Icons/Logo.svg" alt="">
+    <p class="logo-text">alpha</p>
+</a>
+<a class="link @(Context.Request.Path == "/projects" ? "active" : "")" asp-action="Index" asp-controller="Home">
+    <i class="fa-solid fa-briefcase"></i>
+    Projects
+</a>
+<a class="link @(Context.Request.Path == "/admin" ? "active" : "")" asp-action="Index" asp-controller="Admin">
+    <i class="fa-solid fa-user"></i>
+    Team Members
+</a>

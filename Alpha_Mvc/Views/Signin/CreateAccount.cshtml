@@ -4,10 +4,7 @@
 
 <div class="container container-create">
     <h1 class="title title-create">Create Account</h1>
-    <button type="button" class="btn-google">
-        <img src="/images/Icons/google-icon.svg" alt="Google icon." />
-        <span class="text-google">Sign Up with Google</span>
-    </button>
+    @await Html.PartialAsync("Components/_GoogleButton")
     <div class="alternative">
         <div class="line"></div>
         <span class="or">OR</span>
@@ -31,10 +28,7 @@
             <input type="text" class="input last-input" name="confirmed" placeholder="Confirm your password" />
         </div>
         <div class="form-group-check">
-            <label for="remember">
-                <input type="checkbox" name="remember" id="remember" value="" />
-                <span class="checkmark"></span>
-            </label>
+            @await Html.PartialAsync("Components/_Checkbox")
             <span>I accept <a href="#" class="forgot">Terms and Conditions</a></span>
         </div>
         <button type="submit" class="btn">
