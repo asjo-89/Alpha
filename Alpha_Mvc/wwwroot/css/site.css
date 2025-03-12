@@ -75,9 +75,9 @@ body, html {
         "sidebar content";
 }
 
-.signin-container {
+.center-container {
     width: 100svw;
-    height: 100svh;
+    height: 1400px;
     display: flex;
     justify-content: center;
     align-items: center;

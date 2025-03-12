@@ -1,0 +1,117 @@
+﻿.add-container {
+    width: 550px;
+    height: 1130px;
+    padding: 2rem;
+    background-color: var(--surface);
+    border-radius: 1rem;
+    box-shadow: 0 8px 8px var(--grey-400);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.exit {
+    width: 25px;
+    aspect-ratio: 1;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: .3rem;
+
+    &:hover {
+                background-color: var(--grey-200);
+            }
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.picture {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 150px;
+    aspect-ratio: 1;
+}
+
+.label-start, .label-end {
+    padding-left: .5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.label-start {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.label-end {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.input {
+    width: 100%;
+    padding: .7rem;
+    border: 2px solid var(--grey-200);
+    border-radius: .7rem;
+    font-size: .8rem;
+
+    &:focus {
+        outline: 1px solid var(--border-200);
+        background-color: var(--grey-100);
+    }
+
+}
+
+.text-area {
+    height: 200px;
+    font-family: inherit;
+}
+
+.form-date-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: .7rem;
+}
+
+.start-date {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.end-date {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.budget {
+    width: 100%;
+    padding: .7rem;
+    background-color: transparent;
+    background-image: url("/images/Icons/Dollar.svg");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 2.5rem;
+}
