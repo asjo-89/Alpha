@@ -2,49 +2,50 @@
     Layout = "_SigninLayout";
     ViewData["Css"] = "~/css/projectForms.css";
 }
-
-<div class="add-container">
-    <div class="top">
-        <h3>Add Project</h3>
-        <button class="exit">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-    </div>
-    <div class="picture">
-        <img class="image" src="/images/Projects/Img_proj_1.svg" />
-    </div>
-
-    <form class="form">
-        <div class="form-group">
-            <label class="label" for="projectName">Project Name</label>
-            <input type="text" class="input" id="projectName" placeholder="Project name">
-        </div>
-        <div class="form-group">
-            <label class="label" for="clientName">Client Name</label>
-            <input type="text" class="input" id="clientName" placeholder="Client name">
-        </div>
-        <div class="form-group">
-            <label class="label" for="description">Description</label>
-            <textarea type="text" class="input text-area" id="description" placeholder="Description"></textarea>
-        </div>
-        <div class="form-date-group">
-            <label class="label-start" for="start-date">Start Date</label>
-            <input type="date" class="input start-date" id="start-date">
-            <label class="label-end" for="end-date">End Date</label>
-            <input type="date" class="input end-date" id="end-date">
-        </div>
-        <div class="form-group">
-            <label class="label" for="members">Members</label>
-            <input type="text" class="input form-search" id="members" placeholder="Choose members">
-        </div>
-        <div class="form-group">
-            <label class="label" for="budget">Budget</label>
-            <input type="text" class="input budget" id="budget" placeholder="0">
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn">
-                Create
+<div class="modal">
+    <div class="add-container">
+        <div class="top">
+            <h3>Add Project</h3>
+            <button class="exit">
+                <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
-    </form>
+        <div class="picture">
+            <img class="image" src="/images/Projects/Img_proj_1.svg" />
+        </div>
+
+        <form class="form">
+            <div class="form-group">
+                <label class="label" for="projectName">Project Name</label>
+                <input type="text" class="input" id="projectName" placeholder="Project name">
+            </div>
+            <div class="form-group">
+                <label class="label" for="clientName">Client Name</label>
+                <input type="text" class="input" id="clientName" placeholder="Client name">
+            </div>
+            <div class="form-group">
+                <label class="label" for="description">Description</label>
+                <textarea type="text" class="input text-area" id="description" placeholder="Description"></textarea>
+            </div>
+            <div class="form-date-group">
+                <label class="label-start" for="start-date">Start Date</label>
+                <input type="date" class="input start-date" id="start-date">
+                <label class="label-end" for="end-date">End Date</label>
+                <input type="date" class="input end-date" id="end-date">
+            </div>
+            <div class="form-group">
+                <label class="label" for="members">Members</label>
+                <input type="text" class="input form-search" id="members" placeholder="Choose members">
+            </div>
+            <div class="form-group">
+                <label class="label" for="budget">Budget</label>
+                <input type="text" class="input budget" id="budget" placeholder="0">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn">
+                    Create
+                </button>
+            </div>
+        </form>
+    </div>
 </div>

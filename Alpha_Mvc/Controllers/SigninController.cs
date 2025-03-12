@@ -17,8 +17,15 @@ namespace Alpha_Mvc.Controllers
             return View();
         }
 
-        [Route("add")]
+        [Route("add-project")]
         public IActionResult AddProject()
+        {
+            ViewData["Title"] = "Add Project";
+            return View();
+        }
+
+        [Route("add-member")]
+        public IActionResult AddMember()
         {
             ViewData["Title"] = "Add Project";
             return View();
