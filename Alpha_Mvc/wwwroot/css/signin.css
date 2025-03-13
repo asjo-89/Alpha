@@ -2,7 +2,8 @@
 
 .container {
     width: 600px;
-    height: 700px;
+    height: auto;
+    max-height: 90svh;
     padding: 1rem 5rem;
     background-color: var(--surface);
     border-radius: 1rem;
@@ -12,10 +13,12 @@
     justify-content: flex-start;
     align-items: center;
     gap: 2rem;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .container-create {
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .title {
@@ -78,7 +81,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    column-gap: .7rem;
+    row-gap: .3rem;
     justify-content: center;
     align-items: flex-start;
 }
@@ -87,10 +91,11 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto auto;
     justify-content: start;
     align-items: center;
     column-gap: .7rem;
+    row-gap: .3rem;
 }
 
 .first-label {
@@ -129,10 +134,12 @@
 .form-group-check {
     width: 100%;
     display: grid;
+    margin-block: 1rem;
     grid-template-columns: auto 1fr auto;
     justify-content: center;
     align-items: center;
-    gap: .7rem;
+    column-gap: .7rem;
+    row-gap: .3rem;
 
     & p {
         font-weight: var(--font-regular);
