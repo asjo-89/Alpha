@@ -1,0 +1,233 @@
+﻿.modal {
+    width: 100%;
+    height: 100%;
+    background-color: #0000001a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-container {
+    width: 550px;
+    height: auto;
+    max-height: 90svh;
+    padding: 2rem;
+    padding-right: 1.5rem;
+    background-color: var(--surface);
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px var(--body-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.exit {
+    width: 25px;
+    aspect-ratio: 1;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: .3rem;
+
+    &:hover {
+        background-color: var(--grey-200);
+    }
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.picture {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 1rem;
+}
+
+.image {
+    width: 150px;
+    aspect-ratio: 1;
+}
+
+.label-start, .label-end {
+    padding-left: .5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.label-start {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.label-end {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.input {
+    width: 100%;
+    padding: .7rem;
+    border: 2px solid var(--grey-200);
+    border-radius: .7rem;
+    font-size: .8rem;
+    margin-bottom: 1rem;
+
+    &:focus {
+        outline: 1px solid var(--border-200);
+        background-color: var(--grey-100);
+    }
+}
+
+.text-area {
+    height: 200px;
+    font-family: inherit;
+}
+
+.form-date-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: .7rem;
+    row-gap: .3rem;
+}
+
+.start-date {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.end-date {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.budget {
+    width: 100%;
+    padding: .7rem;
+    background-color: transparent;
+    background-image: url("/images/Icons/Dollar.svg");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.form .input {
+/*    margin-top: .3rem;*/
+}
+
+.form-group-name {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: .7rem;
+    row-gap: .3rem;
+}
+
+.first-label {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.first-input {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.last-label {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.last-input {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.form-group-address {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    column-gap: .7rem;
+    row-gap: .3rem;
+}
+
+.street-label {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.street {
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+
+.postal-label {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.postal-code {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.city-label {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.city {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.form-group-birth {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: .7rem;
+    row-gap: .3rem;
+}
+
+.birth-label {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.day {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.month {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.year {
+    grid-column: 3;
+    grid-row: 2;
+}
