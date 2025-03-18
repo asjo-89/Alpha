@@ -1,8 +1,10 @@
 ﻿@{
     ViewData["Css"] = "~/css/home.css";
+    ViewData["Css2"] = "~/css/projectForms.css";
 }
 
-@* @await Html.PartialAsync("Sections/_AddProject") *@
+<partial name="Sections/_AddProject" />
+
 
 <div class="top">
     <h2>Projects</h2>
@@ -27,3 +29,6 @@
     @await Html.PartialAsync("Partials/_ProjectCard")
     @await Html.PartialAsync("Partials/_ProjectCard")
 </div>
+
+
+
