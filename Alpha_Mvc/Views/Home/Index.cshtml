@@ -2,6 +2,16 @@
     ViewData["Css"] = "~/css/home.css";
 }
 
+@* @await Html.PartialAsync("Sections/_AddProject") *@
+
+<div class="top">
+    <h2>Projects</h2>
+    <button type="button" data-modal="true" data-target="#addProjectModal" class="btn">
+        <i class="fa-solid fa-plus"></i>
+        <span>Add Project</span>
+    </button>
+</div>
+
 <div class="filter-bar">
     <span class="alternative active">ALL [8]</span>
     <span class="alternative">STARTED [8]</span>
