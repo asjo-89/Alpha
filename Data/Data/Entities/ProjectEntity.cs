@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Data.Contexts.Entities;
+namespace Data.Entities;
 
 public class ProjectEntity
 {
@@ -10,7 +10,6 @@ public class ProjectEntity
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public decimal Budget { get; set; }
-    public Guid NoteId { get; set; }
     public Guid ClientId { get; set; }
     public Guid StatusId { get; set; }
     public Guid PictureId { get; set; }
@@ -18,8 +17,6 @@ public class ProjectEntity
 
     // Relations
     public ICollection<ProjectEmployeeEntity> Employees { get; set; } = [];
-
-    [ForeignKey(nameof(NoteId))]
     public ICollection<ProjectNoteEntity> Notes { get; set; } = [];
 
     [ForeignKey(nameof(ClientId))]

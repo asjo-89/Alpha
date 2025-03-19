@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Data.Contexts.Entities;
+namespace Data.Entities;
 
 public class EmployeeEntity
 {

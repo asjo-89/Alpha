@@ -1,4 +1,4 @@
-﻿namespace Data.Contexts.Entities;
+﻿namespace Data.Entities;
 
 public class AddressEntity
 {
