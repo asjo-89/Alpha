@@ -5,6 +5,8 @@ namespace Alpha_Mvc.Controllers
 {
     public class SigninController : Controller
     {
+        public CreateAccountModel createAccountModel = new();
+
         public IActionResult Index()
         {
             ViewData["Title"] = "Sign In";
@@ -21,21 +23,9 @@ namespace Alpha_Mvc.Controllers
         public IActionResult CreateAccount()
         {
             ViewData["Title"] = "Sign In";
-            return View();
+            return View(createAccountModel);
         }
 
-        [Route("add-project")]
-        public IActionResult AddProject()
-        {
-            ViewData["Title"] = "Add Project";
-            return View();
-        }
-
-        [Route("add-member")]
-        public IActionResult AddMember()
-        {
-            ViewData["Title"] = "Add Project";
-            return View();
-        }
+        
     }
 }

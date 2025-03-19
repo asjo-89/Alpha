@@ -10,11 +10,8 @@ public class EmployeeEntity
     public string LastName { get; set; } = null!;
     public string PhoneNumber { get; set; } = null!;
     public string Email { get; set; } = null!;
-    //public string StreetAddress { get; set; } = null!;
-    //public int PostalCode { get; set; }
-    //public string City { get; set; } = null!;
-    //public decimal DateOfBirth { get; set; }
-    //public string Password { get; set; } = null!;
-    //public int RoleId { get; set; }
-    //public int PictureId { get; set; }
+    public DateOnly DateOfBirth { get; set; }
+    public int AddressId { get; set; }
+    public int RoleId { get; set; }
+    public int PictureId { get; set; }
 }

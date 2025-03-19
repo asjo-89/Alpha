@@ -1,6 +1,19 @@
+@model CreateMemberFormModel
+
 @{
     ViewData["Css"] = "~/css/admin.css";
+    ViewData["Css2"] = "~/css/projectForms.css";
 }
+
+<partial name="Sections/_AddMember", model="@Model" />
+
+<div class="top">
+    <h2>Projects</h2>
+    <button type="button" data-modal="true" data-target="#addMemberModal" class="btn">
+        <i class="fa-solid fa-plus"></i>
+        <span>Add Member</span>
+    </button>
+</div>
 
 <div class="content">
     @await Html.PartialAsync("Partials/_MembersCard")

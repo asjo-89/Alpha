@@ -1,7 +1,10 @@
 ﻿.modal {
-    width: 100%;
-    height: 100%;
-    background-color: #0000001a;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #0000004a;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,6 +54,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    gap: .7rem;
 }
 
 .picture {
@@ -66,7 +70,7 @@
     aspect-ratio: 1;
 }
 
-.label-start, .label-end {
+.label {
     padding-left: .5rem;
     font-size: 1rem;
     font-weight: 600;
@@ -88,7 +92,6 @@
     border: 2px solid var(--grey-200);
     border-radius: .7rem;
     font-size: .8rem;
-    margin-bottom: 1rem;
 
     &:focus {
         outline: 1px solid var(--border-200);
@@ -107,7 +110,6 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     column-gap: .7rem;
-    row-gap: .3rem;
 }
 
 .start-date {
@@ -135,13 +137,18 @@
 /*    margin-top: .3rem;*/
 }
 
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .form-group-name {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     column-gap: .7rem;
-    row-gap: .3rem;
 }
 
 .first-label {
@@ -168,48 +175,46 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: auto auto auto;
     column-gap: .7rem;
-    row-gap: .3rem;
-}
-
-.street-label {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.street {
-    grid-column: 1 / -1;
-    grid-row: 2;
 }
 
 .postal-label {
     grid-column: 1;
-    grid-row: 3;
+    grid-row: 1;
 }
 
 .postal-code {
     grid-column: 1;
-    grid-row: 4;
+    grid-row: 2;
 }
 
 .city-label {
     grid-column: 2;
-    grid-row: 3;
+    grid-row: 1;
 }
 
 .city {
     grid-column: 2;
-    grid-row: 4;
+    grid-row: 2;
+}
+
+.postal-span {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.city-span {
+    grid-column: 2;
+    grid-row: 3;
 }
 
 .form-group-birth {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     column-gap: .7rem;
-    row-gap: .3rem;
 }
 
 .birth-label {
@@ -230,4 +235,14 @@
 .year {
     grid-column: 3;
     grid-row: 2;
+}
+
+.birth-span {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+
+.field-validation-error {
+    font-size: 12px;
+    color: var(--red);
 }
