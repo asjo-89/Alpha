@@ -17,7 +17,8 @@ public class EmployeeEntity
 
 
     // Relations
-    public ICollection<ProjectEmployeeEntity> Projects { get; set; } = [];
+    public ICollection<ProjectEmployeeEntity> ProjectEmployees { get; set; } = [];
+    public ICollection<ProjectNoteEntity> Notes { get; set; } = [];
 
     [ForeignKey(nameof(AddressId))]
     public AddressEntity Address { get; set; } = null!;
