@@ -1,22 +1,19 @@
 ﻿using Data.Contexts;
 using Data.Errors;
 using Data.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace Data.Repositories;
 
-public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
+public class BaseRepository<TEntity>(AlphaDbContext context) : IBaseRepository<TEntity> where TEntity : class
 {
-    private readonly AlphaDbContext _context;
+    protected readonly AlphaDbContext _context = context;
+    protected readonly DbSet<TEntity> _entities = context.Set<TEntity>();
 
     public IDbContextTransaction? _transaction;
-
-
-    public BaseRepository(AlphaDbContext context)
-    {
-        _context = context;
-    }
 
     #region Transactions
     public async Task<Result> BeginTransactionAsync()
@@ -24,24 +21,10 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         Result result = new();
 
         if (_transaction != null)
-        {
-            result.Success = false;
-            result.ErrorMessage = "Transaction already started.";
-            return result;
-        }
+            return new Result { Success = false, ErrorMessage = "A transaction is already started." };
 
-        try
-        {
-            _transaction = await _context.Database.BeginTransactionAsync();
-            result.Success = true;
-            return result;
-        }
-        catch (Exception ex)
-        {
-            result.Success = false;
-            result.ErrorMessage = $"Failed to start transaction: {ex.Message}";
-            return result;
-        }
+        _transaction = await _context.Database.BeginTransactionAsync();
+        return new Result { Success = true };
     }
 
     public async Task<Result> CommitTransactionAsync()
@@ -49,27 +32,13 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         Result result = new();
 
         if (_transaction == null)
-        {
-            result.Success = false;
-            result.ErrorMessage = "No transaction has been started.";
-            return result;
-        }
+            return new Result { Success = false, ErrorMessage = "No transaction has been started." };
 
-        try
-        {
-            await _transaction.CommitAsync();
-            await _transaction.DisposeAsync();
-            _transaction = null!;
-            result.Success = true;
-            return result;
-        }       
-        catch (Exception ex)
-        {            
-            await _transaction.RollbackAsync();
-            result.Success= false;
-            result.ErrorMessage = $"Failed to commit transaction: {ex.Message}";
-            return result;
-        }
+        await _transaction.CommitAsync();
+        await _transaction.DisposeAsync();
+        _transaction = null!;
+
+        return new Result { Success = true };
     }
 
     public async Task<Result> RollbackTransactionAsync()
@@ -77,80 +46,63 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         Result result = new();
 
         if (_transaction == null)
-        {
-            result.Success = false;
-            result.ErrorMessage = "There is no transaction to roll back.";
-            return result;
-        }
-         
-        try
-        {
-            await _transaction.RollbackAsync();
-            await _transaction.DisposeAsync();
-            _transaction = null!;
+            return new Result { Success = false, ErrorMessage = "There is no transaction to roll back." };
 
-            result.Success = true;
-            return result;
-        }
-        catch (Exception ex) 
-        {
-            result.Success = false;
-            result.ErrorMessage = $"Rollback failed: {ex.Message}";
-            return result;
-        }
+        await _transaction.RollbackAsync();
+        await _transaction.DisposeAsync();
+        _transaction = null!;
+
+        return new Result { Success = true };
     }
 
     public async Task<Result> SaveChangesAsync()
     {
-        Result result = new();
         if (_transaction == null)
-        {
-            result.Success = false;
-            result.ErrorMessage = "There is no transaction to save.";
-            return result;
-        }
-        try
-        {
-            await _context.SaveChangesAsync();
-            result.Success = true;
-            return result;
-        }
-        catch (Exception ex)
-        {
-            await _transaction.RollbackAsync();
-            result.Success = false;
-            result.ErrorMessage = $"Failed to save changes to the database: {ex.Message}";
-            return result;
-        }
+            return new Result { Success = false, ErrorMessage = "There is no transaction to save." };
+
+        await _context.SaveChangesAsync();
+
+        return new Result { Success = true };    
     }
     #endregion
 
 
 
     #region CRUD
-    public Task<bool> CreateAsync(TEntity entity)
+    public async Task<bool> CreateAsync(TEntity entity)
     {
-        throw new NotImplementedException();
+        if (entity == null) return false;
+
+        await _entities.AddAsync(entity);
+        return true;
     }
 
-    public Task<ICollection<TEntity>> GetAllAsync()
+    public async Task<ICollection<TEntity>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var entities = await _entities.ToListAsync();
+        return entities;
     }
 
-    public Task<TEntity> GetOneAsync(Expression<Func<TEntity, bool>> expression)
+    public async Task<TEntity?> GetOneAsync(Expression<Func<TEntity, bool>> expression)
     {
-        throw new NotImplementedException();
+        TEntity? entity = await _entities.FirstOrDefaultAsync(expression);
+        return entity;
     }
 
-    public Task<bool> UpdateAsync(TEntity entity)
+    public bool UpdateAsync(TEntity entity)
     {
-        throw new NotImplementedException();
+        if (entity == null) return false;
+
+        _entities.Update(entity);
+        return true;
     }
 
-    public Task<bool> DeleteAsync(TEntity entity)
+    public bool DeleteAsync(TEntity entity)
     {
-        throw new NotImplementedException();
+        if (entity == null) return false;
+
+        _entities.Remove(entity);
+        return true;
     }
     #endregion
 }
