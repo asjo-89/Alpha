@@ -13,6 +13,9 @@ public class ProjectNoteEntity
     public string Note { get; set; } = null!;
 
     [Required]
+    public DateTime Created { get; set; }
+
+    [Required]
     public Guid EmployeeId { get; set; }
 
     [Required]
