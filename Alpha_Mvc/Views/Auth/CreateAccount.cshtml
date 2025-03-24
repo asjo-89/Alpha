@@ -1,18 +1,19 @@
-﻿@model CreateAccountRegForm
+﻿@model CreateAccountModel
 
 @{
     Layout = "_SigninLayout";
+    ViewData["Action"] = "Sign up";
 }
 
 <div class="container" id="sign-up">
     <h1 class="title title-create">Create Account</h1>
-    @await Html.PartialAsync("Components/_GoogleButton")
+    @await Html.PartialAsync("Components/_GoogleButton", ViewData["Action"])
     <div class="alternative">
         <div class="line"></div>
         <span class="or">OR</span>
         <div class="line"></div>
     </div>
-    <form class="login-form" id="sign-up-form" method="post" asp-action="CreateAccount" asp-controller="Auth">
+    <form class="login-form" id="sign-up-form" method="post" asp-action="CreateAccount" asp-controller="Auth" novalidate>
 
         <div class="form-group">
         <div class="form-group-double">

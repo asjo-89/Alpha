@@ -2,12 +2,13 @@
 
 @{
     Layout = "_SigninLayout";
+    ViewData["Action"] = "Sign in";
 }
 
 <div class="container">
-    <h1 class="title">Log In</h1>
+    <h1 class="title">Sign In</h1>
     
-    @await Html.PartialAsync("Components/_GoogleButton")
+    @await Html.PartialAsync("Components/_GoogleButton", ViewData["Action"])
 
     <div class="alternative">
         <div class="line"></div>
@@ -15,7 +16,7 @@
         <div class="line"></div>
     </div>
 
-    <form class="login-form" method="post" asp-action="SignIn">
+    <form class="login-form" method="post" asp-action="SignIn" asp-controller="Auth" novalidate>
         <div class="form-group">
             <div class="input-container">
                 <label class="label" asp-for="Email"></label>
@@ -37,8 +38,8 @@
             <a href="#" class="forgot">Forgot password?</a>
         </div>
 
-        <button type="submit" class="btn" asp-controller="Home" asp-action="Index">
-            <span>Log In</span>
+        <button type="submit" class="btn">
+            <span>Sign In</span>
         </button>
     </form>
 

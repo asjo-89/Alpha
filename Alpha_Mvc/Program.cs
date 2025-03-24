@@ -19,8 +19,16 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(x =>
     .AddEntityFrameworkStores<AlphaDbContext>()
     .AddDefaultTokenProviders();
 
-builder.Services.AddScoped<AuthService>();
+builder.Services.ConfigureApplicationCookie(x =>
+{
+    x.LoginPath = "/auth/signin";
+    x.LogoutPath = "/auth/signout";
+    x.AccessDeniedPath = "/auth/accessDenied";
+    x.ExpireTimeSpan = TimeSpan.FromMinutes(15);
+    x.SlidingExpiration = true;
+});
 
+builder.Services.AddScoped<AuthService>();
 
 var app = builder.Build();
 
@@ -33,7 +41,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Auth}/{action=SignIn}/{id?}")
+    pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 app.Run();

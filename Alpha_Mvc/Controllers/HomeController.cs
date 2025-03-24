@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Alpha_Mvc.Controllers
 {
-    [Route("projects")]
+    [Authorize]
     public class HomeController : Controller
     {
         public IActionResult Index()
