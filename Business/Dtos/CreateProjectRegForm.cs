@@ -7,7 +7,7 @@ public class CreateProjectRegForm
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public string Budget { get; set; } = null!;
-    public ClientModel Client { get; set; } = null!;
-    public StatusModel Status { get; set; } = null!;
-    public PictureModel Picture { get; set; } = null!;
+    //public ClientModel Client { get; set; } = null!;
+    //public StatusModel Status { get; set; } = null!;
+    //public PictureModel Picture { get; set; } = null!;
 }

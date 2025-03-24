@@ -1,8 +1,8 @@
-﻿@{
+﻿@model CreateAccountRegForm
+
+@{
     ViewData["Css"] = "~/css/signin.css";
 }
 
-<label for="remember">
-    <input type="checkbox" name="remember" id="remember" value="" />
-    <span class="checkmark"></span>
-</label>
+<input type="checkbox" asp-for="TermsAndConditions" id="checkbox" />
+<label class="checkmark" for="checkbox"></label>

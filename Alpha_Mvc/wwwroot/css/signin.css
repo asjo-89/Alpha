@@ -4,7 +4,8 @@
     width: 600px;
     height: auto;
     max-height: 90svh;
-    padding: 1rem 5rem;
+    padding-inline: 5rem;
+    padding-bottom: 2rem;
     background-color: var(--surface);
     border-radius: 1rem;
     box-shadow: 0 8px 8px var(--grey-400);
@@ -17,23 +18,30 @@
     scroll-behavior: smooth;
 }
 
-.container-create {
-    gap: 1.5rem;
+p {
+    color: var(--body-dark);
+    font-weight: var(--font-medium);
+}
+
+.btn {
+    width: 100%;
+    margin-top: .7rem;
+    margin-bottom: 1.7rem;
 }
 
 .title {
-    margin-top: 4rem;
+    margin-top: 6rem;
 }
 
 .title-create {
-    margin-top: .7rem;
+    margin-top: 5rem;
 }
-
 
 .btn-google {
     width: 100%;
     background-color: var(--grey-100);
-    padding: .5rem 2rem;
+    padding: .8rem 1rem;
+    margin-bottom: .7rem;
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: center;
@@ -52,9 +60,9 @@
         color: var(--color-heading);
     }
 
-.text-google {
-    color: var(--heading);
-}
+    .text-google {
+        color: var(--heading);
+    }
 
 .alternative {
     width: 100%;
@@ -65,26 +73,43 @@
     gap: .7rem;
 }
 
-.line {
-    width: 100%;
-    height: 1px;
-    border: 1px solid var(--grey-200);
-}
+    .line {
+        width: 100%;
+        height: 1px;
+        border: 1px solid var(--grey-200);
+    }
 
-.or {
-    color: var(--color-list-menu);
-    font-size: 12px;
-    font-weight: var(--font-regular);
-}
+    .or {
+        color: var(--color-list-menu);
+        font-size: 12px;
+        font-weight: var(--font-regular);
+    }
 
 .form-group {
     width: 100%;
     display: flex;
     flex-direction: column;
     column-gap: .7rem;
-    row-gap: .3rem;
+    row-gap: 1.7rem;
     justify-content: center;
     align-items: flex-start;
+}
+
+.input-container {
+    width: 100%;
+}
+
+.label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.input {
+    width: 100%;
+    padding: .7rem;
+    border: 2px solid var(--grey-200);
+    border-radius: .7rem;
+    margin-top: .5rem;
 }
 
 .form-group-double {
@@ -95,41 +120,27 @@
     justify-content: start;
     align-items: center;
     column-gap: .7rem;
-    row-gap: .3rem;
 }
 
-.first-label {
-    grid-column: 1;
-    grid-row: 1;
-}
+    .first-label {
+        grid-column: 1;
+        grid-row: 1;
+    }
 
-.last-label {
-    grid-column: 2;
-    grid-row: 1;
-}
+    .last-label {
+        grid-column: 2;
+        grid-row: 1;
+    }
 
-.first-input {
-    grid-column: 1;
-    grid-row: 2;
-}
+    .first-input {
+        grid-column: 1;
+        grid-row: 2;
+    }
 
-.last-input {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.label {
-    padding-left: .5rem;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.input {
-    width: 100%;
-    padding: .7rem;
-    border: 2px solid var(--grey-200);
-    border-radius: .7rem;
-}
+    .last-input {
+        grid-column: 2;
+        grid-row: 2;
+    }
 
 .form-group-check {
     width: 100%;
@@ -140,69 +151,72 @@
     align-items: center;
     column-gap: .7rem;
     row-gap: .3rem;
-
-    & p {
+}
+    .form-group-check p {
         font-weight: var(--font-regular);
     }
-}
 
-.form-group-check label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-}
+    label[for="TermsAndConditions"] {
+        display: none;
+    }
 
-.form-group-check input {
-    width: 0;
-    height: 0;
-    opacity: 0;
-    position: absolute;
-}
+    .form-group-check label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+    }
 
-.checkmark {
-    width: 1.2rem;
-    height: 1.2rem;
-    padding: .1rem;
-    place-items: center;
-    border-radius: .3rem;
-    border: 2px solid var(--grey-300);
-    background-color: transparent;
-    display: inline-block;
-    position: relative;
-    transition: all .2s ease-in-out;
-}
+    .form-group-check input {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        position: absolute;
+    }
 
-.checkmark:hover {
-    background-color: var(--grey-400);
-}
+    .checkmark {
+        width: 1.2rem;
+        height: 1.2rem;
+        padding: .1rem;
+        place-items: center;
+        border-radius: .3rem;
+        border: 2px solid var(--grey-300);
+        background-color: transparent;
+        display: inline-block;
+        position: relative;
+        transition: all .2s ease-in-out;
+    }
 
-input:checked + .checkmark {
-    background-color: var(--accent);
-    border: 2px solid var(--accent);
-}
+    .checkmark:hover {
+        background-color: var(--grey-400);
+    }
 
-input:checked + .checkmark:hover {
-    background-color: var(--accent-dark);
-    border: 2px solid var(--accent-dark);
-}
+    input:checked + .checkmark {
+        background-color: var(--accent);
+        border: 2px solid var(--accent);
+    }
 
-.checkmark::after {
-    content: "";
-    position: absolute;
-    display: none;
-    left: 5px;
-    top: 1px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
+    input:checked + .checkmark:hover {
+        background-color: var(--accent-dark);
+        border: 2px solid var(--accent-dark);
+    }
 
-input:checked + .checkmark::after {
-    display: block;
-}
+    .checkmark::after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 5px;
+        top: 1px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+
+    input:checked + .checkmark::after {
+        display: block;
+    }
 
 .forgot, .sign-up {
     font-family: var(--font-main);
@@ -211,23 +225,25 @@ input:checked + .checkmark::after {
     transition: all .2s ease-in-out;
 }
 
-.forgot:hover, .sign-up:hover {
-    text-decoration: underline;
-    color: var(--accent-dark);
-}
-
-.btn {
-    width: 100%;
-}
+    .forgot:hover, .sign-up:hover {
+        text-decoration: underline;
+        color: var(--accent-dark);
+    }
 
 .group-signup {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: .5rem;
+    font-size: 1rem;
 }
 
-p {
-    color: var(--body-dark);
-    font-weight: var(--font-medium);
+.field-validation-error {
+    color: var(--red);
+    font-size: .8rem;
 }
+
+.input-validation-error {
+    border: 2px solid var(--red-opacity);
+}
+
