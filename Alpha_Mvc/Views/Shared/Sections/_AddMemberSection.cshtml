@@ -10,11 +10,22 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
-        <div class="picture">
-            <img class="image" src="/images/Profiles/Img_profile_4.svg" />
-        </div>
 
-        <form class="form" method="post" asp-action="Index">
+        <form class="form" method="post" asp-action="AddMember" asp-controller="Admin" enctype="multipart/form-data">
+            <div class="image-preview-container">
+                <div class="camera">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+
+                <img class="image-preview" src="#" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ProfileImage"></label>
+                <input asp-for="ProfileImage" accept="image/*" />
+                <span asp-validation-for="ProfileImage"></span>
+            </div>
+
             <div class="form-group-name">
                 <label class="label first-label" asp-for="FirstName"></label>
                 <input type="text" class="input first-input" asp-for=FirstName>
@@ -24,7 +35,6 @@
                 <input type="text" class="input last-input" asp-for=LastName>
                 <span asp-validation-for="LastName"></span>
             </div>
-            @* <div class="form-group-details">      *@
 
             <div class="form-group">
                 <label class="label details-label" asp-for="Email"></label>
@@ -43,7 +53,7 @@
                 <input type="text" class="input" asp-for=Role>
                 <span asp-validation-for="Role"></span>
             </div>
-            @* </div> *@
+
             <div class="form-group">
                 <label class="label street-label" asp-for="StreetAddress"></label>
                 <input type="text" class="input street" asp-for=StreetAddress>
@@ -52,7 +62,7 @@
 
             <div class="form-group-address">
                 <label class="label postal-label" asp-for="PostalCode"></label>
-                <input type="text" class="input postal-code" asp-for=PostalCode>
+                <input class="input postal-code" asp-for=PostalCode>
                 <span asp-validation-for="PostalCode" class="postal-span"></span>
                 
                 <label class="label city-label" asp-for="City"></label>

@@ -1,6 +1,10 @@
+using Business.Interfaces;
+using Business.Models;
 using Business.Services;
 using Data.Contexts;
 using Data.Entities;
+using Data.Interfaces;
+using Data.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -29,6 +33,12 @@ builder.Services.ConfigureApplicationCookie(x =>
 });
 
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<IBaseRepository<EmployeeEntity>, BaseRepository<EmployeeEntity>>();
+builder.Services.AddScoped<IBaseRepository<MemberModel>, BaseRepository<MemberModel>>();
+builder.Services.AddScoped<IBaseRepository<AddressEntity>, BaseRepository<AddressEntity>>();
+builder.Services.AddScoped<IBaseRepository<PictureEntity>, BaseRepository<PictureEntity>>();
+builder.Services.AddScoped<IBaseRepository<RoleEntity>, BaseRepository<RoleEntity>>();
+builder.Services.AddScoped<ICreateMemberService, CreateMemberService>();
 
 var app = builder.Build();
 

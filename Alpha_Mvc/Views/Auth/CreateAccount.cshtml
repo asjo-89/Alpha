@@ -52,8 +52,10 @@
         </div>
         </div>
         <div class="form-group-check">
-            @await Html.PartialAsync("Components/_Checkbox", Model)
+            <input type="checkbox" asp-for="TermsAndConditions" id="checkbox" />
+            <label class="checkmark" for="checkbox"></label>
             <span>I accept <a href="#" class="forgot">Terms and Conditions</a></span>
+            <span asp-validation-for="TermsAndConditions"></span>
         </div>
 
         <button type="submit" class="btn">

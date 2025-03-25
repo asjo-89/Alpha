@@ -18,6 +18,5 @@ public class SignInFormModel
         "one lower case and one upper case letter, one digit, one special character.")]
     public string Password { get; set; } = null!;
 
-    [Required]
     public bool RememberMe { get; set; } = false;
 }
