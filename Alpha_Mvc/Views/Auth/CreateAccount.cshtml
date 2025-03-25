@@ -1,0 +1,68 @@
+﻿@model CreateAccountModel
+
+@{
+    Layout = "_SigninLayout";
+    ViewData["Action"] = "Sign up";
+}
+
+<div class="container" id="sign-up">
+    <h1 class="title title-create">Create Account</h1>
+    @await Html.PartialAsync("Components/_GoogleButton", ViewData["Action"])
+    <div class="alternative">
+        <div class="line"></div>
+        <span class="or">OR</span>
+        <div class="line"></div>
+    </div>
+    <form class="login-form" id="sign-up-form" method="post" asp-action="CreateAccount" asp-controller="Auth" novalidate>
+
+        <div class="form-group">
+        <div class="form-group-double">
+            <div class="input-container">
+                <label class="label first-label" asp-for="FirstName"></label>
+                <input type="text" class="input first-input" asp-for="FirstName" />
+                <span asp-validation-for="FirstName"></span>
+            </div>
+
+            <div class="input-container">
+                <label class="label last-label" asp-for="LastName"></label>
+                <input type="text" class="input last-input" asp-for="LastName" />
+                <span asp-validation-for="LastName"></span>
+            </div>
+        </div>
+
+            <div class="input-container">
+                <label class="label" asp-for="EmailAddress"></label>
+                <input type="text" class="input" asp-for=EmailAddress />
+                <span asp-validation-for="EmailAddress"></span>
+            </div>
+        
+
+        <div class="form-group-double">
+            <div class="input-container">
+                <label class="label first-label" asp-for="Password"></label>
+                <input type="password" class="input first-input" asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+
+            <div class="input-container">
+                <label class="label last-label" asp-for=ConfirmPassword></label>
+                <input type="password" class="input last-input" asp-for="ConfirmPassword" />
+                <span asp-validation-for="ConfirmPassword"></span>
+            </div>
+        </div>
+        </div>
+        <div class="form-group-check">
+            @await Html.PartialAsync("Components/_Checkbox", Model)
+            <span>I accept <a href="#" class="forgot">Terms and Conditions</a></span>
+        </div>
+
+        <button type="submit" class="btn">
+            <span>Create Account</span>
+        </button>
+    </form>
+
+    <div class="group-signup">
+        <p>Already have an account?</p>
+        <a asp-action="SignIn" asp-controller="Auth" class="sign-up">Log in</a>
+    </div>
+</div>

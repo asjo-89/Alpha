@@ -53,6 +53,7 @@
     --button-font-size: 1rem;
 }
 
+
 ::-webkit-scrollbar {
     width: 13px; 
     border-radius: 0 10px 10px 0; 
@@ -167,19 +168,18 @@ body, html {
     border-radius: .7rem;
     cursor: pointer;
     transition: background-color .2s ease-in-out;
-
-    &:hover {
+}
+    .btn:hover {
         background-color: var(--accent-dark);
     }
-}
-.btn.span {
-    padding: 0;
-}
+    .btn.span {
+        padding: 0;
+    }
 
 .search-form {
     width: 100%;
-    
-    & .search-input {
+}
+    .search-form .search-input {
         width: 100%;
         padding: .7rem;
         border: 0;
@@ -189,26 +189,24 @@ body, html {
         background-position: 10px center;
         padding-left: 2.5rem;
         border-radius: .7rem;
-
-        &:focus {
-            outline: 1px solid var(--border-200);
-            background-color: var(--grey-100);
-        }
     }
-}
+
+    .search-form:focus {
+        outline: 1px solid var(--border-200);
+        background-color: var(--grey-100);
+    }
 
 .user-menu {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1.2rem;
-
-    .stroke {
+}
+    .user-menu .stroke {
         font-size: 2.3rem;
         font-weight: 200;
         color: var(--border-200);
     }
-}
 
 .profile-small {
     width: 40px;
@@ -224,12 +222,11 @@ body, html {
     gap: 1rem;
     cursor: pointer;
     margin-bottom: 1.3rem;
-
-    &:focus-visible {
+}
+    .logo:focus-visible {
         outline: 1px solid var(--border-300);
         border-radius: var(--border-radius);
     }
-}
 
 .link {
     width: 100%;
@@ -243,17 +240,15 @@ body, html {
     color: var(--color-heading);
     border-radius: var(--border-radius);
     transition: background-color .25s ease-in-out;
-
-    &:hover, &:focus-visible {
+}
+    .link:hover, .link:focus-visible {
         background-color: var(--accent-opacity-higher);
         outline: none;
     }
-
-}
-.link.active {
-    background-color: var(--accent-opacity);
-    color: var(--accent);
-}
+    .link.active {
+        background-color: var(--accent-opacity);
+        color: var(--accent);
+    }
 
 a {
     text-decoration: none;
@@ -301,11 +296,10 @@ h6 {
     color: var(--color-list-menu);
     font-size: 1rem;
     font-weight: var(--font-bold);
-
-    &:active {
+}
+    .project-menu-text:active {
         color: var(--accent);
     }
-}
 
 .login-form {
     width: 100%;
@@ -313,5 +307,4 @@ h6 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
 }

@@ -1,0 +1,52 @@
+﻿@model SignInFormModel
+
+@{
+    Layout = "_SigninLayout";
+    ViewData["Action"] = "Sign in";
+}
+
+<div class="container">
+    <h1 class="title">Sign In</h1>
+    
+    @await Html.PartialAsync("Components/_GoogleButton", ViewData["Action"])
+
+    <div class="alternative">
+        <div class="line"></div>
+        <span class="or">OR</span>
+        <div class="line"></div>
+    </div>
+
+    <form class="login-form" method="post" asp-action="SignIn" asp-controller="Auth" novalidate>
+        <div class="form-group">
+            <div class="input-container">
+                <label class="label" asp-for="Email"></label>
+                <input class="input" type="email" asp-for="Email" />
+                <span asp-validation-for="Email"></span>
+            </div>
+        
+            <div class="input-container">
+                <label class="label" asp-for="Password"></label>
+                <input class="input" type="password" asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+        </div>
+
+        <div class="form-group-check">
+            
+            @await Html.PartialAsync("Components/_Checkbox")
+            <p>Remember me</p>
+            <a href="#" class="forgot">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn">
+            <span>Sign In</span>
+        </button>
+    </form>
+
+    <div class="group-signup">
+        <p>Don't have an account?</p>
+        <a asp-action="CreateAccount" asp-controller="Auth" class="sign-up">Sign Up</a>
+    </div>
+</div>
+
+
