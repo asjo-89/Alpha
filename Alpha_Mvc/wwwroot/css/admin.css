@@ -21,8 +21,9 @@
     align-items: center;
     gap: .7rem;
     box-shadow: 0 8px 7px var(--grey-400);
-    .options
+}
 
+.options
 {
     width: 26px;
     aspect-ratio: 1;

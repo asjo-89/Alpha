@@ -2,13 +2,14 @@
 
 @{
     Layout = "_SigninLayout";
-    // ViewData["Action"] = "Sign in";
+    ViewData["Action"] = "Sign in";
+    ViewData["Css"] = "~/css/projectForms.css";
 }
 
 <div class="container">
     <h1 class="title">Sign In</h1>
     
-    @await Html.PartialAsync("Components/_GoogleButton")
+    @await Html.PartialAsync("Components/_GoogleButton", ViewData["Action"])
 
     <div class="alternative">
         <div class="line"></div>
