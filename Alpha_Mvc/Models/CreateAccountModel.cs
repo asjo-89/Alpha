@@ -38,6 +38,6 @@ public class CreateAccountModel
     [Compare(nameof(Password), ErrorMessage = "The passwords does not match.")]
     public string ConfirmPassword { get; set; } = null!;
 
-    [Range(typeof(bool), "true", "true", ErrorMessage = "You need to accept the terms.")]
+    [Range(typeof(bool), "true", "true", ErrorMessage = "You need to accept the terms and conditions.")]
     public bool TermsAndConditions { get; set; } = false;
 }
