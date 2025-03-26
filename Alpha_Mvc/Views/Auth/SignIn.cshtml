@@ -3,6 +3,7 @@
 @{
     Layout = "_SigninLayout";
     ViewData["Action"] = "Sign in";
+    ViewData["Css"] = "~/css/projectForms.css";
 }
 
 <div class="container">
@@ -33,7 +34,9 @@
 
         <div class="form-group-check">
             
-            @await Html.PartialAsync("Components/_Checkbox")
+            <input type="checkbox" asp-for="RememberMe" id="checkbox" />
+            <label class="checkmark" for="checkbox"></label>
+
             <p>Remember me</p>
             <a href="#" class="forgot">Forgot password?</a>
         </div>
