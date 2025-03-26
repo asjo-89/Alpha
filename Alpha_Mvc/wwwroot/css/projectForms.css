@@ -287,9 +287,15 @@
 }
 
     .checkbox-group {
-        width: 100%;
         display: flex;
         gap: 1rem;
         justify-content: flex-start;
+        align-items: center;
+    }
+
+    .form-group-remember {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
     }
