@@ -14,7 +14,6 @@ namespace Alpha_Mvc.Controllers
         public CreateProjectFormModel createProjectFormModel = new();
         public CreateMemberFormModel createMemberFormModel = new();
 
-        [Route("")]
         public IActionResult Index()
         {
             ViewData["Title"] = "Admin";

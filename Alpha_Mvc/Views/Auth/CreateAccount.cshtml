@@ -16,46 +16,48 @@
     </div>
     <form class="login-form" id="sign-up-form" method="post" asp-action="CreateAccount" asp-controller="Auth" novalidate>
 
-        <div class="form-group">
+        <div class="form-inputs-container">
             <div class="form-group-double">
                 <div class="input-container">
-                    <label class="label first-label" asp-for="FirstName"></label>
+                    <label class="label" asp-for="FirstName"></label>
                     <input type="text" class="input first-input" asp-for="FirstName" />
-                    <span asp-validation-for="FirstName"></span>
+                    <span class="span-1" asp-validation-for="FirstName"></span>
                 </div>
 
                 <div class="input-container">
-                    <label class="label last-label" asp-for="LastName"></label>
+                    <label class="label" asp-for="LastName"></label>
                     <input type="text" class="input last-input" asp-for="LastName" />
-                    <span asp-validation-for="LastName"></span>
+                    <span class="span-2" asp-validation-for="LastName"></span>
                 </div>
             </div>
 
-                <div class="input-container">
-                    <label class="label" asp-for="EmailAddress"></label>
-                    <input type="text" class="input" asp-for=EmailAddress />
-                    <span asp-validation-for="EmailAddress"></span>
-                </div>
-        
+            <div class="input-container">
+                <label class="label" asp-for="EmailAddress"></label>
+                <input type="text" class="input" asp-for=EmailAddress />
+                <span asp-validation-for="EmailAddress"></span>
+            </div>        
 
             <div class="form-group-double">
                 <div class="input-container">
-                    <label class="label first-label" asp-for="Password"></label>
+                    <label class="label" asp-for="Password"></label>
                     <input type="password" class="input first-input" asp-for="Password" />
                     <span asp-validation-for="Password"></span>
                 </div>
 
                 <div class="input-container">
-                    <label class="label last-label" asp-for=ConfirmPassword></label>
+                    <label class="label" asp-for=ConfirmPassword></label>
                     <input type="password" class="input last-input" asp-for="ConfirmPassword" />
                     <span asp-validation-for="ConfirmPassword"></span>
                 </div>
             </div>
         </div>
+
         <div class="form-group-check">
-            <input type="checkbox" asp-for="TermsAndConditions" id="checkbox" />
-            <label class="checkmark" for="checkbox"></label>
-            <span>I accept <a href="#" class="forgot">Terms and Conditions</a></span>
+            <div class="checkbox-group">
+                <input type="checkbox" asp-for="TermsAndConditions" id="checkbox" />
+                <label class="checkmark" for="checkbox"></label>
+                <span>I accept <a href="#" class="forgot">Terms and Conditions</a></span>
+            </div>
             <span asp-validation-for="TermsAndConditions"></span>
         </div>
 
@@ -69,3 +71,5 @@
         <a asp-action="SignIn" asp-controller="Auth" class="sign-up">Log in</a>
     </div>
 </div>
+
+@await Html.PartialAsync("_ValidationScriptsPartial")
