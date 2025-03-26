@@ -13,7 +13,5 @@ public class CreateMemberRegForm
     public string City { get; set; } = null!;
     public string Role { get; set; } = null!;
     public DateOnly DateOfBirth { get; set; }
-    public string StandardPassword { get; set; } = "Standard123!";
-    //Profilbild
     public string ProfileImage { get; set; } = null!;
 }

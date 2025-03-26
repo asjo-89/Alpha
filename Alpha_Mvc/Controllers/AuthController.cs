@@ -4,13 +4,14 @@ using Business.Services;
 using Data.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Alpha_Mvc.Controllers;
 
-public class AuthController(AuthService authService, SignInManager<AppUser> signInManager) : Controller
+public class AuthController(AuthService authService, SignInManager<MemberUserEntity> signInManager) : Controller
 {
     private readonly AuthService _authService = authService;
-    private readonly SignInManager<AppUser> _signInManager = signInManager;
+    private readonly SignInManager<MemberUserEntity> _signInManager = signInManager;
 
     public IActionResult SignIn()
     {
@@ -62,7 +63,7 @@ public class AuthController(AuthService authService, SignInManager<AppUser> sign
 
         switch (result)
         {
-            case 201:
+            case 200:
                 return RedirectToAction("SignIn", "Auth");
 
             case 400:

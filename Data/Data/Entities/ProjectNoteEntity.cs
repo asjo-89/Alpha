@@ -16,7 +16,7 @@ public class ProjectNoteEntity
     public DateTime Created { get; set; }
 
     [Required]
-    public Guid EmployeeId { get; set; }
+    public string EmployeeId { get; set; } = null!;
 
     [Required]
     public Guid ProjectId { get; set; }
@@ -24,7 +24,7 @@ public class ProjectNoteEntity
 
     // Relations
     [ForeignKey(nameof(EmployeeId))]
-    public EmployeeEntity Employee { get; set; } = null!;
+    public MemberUserEntity Employee { get; set; } = null!;
 
     [ForeignKey(nameof(ProjectId))]
     public ProjectEntity Project {  get; set; } = null!;

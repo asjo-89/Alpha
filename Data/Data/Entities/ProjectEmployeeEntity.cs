@@ -6,7 +6,7 @@ namespace Data.Entities;
 public class ProjectEmployeeEntity
 {
     public Guid ProjectId { get; set; }
-    public Guid EmployeeId { get; set; }
+    public string EmployeeId { get; set; } = null!;
 
 
     // Relations
@@ -14,5 +14,5 @@ public class ProjectEmployeeEntity
     public ProjectEntity Project { get; set; } = null!;
 
     [ForeignKey(nameof(EmployeeId))]
-    public EmployeeEntity Employee { get; set; } = null!;
+    public MemberUserEntity Employee { get; set; } = null!;
 }

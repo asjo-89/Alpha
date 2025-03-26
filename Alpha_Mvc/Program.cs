@@ -14,7 +14,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AlphaDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddIdentity<AppUser, IdentityRole>(x =>
+builder.Services.AddIdentity<MemberUserEntity, IdentityRole>(x =>
     {
         x.Password.RequiredLength = 8;
         x.User.RequireUniqueEmail = true;
@@ -33,11 +33,10 @@ builder.Services.ConfigureApplicationCookie(x =>
 });
 
 builder.Services.AddScoped<AuthService>();
-builder.Services.AddScoped<IBaseRepository<EmployeeEntity>, BaseRepository<EmployeeEntity>>();
+builder.Services.AddScoped<IBaseRepository<MemberUserEntity>, BaseRepository<MemberUserEntity>>();
 builder.Services.AddScoped<IBaseRepository<MemberModel>, BaseRepository<MemberModel>>();
 builder.Services.AddScoped<IBaseRepository<AddressEntity>, BaseRepository<AddressEntity>>();
 builder.Services.AddScoped<IBaseRepository<PictureEntity>, BaseRepository<PictureEntity>>();
-builder.Services.AddScoped<IBaseRepository<RoleEntity>, BaseRepository<RoleEntity>>();
 builder.Services.AddScoped<ICreateMemberService, CreateMemberService>();
 
 var app = builder.Build();

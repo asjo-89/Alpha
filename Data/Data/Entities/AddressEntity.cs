@@ -23,5 +23,5 @@ public class AddressEntity
 
 
     // Relations
-    public ICollection<EmployeeEntity> Employees { get; set; } = [];
+    public ICollection<MemberUserEntity> Employees { get; set; } = [];
 }

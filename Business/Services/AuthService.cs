@@ -5,16 +5,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Business.Services;
 
-public class AuthService(UserManager<AppUser> userManager)
+public class AuthService(UserManager<MemberUserEntity> userManager)
 {
-    private readonly UserManager<AppUser> _userManager = userManager;
+    private readonly UserManager<MemberUserEntity> _userManager = userManager;
 
     public async Task<int> CreateAsync(CreateAccountRegForm form)
     {
         if (form == null)
             return 400;
 
-        AppUser appUser = new AppUser
+        MemberUserEntity appUser = new MemberUserEntity
         {
             UserName = form.EmailAddress,
             Email = form.EmailAddress,

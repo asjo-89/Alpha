@@ -4,19 +4,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data.Contexts;
 
-public class AlphaDbContext(DbContextOptions<AlphaDbContext> options) : IdentityDbContext<AppUser>(options)
+public class AlphaDbContext(DbContextOptions<AlphaDbContext> options) : IdentityDbContext<MemberUserEntity>(options)
 {
-
-    //public class AlphaDbContext(DbContextOptions<AlphaDbContext> options) : DbContext(options)
-    //{
     public DbSet<AddressEntity> Addresses { get; set; }
     public DbSet<ClientEntity> Clients { get; set; }
-    public DbSet<EmployeeEntity> Employees { get; set; }
+    public DbSet<MemberUserEntity> Employees { get; set; }
     public DbSet<PictureEntity> Pictures { get; set; }
     public DbSet<ProjectEmployeeEntity> ProjectEmployees { get; set; }
     public DbSet<ProjectEntity> Projects { get; set; }
     public DbSet<ProjectNoteEntity> ProjectNotes { get; set; }
-    public DbSet<RoleEntity> Roles { get; set; }
     public DbSet<StatusEntity> Statuses { get; set; }
 
 
@@ -35,14 +31,6 @@ public class AlphaDbContext(DbContextOptions<AlphaDbContext> options) : Identity
             .HasMany(c => c.Projects)
             .WithOne(p => p.Client)
             .HasForeignKey(p => p.ClientId) 
-            .OnDelete(DeleteBehavior.Restrict);
-        #endregion
-
-        #region RoleEntity
-        modelBuilder.Entity<RoleEntity>()
-            .HasMany(r => r.Employees)
-            .WithOne(e => e.Role)
-            .HasForeignKey(e => e.RoleId)
             .OnDelete(DeleteBehavior.Restrict);
         #endregion
 
@@ -114,32 +102,26 @@ public class AlphaDbContext(DbContextOptions<AlphaDbContext> options) : Identity
             .OnDelete(DeleteBehavior.Restrict);
         #endregion
 
-        #region EmployeeEntity
-        modelBuilder.Entity<EmployeeEntity>()
+        #region MemberUserEntity
+        modelBuilder.Entity<MemberUserEntity>()
             .HasMany(e => e.ProjectEmployees)
             .WithOne(pe => pe.Employee)
             .HasForeignKey(pe => pe.EmployeeId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        modelBuilder.Entity<EmployeeEntity>()
+        modelBuilder.Entity<MemberUserEntity>()
             .HasMany(e => e.Notes)
             .WithOne(n => n.Employee)
             .HasForeignKey(n => n.EmployeeId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        modelBuilder.Entity<EmployeeEntity>()
+        modelBuilder.Entity<MemberUserEntity>()
             .HasOne(e => e.Address)
             .WithMany(a => a.Employees)
             .HasForeignKey(e => e.AddressId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        modelBuilder.Entity<EmployeeEntity>()
-            .HasOne(e => e.Role)
-            .WithMany(r => r.Employees)
-            .HasForeignKey(e => e.RoleId)
-            .OnDelete(DeleteBehavior.Restrict);
-
-        modelBuilder.Entity<EmployeeEntity>()
+        modelBuilder.Entity<MemberUserEntity>()
             .HasOne(e => e.Picture)
             .WithMany(pic =>  pic.Employees)
             .HasForeignKey(e => e.PictureId)
