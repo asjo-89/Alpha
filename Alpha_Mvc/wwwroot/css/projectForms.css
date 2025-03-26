@@ -61,6 +61,15 @@
 
 
 /* FORM base */
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .form {
     width: 100%;
     height: 100%;
@@ -116,6 +125,38 @@
         font-family: inherit;
     }
 
+
+/* REGULAR form-group*/
+.form-inputs-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    column-gap: .7rem;
+    row-gap: 1.7rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+    .input-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .label {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .input {
+        width: 100%;
+        padding: .7rem;
+        border: 2px solid var(--grey-200);
+        border-radius: .7rem;
+        margin-top: .5rem;
+    }   
 
 
 /* IMAGE PREVIEW */
@@ -190,85 +231,15 @@
     }
 
 
-/* REGULAR form-group*/
-.form-group {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    column-gap: .7rem;
-    row-gap: 1.7rem;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-    .input-container {
-        width: 100%;
-    }
-
-    .label {
-        font-size: 1rem;
-        font-weight: 600;
-    }
-
-    .input {
-        width: 100%;
-        padding: .7rem;
-        border: 2px solid var(--grey-200);
-        border-radius: .7rem;
-        margin-top: .5rem;
-    }   
-
 
 /* DOUBLE form-group*/
 .form-group-double {
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    justify-content: start;
-    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     column-gap: .7rem;
-}
-
-    .first-label {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .last-label {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
-    .first-input {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .last-input {
-        grid-column: 2;
-        grid-row: 2;
-    }
-
-    .postal-code {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .city {
-        grid-column: 2;
-        grid-row: 2;
-    }
-
-    .postal-span {
-        grid-column: 1;
-        grid-row: 3;
-    }
-
-    .city-span {
-        grid-column: 2;
-        grid-row: 3;
-    }
+}   
 
 
 /* BIRTH form-group*/
@@ -306,3 +277,19 @@
     }
 
 
+/* CHECKBOX form-group */
+.form-group-check {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+    .checkbox-group {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-start;
+        align-items: center;
+    }

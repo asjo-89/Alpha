@@ -8,21 +8,20 @@ public class CreateAccountModel
 
     [Required(ErrorMessage = "First name is required.")]
     [Display(Name = "First Name", Prompt = "Enter first name...")]
-    [RegularExpression(@"^[A-ZÅÄÖa-zåäö][a-zåäö'-]{1,49}$", 
-        ErrorMessage = "First name must be at least one character long.")]
     public string FirstName { get; set; } = null!;
+
 
     [Required(ErrorMessage = "Last name is required.")]
     [Display(Name = "Last Name", Prompt = "Enter last name...")]
-    [RegularExpression(@"^[A-ZÅÄÖa-zåäö][a-zåäö'-]{1,49}$",
-        ErrorMessage = "Last name must be at least one charachter long.")]
     public string LastName { get; set; } = null!;
+
 
     [Required(ErrorMessage = "Email address is required.")]
     [Display(Name = "Email", Prompt = "Enter email address...")]
     [DataType(DataType.EmailAddress)]
     [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", ErrorMessage = "Invalid email address.")]
     public string EmailAddress { get; set; } = null!;
+
 
     [Required(ErrorMessage = "Password is required.")]
     [Display(Name = "Password", Prompt = "Enter a password...")]
@@ -32,11 +31,13 @@ public class CreateAccountModel
         "one lower case and one upper case letter, one digit, one special character.")]
     public string Password { get; set; } = null!;
 
+
     [Required(ErrorMessage = "Confirm password is required.")]
     [Display(Name = "Confirm Password", Prompt = "Confirm password...")]
     [DataType(DataType.Password)]
     [Compare(nameof(Password), ErrorMessage = "The passwords does not match.")]
     public string ConfirmPassword { get; set; } = null!;
+
 
     [Range(typeof(bool), "true", "true", ErrorMessage = "You need to accept the terms and conditions.")]
     public bool TermsAndConditions { get; set; } = false;
