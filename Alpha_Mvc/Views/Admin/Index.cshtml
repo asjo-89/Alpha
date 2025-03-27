@@ -1,11 +1,11 @@
-@model CreateMemberFormModel
+@model TeamMembersViewModel
 
 @{
     ViewData["Css"] = "~/css/admin.css";
     ViewData["Css2"] = "~/css/projectForms.css";
 }
 
-<partial name="Sections/_AddMemberSection", model="@Model" />
+<partial name="Sections/_AddMemberSection", model="@Model.CreateMemberFormModel" />
 
 <div class="top">
     <h2>Team Members</h2>
@@ -16,10 +16,10 @@
 </div>
 
 <div class="content">
-    @await Html.PartialAsync("Partials/_MembersCard")
-    @await Html.PartialAsync("Partials/_MembersCard")
-    @await Html.PartialAsync("Partials/_MembersCard")
-    @await Html.PartialAsync("Partials/_MembersCard")
-    @await Html.PartialAsync("Partials/_MembersCard")
-    @await Html.PartialAsync("Partials/_MembersCard")
+
+    @foreach (UserModel member in Model.Users)
+    {        
+        @await Html.PartialAsync("Partials/_MembersCard", Model.User)
+    }
+
 </div>

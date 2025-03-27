@@ -3,6 +3,7 @@ using AspNetCoreGeneratedDocument;
 using Business.Dtos;
 using Business.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Alpha_Mvc.Controllers
 {
@@ -14,11 +15,27 @@ namespace Alpha_Mvc.Controllers
         public CreateProjectFormModel createProjectFormModel = new();
         public CreateMemberFormModel createMemberFormModel = new();
 
-        public IActionResult Index()
+        public TeamMembersViewModel teamMembersViewModel = new();
+
+        public async Task<IActionResult> Index()
         {
             ViewData["Title"] = "Admin";
             ViewData["Header"] = "Team Members";
-            return View();
+
+            var members = await _memberService.GetAllMembers();
+
+            teamMembersViewModel.Users = members.Select(member => new UserModel
+            {
+                Id = member.Id,
+                FirstName = member.FirstName,
+                LastName = member.LastName,
+                Email = member.Email,
+                PhoneNumber = member.PhoneNumber,
+                JobTitle = member.JobTitle,
+                ProfilePicture = member.ProfileImage
+            }).ToList();
+
+            return View(teamMembersViewModel);
         }
 
         [HttpPost]

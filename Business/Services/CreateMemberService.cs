@@ -3,16 +3,19 @@ using Business.Interfaces;
 using Business.Models;
 using Data.Entities;
 using Data.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Business.Services;
 
-public class CreateMemberService(IBaseRepository<MemberUserEntity> repository, IBaseRepository<AddressEntity> addressRepository, IBaseRepository<PictureEntity> pictureRepository) : ICreateMemberService
+public class CreateMemberService(IBaseRepository<MemberUserEntity> repository, IBaseRepository<AddressEntity> addressRepository, IBaseRepository<PictureEntity> pictureRepository, UserManager<MemberUserEntity> userManager) : ICreateMemberService
 {
     private readonly IBaseRepository<MemberUserEntity> _repository = repository;
     private readonly IBaseRepository<AddressEntity> _addressRepository = addressRepository;
     private readonly IBaseRepository<PictureEntity> _pictureRepository = pictureRepository;
+
+    private readonly UserManager<MemberUserEntity> _userManager = userManager;
 
 
     public async Task<MemberModel> AddMember(CreateMemberRegForm form)
@@ -34,13 +37,8 @@ public class CreateMemberService(IBaseRepository<MemberUserEntity> repository, I
             City = form.City
         };
 
-        
-
-
         try
         {
-
-
             await _pictureRepository.BeginTransactionAsync();
             await _pictureRepository.CreateAsync(image);
             await _pictureRepository.SaveChangesAsync();
@@ -76,7 +74,7 @@ public class CreateMemberService(IBaseRepository<MemberUserEntity> repository, I
 
             var newMember = new MemberModel()
             {
-                Id = entity.Id,
+                Id = Guid.Parse(entity.Id),
                 FirstName = entity.FirstName,
                 LastName = entity.LastName,
                 Email = entity.Email,
@@ -103,9 +101,29 @@ public class CreateMemberService(IBaseRepository<MemberUserEntity> repository, I
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<MemberModel>> GetAllMembers()
+    public async Task<IEnumerable<MemberModel>> GetAllMembers()
     {
-        throw new NotImplementedException();
+        var entities = await _repository.GetAllAsync();
+        var members = new List<MemberModel>();
+        foreach (var entity in entities)
+        {
+
+            var role = await _userManager.GetRolesAsync(entity);
+
+            var jobTitle = role.FirstOrDefault() ?? "No role assigned";
+
+            members.Add(new MemberModel()
+            {
+                Id = Guid.Parse(entity.Id),
+                FirstName = entity.FirstName,
+                LastName = entity.LastName,
+                JobTitle = jobTitle,
+                PhoneNumber = entity.PhoneNumber,
+                Email = entity.Email,
+                ProfileImage = entity.Picture?.PictureUrl ?? ""
+            });
+        }
+        return members;
     }
 
     public Task<MemberModel> GetMember(MemberModel model)
