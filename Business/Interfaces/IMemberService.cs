@@ -3,7 +3,7 @@ using Business.Models;
 
 namespace Business.Interfaces;
 
-public interface ICreateMemberService
+public interface IMemberService
 {
     Task<MemberModel> AddMember(CreateMemberRegForm form);
     Task<IEnumerable<MemberModel>> GetAllMembers();

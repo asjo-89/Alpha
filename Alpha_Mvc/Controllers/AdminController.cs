@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Alpha_Mvc.Controllers
 {
-    public class AdminController(IWebHostEnvironment environment, ICreateMemberService memberService) : Controller
+    public class AdminController(IWebHostEnvironment environment, IMemberService memberService) : Controller
     {
         private readonly IWebHostEnvironment _environment = environment;
-        private readonly ICreateMemberService _memberService = memberService;
+        private readonly IMemberService _memberService = memberService;
 
         public CreateProjectFormModel createProjectFormModel = new();
         public CreateMemberFormModel createMemberFormModel = new();
@@ -31,9 +31,8 @@ namespace Alpha_Mvc.Controllers
                 LastName = member.LastName,
                 Email = member.Email,
                 PhoneNumber = member.PhoneNumber,
-                JobTitle = member.JobTitle,
-                ProfilePicture = member.ProfileImage
-            }).ToList();
+                JobTitle = member.JobTitle
+            });
 
             return View(teamMembersViewModel);
         }

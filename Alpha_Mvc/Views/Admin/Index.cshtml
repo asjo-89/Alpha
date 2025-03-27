@@ -19,7 +19,7 @@
 
     @foreach (UserModel member in Model.Users)
     {        
-        @await Html.PartialAsync("Partials/_MembersCard", Model.User)
+        @await Html.PartialAsync("Partials/_MembersCard", member)
     }
 
 </div>

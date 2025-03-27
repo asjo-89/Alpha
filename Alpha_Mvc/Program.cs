@@ -37,7 +37,7 @@ builder.Services.AddScoped<IBaseRepository<MemberUserEntity>, BaseRepository<Mem
 builder.Services.AddScoped<IBaseRepository<MemberModel>, BaseRepository<MemberModel>>();
 builder.Services.AddScoped<IBaseRepository<AddressEntity>, BaseRepository<AddressEntity>>();
 builder.Services.AddScoped<IBaseRepository<PictureEntity>, BaseRepository<PictureEntity>>();
-builder.Services.AddScoped<ICreateMemberService, CreateMemberService>();
+builder.Services.AddScoped<IMemberService, MemberService>();
 
 var app = builder.Build();
 
