@@ -15,5 +15,5 @@ public class PictureEntity
 
     // Relations
     public ICollection<ProjectEntity> Projects { get; set; } = [];
-    public ICollection<EmployeeEntity> Employees { get; set; } = [];
+    public ICollection<MemberUserEntity> Employees { get; set; } = [];
 }

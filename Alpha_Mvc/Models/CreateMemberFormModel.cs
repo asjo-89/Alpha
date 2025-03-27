@@ -23,7 +23,7 @@ public class CreateMemberFormModel
 
     [Required(ErrorMessage = "Phone number is required.")]
     [Display(Name = "Phone number", Prompt = "Enter phone number...")]
-    public string Phone { get; set; } = null!;
+    public string PhoneNumber { get; set; } = null!;
 
 
     [Required(ErrorMessage = "Job title is required.")]

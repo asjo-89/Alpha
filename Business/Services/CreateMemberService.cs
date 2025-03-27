@@ -8,12 +8,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Business.Services;
 
-public class CreateMemberService(IBaseRepository<EmployeeEntity> repository, IBaseRepository<RoleEntity> roleRepository, IBaseRepository<AddressEntity> addressRepository, IBaseRepository<PictureEntity> pictureRepository) : ICreateMemberService
+public class CreateMemberService(IBaseRepository<MemberUserEntity> repository, IBaseRepository<AddressEntity> addressRepository, IBaseRepository<PictureEntity> pictureRepository) : ICreateMemberService
 {
-    private readonly IBaseRepository<EmployeeEntity> _repository = repository;
+    private readonly IBaseRepository<MemberUserEntity> _repository = repository;
     private readonly IBaseRepository<AddressEntity> _addressRepository = addressRepository;
     private readonly IBaseRepository<PictureEntity> _pictureRepository = pictureRepository;
-    private readonly IBaseRepository<RoleEntity> _roleRepository = roleRepository;
 
 
     public async Task<MemberModel> AddMember(CreateMemberRegForm form)
@@ -35,11 +34,6 @@ public class CreateMemberService(IBaseRepository<EmployeeEntity> repository, IBa
             City = form.City
         };
 
-        var role = new RoleEntity()
-        {
-            RoleName = form.Role
-        };
-
         
 
 
@@ -52,11 +46,6 @@ public class CreateMemberService(IBaseRepository<EmployeeEntity> repository, IBa
             await _pictureRepository.SaveChangesAsync();
             await _pictureRepository.CommitTransactionAsync();
 
-            await _roleRepository.BeginTransactionAsync();
-            await _roleRepository.CreateAsync(role);
-            await _roleRepository.SaveChangesAsync();
-            await _roleRepository.CommitTransactionAsync();
-
             await _addressRepository.BeginTransactionAsync();
             await _addressRepository.CreateAsync(address);
             await _addressRepository.SaveChangesAsync();
@@ -64,15 +53,13 @@ public class CreateMemberService(IBaseRepository<EmployeeEntity> repository, IBa
 
             await _repository.BeginTransactionAsync();
 
-            var member = new EmployeeEntity()
+            var member = new MemberUserEntity()
             {
                 FirstName = form.FirstName,
                 LastName = form.LastName,
-                EmailAddress = form.EmailAddress,
+                Email = form.Email,
                 PhoneNumber = form.PhoneNumber,
-                Password = form.StandardPassword,
                 AddressId = address.Id,
-                RoleId = role.Id,
                 DateOfBirth = form.DateOfBirth,
                 PictureId = image.Id
             };
@@ -83,7 +70,7 @@ public class CreateMemberService(IBaseRepository<EmployeeEntity> repository, IBa
             await _repository.SaveChangesAsync();
             await _repository.CommitTransactionAsync();
 
-            var entity = await _repository.GetOneAsync(x => x.EmailAddress == member.EmailAddress);
+            var entity = await _repository.GetOneAsync(x => x.Email == member.Email);
             var addressEntity = await _addressRepository.GetOneAsync(x => x.Id == entity.AddressId);
             var pictureEntity = await _pictureRepository.GetOneAsync(x => x.Id == entity.PictureId);
 
@@ -92,8 +79,8 @@ public class CreateMemberService(IBaseRepository<EmployeeEntity> repository, IBa
                 Id = entity.Id,
                 FirstName = entity.FirstName,
                 LastName = entity.LastName,
-                Email = entity.EmailAddress,
-                Phone = entity.PhoneNumber,
+                Email = entity.Email,
+                PhoneNumber = entity.PhoneNumber,
                 StreetAddress = addressEntity.StreetName,
                 PostalCode = addressEntity.PostalCode,
                 City = addressEntity.City,

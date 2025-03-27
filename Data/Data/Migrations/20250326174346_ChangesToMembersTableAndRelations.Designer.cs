@@ -4,6 +4,7 @@ using Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(AlphaDbContext))]
-    partial class AlphaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250326174346_ChangesToMembersTableAndRelations")]
+    partial class ChangesToMembersTableAndRelations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +44,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Addresses", (string)null);
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("Data.Entities.ClientEntity", b =>
@@ -63,7 +66,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clients", (string)null);
+                    b.ToTable("Clients");
                 });
 
             modelBuilder.Entity("Data.Entities.MemberUserEntity", b =>
@@ -74,7 +77,7 @@ namespace Data.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("AddressId")
+                    b.Property<Guid>("AddressId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -85,8 +88,11 @@ namespace Data.Migrations
                         .HasColumnType("date");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("EmailAddress")
+                        .IsRequired()
                         .HasColumnType("varchar(250)");
 
                     b.Property<bool>("EmailConfirmed")
@@ -127,7 +133,10 @@ namespace Data.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<Guid?>("PictureId")
+                    b.Property<Guid>("PictureId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("RoleId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("SecurityStamp")
@@ -154,6 +163,8 @@ namespace Data.Migrations
 
                     b.HasIndex("PictureId");
 
+                    b.HasIndex("RoleId");
+
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
@@ -169,7 +180,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pictures", (string)null);
+                    b.ToTable("Pictures");
                 });
 
             modelBuilder.Entity("Data.Entities.ProjectEmployeeEntity", b =>
@@ -184,7 +195,7 @@ namespace Data.Migrations
 
                     b.HasIndex("EmployeeId");
 
-                    b.ToTable("ProjectEmployees", (string)null);
+                    b.ToTable("ProjectEmployees");
                 });
 
             modelBuilder.Entity("Data.Entities.ProjectEntity", b =>
@@ -227,7 +238,7 @@ namespace Data.Migrations
 
                     b.HasIndex("StatusId");
 
-                    b.ToTable("Projects", (string)null);
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("Data.Entities.ProjectNoteEntity", b =>
@@ -256,7 +267,22 @@ namespace Data.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("ProjectNotes", (string)null);
+                    b.ToTable("ProjectNotes");
+                });
+
+            modelBuilder.Entity("Data.Entities.RoleEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("RoleName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmployeeRoles");
                 });
 
             modelBuilder.Entity("Data.Entities.StatusEntity", b =>
@@ -271,7 +297,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Statuses", (string)null);
+                    b.ToTable("Statuses");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -412,16 +438,26 @@ namespace Data.Migrations
                     b.HasOne("Data.Entities.AddressEntity", "Address")
                         .WithMany("Employees")
                         .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("Data.Entities.PictureEntity", "Picture")
                         .WithMany("Employees")
                         .HasForeignKey("PictureId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Data.Entities.RoleEntity", "Role")
+                        .WithMany("Employees")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Address");
 
                     b.Navigation("Picture");
+
+                    b.Navigation("Role");
                 });
 
             modelBuilder.Entity("Data.Entities.ProjectEmployeeEntity", b =>
@@ -569,6 +605,11 @@ namespace Data.Migrations
                     b.Navigation("Notes");
 
                     b.Navigation("ProjectEmployees");
+                });
+
+            modelBuilder.Entity("Data.Entities.RoleEntity", b =>
+                {
+                    b.Navigation("Employees");
                 });
 
             modelBuilder.Entity("Data.Entities.StatusEntity", b =>

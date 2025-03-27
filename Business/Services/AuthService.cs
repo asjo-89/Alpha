@@ -5,25 +5,28 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Business.Services;
 
-public class AuthService(UserManager<AppUser> userManager)
+public class AuthService(UserManager<MemberUserEntity> userManager)
 {
-    private readonly UserManager<AppUser> _userManager = userManager;
+    private readonly UserManager<MemberUserEntity> _userManager = userManager;
 
     public async Task<int> CreateAsync(CreateAccountRegForm form)
     {
         if (form == null)
             return 400;
 
-        AppUser appUser = new AppUser
+        MemberUserEntity appUser = new MemberUserEntity
         {
-            UserName = form.EmailAddress,
-            Email = form.EmailAddress,
+            UserName = form.Email,
+            Email = form.Email,
             FirstName = form.FirstName,
             LastName = form.LastName,
+            Password = form.Password
         };
-
         var result = await _userManager.CreateAsync(appUser, form.Password);
-
+        foreach (var error in result.Errors)
+        {
+            Console.WriteLine($"Error: {error.Description}");
+        }
         if (result.Succeeded)
             return 201;
 

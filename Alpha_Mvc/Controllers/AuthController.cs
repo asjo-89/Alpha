@@ -4,13 +4,14 @@ using Business.Services;
 using Data.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Alpha_Mvc.Controllers;
 
-public class AuthController(AuthService authService, SignInManager<AppUser> signInManager) : Controller
+public class AuthController(AuthService authService, SignInManager<MemberUserEntity> signInManager) : Controller
 {
     private readonly AuthService _authService = authService;
-    private readonly SignInManager<AppUser> _signInManager = signInManager;
+    private readonly SignInManager<MemberUserEntity> _signInManager = signInManager;
 
     public IActionResult SignIn()
     {
@@ -44,7 +45,7 @@ public class AuthController(AuthService authService, SignInManager<AppUser> sign
         if (!ModelState.IsValid) 
             return View(form);
 
-        if (await _authService.ExistsAsync(form.EmailAddress))
+        if (await _authService.ExistsAsync(form.Email))
         {
             ModelState.AddModelError("Exists", "User already exists.");
             return View(form);
@@ -54,7 +55,7 @@ public class AuthController(AuthService authService, SignInManager<AppUser> sign
         {
             FirstName = form.FirstName,
             LastName = form.LastName,
-            EmailAddress = form.EmailAddress,
+            Email = form.Email,
             Password = form.Password
         };
 
