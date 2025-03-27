@@ -57,7 +57,7 @@ public class CreateMemberService(IBaseRepository<MemberUserEntity> repository, I
             {
                 FirstName = form.FirstName,
                 LastName = form.LastName,
-                EmailAddress = form.EmailAddress,
+                Email = form.Email,
                 PhoneNumber = form.PhoneNumber,
                 AddressId = address.Id,
                 DateOfBirth = form.DateOfBirth,
@@ -70,7 +70,7 @@ public class CreateMemberService(IBaseRepository<MemberUserEntity> repository, I
             await _repository.SaveChangesAsync();
             await _repository.CommitTransactionAsync();
 
-            var entity = await _repository.GetOneAsync(x => x.EmailAddress == member.EmailAddress);
+            var entity = await _repository.GetOneAsync(x => x.Email == member.Email);
             var addressEntity = await _addressRepository.GetOneAsync(x => x.Id == entity.AddressId);
             var pictureEntity = await _pictureRepository.GetOneAsync(x => x.Id == entity.PictureId);
 
@@ -79,8 +79,8 @@ public class CreateMemberService(IBaseRepository<MemberUserEntity> repository, I
                 Id = entity.Id,
                 FirstName = entity.FirstName,
                 LastName = entity.LastName,
-                Email = entity.EmailAddress,
-                Phone = entity.PhoneNumber,
+                Email = entity.Email,
+                PhoneNumber = entity.PhoneNumber,
                 StreetAddress = addressEntity.StreetName,
                 PostalCode = addressEntity.PostalCode,
                 City = addressEntity.City,

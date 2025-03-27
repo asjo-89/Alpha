@@ -59,8 +59,8 @@ namespace Alpha_Mvc.Controllers
             {
                 FirstName = model.FirstName,
                 LastName = model.LastName,
-                EmailAddress = model.Email,
-                PhoneNumber = model.Phone,
+                Email = model.Email,
+                PhoneNumber = model.PhoneNumber,
                 StreetAddress = model.StreetAddress,
                 PostalCode = model.PostalCode,
                 Role = model.Role,

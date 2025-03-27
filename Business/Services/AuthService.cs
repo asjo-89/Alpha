@@ -16,10 +16,11 @@ public class AuthService(UserManager<MemberUserEntity> userManager)
 
         MemberUserEntity appUser = new MemberUserEntity
         {
-            UserName = form.EmailAddress,
-            Email = form.EmailAddress,
+            UserName = form.Email,
+            Email = form.Email,
             FirstName = form.FirstName,
             LastName = form.LastName,
+            Password = form.Password
         };
 
         var result = await _userManager.CreateAsync(appUser, form.Password);

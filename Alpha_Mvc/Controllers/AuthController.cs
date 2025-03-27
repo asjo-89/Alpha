@@ -45,7 +45,7 @@ public class AuthController(AuthService authService, SignInManager<MemberUserEnt
         if (!ModelState.IsValid) 
             return View(form);
 
-        if (await _authService.ExistsAsync(form.EmailAddress))
+        if (await _authService.ExistsAsync(form.Email))
         {
             ModelState.AddModelError("Exists", "User already exists.");
             return View(form);
@@ -55,7 +55,7 @@ public class AuthController(AuthService authService, SignInManager<MemberUserEnt
         {
             FirstName = form.FirstName,
             LastName = form.LastName,
-            EmailAddress = form.EmailAddress,
+            Email = form.Email,
             Password = form.Password
         };
 

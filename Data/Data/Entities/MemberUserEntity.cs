@@ -21,13 +21,16 @@ public class MemberUserEntity : IdentityUser
     [ProtectedPersonalData]
     [Required]
     [Column(TypeName = "varchar(250)")]
-    public string EmailAddress { get; set; } = null!;
+    [EmailAddress]
+    public new string Email { get; set; } = null!;
 
     [ProtectedPersonalData]
+    [DataType(DataType.Date)]
     public DateOnly? DateOfBirth { get; set; }
 
     [Required]
     [Column(TypeName = "nvarchar(100)")]
+    [DataType(DataType.Password)]
     public string Password { get; set; } = null!;
 
     [ProtectedPersonalData]
@@ -43,9 +46,9 @@ public class MemberUserEntity : IdentityUser
     public ICollection<ProjectNoteEntity> Notes { get; set; } = [];
 
     [ForeignKey(nameof(AddressId))]
-    public AddressEntity Address { get; set; } = null!;
+    public AddressEntity? Address { get; set; }
 
     [ForeignKey(nameof(PictureId))]
-    public PictureEntity Picture { get; set; } = null!;
+    public PictureEntity? Picture { get; set; }
 
 }
