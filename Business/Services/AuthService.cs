@@ -22,9 +22,11 @@ public class AuthService(UserManager<MemberUserEntity> userManager)
             LastName = form.LastName,
             Password = form.Password
         };
-
         var result = await _userManager.CreateAsync(appUser, form.Password);
-
+        foreach (var error in result.Errors)
+        {
+            Console.WriteLine($"Error: {error.Description}");
+        }
         if (result.Succeeded)
             return 201;
 

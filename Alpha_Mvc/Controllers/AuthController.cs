@@ -63,7 +63,7 @@ public class AuthController(AuthService authService, SignInManager<MemberUserEnt
 
         switch (result)
         {
-            case 200:
+            case 201:
                 return RedirectToAction("SignIn", "Auth");
 
             case 400:

@@ -7,10 +7,12 @@ namespace Data.Entities;
 public class MemberUserEntity : IdentityUser
 {
     [ProtectedPersonalData]
+    [Required]
     [Column(TypeName = "nvarchar(50)")]
     public string FirstName { get; set; } = null!;
 
     [ProtectedPersonalData]
+    [Required]
     [Column(TypeName = "nvarchar(50)")]
     public string LastName { get; set; } = null!;
 
@@ -22,7 +24,7 @@ public class MemberUserEntity : IdentityUser
     [Required]
     [Column(TypeName = "varchar(250)")]
     [EmailAddress]
-    public new string Email { get; set; } = null!;
+    public override string? Email { get; set; } = null!;
 
     [ProtectedPersonalData]
     [DataType(DataType.Date)]
@@ -34,11 +36,9 @@ public class MemberUserEntity : IdentityUser
     public string Password { get; set; } = null!;
 
     [ProtectedPersonalData]
-    [Required]
-    public Guid AddressId { get; set; }
+    public Guid? AddressId { get; set; }
 
-    [Required]
-    public Guid PictureId { get; set; }
+    public Guid? PictureId { get; set; }
 
 
     // Relations
