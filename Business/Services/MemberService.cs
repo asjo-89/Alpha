@@ -1,26 +1,125 @@
 ﻿using Business.Dtos;
 using Business.Interfaces;
 using Business.Models;
+using Data.Contexts;
 using Data.Entities;
+using Data.Errors;
 using Data.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace Business.Services;
 
-public class MemberService(IBaseRepository<MemberUserEntity> repository, IBaseRepository<AddressEntity> addressRepository, IBaseRepository<PictureEntity> pictureRepository, UserManager<MemberUserEntity> userManager) : IMemberService
+public class MemberService(IBaseRepository<MemberUserEntity> repository, IAddressRepository addressRepository, IPictureRepository pictureRepository, UserManager<MemberUserEntity> userManager) : IMemberService
 {
     private readonly IBaseRepository<MemberUserEntity> _repository = repository;
-    private readonly IBaseRepository<AddressEntity> _addressRepository = addressRepository;
-    private readonly IBaseRepository<PictureEntity> _pictureRepository = pictureRepository;
+    private readonly IAddressRepository _addressRepository = addressRepository;
+    private readonly IPictureRepository _pictureRepository = pictureRepository;
+
 
     private readonly UserManager<MemberUserEntity> _userManager = userManager;
 
 
     public async Task<MemberModel> AddMember(CreateMemberRegForm form)
     {
-        throw new NotImplementedException();
+        if (form == null) return null!;
+
+        bool exists = await _repository.ExistsAsync(x => x.Email == form.Email);
+
+        
+
+        try
+        {
+            var address = await _addressRepository.GetOrAddAsync(form.StreetAddress, form.PostalCode, form.City);
+            if (address == null) return null!;
+
+            var picture = await _pictureRepository.GetOrAddAsync(form.ProfileImage);
+            if (picture == null) return null!;
+
+
+            if (exists)
+            {
+                var updatedMember = await _repository.GetOneAsync(x => x.Email == form.Email);
+
+
+                updatedMember.UserName = form.Email;
+                updatedMember.FirstName = form.FirstName;
+                updatedMember.LastName = form.LastName;
+                updatedMember.Email = form.Email;
+                updatedMember.PhoneNumber = form.PhoneNumber;
+                updatedMember.JobTitle = form.JobTitle;
+                updatedMember.DateOfBirth = form.DateOfBirth;
+                updatedMember.AddressId = address.Id;
+                updatedMember.PictureId = picture.Id;
+
+                
+                await _repository.BeginTransactionAsync();
+
+                var result = _repository.UpdateAsync(updatedMember);
+
+                await _repository.SaveChangesAsync();
+                await _repository.CommitTransactionAsync();
+
+                MemberModel member = new MemberModel()
+                {
+                    Id = Guid.Parse(updatedMember.Id),
+                    FirstName = updatedMember.FirstName,
+                    LastName = updatedMember.LastName,
+                    Email = updatedMember.Email,
+                    PhoneNumber = updatedMember.PhoneNumber,
+                    DateOfBirth = updatedMember.DateOfBirth,
+                    StreetAddress = updatedMember.Address.StreetName,
+                    PostalCode = updatedMember.Address.PostalCode,
+                    City = updatedMember.Address.City,
+                    ProfileImage = updatedMember.Picture.PictureUrl
+                };
+                return member;
+                
+            }
+
+            MemberUserEntity entity = new MemberUserEntity()
+            {
+                UserName = form.Email,
+                FirstName = form.FirstName,
+                LastName = form.LastName,
+                Email = form.Email,
+                PhoneNumber = form.PhoneNumber,
+                DateOfBirth = form.DateOfBirth,
+                AddressId = address.Id,
+                PictureId = picture.Id,
+                Password = form.PassWord ?? ""
+            };
+
+            if (await _repository.CreateAsync(entity))
+            {
+                await _repository.SaveChangesAsync();
+                await _repository.CommitTransactionAsync();
+
+                MemberModel member = new MemberModel()
+                {
+                    Id = Guid.Parse(entity.Id),
+                    FirstName = entity.FirstName,
+                    LastName = entity.LastName,
+                    Email = entity.Email,
+                    PhoneNumber = entity.PhoneNumber,
+                    DateOfBirth = entity.DateOfBirth,
+                    StreetAddress = address.StreetName,
+                    PostalCode = address.PostalCode,
+                    City = address.City,
+                    ProfileImage = picture.PictureUrl
+                };
+                return member;
+            }
+            return null!;
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Failed to create member: {ex.Message}");
+            await _repository.RollbackTransactionAsync();
+            return null!;
+        }
     }
 
     public Task<bool> DeleteMember(MemberModel model)
@@ -45,8 +144,8 @@ public class MemberService(IBaseRepository<MemberUserEntity> repository, IBaseRe
                 FirstName = entity.FirstName,
                 LastName = entity.LastName,
                 JobTitle = jobTitle,
-                PhoneNumber = entity.PhoneNumber,
-                Email = entity.Email,
+                PhoneNumber = entity.PhoneNumber ?? "",
+                Email = entity.Email ?? "",
                 ProfileImage = entity.Picture?.PictureUrl ?? ""
             });
         }

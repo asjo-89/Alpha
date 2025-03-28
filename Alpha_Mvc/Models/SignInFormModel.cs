@@ -4,7 +4,7 @@ namespace Alpha_Mvc.Models;
 
 public class SignInFormModel
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 
     [Required(ErrorMessage = "You need to enter your email address.")]
     [DataType(DataType.EmailAddress)]

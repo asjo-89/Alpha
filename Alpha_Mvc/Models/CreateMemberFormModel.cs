@@ -4,7 +4,7 @@ namespace Alpha_Mvc.Models;
 
 public class CreateMemberFormModel
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 
     [Required(ErrorMessage = "First name is required.")]
     [Display(Name = "First Name", Prompt = "Enter first name...")]
@@ -28,7 +28,7 @@ public class CreateMemberFormModel
 
     [Required(ErrorMessage = "Job title is required.")]
     [Display(Name = "Job title", Prompt = "Enter job title...")]
-    public string Role { get; set; } = null!;
+    public string JobTitle { get; set; } = null!;
 
 
     [Required(ErrorMessage = "Street address is required.")]

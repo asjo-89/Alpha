@@ -4,7 +4,7 @@ namespace Alpha_Mvc.Models;
 
 public class CreateProjectFormModel
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 
     [Required(ErrorMessage = "You need to select a picture.")]
     public string Picture { get; set; } = null!;

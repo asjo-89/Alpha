@@ -35,9 +35,12 @@ builder.Services.ConfigureApplicationCookie(x =>
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<IBaseRepository<MemberUserEntity>, BaseRepository<MemberUserEntity>>();
 builder.Services.AddScoped<IBaseRepository<MemberModel>, BaseRepository<MemberModel>>();
+builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+builder.Services.AddScoped<IPictureRepository, PictureRepository>();
 builder.Services.AddScoped<IBaseRepository<AddressEntity>, BaseRepository<AddressEntity>>();
 builder.Services.AddScoped<IBaseRepository<PictureEntity>, BaseRepository<PictureEntity>>();
 builder.Services.AddScoped<IMemberService, MemberService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 

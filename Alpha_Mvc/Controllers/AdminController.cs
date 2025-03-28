@@ -24,41 +24,74 @@ namespace Alpha_Mvc.Controllers
 
             var members = await _memberService.GetAllMembers();
 
-            teamMembersViewModel.Users = members.Select(member => new UserModel
+            var viewModel = new TeamMembersViewModel
             {
-                Id = member.Id,
-                FirstName = member.FirstName,
-                LastName = member.LastName,
-                Email = member.Email,
-                PhoneNumber = member.PhoneNumber,
-                JobTitle = member.JobTitle
-            });
+                Users = members.Select(member => new UserModel
+                {
+                    Id = member.Id,
+                    FirstName = member.FirstName,
+                    LastName = member.LastName,
+                    Email = member.Email,
+                    PhoneNumber = member.PhoneNumber,
+                    JobTitle = member.JobTitle
+                }),
+                Member = new CreateMemberFormModel()
+            };
 
-            return View(teamMembersViewModel);
+            return View(viewModel);
         }
 
-        [HttpPost]
-        public IActionResult Index(CreateMemberFormModel model)
-        {
-            ViewData["Title"] = "Admin";
+        //[HttpPost]
+        //public IActionResult Index(CreateMemberFormModel model)
+        //{
+        //    ViewData["Title"] = "Admin";
 
-            if (!ModelState.IsValid)
-                return View();
+        //    if (!ModelState.IsValid)
+        //        return View(model);
 
-            return View();
-        }
+        //    return View(teamMembersViewModel);
+        //}
 
         [HttpPost]
         public async Task<IActionResult> AddMember(CreateMemberFormModel model)
         {
             if (!ModelState.IsValid)
             {
-                return View("Index", model);
+                var members = await _memberService.GetAllMembers();
+                var viewModel = new TeamMembersViewModel
+                {
+                    Member = model,
+                    Users = members.Select(member => new UserModel
+                    {
+                        Id = member.Id,
+                        
+                        FirstName = member.FirstName,
+                        LastName = member.LastName,
+                        Email = member.Email,
+                        PhoneNumber = member.PhoneNumber,
+                        JobTitle = member.JobTitle
+                    }),
+                };
+                return View("Index", viewModel);
             }
             if (model.ProfileImage.Length == 0)
             {
                 ModelState.AddModelError("ProfileImage", "Profile image is required.");
-                return View("Index", model);
+                var members = await _memberService.GetAllMembers();
+                var viewModel = new TeamMembersViewModel
+                {
+                    Member = model,
+                    Users = members.Select(member => new UserModel
+                    {
+                        Id = member.Id,
+                        FirstName = member.FirstName,
+                        LastName = member.LastName,
+                        Email = member.Email,
+                        PhoneNumber = member.PhoneNumber,
+                        JobTitle = member.JobTitle
+                    }),
+                };
+                return View("Index", viewModel);
             }
 
             var directoryPath = Path.Combine(_environment.WebRootPath, "uploads");
@@ -77,10 +110,11 @@ namespace Alpha_Mvc.Controllers
                 LastName = model.LastName,
                 Email = model.Email,
                 PhoneNumber = model.PhoneNumber,
+                JobTitle = model.JobTitle,
                 StreetAddress = model.StreetAddress,
                 PostalCode = model.PostalCode,
-                Role = model.Role,
                 City = model.City,
+                PassWord = "AddMember123!",
                 DateOfBirth = model.DateOfBirth,
                 ProfileImage = filePath
             };
@@ -88,11 +122,41 @@ namespace Alpha_Mvc.Controllers
             var newModel = await _memberService.AddMember(dto);
             if (newModel != null) 
             {
-                return View("Index", model);
+                var members = await _memberService.GetAllMembers();
+                var viewModel = new TeamMembersViewModel
+                {
+                    Member = model,
+                    Users = members.Select(member => new UserModel
+                    {
+                        Id = member.Id,
+                        FirstName = member.FirstName,
+                        LastName = member.LastName,
+                        Email = member.Email,
+                        PhoneNumber = member.PhoneNumber,
+                        JobTitle = member.JobTitle
+                    }),
+                };
+                return View("Index", viewModel);
             }
             else
             {
-                return View("Index", model);
+                var members = await _memberService.GetAllMembers();
+                var viewModel = new TeamMembersViewModel
+                {
+                    Member = model,
+                    Users = members.Select(member => new UserModel
+                    {
+                        Id = member.Id,
+                        FirstName = member.FirstName,
+                        LastName = member.LastName,
+                        Email = member.Email,
+                        PhoneNumber = member.PhoneNumber,
+                        JobTitle = member.JobTitle
+                    }),
+                };
+
+                ModelState.AddModelError("viewModel", "Failed to create member.");
+                return View("Index", viewModel);
             }
             
         }

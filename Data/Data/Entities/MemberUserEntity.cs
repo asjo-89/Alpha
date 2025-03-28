@@ -26,6 +26,9 @@ public class MemberUserEntity : IdentityUser
     [EmailAddress]
     public override string? Email { get; set; } = null!;
 
+    [Column(TypeName = "nvarchar(20)")]
+    public string? JobTitle { get; set; }
+
     [ProtectedPersonalData]
     [DataType(DataType.Date)]
     public DateOnly? DateOfBirth { get; set; }
