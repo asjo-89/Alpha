@@ -46,6 +46,10 @@ public class CreateMemberFormModel
     public string City { get; set; } = null!;
 
 
+    public int BirthDay { get; set; }
+    public int BirthMonth { get; set; }
+    public int BirthYear { get; set; }
+
     [Required(ErrorMessage = "Date of birth is required.")]
     [Display(Name = "Date Of Birth", Prompt = "Enter date of birth...")]
     public DateOnly DateOfBirth { get; set; }

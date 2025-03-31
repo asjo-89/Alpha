@@ -9,12 +9,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Business.Services;
 
-public class MemberService(IBaseRepository<MemberUserEntity> repository, IAddressRepository addressRepository, IPictureRepository pictureRepository, UserManager<MemberUserEntity> userManager) : IMemberService
+public class MemberService(IBaseRepository<MemberUserEntity> repository, IBaseRepository<PictureEntity> picRepository, IAddressRepository addressRepository, IPictureRepository pictureRepository, UserManager<MemberUserEntity> userManager) : IMemberService
 {
     private readonly IBaseRepository<MemberUserEntity> _repository = repository;
+    private readonly IBaseRepository<PictureEntity> _picRepository = picRepository;
     private readonly IAddressRepository _addressRepository = addressRepository;
     private readonly IPictureRepository _pictureRepository = pictureRepository;
 
@@ -69,6 +71,7 @@ public class MemberService(IBaseRepository<MemberUserEntity> repository, IAddres
                     LastName = updatedMember.LastName,
                     Email = updatedMember.Email,
                     PhoneNumber = updatedMember.PhoneNumber,
+                    JobTitle = updatedMember.JobTitle,
                     DateOfBirth = updatedMember.DateOfBirth,
                     StreetAddress = updatedMember.Address.StreetName,
                     PostalCode = updatedMember.Address.PostalCode,
@@ -86,12 +89,14 @@ public class MemberService(IBaseRepository<MemberUserEntity> repository, IAddres
                 LastName = form.LastName,
                 Email = form.Email,
                 PhoneNumber = form.PhoneNumber,
+                JobTitle = form.JobTitle,
                 DateOfBirth = form.DateOfBirth,
                 AddressId = address.Id,
                 PictureId = picture.Id,
                 Password = form.PassWord ?? ""
             };
 
+            await _repository.BeginTransactionAsync();
             if (await _repository.CreateAsync(entity))
             {
                 await _repository.SaveChangesAsync();
@@ -104,6 +109,7 @@ public class MemberService(IBaseRepository<MemberUserEntity> repository, IAddres
                     LastName = entity.LastName,
                     Email = entity.Email,
                     PhoneNumber = entity.PhoneNumber,
+                    JobTitle = entity.JobTitle,
                     DateOfBirth = entity.DateOfBirth,
                     StreetAddress = address.StreetName,
                     PostalCode = address.PostalCode,
@@ -131,10 +137,15 @@ public class MemberService(IBaseRepository<MemberUserEntity> repository, IAddres
     {
         var entities = await _repository.GetAllAsync();
         var members = new List<MemberModel>();
+
+        var pictures = await _picRepository.GetAllAsync();
+
+
         foreach (var entity in entities)
         {
-
             var role = await _userManager.GetRolesAsync(entity);
+
+            var picture = await _picRepository.GetOneAsync(x => x.Id == entity.PictureId);
 
             var jobTitle = role.FirstOrDefault() ?? "No role assigned";
 
@@ -146,8 +157,9 @@ public class MemberService(IBaseRepository<MemberUserEntity> repository, IAddres
                 JobTitle = jobTitle,
                 PhoneNumber = entity.PhoneNumber ?? "",
                 Email = entity.Email ?? "",
-                ProfileImage = entity.Picture?.PictureUrl ?? ""
+                ProfileImage = picture?.PictureUrl ?? ""
             });
+
         }
         return members;
     }

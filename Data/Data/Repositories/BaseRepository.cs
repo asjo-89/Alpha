@@ -76,7 +76,7 @@ public class BaseRepository<TEntity>(AlphaDbContext context) : IBaseRepository<T
         return true;
     }
 
-    public async Task<ICollection<TEntity>> GetAllAsync()
+    public virtual async Task<ICollection<TEntity>> GetAllAsync()
     {
         var entities = await _entities.ToListAsync();
         return entities;

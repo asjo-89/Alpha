@@ -33,24 +33,14 @@ namespace Alpha_Mvc.Controllers
                     LastName = member.LastName,
                     Email = member.Email,
                     PhoneNumber = member.PhoneNumber,
-                    JobTitle = member.JobTitle
+                    JobTitle = member.JobTitle,
+                    ProfilePicture = Url.Content($"~/{member.ProfileImage}")
                 }),
                 Member = new CreateMemberFormModel()
             };
 
             return View(viewModel);
         }
-
-        //[HttpPost]
-        //public IActionResult Index(CreateMemberFormModel model)
-        //{
-        //    ViewData["Title"] = "Admin";
-
-        //    if (!ModelState.IsValid)
-        //        return View(model);
-
-        //    return View(teamMembersViewModel);
-        //}
 
         [HttpPost]
         public async Task<IActionResult> AddMember(CreateMemberFormModel model)
@@ -63,8 +53,7 @@ namespace Alpha_Mvc.Controllers
                     Member = model,
                     Users = members.Select(member => new UserModel
                     {
-                        Id = member.Id,
-                        
+                        Id = member.Id,                        
                         FirstName = member.FirstName,
                         LastName = member.LastName,
                         Email = member.Email,
@@ -88,7 +77,8 @@ namespace Alpha_Mvc.Controllers
                         LastName = member.LastName,
                         Email = member.Email,
                         PhoneNumber = member.PhoneNumber,
-                        JobTitle = member.JobTitle
+                        JobTitle = member.JobTitle,
+                        ProfilePicture = Url.Content($"~/{member.ProfileImage}")
                     }),
                 };
                 return View("Index", viewModel);
@@ -97,11 +87,13 @@ namespace Alpha_Mvc.Controllers
             var directoryPath = Path.Combine(_environment.WebRootPath, "uploads");
             Directory.CreateDirectory(directoryPath);
 
-            var filePath = Path.Combine(directoryPath, $"{Guid.NewGuid()}_{model.ProfileImage.FileName}");
+            var fileName = $"{Guid.NewGuid()}_{model.ProfileImage.FileName}";
+            var filePath = Path.Combine(directoryPath, fileName);
+            var relativePath = $"uploads/{fileName}";
 
             using (var fileStream = new FileStream(filePath, FileMode.Create))
-            {
-                await fileStream.CopyToAsync(fileStream);
+            {                
+                await model.ProfileImage.CopyToAsync(fileStream);
             }
 
             CreateMemberRegForm dto = new CreateMemberRegForm()
@@ -115,28 +107,14 @@ namespace Alpha_Mvc.Controllers
                 PostalCode = model.PostalCode,
                 City = model.City,
                 PassWord = "AddMember123!",
-                DateOfBirth = model.DateOfBirth,
-                ProfileImage = filePath
+                DateOfBirth = new (model.BirthYear, model.BirthMonth, model.BirthDay),
+                ProfileImage = relativePath,
             };
 
             var newModel = await _memberService.AddMember(dto);
             if (newModel != null) 
             {
-                var members = await _memberService.GetAllMembers();
-                var viewModel = new TeamMembersViewModel
-                {
-                    Member = model,
-                    Users = members.Select(member => new UserModel
-                    {
-                        Id = member.Id,
-                        FirstName = member.FirstName,
-                        LastName = member.LastName,
-                        Email = member.Email,
-                        PhoneNumber = member.PhoneNumber,
-                        JobTitle = member.JobTitle
-                    }),
-                };
-                return View("Index", viewModel);
+                return RedirectToAction("Index");
             }
             else
             {
@@ -151,7 +129,8 @@ namespace Alpha_Mvc.Controllers
                         LastName = member.LastName,
                         Email = member.Email,
                         PhoneNumber = member.PhoneNumber,
-                        JobTitle = member.JobTitle
+                        JobTitle = member.JobTitle,
+                        ProfilePicture = Url.Content($"~/{member.ProfileImage}")
                     }),
                 };
 
