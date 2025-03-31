@@ -48,6 +48,9 @@
         background-color: var(--grey-200);
     }
 
+    .btn-submit {
+        width: 100%;
+    }
 
 /* ERRORS */
 .field-validation-error {
@@ -61,7 +64,6 @@
 
 
 /* FORM base */
-
 .login-form {
     width: 100%;
     display: flex;
@@ -75,36 +77,12 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: .7rem;
+    gap: 2rem;
 }
-
-    .picture {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-block: 1rem;
-    }
-
-    .image {
-        width: 150px;
-        aspect-ratio: 1;
-    }
-
     .label {
         padding-left: .5rem;
         font-size: 1rem;
         font-weight: 600;
-    }
-
-    .label-start {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .label-end {
-        grid-column: 2;
-        grid-row: 1;
     }
 
     .input {
@@ -132,7 +110,7 @@
     display: flex;
     flex-direction: column;
     column-gap: .7rem;
-    row-gap: 1.7rem;
+    row-gap: 1.5rem;
     justify-content: center;
     align-items: flex-start;
 }
@@ -155,7 +133,7 @@
         padding: .7rem;
         border: 2px solid var(--grey-200);
         border-radius: .7rem;
-        margin-top: .5rem;
+        margin-top: .2rem;
     }   
 
 
@@ -188,6 +166,8 @@
         border: none;
         border-radius: 50%;
         color: var(--border-300);
+        cursor: pointer;
+
     }
 
     .image-preview {
@@ -198,84 +178,18 @@
         border-radius: 50%;
     }
 
-
-
-/* DATE start/end */
-.form-date-group {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    column-gap: .7rem;
-}
-
-    .start-date {
-        grid-column: 1;
-        grid-row: 2;
+    .image-input {
+        display: none;
     }
 
-    .end-date {
-        grid-column: 2;
-        grid-row: 2;
-    }
-
-    .budget {
-        width: 100%;
-        padding: .7rem;
-        background-color: transparent;
-        background-image: url("/images/Icons/Dollar.svg");
-        background-repeat: no-repeat;
-        background-position: 10px center;
-        padding-left: 2.5rem;
-        margin-bottom: 2rem;
-    }
-
-
-
-/* DOUBLE form-group*/
-.form-group-double {
+/* STANDARD form-group */
+.form-group {
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     column-gap: .7rem;
-}   
-
-
-/* BIRTH form-group*/
-.form-group-birth {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    column-gap: .7rem;
 }
-
-    .birth-label {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .day {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .month {
-        grid-column: 2;
-        grid-row: 2;
-    }
-
-    .year {
-        grid-column: 3;
-        grid-row: 2;
-    }
-
-    .birth-span {
-        grid-column: 1 / -1;
-        grid-row: 3;
-    }
-
 
 /* CHECKBOX form-group */
 .form-group-check {
@@ -299,3 +213,14 @@
         justify-content: space-between;
         align-items: center;
     }
+
+
+.budget {
+    width: 100%;
+    padding: .7rem;
+    background-color: transparent;
+    background-image: url("/images/Icons/Dollar.svg");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 2.5rem;
+}

@@ -13,7 +13,7 @@
         <form class="form" method="post" asp-action="AddMember" asp-controller="Admin" enctype="multipart/form-data">
             <div class="image-preview-container">
                 <div id="circle" class="border-circle">
-                    <div class="camera">
+                    <div class="camera" id="camera">
                         <i class="fa-solid fa-camera"></i>
                     </div>
 
@@ -22,21 +22,24 @@
                 <img id="image-preview" class="image-preview" src="#" />
             </div>
 
-            <div class="form-group">
+            <div class="form-inputs-container">
                 <div class="form-group">
-                    <label asp-for="ProfileImage"></label>
-                    <input asp-for="ProfileImage" accept="image/*" />
+                    <label asp-for="ProfileImage" hidden></label>
+                    <input asp-for="ProfileImage" class="image-input" accept="image/*" hidden />
                     <span asp-validation-for="ProfileImage"></span>
                 </div>
 
-                <div class="form-group-double">
-                    <label class="label first-label" asp-for="FirstName"></label>
-                    <input type="text" class="input first-input" asp-for="FirstName">
-                    <span asp-validation-for="FirstName"></span>
-
-                    <label class="label last-label" asp-for="LastName"></label>
-                    <input type="text" class="input last-input" asp-for="LastName">
-                    <span asp-validation-for="LastName"></span>
+                <div class="form-group">
+                    <div class="input-container">
+                        <label class="label" asp-for="FirstName"></label>
+                        <input type="text" class="input" asp-for="FirstName">
+                        <span asp-validation-for="FirstName"></span>
+                    </div>
+                    <div class="input-container">
+                        <label class="label" asp-for="LastName"></label>
+                        <input type="text" class="input" asp-for="LastName">
+                        <span asp-validation-for="LastName"></span>
+                    </div>
                 </div>
 
                 <div class="input-container">
@@ -63,42 +66,51 @@
                     <span asp-validation-for="StreetAddress"></span>
                 </div>
 
-                <div class="form-group-double">
-                    <label class="label" asp-for="PostalCode"></label>
-                    <input class="input postal-code" asp-for="PostalCode">
-                    <span asp-validation-for="PostalCode" class="postal-span"></span>
-
-                    <label class="label" asp-for="City"></label>
-                    <input type="text" class="input city" asp-for="City">
-                    <span asp-validation-for="City" class="city-span"></span>
+                <div class="form-group">
+                    <div class="input-container">
+                        <label class="label" asp-for="PostalCode"></label>
+                        <input class="input postal-code" asp-for="PostalCode">
+                        <span asp-validation-for="PostalCode" class="postal-span"></span>
+                    </div>
+                    <div class="input-container">
+                        <label class="label" asp-for="City"></label>
+                        <input type="text" class="input city" asp-for="City">
+                        <span asp-validation-for="City" class="city-span"></span>
+                    </div>
 
                 </div>
-                <div class="form-group-birth">
-                    <label class="label birth-label" asp-for="BirthDay">Day</label>
-                    <select id="day" class="input day" asp-for="BirthDay">
-                        <option value="">-- Select Day --</option>
-                        @for(int i = 1; i <= 31; i++)
-                        {
-                            <option value="@i">@i</option>
-                        }
-                    </select>
-                    <label class="label birth-label" asp-for="BirthMonth">Month</label> 
-                    <select id="month" class="input month" asp-for="BirthMonth">
-                        <option value="">-- Select Month --</option>
-                        @for (int i = 1; i <= 12; i++)
-                        {
-                            <option value="@i">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(@i)</option>
-                        }
-                    </select>
-                    <label class="label birth-label" asp-for="BirthYear">Year</label>
-                    <select id="year" class="input year" asp-for="BirthYear">
-                        <option value="">-- Select Year --</option>
-                        @for (int i = DateTime.Now.Year; i >= 1900; i--)
-                        {
-                            <option value="@i">@i</option>
-                        }
-                    </select>
-                </div>  
+                <div class="form-group">
+                    <div class="day">
+                        <label class="label day-label" asp-for="BirthDay">Day</label>
+                        <select id="day" class="input day" asp-for="BirthDay">
+                            <option value="">-- Select Day --</option>
+                            @for (int i = 1; i <= 31; i++)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="month">
+                        <label class="label birth-label" asp-for="BirthMonth">Month</label>
+                        <select id="month" class="input month" asp-for="BirthMonth">
+                            <option value="">-- Select Month --</option>
+                            @for (int i = 1; i <= 12; i++)
+                            {
+                                <option value="@i">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(@i)</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="year">
+                        <label class="label birth-label" asp-for="BirthYear">Year</label>
+                        <select id="year" class="input year" asp-for="BirthYear">
+                            <option value="">-- Select Year --</option>
+                            @for (int i = DateTime.Now.Year; i >= 1900; i--)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+                    </div>
+                </div>
             </div>
             <button type="submit" class="btn">
                 Add Member
@@ -110,9 +122,14 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
+        const camera = document.querySelector("#camera");
         const imageInput = document.querySelector("#ProfileImage");
-        if (!imageInput)
-            return;
+
+        if (!imageInput) return;
+
+        camera.addEventListener("click", () => {
+            imageInput.click();
+        });
 
         imageInput.addEventListener("change", (e) => {
             const image = e.target.files[0];
