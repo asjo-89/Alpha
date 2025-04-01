@@ -1,15 +1,30 @@
 ﻿@model UserModel
 
+
+
 @{
     ViewData["Css"] = "~/css/admin.css"; 
+    // f303
+    // f1f8
 }
 
 <div class="card">
-    <img class="options" src="/images/Icons/Dots.svg" alt="An image of three dots.">
+
+    <div class="dropdown-container">
+        <img class="options" src="/images/Icons/Dots.svg" alt="An image of three dots.">
+        <div class="dropdown-content">
+            <p class="menu-option option-edit">Edit Member</p>
+            <hr />
+            <p class="menu-option option-delete">Delete Member</p>
+        </div>
+    </div>
+
     <img class="profile" src="@Model.ProfilePicture" alt="A profile picture.">
-    <h4>@Model.FirstName @Model.LastName</h4>
-    <p class="role">@Model.JobTitle</p>
-    <p class="email">@Model.Email</p>
-    <p class="phone">@Model.PhoneNumber</p>
-    <div class="btn message">Message</div>
+    <div class="member-info">
+        <h4>@Model.FirstName @Model.LastName</h4>
+        <p class="role">@Model.JobTitle</p>
+        <p class="email">@Model.Email</p>
+        <p class="phone">@Model.PhoneNumber</p>
+        <div class="btn message">Message</div>
+    </div>
 </div>
