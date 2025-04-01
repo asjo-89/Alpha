@@ -1,4 +1,5 @@
 ﻿using Business.Dtos;
+using Business.Factories;
 using Business.Interfaces;
 using Business.Models;
 using Data.Contexts;
@@ -45,7 +46,6 @@ public class MemberService(IBaseRepository<MemberUserEntity> repository, IBaseRe
             {
                 var updatedMember = await _repository.GetOneAsync(x => x.Email == form.Email);
 
-
                 updatedMember.UserName = form.Email;
                 updatedMember.FirstName = form.FirstName;
                 updatedMember.LastName = form.LastName;
@@ -55,7 +55,6 @@ public class MemberService(IBaseRepository<MemberUserEntity> repository, IBaseRe
                 updatedMember.DateOfBirth = form.DateOfBirth;
                 updatedMember.AddressId = address.Id;
                 updatedMember.PictureId = picture.Id;
-
                 
                 await _repository.BeginTransactionAsync();
 
@@ -64,37 +63,11 @@ public class MemberService(IBaseRepository<MemberUserEntity> repository, IBaseRe
                 await _repository.SaveChangesAsync();
                 await _repository.CommitTransactionAsync();
 
-                MemberModel member = new MemberModel()
-                {
-                    Id = Guid.Parse(updatedMember.Id),
-                    FirstName = updatedMember.FirstName,
-                    LastName = updatedMember.LastName,
-                    Email = updatedMember.Email,
-                    PhoneNumber = updatedMember.PhoneNumber,
-                    JobTitle = updatedMember.JobTitle,
-                    DateOfBirth = updatedMember.DateOfBirth,
-                    StreetAddress = updatedMember.Address.StreetName,
-                    PostalCode = updatedMember.Address.PostalCode,
-                    City = updatedMember.Address.City,
-                    ProfileImage = updatedMember.Picture.PictureUrl
-                };
-                return member;
-                
+                MemberModel member = MemberFactory.CreateModelFromEntity(updatedMember);
+                return member;                
             }
 
-            MemberUserEntity entity = new MemberUserEntity()
-            {
-                UserName = form.Email,
-                FirstName = form.FirstName,
-                LastName = form.LastName,
-                Email = form.Email,
-                PhoneNumber = form.PhoneNumber,
-                JobTitle = form.JobTitle,
-                DateOfBirth = form.DateOfBirth,
-                AddressId = address.Id,
-                PictureId = picture.Id,
-                Password = form.PassWord ?? ""
-            };
+            MemberUserEntity entity = MemberFactory.CreateEntityFromDto(form, address, picture);
 
             await _repository.BeginTransactionAsync();
             if (await _repository.CreateAsync(entity))
@@ -102,20 +75,7 @@ public class MemberService(IBaseRepository<MemberUserEntity> repository, IBaseRe
                 await _repository.SaveChangesAsync();
                 await _repository.CommitTransactionAsync();
 
-                MemberModel member = new MemberModel()
-                {
-                    Id = Guid.Parse(entity.Id),
-                    FirstName = entity.FirstName,
-                    LastName = entity.LastName,
-                    Email = entity.Email,
-                    PhoneNumber = entity.PhoneNumber,
-                    JobTitle = entity.JobTitle,
-                    DateOfBirth = entity.DateOfBirth,
-                    StreetAddress = address.StreetName,
-                    PostalCode = address.PostalCode,
-                    City = address.City,
-                    ProfileImage = picture.PictureUrl
-                };
+                MemberModel member = MemberFactory.CreateModelFromEntity(entity);
                 return member;
             }
             return null!;
@@ -126,11 +86,6 @@ public class MemberService(IBaseRepository<MemberUserEntity> repository, IBaseRe
             await _repository.RollbackTransactionAsync();
             return null!;
         }
-    }
-
-    public Task<bool> DeleteMember(MemberModel model)
-    {
-        throw new NotImplementedException();
     }
 
     public async Task<IEnumerable<MemberModel>> GetAllMembers()
@@ -149,17 +104,7 @@ public class MemberService(IBaseRepository<MemberUserEntity> repository, IBaseRe
 
             var jobTitle = role.FirstOrDefault() ?? "No role assigned";
 
-            members.Add(new MemberModel()
-            {
-                Id = Guid.Parse(entity.Id),
-                FirstName = entity.FirstName,
-                LastName = entity.LastName,
-                JobTitle = jobTitle,
-                PhoneNumber = entity.PhoneNumber ?? "",
-                Email = entity.Email ?? "",
-                ProfileImage = picture?.PictureUrl ?? ""
-            });
-
+            members.Add(MemberFactory.CreateModelFromEntity(entity));
         }
         return members;
     }
@@ -170,6 +115,11 @@ public class MemberService(IBaseRepository<MemberUserEntity> repository, IBaseRe
     }
 
     public Task<MemberModel> UpdateMember(MemberModel model)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<bool> DeleteMember(MemberModel model)
     {
         throw new NotImplementedException();
     }

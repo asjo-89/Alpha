@@ -317,6 +317,10 @@ h6 {
     background-color: var(--surface);
     box-shadow: 0 8px 20px var(--shadow);
 }
+
+    .dropdown-content.show {
+        display: flex;
+    }
     
     .dropdown-content > hr {
         border: 1px solid var(--border-100);

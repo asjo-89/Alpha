@@ -38,7 +38,6 @@ namespace Alpha_Mvc.Controllers
                 }),
                 Member = new CreateMemberFormModel()
             };
-
             return View(viewModel);
         }
 
@@ -59,26 +58,6 @@ namespace Alpha_Mvc.Controllers
                         Email = member.Email,
                         PhoneNumber = member.PhoneNumber,
                         JobTitle = member.JobTitle
-                    }),
-                };
-                return View("Index", viewModel);
-            }
-            if (model.ProfileImage.Length == 0)
-            {
-                ModelState.AddModelError("ProfileImage", "Profile image is required.");
-                var members = await _memberService.GetAllMembers();
-                var viewModel = new TeamMembersViewModel
-                {
-                    Member = model,
-                    Users = members.Select(member => new UserModel
-                    {
-                        Id = member.Id,
-                        FirstName = member.FirstName,
-                        LastName = member.LastName,
-                        Email = member.Email,
-                        PhoneNumber = member.PhoneNumber,
-                        JobTitle = member.JobTitle,
-                        ProfilePicture = Url.Content($"~/{member.ProfileImage}")
                     }),
                 };
                 return View("Index", viewModel);
@@ -139,6 +118,36 @@ namespace Alpha_Mvc.Controllers
             }
             
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> EditMember(CreateMemberFormModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                var members = await _memberService.GetAllMembers();
+                var viewModel = new TeamMembersViewModel
+                {
+                    Member = model,
+                    Users = members.Select(member => new UserModel
+                    {
+                        Id = member.Id,
+                        FirstName = member.FirstName,
+                        LastName = member.LastName,
+                        Email = member.Email,
+                        PhoneNumber = member.PhoneNumber,
+                        JobTitle = member.JobTitle
+                    }),
+                };
+                return View("Index", viewModel);
+            }
+
+            return View("Index");
+
+
+
+        }
+
 
         [Route("add-project")]
         [HttpPost]
