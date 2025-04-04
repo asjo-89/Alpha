@@ -17,7 +17,7 @@
     <form class="login-form" id="sign-up-form" method="post" asp-action="CreateAccount" asp-controller="Auth" novalidate>
 
         <div class="form-inputs-container">
-            <div class="form-group-double">
+            <div class="form-group">
                 <div class="input-container">
                     <label class="label" asp-for="FirstName"></label>
                     <input type="text" class="input first-input" asp-for="FirstName" />
@@ -37,7 +37,7 @@
                 <span asp-validation-for="Email"></span>
             </div>        
 
-            <div class="form-group-double">
+            <div class="form-group">
                 <div class="input-container">
                     <label class="label" asp-for="Password"></label>
                     <input type="password" class="input first-input" asp-for="Password" />

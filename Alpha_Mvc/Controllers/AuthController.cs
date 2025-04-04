@@ -4,7 +4,6 @@ using Business.Services;
 using Data.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace Alpha_Mvc.Controllers;
 
@@ -64,7 +63,7 @@ public class AuthController(AuthService authService, SignInManager<MemberUserEnt
         switch (result)
         {
             case 201:
-                return RedirectToAction("SignIn", "Auth");
+                return RedirectToAction("Index", "Home");
 
             case 400:
             {

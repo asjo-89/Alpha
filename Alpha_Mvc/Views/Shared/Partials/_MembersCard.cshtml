@@ -1,13 +1,31 @@
-﻿@{
+﻿@model UserModel
+
+
+
+@{
     ViewData["Css"] = "~/css/admin.css"; 
 }
 
+@await Html.PartialAsync("Sections/_EditMemberSection", Model)
+
 <div class="card">
-    <img class="options" src="/images/Icons/Dots.svg" alt="An image of three dots.">
-    <img class="profile" src="/images/Profiles/Img_profile_1.svg" alt="A profile picture.">
-    <h4>Hans Mattin-Lassei</h4>
-    <p class="role">CEO</p>
-    <p class="email">hans@domain.com</p>
-    <p class="phone">+46 070-123 45 78</p>
-    <div class="btn message">Message</div>
+    <div class="dropdown-container">
+        <img id="menu-button" class="options" src="/images/Icons/Dots.svg" alt="An image of three dots.">
+        <div class="dropdown-content">
+            <a class="menu-option option-edit" data-modal="true" data-target="#editMemberModal_@Model.Id">Edit Member</a>
+            <hr />
+            <form class="dropdown-form" asp-action="DeleteMember" asp-route-id="@Model.Id" asp-controller="Admin">
+                <button type="submit" class="menu-option option-delete">Delete Member</button>                
+            </form>
+        </div>
+    </div>
+
+    <img class="profile" src="@Model.ProfilePicture" alt="A profile picture.">
+    <div class="member-info">
+        <h4>@Model.FirstName @Model.LastName</h4>
+        <p class="role">@Model.JobTitle</p>
+        <p class="email">@Model.Email</p>
+        <p class="phone">@Model.PhoneNumber</p>
+        <div class="btn message">Message</div>
+    </div>
 </div>

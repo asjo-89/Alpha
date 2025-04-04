@@ -1,58 +1,96 @@
 using Alpha_Mvc.Models;
 using AspNetCoreGeneratedDocument;
 using Business.Dtos;
+using Business.Factories;
 using Business.Interfaces;
+using Business.Models;
+using Data.Entities;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Alpha_Mvc.Controllers
 {
-    public class AdminController(IWebHostEnvironment environment, ICreateMemberService memberService) : Controller
+    public class AdminController(IWebHostEnvironment environment, IMemberService memberService) : Controller
     {
         private readonly IWebHostEnvironment _environment = environment;
-        private readonly ICreateMemberService _memberService = memberService;
+        private readonly IMemberService _memberService = memberService;
 
         public CreateProjectFormModel createProjectFormModel = new();
         public CreateMemberFormModel createMemberFormModel = new();
 
-        public IActionResult Index()
+        public TeamMembersViewModel teamMembersViewModel = new();
+
+        public async Task<IActionResult> Index()
         {
             ViewData["Title"] = "Admin";
             ViewData["Header"] = "Team Members";
-            return View();
+
+            var members = await _memberService.GetAllMembersAsync();
+
+            var viewModel = new TeamMembersViewModel
+            {
+                Users = members.Select(member => new UserModel
+                {
+                    Id = member.Id,
+                    FirstName = member.FirstName,
+                    LastName = member.LastName,
+                    Email = member.Email,
+                    PhoneNumber = member.PhoneNumber,
+                    JobTitle = member.JobTitle,
+                    ProfilePicture = Url.Content($"~/{member.ProfileImage}")
+                }),
+                Member = new CreateMemberFormModel()
+            };
+            return View(viewModel);
         }
 
-        [HttpPost]
-        public IActionResult Index(CreateMemberFormModel model)
-        {
-            ViewData["Title"] = "Admin";
-
-            if (!ModelState.IsValid)
-                return View();
-
-            return View();
-        }
 
         [HttpPost]
         public async Task<IActionResult> AddMember(CreateMemberFormModel model)
         {
             if (!ModelState.IsValid)
             {
-                return View("Index", model);
+                var members = await _memberService.GetAllMembersAsync();
+                var viewModel = new TeamMembersViewModel
+                {
+                    Member = model,
+                    Users = members.Select(member => new UserModel
+                    {
+                        Id = member.Id,
+                        FirstName = member.FirstName,
+                        LastName = member.LastName,
+                        Email = member.Email,
+                        PhoneNumber = member.PhoneNumber,
+                        JobTitle = member.JobTitle
+                    }),
+                };
+                return View("Index", viewModel);
             }
-            if (model.ProfileImage.Length == 0)
+
+            MemberUserEntity entity = new()
             {
-                ModelState.AddModelError("ProfileImage", "Profile image is required.");
-                return View("Index", model);
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                Password = ""
+            };
+
+            var existingEntity = await _memberService.ExistsAsync(x => x.Email == entity.Email);
+            if (existingEntity)
+            {
+                // returnera att användaren redan finns.
             }
 
             var directoryPath = Path.Combine(_environment.WebRootPath, "uploads");
             Directory.CreateDirectory(directoryPath);
 
-            var filePath = Path.Combine(directoryPath, $"{Guid.NewGuid()}_{model.ProfileImage.FileName}");
+            var fileName = $"{Guid.NewGuid()}_{model.ProfileImage.FileName}";
+            var filePath = Path.Combine(directoryPath, fileName);
+            var relativePath = $"uploads/{fileName}";
 
             using (var fileStream = new FileStream(filePath, FileMode.Create))
-            {
-                await fileStream.CopyToAsync(fileStream);
+            {                
+                await model.ProfileImage.CopyToAsync(fileStream);
             }
 
             CreateMemberRegForm dto = new CreateMemberRegForm()
@@ -61,25 +99,125 @@ namespace Alpha_Mvc.Controllers
                 LastName = model.LastName,
                 Email = model.Email,
                 PhoneNumber = model.PhoneNumber,
+                JobTitle = model.JobTitle,
                 StreetAddress = model.StreetAddress,
                 PostalCode = model.PostalCode,
-                Role = model.Role,
                 City = model.City,
-                DateOfBirth = model.DateOfBirth,
-                ProfileImage = filePath
+                PassWord = "AddMember123!",
+                DateOfBirth = new (model.BirthYear, model.BirthMonth, model.BirthDay),
+                ProfileImage = relativePath,
             };
 
-            var newModel = await _memberService.AddMember(dto);
+            var newModel = await _memberService.AddMemberAsync(dto);
             if (newModel != null) 
             {
-                return View("Index", model);
+                return RedirectToAction("Index");
             }
             else
             {
-                return View("Index", model);
+                var members = await _memberService.GetAllMembersAsync();
+                var viewModel = new TeamMembersViewModel
+                {
+                    Member = model,
+                    Users = members.Select(member => new UserModel
+                    {
+                        Id = member.Id,
+                        FirstName = member.FirstName,
+                        LastName = member.LastName,
+                        Email = member.Email,
+                        PhoneNumber = member.PhoneNumber,
+                        JobTitle = member.JobTitle,
+                        ProfilePicture = Url.Content($"~/{member.ProfileImage}")
+                    }),
+                };
+
+                ModelState.AddModelError("viewModel", "Failed to create member.");
+                return View("Index", viewModel);
             }
             
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> EditMember(UserModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                var members = await _memberService.GetAllMembersAsync();
+                var viewModel = new TeamMembersViewModel
+                {
+                    Member = new CreateMemberFormModel(),
+                    Users = members.Select(member => new UserModel
+                    {
+                        Id = member.Id,
+                        FirstName = member.FirstName,
+                        LastName = member.LastName,
+                        Email = member.Email,
+                        PhoneNumber = member.PhoneNumber,
+                        JobTitle = member.JobTitle
+                    }),
+                };
+                return View("Index", viewModel);
+            }
+
+            var existingMember = await _memberService.GetMemberAsync(x => x.Id == model.Id);
+            if (existingMember == null) return null!;
+
+            string? relativePath = null;
+
+            if (model.ProfilePicture != null)
+            {
+                var directoryPath = Path.Combine(_environment.WebRootPath, "uploads");
+                Directory.CreateDirectory(directoryPath);
+
+                var fileName = $"{Guid.NewGuid()}_{model.ProfileImage.FileName}";
+                var filePath = Path.Combine(directoryPath, fileName);
+                relativePath = $"uploads/{fileName}";
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.ProfileImage.CopyToAsync(fileStream);
+                };
+            }
+
+            var memberModel = new MemberModel()
+            {
+                Id = model.Id,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                PhoneNumber = model.PhoneNumber,
+                JobTitle = model.JobTitle,
+                StreetAddress = model.StreetAddress,
+                PostalCode = model.PostalCode,
+                City = model.City,
+                DateOfBirth = new(model.BirthYear, model.BirthMonth, model.BirthDay),
+                ProfileImage = relativePath ?? existingMember.ProfileImage
+            };
+
+            MemberModel updatedModel = await _memberService.UpdateMember(memberModel);
+            if (updatedModel == null) return null!;
+
+            return RedirectToAction("Index");
+            
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteMember(Guid id)
+        {
+            var result = await _memberService.DeleteMember(id);
+
+            if (result)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("Index");
+            }
+        }
+
 
         [Route("add-project")]
         [HttpPost]

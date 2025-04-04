@@ -4,7 +4,7 @@ namespace Alpha_Mvc.Models;
 
 public class CreateAccountModel
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 
     [Required(ErrorMessage = "First name is required.")]
     [Display(Name = "First Name", Prompt = "Enter first name...")]

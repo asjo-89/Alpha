@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Data.Entities;
 
-public class MemberUserEntity : IdentityUser
+public class MemberUserEntity : IdentityUser<Guid>
 {
     [ProtectedPersonalData]
     [Required]
@@ -26,18 +26,22 @@ public class MemberUserEntity : IdentityUser
     [EmailAddress]
     public override string? Email { get; set; } = null!;
 
+    // Lägg i ProfileEntity
     [ProtectedPersonalData]
     [DataType(DataType.Date)]
     public DateOnly? DateOfBirth { get; set; }
 
+    // Ta bort
     [Required]
     [Column(TypeName = "nvarchar(100)")]
     [DataType(DataType.Password)]
     public string Password { get; set; } = null!;
 
+    // Lägg i ProfileEntity
     [ProtectedPersonalData]
     public Guid? AddressId { get; set; }
 
+    // Lägg i ProfileEntity
     public Guid? PictureId { get; set; }
 
 

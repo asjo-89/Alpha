@@ -76,7 +76,7 @@ public class BaseRepository<TEntity>(AlphaDbContext context) : IBaseRepository<T
         return true;
     }
 
-    public async Task<ICollection<TEntity>> GetAllAsync()
+    public virtual async Task<ICollection<TEntity>> GetAllAsync()
     {
         var entities = await _entities.ToListAsync();
         return entities;
@@ -88,11 +88,23 @@ public class BaseRepository<TEntity>(AlphaDbContext context) : IBaseRepository<T
         return entity;
     }
 
+    public async Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> expression)
+    {
+        var result = await _entities.FirstOrDefaultAsync(expression);
+        
+        if (result == null) return false;
+
+        return true;
+    } 
+
     public bool UpdateAsync(TEntity entity)
     {
         if (entity == null) return false;
 
-        _entities.Update(entity);
+        var updatedEntity = _entities.Update(entity);
+
+        if (updatedEntity == null) return false;
+
         return true;
     }
 
