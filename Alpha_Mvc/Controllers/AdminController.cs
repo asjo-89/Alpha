@@ -138,90 +138,69 @@ namespace Alpha_Mvc.Controllers
         }
 
 
-        //[HttpPost]
-        //public async Task<IActionResult> EditMember(UserModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        var members = await _memberService.GetAllMembersAsync();
-        //        var viewModel = new TeamMembersViewModel
-        //        {
-        //            Member = new CreateMemberFormModel(),
-        //            Users = members.Select(member => new UserModel
-        //            {
-        //                Id = member.Id,
-        //                FirstName = member.FirstName,
-        //                LastName = member.LastName,
-        //                Email = member.Email,
-        //                PhoneNumber = member.PhoneNumber,
-        //                JobTitle = member.JobTitle
-        //            }),
-        //        };
-        //        return View("Index", viewModel);
-        //    }
+        [HttpPost]
+        public async Task<IActionResult> EditMember(UserModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                var members = await _memberService.GetAllMembersAsync();
+                var viewModel = new TeamMembersViewModel
+                {
+                    Member = new CreateMemberFormModel(),
+                    Users = members.Select(member => new UserModel
+                    {
+                        Id = member.Id,
+                        FirstName = member.FirstName,
+                        LastName = member.LastName,
+                        Email = member.Email,
+                        PhoneNumber = member.PhoneNumber,
+                        JobTitle = member.JobTitle
+                    }),
+                };
+                return View("Index", viewModel);
+            }
 
-        //    MemberModel memberModel = new();
+            var existingMember = await _memberService.GetMemberAsync(x => x.Id == model.Id);
+            if (existingMember == null) return null!;
 
-        //    var existingMember = await _memberService.GetMemberAsync(x => x.Id == model.Id);
-        //    if (existingMember == null) return null!;
+            string? relativePath = null;
 
-        //    if (model.ProfilePicture.ToString() != existingMember.ProfileImage)
-        //    {
-        //        var directoryPath = Path.Combine(_environment.WebRootPath, "uploads");
-        //        Directory.CreateDirectory(directoryPath);
+            if (model.ProfilePicture != null)
+            {
+                var directoryPath = Path.Combine(_environment.WebRootPath, "uploads");
+                Directory.CreateDirectory(directoryPath);
 
-        //        var fileName = $"{Guid.NewGuid()}_{model.ProfilePicture.FileName}";
-        //        var filePath = Path.Combine(directoryPath, fileName);
-        //        var relativePath = $"uploads/{fileName}";
+                var fileName = $"{Guid.NewGuid()}_{model.ProfileImage.FileName}";
+                var filePath = Path.Combine(directoryPath, fileName);
+                relativePath = $"uploads/{fileName}";
 
-        //        using (var fileStream = new FileStream(filePath, FileMode.Create))
-        //        {
-        //            await model.ProfilePicture.CopyToAsync(fileStream);
-        //        };
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.ProfileImage.CopyToAsync(fileStream);
+                };
+            }
 
-        //        memberModel = new()
-        //        {
-        //            Id = model.Id,
-        //            FirstName = model.FirstName,
-        //            LastName = model.LastName,
-        //            Email = model.Email,
-        //            PhoneNumber = model.PhoneNumber,
-        //            JobTitle = model.JobTitle,
-        //            StreetAddress = model.StreetAddress,
-        //            PostalCode = model.PostalCode,
-        //            City = model.City,
-        //            DateOfBirth = new(model.BirthYear, model.BirthMonth, model.BirthDay),
-        //            ProfileImage = filePath
-        //        };
+            var memberModel = new MemberModel()
+            {
+                Id = model.Id,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                PhoneNumber = model.PhoneNumber,
+                JobTitle = model.JobTitle,
+                StreetAddress = model.StreetAddress,
+                PostalCode = model.PostalCode,
+                City = model.City,
+                DateOfBirth = new(model.BirthYear, model.BirthMonth, model.BirthDay),
+                ProfileImage = relativePath ?? existingMember.ProfileImage
+            };
 
-        //        MemberModel updatedModelNewPic = await _memberService.UpdateMember(memberModel);
-        //        if (updatedModelNewPic == null) return null!;
+            MemberModel updatedModel = await _memberService.UpdateMember(memberModel);
+            if (updatedModel == null) return null!;
 
-        //        return RedirectToAction("Index");
-        //    } 
-        //    else
-        //    {
-        //        memberModel = new()
-        //        {
-        //            Id = model.Id,
-        //            FirstName = model.FirstName,
-        //            LastName = model.LastName,
-        //            Email = model.Email,
-        //            PhoneNumber = model.PhoneNumber,
-        //            JobTitle = model.JobTitle,
-        //            StreetAddress = model.StreetAddress,
-        //            PostalCode = model.PostalCode,
-        //            City = model.City,
-        //            DateOfBirth = new(model.BirthYear, model.BirthMonth, model.BirthDay),
-        //            ProfileImage = Url.Content($"~/{model.ProfilePicture}")
-        //        };
-
-        //        MemberModel updatedModel = await _memberService.UpdateMember(memberModel);
-        //        if (updatedModel == null) return null!;
-
-        //        return RedirectToAction("Index");
-        //    }
-        //}
+            return RedirectToAction("Index");
+            
+        }
 
 
         [HttpPost]
