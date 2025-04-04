@@ -1,0 +1,112 @@
+﻿@model ProjectFormModel
+
+@{
+}
+
+<div class="modal" id="addProjectModal">
+    <div class="modal-container">
+        <div class="top">
+            <h3>Add Project</h3>
+            <button type="button" class="exit" data-close="true">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="image-preview-container">
+            <div id="circle" class="border-circle">
+                <div class="camera" id="camera-project">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+
+            </div>
+
+            <img id="image-preview" class="image-preview" src="#" />
+        </div>
+
+        <form class="form" method="post">
+            <div class="form-inputs-container">
+                <div class="form-group">
+                    <label asp-for="ProjectImage" hidden></label>
+                    <input asp-for="ProjectImage" class="image-input" accept="image/*" hidden />
+                    <span asp-validation-for="ProjectImage"></span>
+                </div>
+
+                <div class="input-container">
+                    <label class="label" asp-for="ProjectName">Project Name</label>
+                    <input type="text" class="input" asp-for="ProjectName">
+                    <span asp-validation-for="ProjectName"></span>
+                </div>
+
+                <div class="input-container">
+                    <label class="label" asp-for="ClientName">Client Name</label>
+                    <input type="text" class="input" asp-for="ClientName">
+                    <span asp-validation-for="ClientName"></span>
+                </div>
+                <div class="input-container">
+                    <label class="label" asp-for="ProjectDescription">Description</label>
+                    <textarea type="text" class="input text-area" asp-for="ProjectDescription"></textarea>
+                    <span asp-validation-for="ProjectDescription"></span>
+                </div>
+                <div class="form-group">
+                    <div class="start">
+                        <label class="label" asp-for="StartDate">Start Date</label>
+                        <input type="date" class="input" asp-for="StartDate">
+                        <span asp-validation-for="StartDate"></span>
+                    </div>
+                    <div class="end">
+                        <label class="label" asp-for="EndDate">End Date</label>
+                        <input type="date" class="input" asp-for="EndDate">
+                        <span asp-validation-for="EndDate"></span>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label class="label" for="members">Members</label>
+                    <input type="text" class="input form-search" id="members" placeholder="Choose members">
+                </div>
+                <div class="input-container">
+                    <label class="label" asp-for="Budget">Budget</label>
+                    <input type="text" class="input budget" asp-for="Budget">
+                    <span asp-validation-for="Budget"></span>
+                </div>
+            </div>
+            <button type="submit" class="btn">
+                Create
+            </button>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const camera = document.querySelector("#camera-project");
+        const imageInput = document.querySelector("#ProjectImage");
+
+        if (!imageInput) return;
+
+        camera.addEventListener("click", () => {
+            imageInput.click();
+        });
+
+        imageInput.addEventListener("change", (e) => {
+            const image = e.target.files[0];
+            const circle = document.querySelector("#circle");
+            const imagePreview = document.querySelector("#image-preview");
+
+            if (image) {
+                const reader = new FileReader();
+
+                reader.onload = (e) => {
+                    imagePreview.src = e.target.result;
+                    circle.style.display = "none";
+                    imagePreview.style.display = "block";
+                };
+
+                reader.readAsDataURL(image);
+            } else {
+                circle.style.display = "block";
+                imagePreview.style.display = "none";
+            }
+        })
+    })
+</script>

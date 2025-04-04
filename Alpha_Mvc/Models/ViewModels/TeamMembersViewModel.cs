@@ -1,4 +1,4 @@
-﻿namespace Alpha_Mvc.Models;
+﻿namespace Alpha_Mvc.Models.ViewModels;
 
 public class TeamMembersViewModel
 {

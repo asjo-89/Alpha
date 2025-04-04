@@ -1,9 +1,11 @@
-﻿@{
+﻿@model ProjectsViewModel
+
+@{
     ViewData["Css"] = "~/css/home.css";
     ViewData["Css2"] = "~/css/projectForms.css";
 }
 
-<partial name="Sections/_AddProject" />
+@await Html.PartialAsync("Sections/_AddProjectSection", Model.Project)
 
 
 <div class="top">
