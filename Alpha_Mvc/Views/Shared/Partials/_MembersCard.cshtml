@@ -12,7 +12,7 @@
     <div class="dropdown-container">
         <img id="menu-button" class="options" src="/images/Icons/Dots.svg" alt="An image of three dots.">
         <div class="dropdown-content">
-            <a class="menu-option option-edit" data-modal="true" data-target="#editMemberModal">Edit Member</a>
+            <a class="menu-option option-edit" data-modal="true" data-target="#editMemberModal_@Model.Id">Edit Member</a>
             <hr />
             <form class="dropdown-form" asp-action="DeleteMember" asp-route-id="@Model.Id" asp-controller="Admin">
                 <button type="submit" class="menu-option option-delete">Delete Member</button>                
