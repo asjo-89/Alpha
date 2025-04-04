@@ -2,6 +2,7 @@
 
 public class TeamMembersViewModel
 {
+    //public IEnumerable<UserModel> Users { get; set; } = [];
     public IEnumerable<UserModel> Users { get; set; } = [];
 
     public UserModel User { get; set; } = new();

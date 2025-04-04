@@ -1,7 +1,10 @@
 using Alpha_Mvc.Models;
 using AspNetCoreGeneratedDocument;
 using Business.Dtos;
+using Business.Factories;
 using Business.Interfaces;
+using Business.Models;
+using Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -22,7 +25,7 @@ namespace Alpha_Mvc.Controllers
             ViewData["Title"] = "Admin";
             ViewData["Header"] = "Team Members";
 
-            var members = await _memberService.GetAllMembers();
+            var members = await _memberService.GetAllMembersAsync();
 
             var viewModel = new TeamMembersViewModel
             {
@@ -41,18 +44,19 @@ namespace Alpha_Mvc.Controllers
             return View(viewModel);
         }
 
+
         [HttpPost]
         public async Task<IActionResult> AddMember(CreateMemberFormModel model)
         {
             if (!ModelState.IsValid)
             {
-                var members = await _memberService.GetAllMembers();
+                var members = await _memberService.GetAllMembersAsync();
                 var viewModel = new TeamMembersViewModel
                 {
                     Member = model,
                     Users = members.Select(member => new UserModel
                     {
-                        Id = member.Id,                        
+                        Id = member.Id,
                         FirstName = member.FirstName,
                         LastName = member.LastName,
                         Email = member.Email,
@@ -61,6 +65,20 @@ namespace Alpha_Mvc.Controllers
                     }),
                 };
                 return View("Index", viewModel);
+            }
+
+            MemberUserEntity entity = new()
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                Password = ""
+            };
+
+            var existingEntity = await _memberService.ExistsAsync(x => x.Email == entity.Email);
+            if (existingEntity)
+            {
+                // returnera att användaren redan finns.
             }
 
             var directoryPath = Path.Combine(_environment.WebRootPath, "uploads");
@@ -90,14 +108,14 @@ namespace Alpha_Mvc.Controllers
                 ProfileImage = relativePath,
             };
 
-            var newModel = await _memberService.AddMember(dto);
+            var newModel = await _memberService.AddMemberAsync(dto);
             if (newModel != null) 
             {
                 return RedirectToAction("Index");
             }
             else
             {
-                var members = await _memberService.GetAllMembers();
+                var members = await _memberService.GetAllMembersAsync();
                 var viewModel = new TeamMembersViewModel
                 {
                     Member = model,
@@ -120,32 +138,105 @@ namespace Alpha_Mvc.Controllers
         }
 
 
+        //[HttpPost]
+        //public async Task<IActionResult> EditMember(UserModel model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        var members = await _memberService.GetAllMembersAsync();
+        //        var viewModel = new TeamMembersViewModel
+        //        {
+        //            Member = new CreateMemberFormModel(),
+        //            Users = members.Select(member => new UserModel
+        //            {
+        //                Id = member.Id,
+        //                FirstName = member.FirstName,
+        //                LastName = member.LastName,
+        //                Email = member.Email,
+        //                PhoneNumber = member.PhoneNumber,
+        //                JobTitle = member.JobTitle
+        //            }),
+        //        };
+        //        return View("Index", viewModel);
+        //    }
+
+        //    MemberModel memberModel = new();
+
+        //    var existingMember = await _memberService.GetMemberAsync(x => x.Id == model.Id);
+        //    if (existingMember == null) return null!;
+
+        //    if (model.ProfilePicture.ToString() != existingMember.ProfileImage)
+        //    {
+        //        var directoryPath = Path.Combine(_environment.WebRootPath, "uploads");
+        //        Directory.CreateDirectory(directoryPath);
+
+        //        var fileName = $"{Guid.NewGuid()}_{model.ProfilePicture.FileName}";
+        //        var filePath = Path.Combine(directoryPath, fileName);
+        //        var relativePath = $"uploads/{fileName}";
+
+        //        using (var fileStream = new FileStream(filePath, FileMode.Create))
+        //        {
+        //            await model.ProfilePicture.CopyToAsync(fileStream);
+        //        };
+
+        //        memberModel = new()
+        //        {
+        //            Id = model.Id,
+        //            FirstName = model.FirstName,
+        //            LastName = model.LastName,
+        //            Email = model.Email,
+        //            PhoneNumber = model.PhoneNumber,
+        //            JobTitle = model.JobTitle,
+        //            StreetAddress = model.StreetAddress,
+        //            PostalCode = model.PostalCode,
+        //            City = model.City,
+        //            DateOfBirth = new(model.BirthYear, model.BirthMonth, model.BirthDay),
+        //            ProfileImage = filePath
+        //        };
+
+        //        MemberModel updatedModelNewPic = await _memberService.UpdateMember(memberModel);
+        //        if (updatedModelNewPic == null) return null!;
+
+        //        return RedirectToAction("Index");
+        //    } 
+        //    else
+        //    {
+        //        memberModel = new()
+        //        {
+        //            Id = model.Id,
+        //            FirstName = model.FirstName,
+        //            LastName = model.LastName,
+        //            Email = model.Email,
+        //            PhoneNumber = model.PhoneNumber,
+        //            JobTitle = model.JobTitle,
+        //            StreetAddress = model.StreetAddress,
+        //            PostalCode = model.PostalCode,
+        //            City = model.City,
+        //            DateOfBirth = new(model.BirthYear, model.BirthMonth, model.BirthDay),
+        //            ProfileImage = Url.Content($"~/{model.ProfilePicture}")
+        //        };
+
+        //        MemberModel updatedModel = await _memberService.UpdateMember(memberModel);
+        //        if (updatedModel == null) return null!;
+
+        //        return RedirectToAction("Index");
+        //    }
+        //}
+
+
         [HttpPost]
-        public async Task<IActionResult> EditMember(CreateMemberFormModel model)
+        public async Task<IActionResult> DeleteMember(Guid id)
         {
-            if (!ModelState.IsValid)
+            var result = await _memberService.DeleteMember(id);
+
+            if (result)
             {
-                var members = await _memberService.GetAllMembers();
-                var viewModel = new TeamMembersViewModel
-                {
-                    Member = model,
-                    Users = members.Select(member => new UserModel
-                    {
-                        Id = member.Id,
-                        FirstName = member.FirstName,
-                        LastName = member.LastName,
-                        Email = member.Email,
-                        PhoneNumber = member.PhoneNumber,
-                        JobTitle = member.JobTitle
-                    }),
-                };
-                return View("Index", viewModel);
+                return RedirectToAction("Index");
             }
-
-            return View("Index");
-
-
-
+            else
+            {
+                return View("Index");
+            }
         }
 
 

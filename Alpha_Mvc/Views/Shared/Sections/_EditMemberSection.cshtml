@@ -1,0 +1,155 @@
+﻿@model UserModel
+
+
+<div class="modal" id="addMemberModal">
+    <div class="modal-container">
+        <div class="top">
+            <h3>Add Member</h3>
+            <button type="button" class="exit" data-close="true">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <form class="form" method="post" asp-action="AddMember" asp-controller="Admin" enctype="multipart/form-data">
+            <div class="image-preview-container">
+                <div id="circle" class="border-circle">
+                    <div class="camera" id="camera">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+
+                </div>
+
+                <img id="image-preview" class="image-preview" src="#" />
+            </div>
+
+            <div class="form-inputs-container">
+                <div class="form-group">
+                    <label asp-for="ProfilePicture" hidden></label>
+                    <input asp-for="ProfilePicture" class="image-input" accept="image/*" hidden />
+                    <span asp-validation-for="ProfilePicture"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-container">
+                        <label class="label" asp-for="FirstName"></label>
+                        <input type="text" class="input" asp-for="FirstName">
+                        <span asp-validation-for="FirstName"></span>
+                    </div>
+                    <div class="input-container">
+                        <label class="label" asp-for="LastName"></label>
+                        <input type="text" class="input" asp-for="LastName">
+                        <span asp-validation-for="LastName"></span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label class="label" asp-for="Email"></label>
+                    <input type="email" class="input" asp-for="Email">
+                    <span asp-validation-for="Email"></span>
+                </div>
+
+                <div class="input-container">
+                    <label class="label" asp-for="PhoneNumber"></label>
+                    <input type="text" class="input" asp-for="PhoneNumber">
+                    <span asp-validation-for="PhoneNumber"></span>
+                </div>
+
+                <div class="input-container">
+                    <label class="label" asp-for="JobTitle"></label>
+                    <input type="text" class="input" asp-for="JobTitle">
+                    <span asp-validation-for="JobTitle"></span>
+                </div>
+
+                @* <div class="input-container"> *@
+                @*     <label class="label" asp-for="StreetAddress"></label> *@
+                @*     <input type="text" class="input street" asp-for="StreetAddress"> *@
+                @*     <span asp-validation-for="StreetAddress"></span> *@
+                @* </div> *@
+
+                @* <div class="form-group"> *@
+                @*     <div class="input-container"> *@
+                @*         <label class="label" asp-for="PostalCode"></label> *@
+                @*         <input class="input postal-code" asp-for="PostalCode"> *@
+                @*         <span asp-validation-for="PostalCode" class="postal-span"></span> *@
+                @*     </div> *@
+                @*     <div class="input-container"> *@
+                @*         <label class="label" asp-for="City"></label> *@
+                @*         <input type="text" class="input city" asp-for="City"> *@
+                @*         <span asp-validation-for="City" class="city-span"></span> *@
+                @*     </div> *@
+
+                @* </div> *@
+                @* <div class="form-group"> *@
+                @*     <div class="day"> *@
+                @*         <label class="label day-label" asp-for="BirthDay">Day</label> *@
+                @*         <select id="day" class="input day" asp-for="BirthDay"> *@
+                @*             <option value="">-- Select Day --</option> *@
+                @*             @for (int i = 1; i <= 31; i++) *@
+                @*             { *@
+                @*                 <option value="@i">@i</option> *@
+                @*             } *@
+                @*         </select> *@
+                @*     </div> *@
+                @*     <div class="month"> *@
+                @*         <label class="label birth-label" asp-for="BirthMonth">Month</label> *@
+                @*         <select id="month" class="input month" asp-for="BirthMonth"> *@
+                @*             <option value="">-- Select Month --</option> *@
+                @*             @for (int i = 1; i <= 12; i++) *@
+                @*             { *@
+                @*                 <option value="@i">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(@i)</option> *@
+                @*             } *@
+                @*         </select> *@
+                @*     </div> *@
+                @*     <div class="year"> *@
+                @*         <label class="label birth-label" asp-for="BirthYear">Year</label> *@
+                @*         <select id="year" class="input year" asp-for="BirthYear"> *@
+                @*             <option value="">-- Select Year --</option> *@
+                @*             @for (int i = DateTime.Now.Year; i >= 1900; i--) *@
+                @*             { *@
+                @*                 <option value="@i">@i</option> *@
+                @*             } *@
+                @*         </select> *@
+                @*     </div> *@
+                @* </div> *@
+            </div>
+            <button type="submit" class="btn">
+                Add Member
+            </button>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const camera = document.querySelector("#camera");
+        const imageInput = document.querySelector("#ProfileImage");
+
+        if (!imageInput) return;
+
+        camera.addEventListener("click", () => {
+            imageInput.click();
+        });
+
+        imageInput.addEventListener("change", (e) => {
+            const image = e.target.files[0];
+            const circle = document.querySelector("#circle");
+            const imagePreview = document.querySelector("#image-preview");
+
+            if (image) {
+                const reader = new FileReader();
+
+                reader.onload = (e) => {
+                    imagePreview.src = e.target.result;
+                    circle.style.display = "none";
+                    imagePreview.style.display = "block";
+                };
+
+                reader.readAsDataURL(image);
+            } else {
+                circle.style.display = "block";
+                imagePreview.style.display = "none";
+            }
+        })
+    })
+</script>

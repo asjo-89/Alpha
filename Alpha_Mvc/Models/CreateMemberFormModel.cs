@@ -4,8 +4,6 @@ namespace Alpha_Mvc.Models;
 
 public class CreateMemberFormModel
 {
-    public Guid Id { get; set; }
-
     [Required(ErrorMessage = "First name is required.")]
     [Display(Name = "First Name", Prompt = "Enter first name...")]
     public string FirstName { get; set; } = null!;
@@ -50,9 +48,9 @@ public class CreateMemberFormModel
     public int BirthMonth { get; set; }
     public int BirthYear { get; set; }
 
-    [Required(ErrorMessage = "Date of birth is required.")]
+    //[Required(ErrorMessage = "Date of birth is required.")]
     [Display(Name = "Date Of Birth", Prompt = "Enter date of birth...")]
-    public DateOnly DateOfBirth { get; set; }
+    public DateOnly? DateOfBirth { get; set; }
 
     [Required(ErrorMessage = "You need to select a profile image.")]
     [DataType(DataType.ImageUrl)]

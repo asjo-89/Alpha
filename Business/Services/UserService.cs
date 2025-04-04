@@ -52,7 +52,7 @@ public class UserService(IBaseRepository<MemberUserEntity> repository, IAddressR
 
             MemberModel newUser = new MemberModel()
             {
-                Id = Guid.Parse(userEntity.Id),
+                Id = userEntity.Id,
                 FirstName = userEntity.FirstName,
                 LastName = userEntity.LastName,
                 Email = userEntity.Email,

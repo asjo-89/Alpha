@@ -6,14 +6,17 @@
     ViewData["Css"] = "~/css/admin.css"; 
 }
 
-<div class="card">
+@await Html.PartialAsync("Sections/_EditMemberSection", Model)
 
+<div class="card">
     <div class="dropdown-container">
         <img id="menu-button" class="options" src="/images/Icons/Dots.svg" alt="An image of three dots.">
         <div class="dropdown-content">
-            <p class="menu-option option-edit">Edit Member</p>
+            <a class="menu-option option-edit" data-modal="true" data-target="#addMemberModal">Edit Member</a>
             <hr />
-            <p class="menu-option option-delete">Delete Member</p>
+            <form class="dropdown-form" asp-action="DeleteMember" asp-route-id="@Model.Id" asp-controller="Admin">
+                <button type="submit" class="menu-option option-delete">Delete Member</button>                
+            </form>
         </div>
     </div>
 

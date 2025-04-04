@@ -14,7 +14,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AlphaDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddIdentity<MemberUserEntity, IdentityRole>(x =>
+builder.Services.AddIdentity<MemberUserEntity, IdentityRole<Guid>>(x =>
     {
         x.Password.RequiredLength = 8;
         x.User.RequireUniqueEmail = true;
@@ -54,8 +54,23 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapStaticAssets();
 
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole<Guid>>>();
+    string[] roles = { "Administrator", "User", "Frontend Developer", "Backend Developer" };
+
+    foreach(var role in roles)
+    {
+        var exists = await roleManager.RoleExistsAsync(role);
+        if (!exists)
+        {
+            await roleManager.CreateAsync(new IdentityRole<Guid>(role));
+        }
+    }
+};
+
+app.MapStaticAssets();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")

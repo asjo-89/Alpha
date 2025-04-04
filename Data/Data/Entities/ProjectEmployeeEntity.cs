@@ -6,7 +6,7 @@ namespace Data.Entities;
 public class ProjectEmployeeEntity
 {
     public Guid ProjectId { get; set; }
-    public string EmployeeId { get; set; } = null!;
+    public Guid EmployeeId { get; set; } 
 
 
     // Relations
