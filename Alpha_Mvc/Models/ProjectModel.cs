@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Business.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Alpha_Mvc.Models;
 
@@ -43,4 +44,7 @@ public class ProjectModel
 
     [Required(ErrorMessage = "Image is required.")]
     public IFormFile ProjectImage { get; set; } = null!;
+
+    public IEnumerable<MemberModel> Members { get; set; } = []; 
+    public IEnumerable<ProjectNotesModel> ProjectNotes { get; set; } = [];
 }

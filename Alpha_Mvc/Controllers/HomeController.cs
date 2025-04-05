@@ -16,8 +16,10 @@ namespace Alpha_Mvc.Controllers
 
             ProjectsViewModel viewModel = new ProjectsViewModel()
             {
-                Project = new ProjectFormModel(),
-                ProjectModel = new ProjectModel()
+                ProjectForm = new ProjectFormModel(),
+                ProjectModel = new ProjectModel(),
+                ClientModel = new ClientModel(),
+                StatusModel = new StatusModel(),
             };
 
             return View(viewModel);
