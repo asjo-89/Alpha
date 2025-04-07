@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities;
 
@@ -30,8 +31,8 @@ public class ProjectEntity
     [Required]
     public Guid PictureId { get; set; }
 
-    public Guid ClientId { get; set; }
-    public Guid? MemberId { get; set; }
+    public Guid? ClientId { get; set; }
+    public Guid? ProjectMemberId { get; set; }
     public Guid? ProjectNoteId { get; set; }
 
 
@@ -40,8 +41,18 @@ public class ProjectEntity
 
     // Navigation
 
+    [ForeignKey(nameof(PictureId))]
     public PictureEntity Picture { get; set; } = null!;
-    public ClientEntity Client { get; set; } = null!;
-    public ICollection<ProjectMemberEntity>? Member { get; set; } = [];
+
+
+    [ForeignKey(nameof(ClientId))]
+    public ClientEntity? Client { get; set; } = null!;
+
+
+    [ForeignKey(nameof(ProjectMemberId))]
+    public ICollection<ProjectMemberEntity>? ProjectMembers { get; set; } = [];
+
+
+    [ForeignKey(nameof(ProjectNoteId))]
     public ICollection<ProjectNoteEntity>? ProjectNotes { get; set; } = [];
 }

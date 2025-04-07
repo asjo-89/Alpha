@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities;
 
@@ -20,6 +21,12 @@ public class MemberEntity
     [DataType(DataType.Text)]
     public string JobTitle { get; set; } = null!;
 
+
+    [Required, ProtectedPersonalData]
+    [DataType(DataType.Date)]
+    public DateOnly DateOfBirth { get; set; }
+
+
     [Required, ProtectedPersonalData]
     [DataType(DataType.Password)]
     public string Password { get; set; } = null!;
@@ -28,7 +35,7 @@ public class MemberEntity
     [Required, ProtectedPersonalData]
     public Guid AddressId { get; set; }
     public Guid? PictureId { get; set; }
-    public Guid? ProjectId { get; set; }
+    public Guid? ProjectMemberId { get; set; }
     public Guid? ProjectNoteId { get; set; }
 
 
@@ -37,9 +44,19 @@ public class MemberEntity
 
     // Navigation
 
+    [ForeignKey(nameof(AddressId))]
     public AddressEntity Address { get; set; } = null!;
+
+
+    [ForeignKey(nameof(PictureId))]
     public PictureEntity? Picture { get; set; }
-    public ICollection<ProjectMemberEntity>? Projects { get; set; } = [];
+
+
+    [ForeignKey(nameof(ProjectMemberId))]
+    public ICollection<ProjectMemberEntity>? ProjectMembers { get; set; } = [];
+
+
+    [ForeignKey(nameof(ProjectNoteId))]
     public ICollection<PictureEntity>? ProjectNotes { get; set; } = [];
 
 

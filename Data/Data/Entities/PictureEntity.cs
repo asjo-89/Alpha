@@ -11,14 +11,13 @@ public class PictureEntity
     [DataType(DataType.ImageUrl)]
     public string ImageUrl { get; set; } = null!;
 
-    public Guid? UserId { get; set; }
-
 
 
 
 
     // Navigation
 
-    public ICollection<MemberEntity>? MemberEntities { get; set; } = [];
+    public ICollection<MemberEntity>? Members { get; set; } = [];
+
     public ICollection<ProjectEntity>? ProjectEntities { get; set; } = [];
 }

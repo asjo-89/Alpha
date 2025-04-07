@@ -1,4 +1,6 @@
-﻿namespace Data.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities;
 
 public class ProjectMemberEntity
 {
@@ -8,6 +10,7 @@ public class ProjectMemberEntity
 
 
     // Navigation
+
 
     public MemberEntity Member { get; set; } = null!;
     public ProjectEntity Project { get; set; } = null!;
