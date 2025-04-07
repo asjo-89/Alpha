@@ -12,6 +12,9 @@ public class ProjectMemberEntity
     // Navigation
 
 
+    [ForeignKey(nameof(MemberId))]
     public MemberEntity Member { get; set; } = null!;
+
+    [ForeignKey(nameof(ProjectId))]
     public ProjectEntity Project { get; set; } = null!;
 }
