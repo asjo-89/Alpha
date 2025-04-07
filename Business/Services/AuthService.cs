@@ -1,11 +1,12 @@
 ﻿using Business.Dtos;
+using Business.Interfaces;
 using Data.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Business.Services;
 
-public class AuthService(UserManager<MemberUserEntity> userManager)
+public class AuthService(UserManager<MemberUserEntity> userManager) : IAuthService
 {
     private readonly UserManager<MemberUserEntity> _userManager = userManager;
 
