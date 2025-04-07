@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities;
 
@@ -9,43 +8,40 @@ public class ProjectEntity
     public Guid Id { get; set; }
 
     [Required]
-    [Column(TypeName = "nvarchar(50)")]
-    public string ProjectName { get; set; } = null!;
+    [DataType(DataType.Text)]
+    public string ProjectTitle { get; set; } = null!;
+
+    [DataType(DataType.Text)]
+    public string? Description { get; set; }
 
     [Required]
-    [Column(TypeName = "nvarchar(max)")]
-    public string ProjectDescription { get; set; } = null!;
-
-    [Required]
+    [DataType(DataType.DateTime)]
     public DateTime StartDate { get; set; }
 
     [Required]
+    [DataType(DataType.DateTime)]
     public DateTime EndDate { get; set; }
 
-    [Required]
-    [Column(TypeName = "decimal(18,2)")]
-    public decimal Budget { get; set; }
+    public decimal? Budget {  get; set; }
 
-    [Required]
-    public Guid ClientId { get; set; }
 
-    [Required]
-    public Guid StatusId { get; set; }
+
 
     [Required]
     public Guid PictureId { get; set; }
 
+    public Guid ClientId { get; set; }
+    public Guid? MemberId { get; set; }
+    public Guid? ProjectNoteId { get; set; }
 
-    // Relations
-    public ICollection<ProjectEmployeeEntity> ProjectEmployees { get; set; } = [];
-    public ICollection<ProjectNoteEntity> Notes { get; set; } = [];
 
-    [ForeignKey(nameof(ClientId))]
-    public ClientEntity Client { get; set; } = null!;
 
-    [ForeignKey(nameof(StatusId))]
-    public StatusEntity Status { get; set; } = null!;
 
-    [ForeignKey(nameof(PictureId))]
+
+    // Navigation
+
     public PictureEntity Picture { get; set; } = null!;
+    public ClientEntity Client { get; set; } = null!;
+    public ICollection<ProjectMemberEntity>? Member { get; set; } = [];
+    public ICollection<ProjectNoteEntity>? ProjectNotes { get; set; } = [];
 }

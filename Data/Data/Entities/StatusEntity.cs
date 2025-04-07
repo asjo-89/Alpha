@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities;
 
@@ -9,10 +8,11 @@ public class StatusEntity
     public Guid Id { get; set; }
 
     [Required]
-    [Column(TypeName = "nvarchar(10)")]
+    [DataType(DataType.Text)]
     public string StatusName { get; set; } = null!;
 
 
-    //Relations
-    public ICollection<ProjectEntity> Projects { get; set; } = [];
+    // Navigation
+
+    public ICollection<ProjectEntity>? Projects { get; set; } = [];
 }

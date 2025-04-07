@@ -1,10 +1,4 @@
-using Business.Interfaces;
-using Business.Models;
-using Business.Services;
 using Data.Contexts;
-using Data.Entities;
-using Data.Interfaces;
-using Data.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,33 +8,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AlphaDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddIdentity<MemberUserEntity, IdentityRole<Guid>>(x =>
-    {
-        x.Password.RequiredLength = 8;
-        x.User.RequireUniqueEmail = true;
-        x.SignIn.RequireConfirmedEmail = false;
-    })
-    .AddEntityFrameworkStores<AlphaDbContext>()
-    .AddDefaultTokenProviders();
 
-builder.Services.ConfigureApplicationCookie(x =>
-{
-    x.LoginPath = "/auth/signin";
-    x.LogoutPath = "/auth/signout";
-    x.AccessDeniedPath = "/auth/accessDenied";
-    x.ExpireTimeSpan = TimeSpan.FromMinutes(15);
-    x.SlidingExpiration = true;
-});
 
-builder.Services.AddScoped<AuthService>();
-builder.Services.AddScoped<IBaseRepository<MemberUserEntity>, BaseRepository<MemberUserEntity>>();
-builder.Services.AddScoped<IBaseRepository<MemberModel>, BaseRepository<MemberModel>>();
-builder.Services.AddScoped<IAddressRepository, AddressRepository>();
-builder.Services.AddScoped<IPictureRepository, PictureRepository>();
-builder.Services.AddScoped<IBaseRepository<AddressEntity>, BaseRepository<AddressEntity>>();
-builder.Services.AddScoped<IBaseRepository<PictureEntity>, BaseRepository<PictureEntity>>();
-builder.Services.AddScoped<IMemberService, MemberService>();
-builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 if (!app.Environment.IsDevelopment())

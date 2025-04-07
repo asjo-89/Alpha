@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities;
 
@@ -8,24 +7,27 @@ public class ProjectNoteEntity
     [Key]
     public Guid Id { get; set; }
 
-    [Required]
-    [Column(TypeName = "nvarchar(max)")]
-    public string Note { get; set; } = null!;
 
     [Required]
-    public DateTime Created { get; set; }
+    [DataType(DataType.Text)]
+    public string Content { get; set; } = null!;
 
     [Required]
-    public Guid EmployeeId { get; set; }
+    [DataType(DataType.DateTime)]
+    public DateTime Created { get; set; } = DateTime.Now;
+
+
+
+
+    [Required]
+    public Guid UserId { get; set; }
 
     [Required]
     public Guid ProjectId { get; set; }
 
 
-    // Relations
-    [ForeignKey(nameof(EmployeeId))]
-    public MemberUserEntity Employee { get; set; } = null!;
+    // Navigation
 
-    [ForeignKey(nameof(ProjectId))]
-    public ProjectEntity Project {  get; set; } = null!;
+    public MemberEntity Member { get; set; } = null!;
+    public ProjectEntity Project { get; set; } = null!;
 }

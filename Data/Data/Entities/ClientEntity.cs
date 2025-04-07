@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities;
 
@@ -9,17 +8,20 @@ public class ClientEntity
     public Guid Id { get; set; }
 
     [Required]
-    [Column(TypeName = "nvarchar(50)")]
+    [DataType(DataType.Text)]
     public string ClientName { get; set; } = null!;
 
     [Required]
-    [Column(TypeName = "varchar(20)")]
-    public string PhoneNumber { get; set; } = null!;
+    [DataType(DataType.EmailAddress)]
+    public string Email { get; set; } = null!;
 
-    [Column(TypeName = "varchar(250)")]
-    public string? Email { get; set; }
+    [DataType(DataType.PhoneNumber)]
+    public string? PhoneNumber { get; set; }
 
 
-    // Relations
-    public ICollection<ProjectEntity> Projects { get; set; } = [];
+
+
+    // Navigation
+
+    public ICollection<ProjectEntity>? Projects { get; set; } = [];
 }
