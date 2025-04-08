@@ -1,14 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace Data.Entities;
 
+[Index(nameof(ClientName), IsUnique = true)]
 public class ClientEntity
 {
     [Key]
     public Guid Id { get; set; }
 
     [Required]
-    [DataType(DataType.Text)]
     public string ClientName { get; set; } = null!;
 
     [Required]
@@ -23,5 +24,5 @@ public class ClientEntity
 
     // Navigation
 
-    public ICollection<ProjectEntity>? Projects { get; set; } = [];
+    public virtual ICollection<ProjectEntity>? Projects { get; set; } = [];
 }

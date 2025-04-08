@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities;
@@ -9,20 +10,19 @@ public class ProjectEntity
     public Guid Id { get; set; }
 
     [Required]
-    [DataType(DataType.Text)]
     public string ProjectTitle { get; set; } = null!;
 
-    [DataType(DataType.Text)]
     public string? Description { get; set; }
 
     [Required]
-    [DataType(DataType.DateTime)]
+    [Column(TypeName = "date")]
     public DateTime StartDate { get; set; }
 
     [Required]
-    [DataType(DataType.DateTime)]
+    [Column(TypeName = "date")]
     public DateTime EndDate { get; set; }
 
+    [Precision(18, 2)]
     public decimal? Budget {  get; set; }
 
 
@@ -31,10 +31,11 @@ public class ProjectEntity
     [Required]
     public Guid PictureId { get; set; }
 
-    public Guid? ClientId { get; set; }
-    public Guid? ProjectMemberId { get; set; }
-    public Guid? ProjectNoteId { get; set; }
+    [Required]
+    public Guid ClientId { get; set; }
 
+    [Required]
+    public Guid StatusId { get; set; }
 
 
 
@@ -42,17 +43,17 @@ public class ProjectEntity
     // Navigation
 
     [ForeignKey(nameof(PictureId))]
-    public PictureEntity Picture { get; set; } = null!;
+    public virtual PictureEntity Picture { get; set; } = null!;
 
 
     [ForeignKey(nameof(ClientId))]
-    public ClientEntity? Client { get; set; } = null!;
+    public virtual ClientEntity Client { get; set; } = null!;
+
+    [ForeignKey(nameof(StatusId))]
+    public virtual StatusEntity Status { get; set; } = null!;
+
+    public virtual ICollection<ProjectMemberEntity>? ProjectMembers { get; set; } = [];
 
 
-    [ForeignKey(nameof(ProjectMemberId))]
-    public ICollection<ProjectMemberEntity>? ProjectMembers { get; set; } = [];
-
-
-    [ForeignKey(nameof(ProjectNoteId))]
-    public ICollection<ProjectNoteEntity>? ProjectNotes { get; set; } = [];
+    public virtual ICollection<ProjectNoteEntity>? ProjectNotes { get; set; } = [];
 }

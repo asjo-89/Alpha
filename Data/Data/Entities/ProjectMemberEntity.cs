@@ -13,8 +13,8 @@ public class ProjectMemberEntity
 
 
     [ForeignKey(nameof(MemberId))]
-    public MemberEntity Member { get; set; } = null!;
+    public virtual MemberUserEntity Member { get; set; } = null!;
 
     [ForeignKey(nameof(ProjectId))]
-    public ProjectEntity Project { get; set; } = null!;
+    public virtual ProjectEntity Project { get; set; } = null!;
 }

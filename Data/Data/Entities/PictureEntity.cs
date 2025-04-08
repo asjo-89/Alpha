@@ -8,7 +8,6 @@ public class PictureEntity
     public Guid Id { get; set; }
 
     [Required]
-    [DataType(DataType.ImageUrl)]
     public string ImageUrl { get; set; } = null!;
 
 
@@ -17,7 +16,7 @@ public class PictureEntity
 
     // Navigation
 
-    public ICollection<MemberEntity>? Members { get; set; } = [];
+    public virtual ICollection<MemberUserEntity>? Members { get; set; } = [];
 
-    public ICollection<ProjectEntity>? ProjectEntities { get; set; } = [];
+    public virtual ICollection<ProjectEntity>? ProjectEntities { get; set; } = [];
 }
