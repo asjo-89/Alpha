@@ -1,4 +1,6 @@
 using Data.Contexts;
+using Data.Interfaces;
+using Data.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +11,13 @@ builder.Services.AddDbContext<AlphaDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
+builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddScoped<IMemberUserRepository, MemberUserRepository>();
+builder.Services.AddScoped<IPictureRepository, PictureRepository>();
+builder.Services.AddScoped<IProjectNoteRepository, ProjectNoteRepository>();
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
+builder.Services.AddScoped<IStatusRepository, StatusRepository>();
 
 
 var app = builder.Build();

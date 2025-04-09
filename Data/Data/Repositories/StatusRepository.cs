@@ -5,6 +5,6 @@ using Domain.Models;
 
 namespace Data.Repositories;
 
-public class ClientRepository(AlphaDbContext context) : BaseRepository<ClientEntity, Client>(context), IClientRepository
+public class StatusRepository(AlphaDbContext context) : BaseRepository<StatusEntity, Status>(context), IStatusRepository
 {
 }
