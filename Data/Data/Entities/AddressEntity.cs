@@ -15,7 +15,7 @@ public class AddressEntity
 
 
     [Required, ProtectedPersonalData]
-    public int PostalCode { get; set; }
+    public string PostalCode { get; set; } = null!;
 
 
     [Required, ProtectedPersonalData]

@@ -3,8 +3,8 @@ using Data.Interfaces;
 using Data.Models;
 using Domain.Extensions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using System.Linq.Expressions;
-using System.Reflection.Metadata.Ecma335;
 
 namespace Data.Repositories;
 
@@ -13,6 +13,8 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
     protected readonly AlphaDbContext _context;
     protected readonly DbSet<TEntity> _entity;
 
+    private IDbContextTransaction _transaction = null!;
+
     public BaseRepository(AlphaDbContext context)
     {
         _context = context;
@@ -20,7 +22,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
     }
 
 
-
+    #region CRUD
     public async Task<RepositoryResult<bool>> CreateAsync(TEntity entity)
     {
         if (entity == null)
@@ -48,7 +50,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
     public async Task<RepositoryResult<IEnumerable<TModel>>> GetAllAsync
         (
             bool orderByDescending = false,
-            Expression<Func<TEntity, bool>> orderBy = null!,
+            Expression<Func<TEntity, object>> orderBy = null!,
             Expression<Func<TEntity, bool>> filterBy = null!,
             params Expression<Func<TEntity, bool>>[] includes
         )
@@ -74,7 +76,9 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
         var entities = await query.ToListAsync();
         var result = entities.Select(entity => entity.MapTo<TModel>());
 
-        return new RepositoryResult<IEnumerable<TModel>> { Success = true, StatusCode = 200, Data = result };
+        return entities.Count == 0
+            ? new RepositoryResult<IEnumerable<TModel>> { Success = true, StatusCode = 200, Data = result }
+            : new RepositoryResult<IEnumerable<TModel>> { Success = false, StatusCode = 404, Error = "No entities found." };
     }
 
 
@@ -84,7 +88,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
         (
             Expression<Func<TEntity, TSelect>> selector,
             bool orderByDescending = false,
-            Expression<Func<TEntity, bool>> orderBy = null!,
+            Expression<Func<TEntity, object>> orderBy = null!,
             Expression<Func<TEntity, bool>> filterBy = null!,
             params Expression<Func<TEntity, bool>>[] includes
         )
@@ -115,6 +119,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
 
 
 
+    // Get one with specific data
     public async Task<RepositoryResult<TModel>> GetAsync
         (
             Expression<Func<TEntity, bool>> filterBy = null!,
@@ -192,4 +197,61 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
             return new RepositoryResult<bool> { Success = false, StatusCode = 500, Error = $"Something wen wrong deleting entity: {ex.Message}" };
         }
     }
+    #endregion
+
+    #region Transactions
+    public async Task<RepositoryResult> BeginTransactionAsync()
+    {
+        if (_transaction != null)
+            return new RepositoryResult { Success = false, StatusCode = 409, Error = "Another transaction is already started." };
+
+        _transaction = await _context.Database.BeginTransactionAsync();
+        return new RepositoryResult { Success = true, StatusCode = 200 };
+    }
+
+    public async Task<RepositoryResult> CommitTransactionAsync()
+    {
+        if (_transaction == null)
+            return new RepositoryResult { Success = false, StatusCode = 400, Error = "No transaction has been started yet" };
+
+        try
+        {
+            await _transaction.CommitAsync();
+            await _transaction.DisposeAsync();
+            _transaction = null!;
+
+            return new RepositoryResult { Success = true, StatusCode = 200 };
+        }
+        catch (Exception ex)
+        {
+            await _transaction.RollbackAsync();
+            Console.WriteLine($"************\n{ex.Message}\n**************");
+            _transaction = null!;
+
+            return new RepositoryResult { Success = false, StatusCode = 500, Error = $"Failed to commit transaction: {ex.Message}" };
+        }
+    }
+
+    public async Task<RepositoryResult> RollbackTransactionAsync()
+    {
+        if (_transaction == null)
+            return new RepositoryResult { Success = false, StatusCode = 400, Error = "No transaction has been started yet" };
+
+        try
+        {
+            await _transaction.RollbackAsync();
+            await _transaction.DisposeAsync();
+            _transaction = null!;
+
+            return new RepositoryResult { Success = true, StatusCode = 200 };
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"************\n{ex.Message}\n**************");
+            _transaction = null!;
+
+            return new RepositoryResult { Success = false, StatusCode = 500, Error = $"Failed to rollback transaction: {ex.Message}" };
+        }
+    }
+    #endregion
 }
