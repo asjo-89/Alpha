@@ -8,12 +8,12 @@ namespace Data.Entities;
 [Index(nameof(Email), IsUnique = true)]
 public class MemberUserEntity : IdentityUser<Guid>
 {
-    [Required, ProtectedPersonalData]
-    public string FirstName { get; set; } = null!;
+    [ProtectedPersonalData]
+    public string? FirstName { get; set; }
 
-    [Required, ProtectedPersonalData]
-    public string LastName { get; set; } = null!;
-
+    [ProtectedPersonalData]
+    public string? LastName { get; set; }
+    
     [ProtectedPersonalData]
     public string? JobTitle { get; set; }
 
@@ -28,8 +28,8 @@ public class MemberUserEntity : IdentityUser<Guid>
     public string Password { get; set; } = null!;
 
 
-    [Required, ProtectedPersonalData]
-    public Guid AddressId { get; set; }
+    [ProtectedPersonalData]
+    public Guid? AddressId { get; set; }
     public Guid? PictureId { get; set; }
 
 

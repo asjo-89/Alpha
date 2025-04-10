@@ -81,14 +81,12 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
             : new RepositoryResult<IEnumerable<TModel>> { Success = false, StatusCode = 404, Error = "No entities found." };
     }
 
-
-
     // Get all with specific order and based on specific data
     public async Task<RepositoryResult<IEnumerable<TSelect>>> GetAllAsync<TSelect>
         (
             Expression<Func<TEntity, TSelect>> selector,
             bool orderByDescending = false,
-            Expression<Func<TEntity, object>>[]? orderBy = null!,
+            Expression<Func<TEntity, object>> orderBy = null!,
             Expression<Func<TEntity, bool>> filterBy = null!,
             params Expression<Func<TEntity, bool>>[] includes
         )
@@ -147,7 +145,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
     public async Task<RepositoryResult<bool>> ExistsAsync(Expression<Func<TEntity, bool>> expression)
     {
         bool result = await _entity.AnyAsync(expression);
-        return result
+        return !result
             ? new RepositoryResult<bool> { Success = false, StatusCode = 404, Error = "Entity was not found." }
             : new RepositoryResult<bool> { Success = true, StatusCode = 200 };
     }
@@ -253,5 +251,6 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
             return new RepositoryResult { Success = false, StatusCode = 500, Error = $"Failed to rollback transaction: {ex.Message}" };
         }
     }
+
     #endregion
 }

@@ -8,3 +8,5 @@ public class ClientResult<T> : BaseResult
 public class ClientResult : BaseResult
 {
 }
+
+

@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace Business.Services;
 
-internal class StatusService(IStatusRepository statusRepository) : IStatusService
+public class StatusService(IStatusRepository statusRepository) : IStatusService
 {
     private readonly IStatusRepository _statusRepository = statusRepository;
 
