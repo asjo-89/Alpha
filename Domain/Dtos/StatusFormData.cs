@@ -2,7 +2,7 @@
 
 namespace Domain.Dtos;
 
-public class CreateStatusFormData
+public class StatusFormData
 {
     [Required(ErrorMessage = "Required")]
     [Display(Name = "Status  name", Prompt = "Enter status name")]

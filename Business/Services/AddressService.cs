@@ -11,21 +11,18 @@ public class AddressService(IAddressRepository addressRepository) : IAddressServ
     private readonly IAddressRepository _addressRepository = addressRepository;
 
 
-    public async Task<AddressResult> CreateAddressAsync(string streetName, string postalCode, string city)
+    public async Task<AddressResult> CreateAsync(string streetName, string postalCode, string city)
     {
         if (streetName == null && postalCode == null && city == null)
             return new AddressResult { Succeeded = false, StatusCode = 400, ErrorMessage = "All required fields must be completed." };
 
         var exists = await _addressRepository.ExistsAsync(x => x.StreetAddress == streetName);
         if (exists.Success)
-            return new AddressResult { Succeeded = false, StatusCode = exists.StatusCode, ErrorMessage = "Address already exists." };
+            return new AddressResult { Succeeded = false, StatusCode = 409, ErrorMessage = "Address already exists." };
 
         try
         {
             var started = await _addressRepository.BeginTransactionAsync();
-
-            if (!started.Success)
-                return new AddressResult { Succeeded = false, StatusCode = started.StatusCode, ErrorMessage = started.Error };
 
             AddressEntity address = new AddressEntity
             {
@@ -35,17 +32,19 @@ public class AddressService(IAddressRepository addressRepository) : IAddressServ
             };
 
             var result = await _addressRepository.CreateAsync(address);
+
+            if (!result.Success)
+                return new AddressResult { Succeeded = false, StatusCode = result.StatusCode, ErrorMessage = "Failed to save address." };
+
             await _addressRepository.CommitTransactionAsync();
 
-            return result.Success
-                ? new AddressResult { Succeeded = true, StatusCode = 201 }
-                : new AddressResult { Succeeded = false, StatusCode = result.StatusCode, ErrorMessage = "Failed to save address." };
+            return new AddressResult { Succeeded = true, StatusCode = 201 };
         }
         catch (Exception ex)
         {
             var rollback = await _addressRepository.RollbackTransactionAsync();
             Debug.WriteLine($"**********\n{ex.Message}\n**********");
-            return new AddressResult { Succeeded = false, StatusCode = rollback.StatusCode, ErrorMessage = $"Failed to save address: {ex.Message} " };
+            return new AddressResult { Succeeded = false, StatusCode = 500, ErrorMessage = $"Failed to save address: {ex.Message} " };
         }
     }
 }

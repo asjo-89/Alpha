@@ -25,6 +25,8 @@ public class ProjectEntity
     [Precision(18, 2)]
     public decimal? Budget {  get; set; }
 
+    public DateTime Created { get; set; } = DateTime.Now;
+
 
 
 
