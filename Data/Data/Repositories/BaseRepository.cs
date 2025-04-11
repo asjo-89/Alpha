@@ -76,8 +76,8 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
         var entities = await query.ToListAsync();
         var result = entities.Select(entity => entity.MapTo<TModel>());
 
-        return entities.Count == 0
-            ? new RepositoryResult<IEnumerable<TModel>> { Success = true, StatusCode = 200, Data = result }
+        return entities.Count != 0
+            ? new RepositoryResult<IEnumerable<TModel>> { Success = true, StatusCode = 200, Data = result ?? [] }
             : new RepositoryResult<IEnumerable<TModel>> { Success = false, StatusCode = 404, Error = "No entities found." };
     }
 

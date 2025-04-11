@@ -36,7 +36,7 @@ public class CreateMemberFormModel
 
     [Required(ErrorMessage = "Postal code is required.")]
     [Display(Name = "Postal Code", Prompt = "Enter postal code...")]
-    public int PostalCode { get; set; }
+    public string PostalCode { get; set; } = null!;
 
 
     [Required(ErrorMessage = "City is required.")]

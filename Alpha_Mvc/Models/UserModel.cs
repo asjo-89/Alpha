@@ -5,12 +5,6 @@ namespace Alpha_Mvc.Models;
 public class UserModel
 {
     public Guid Id { get; set; }
-    //public string FirstName { get; set; } = null!;
-    //public string LastName { get; set; } = null!;
-    //public string JobTitle { get; set; } = null!;
-    //public string Email { get; set; } = null!;
-    //public string PhoneNumber { get; set; } = null!; 
-    //public string ProfilePicture { get; set; } = null!;
 
     [Required(ErrorMessage = "First name is required.")]
     [Display(Name = "First Name", Prompt = "Enter first name...")]
@@ -44,7 +38,7 @@ public class UserModel
 
     [Required(ErrorMessage = "Postal code is required.")]
     [Display(Name = "Postal Code", Prompt = "Enter postal code...")]
-    public int PostalCode { get; set; }
+    public string PostalCode { get; set; } = null!;
 
 
     [Required(ErrorMessage = "City is required.")]
@@ -56,13 +50,12 @@ public class UserModel
     public int BirthMonth { get; set; }
     public int BirthYear { get; set; }
 
-    //[Required(ErrorMessage = "Date of birth is required.")]
     [Display(Name = "Date Of Birth", Prompt = "Enter date of birth...")]
     public DateOnly? DateOfBirth { get; set; }
 
     [Required(ErrorMessage = "You need to select a profile image.")]
     [DataType(DataType.ImageUrl)]
-    public string ProfilePicture { get; set; } = null!;
+    public string ImageUrl { get; set; } = null!;
 
     [Required(ErrorMessage = "You need to select a profile image.")]
     [DataType(DataType.ImageUrl)]

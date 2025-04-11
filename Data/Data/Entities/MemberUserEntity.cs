@@ -39,7 +39,7 @@ public class MemberUserEntity : IdentityUser<Guid>
     // Navigation
 
     [ForeignKey(nameof(AddressId))]
-    public virtual AddressEntity Address { get; set; } = null!;
+    public virtual AddressEntity? Address { get; set; } 
 
 
     [ForeignKey(nameof(PictureId))]

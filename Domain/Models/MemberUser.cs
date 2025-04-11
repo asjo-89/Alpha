@@ -11,5 +11,6 @@ public class MemberUser
     public DateOnly? DateOfBirth { get; set; }
     public string Password { get; set; } = null!;
     public Address? Address { get; set; }
-    public string? Picture { get; set; }
+    public string? ImageUrl { get; set; }
+    public Guid? PictureId { get; set; }
 }

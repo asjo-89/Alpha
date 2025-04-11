@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Alpha_Mvc.Controllers;
 
-public class AuthController(IAuthService authService, IMemberUserService memberUserService) : Controller
+public class AuthController(IAuthService authService, IPictureService pictureService) : Controller
 {
     private readonly IAuthService _authService = authService;
-    private readonly IMemberUserService _memberUserService = memberUserService;
+    private readonly IPictureService _pictureService = pictureService;
 
     public IActionResult SignIn()
     {
@@ -34,10 +34,12 @@ public class AuthController(IAuthService authService, IMemberUserService memberU
         return View(form);
     }
 
+
     public IActionResult CreateAccount()
     {
         return View();
     }
+
 
     [HttpPost]
     public async Task<IActionResult> CreateAccount(CreateAccountModel form)
@@ -45,15 +47,20 @@ public class AuthController(IAuthService authService, IMemberUserService memberU
         if (!ModelState.IsValid)
             return View(form);
 
-        //if (await _memberUserService.ExistsAsync(form.Email))
+        //if (string.IsNullOrEmpty(form.ImageUrl))
         //{
-        //    ModelState.AddModelError("Exists", "User already exists.");
-        //    return View(form);
+        //    var exists = await _pictureService.ExistsAsync("~/wwwRoot/Images/Profiles/Profile1.png");
+        //    if (!exists.Succeeded)
+        //    {
+        //        await _pictureService.CreateAsync("~/wwwRoot/Images/Profiles/Profile1.png");
+        //    }
+
+        //    form.ImageUrl = "~/wwwRoot/Images/Profiles/Profile1.png";
         //}
 
         var newUser = form.MapTo<CreateUserFormData>();
 
-        var result = await _memberUserService.CreateUserAsync(newUser);
+        var result = await _authService.CreateUserAsync(newUser);
 
         switch (result.StatusCode)
         {

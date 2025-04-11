@@ -21,7 +21,7 @@ public class PictureService(IPictureRepository pictureRepository) : IPictureServ
         {
             var started = await _pictureRepository.BeginTransactionAsync();
 
-            PictureEntity entity = new PictureEntity
+            PictureEntity entity = new()
             {
                 ImageUrl = url
             };
@@ -31,6 +31,7 @@ public class PictureService(IPictureRepository pictureRepository) : IPictureServ
                 return new PictureResult { Succeeded = false, StatusCode = result.StatusCode, ErrorMessage = "Failed to save picture." };
 
             await _pictureRepository.CommitTransactionAsync();
+
             return new PictureResult { Succeeded = true, StatusCode = 201 };
         }
         catch (Exception ex)
@@ -39,5 +40,15 @@ public class PictureService(IPictureRepository pictureRepository) : IPictureServ
             Debug.WriteLine($"**********\n{ex.Message}\n**********");
             return new PictureResult { Succeeded = false, StatusCode = 500, ErrorMessage = $"Failed to save picture: {ex.Message} " };
         }
+    }
+
+    public async Task<PictureResult> ExistsAsync(string url)
+    {
+        var exists = await _pictureRepository.ExistsAsync(x => x.ImageUrl == url);
+
+        return exists.Success
+            ? new PictureResult { Succeeded = true, StatusCode = 200 }
+            : new PictureResult { Succeeded = false, StatusCode = 404, ErrorMessage = $"Picture does not exist. " };
+
     }
 }

@@ -27,4 +27,8 @@ public class CreateUserFormData
 
     [Range(typeof(bool), "true", "true")]
     public bool TermsAndConditions { get; set; }
+
+    public string? ImageUrl { get; set; }
+
+    public Guid? PictureId { get; set; }
 }

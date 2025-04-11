@@ -25,9 +25,5 @@ namespace Alpha_Mvc.Controllers
 
             return View(viewModel);
         }
-
-
-        //[HttpPost]
-        //public async Task<IActionResult> CreateProjectAsync()
     }
 }

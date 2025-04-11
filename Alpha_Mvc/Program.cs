@@ -19,11 +19,18 @@ builder.Services.AddIdentity<MemberUserEntity, IdentityRole<Guid>>()
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireNonAlphanumeric = false;
     options.Password.RequiredLength = 8;
+    options.Password.RequiredUniqueChars = 1;
     options.User.RequireUniqueEmail = true;
+    options.SignIn.RequireConfirmedEmail = false;
 });
 builder.Services.ConfigureApplicationCookie(options =>
 {
+    options.Cookie.HttpOnly = true;
     options.LoginPath = "/Auth/SignIn";
     options.LogoutPath = "/Auth/SignOut";
     options.AccessDeniedPath = "/Auth/Denied";
@@ -67,7 +74,7 @@ app.UseAuthorization();
 using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole<Guid>>>();
-    string[] roles = { "Administrator", "User", "Frontend Developer", "Backend Developer" };
+    string[] roles = { "Administrator", "User" };
 
     foreach(var role in roles)
     {
@@ -77,6 +84,13 @@ using (var scope = app.Services.CreateScope())
             await roleManager.CreateAsync(new IdentityRole<Guid>(role));
         }
     }
+
+    
+    var picService = scope.ServiceProvider.GetRequiredService<IPictureService>();
+    var result = await picService.ExistsAsync("~/wwwRoot/Images/Profiles/Profile1.png");
+
+    if (!result.Succeeded)
+        await picService.CreateAsync("~/wwwRoot/Images/Profiles/Profile1.png");
 };
 
 app.MapStaticAssets();

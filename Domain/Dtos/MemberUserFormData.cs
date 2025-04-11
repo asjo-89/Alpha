@@ -4,6 +4,8 @@ namespace Domain.Dtos;
 
 public class MemberUserFormData
 {
+    public Guid Id { get; set; }
+
     [Required(ErrorMessage = "Required")]
     [Display(Name = "First Name", Prompt = "Enter first name")]
     [DataType(DataType.Text)]
@@ -68,5 +70,5 @@ public class MemberUserFormData
 
     [Required(ErrorMessage = "Required")]
     [DataType(DataType.ImageUrl)]
-    public string Picture { get; set; } = null!;
+    public string ImageUrl { get; set; } = null!;
 }
