@@ -7,6 +7,7 @@ using Domain.Extensions;
 using Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Diagnostics;
+using System.Linq.Expressions;
 
 namespace Business.Services;
 
@@ -52,14 +53,12 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
 
     public async Task<MemberUserResult<IEnumerable<MemberUser>>> GetMemberUsersAsync()
     {
-        var result = await _memberRepository.GetAllAsync
-            (
-                orderByDescending: false,
-                orderBy: x => x.Email,
-                filterBy: null!,
-                includes: null!
-            );
-
+        var result = await _memberRepository.GetAllAsync(
+            orderByDescending: false,
+            orderBy: x => x.Email,
+            filterBy: null!,
+            includes: x => x.Picture
+        );
 
         return result.Success
             ? new MemberUserResult<IEnumerable<MemberUser>> { Succeeded = true, StatusCode = 200, Data = result.Data ?? [] }

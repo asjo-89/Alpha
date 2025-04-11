@@ -42,5 +42,5 @@ public class CreateAccountModel
     [Range(typeof(bool), "true", "true", ErrorMessage = "You need to accept the terms and conditions.")]
     public bool TermsAndConditions { get; set; } = false;
 
-    public string? ImageUrl { get; set; } = "~/wwwRoot/Images/Profiles/Profile1.png";
+    public string? ImageUrl { get; set; } = "~/Images/Profiles/Profile1.png";
 }

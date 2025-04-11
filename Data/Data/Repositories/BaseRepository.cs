@@ -1,4 +1,5 @@
 ﻿using Data.Contexts;
+using Data.Entities;
 using Data.Interfaces;
 using Data.Models;
 using Domain.Extensions;
@@ -52,7 +53,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
             bool orderByDescending = false,
             Expression<Func<TEntity, object>> orderBy = null!,
             Expression<Func<TEntity, bool>> filterBy = null!,
-            params Expression<Func<TEntity, bool>>[] includes
+            params Expression<Func<TEntity, object>>[] includes
         )
     {
         IQueryable<TEntity> query = _entity;
@@ -74,7 +75,29 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
         }
 
         var entities = await query.ToListAsync();
-        var result = entities.Select(entity => entity.MapTo<TModel>());
+
+        foreach (var entity in entities)
+        {
+            
+        }
+
+        //var result = entities.Select(entity => entity.MapTo<TModel>());
+        var result = entities.Select(entity =>
+        {
+            var mappedEntity = entity.MapTo<TModel>();
+
+            // Kontrollera om TModel har en ImageUrl-egenskap och mappa den manuellt
+            var pictureProperty = entity.GetType().GetProperty("Picture");
+            var imageUrlProperty = mappedEntity.GetType().GetProperty("ImageUrl");
+
+            if (pictureProperty != null && imageUrlProperty != null)
+            {
+                var picture = pictureProperty.GetValue(entity) as PictureEntity;
+                imageUrlProperty.SetValue(mappedEntity, picture?.ImageUrl);
+            }
+
+            return mappedEntity;
+        });
 
         return entities.Count != 0
             ? new RepositoryResult<IEnumerable<TModel>> { Success = true, StatusCode = 200, Data = result ?? [] }
@@ -88,7 +111,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
             bool orderByDescending = false,
             Expression<Func<TEntity, object>> orderBy = null!,
             Expression<Func<TEntity, bool>> filterBy = null!,
-            params Expression<Func<TEntity, bool>>[] includes
+            params Expression<Func<TEntity, object>>[] includes
         )
     {
         IQueryable<TEntity> query = _entity;
@@ -121,7 +144,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
     public async Task<RepositoryResult<TModel>> GetAsync
         (
             Expression<Func<TEntity, bool>> filterBy = null!,
-            params Expression<Func<TEntity, bool>>[] includes
+            params Expression<Func<TEntity, object>>[] includes
         )
     {
         IQueryable<TEntity> query = _entity;

@@ -7,7 +7,7 @@ public class CreateProjectFormModel
     public Guid Id { get; set; }
 
     [Required(ErrorMessage = "You need to select a picture.")]
-    public string Picture { get; set; } = null!;
+    public string ImageUrl { get; set; } = null!;
 
     [Required(ErrorMessage = "You need to enter a name for the project.")]
     public string ProjectName { get; set; } = null!;

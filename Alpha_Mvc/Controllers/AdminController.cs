@@ -35,7 +35,7 @@ namespace Alpha_Mvc.Controllers
                     Email = member.Email,
                     PhoneNumber = member.PhoneNumber ?? "",
                     JobTitle = member.JobTitle ?? "",
-                    ImageUrl = Url.Content($"{member.PictureId}")
+                    ImageUrl = Url.Content($"{member.ImageUrl}")
                 }),
                 Member = new CreateMemberFormModel()
             };
