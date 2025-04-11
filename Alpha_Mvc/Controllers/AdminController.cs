@@ -4,6 +4,7 @@ using Business.Interfaces;
 using Data.Entities;
 using Domain.Dtos;
 using Domain.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Alpha_Mvc.Controllers
@@ -34,7 +35,7 @@ namespace Alpha_Mvc.Controllers
                     LastName = member.LastName,
                     Email = member.Email,
                     PhoneNumber = member.PhoneNumber ?? "",
-                    JobTitle = member.JobTitle ?? "",
+                    JobTitle = member.JobTitle ?? "No role assigned",
                     ImageUrl = Url.Content($"{member.ImageUrl}")
                 }),
                 Member = new CreateMemberFormModel()
@@ -49,9 +50,9 @@ namespace Alpha_Mvc.Controllers
             if (!ModelState.IsValid)
             {
                 var members = await _memberService.GetMemberUsersAsync();
+
                 var viewModel = new TeamMembersViewModel
                 {
-                    Member = model,
                     Users = members.Data.Select(member => new UserModel
                     {
                         Id = member.Id,
@@ -59,10 +60,15 @@ namespace Alpha_Mvc.Controllers
                         LastName = member.LastName,
                         Email = member.Email,
                         PhoneNumber = member.PhoneNumber ?? "",
-                        JobTitle = member.JobTitle ?? ""
+                        JobTitle = member.JobTitle ?? "No role assigned",
+                        ImageUrl = Url.Content($"{member.ImageUrl}")
                     }),
+                    Member = new CreateMemberFormModel()
                 };
-                return View("Index", viewModel);
+
+
+
+                return RedirectToAction("AddMember");
             }
 
             MemberUserEntity entity = new()
@@ -107,9 +113,9 @@ namespace Alpha_Mvc.Controllers
             else
             {
                 var members = await _memberService.GetMemberUsersAsync();
+
                 var viewModel = new TeamMembersViewModel
                 {
-                    Member = model,
                     Users = members.Data.Select(member => new UserModel
                     {
                         Id = member.Id,
@@ -117,9 +123,10 @@ namespace Alpha_Mvc.Controllers
                         LastName = member.LastName,
                         Email = member.Email,
                         PhoneNumber = member.PhoneNumber ?? "",
-                        JobTitle = member.JobTitle ?? "",
-                        ImageUrl = Url.Content($"{member.PictureId}")
+                        JobTitle = member.JobTitle ?? "No role assigned",
+                        ImageUrl = Url.Content($"{member.ImageUrl}")
                     }),
+                    Member = new CreateMemberFormModel()
                 };
 
                 ModelState.AddModelError("viewModel", "Failed to create member.");
@@ -135,9 +142,9 @@ namespace Alpha_Mvc.Controllers
             if (!ModelState.IsValid)
             {
                 var members = await _memberService.GetMemberUsersAsync();
+
                 var viewModel = new TeamMembersViewModel
                 {
-                    Member = new CreateMemberFormModel(),
                     Users = members.Data.Select(member => new UserModel
                     {
                         Id = member.Id,
@@ -145,8 +152,10 @@ namespace Alpha_Mvc.Controllers
                         LastName = member.LastName,
                         Email = member.Email,
                         PhoneNumber = member.PhoneNumber ?? "",
-                        JobTitle = member.JobTitle ?? ""
+                        JobTitle = member.JobTitle ?? "No role assigned",
+                        ImageUrl = Url.Content($"{member.ImageUrl}")
                     }),
+                    Member = new CreateMemberFormModel()
                 };
                 return View("Index", viewModel);
             }

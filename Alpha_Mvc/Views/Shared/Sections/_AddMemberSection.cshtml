@@ -12,11 +12,10 @@
 
         <form class="form" method="post" asp-action="AddMember" asp-controller="Admin" enctype="multipart/form-data">
             <div class="image-preview-container">
-                <div id="circle" class="border-circle">
+                <div id="circle" class="border-circle show">
                     <div class="camera" id="camera">
                         <i class="fa-solid fa-camera"></i>
                     </div>
-
                 </div>
 
                 <img id="image-preview" class="image-preview" src="#" />
@@ -141,14 +140,18 @@
 
                 reader.onload = (e) => {
                     imagePreview.src = e.target.result;
-                    circle.style.display = "none";
-                    imagePreview.style.display = "block";
+                    // circle.style.display = "none";
+                    circle.classList.remove('show');
+                    // imagePreview.style.display = "block";
+                    imagePreview.classList.add('show');
                 };
 
                 reader.readAsDataURL(image);
             } else {
-                circle.style.display = "block";
-                imagePreview.style.display = "none";
+                // circle.style.display = "block";
+                circle.classList.add('show');
+                // imagePreview.style.display = "none";
+                imagePreview.classList.remove('show');
             }
         })
     })
