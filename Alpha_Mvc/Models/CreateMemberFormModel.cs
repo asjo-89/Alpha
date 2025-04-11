@@ -14,8 +14,10 @@ public class CreateMemberFormModel
     public string LastName { get; set; } = null!;
 
 
-    [Required(ErrorMessage = "Email is required.")]
+    [Required(ErrorMessage = "Email address is required.")]
     [Display(Name = "Email", Prompt = "Enter email address...")]
+    [DataType(DataType.EmailAddress)]
+    [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", ErrorMessage = "Invalid email address.")]
     public string Email { get; set; } = null!;
 
 
@@ -48,7 +50,7 @@ public class CreateMemberFormModel
     public int BirthMonth { get; set; }
     public int BirthYear { get; set; }
 
-    //[Required(ErrorMessage = "Date of birth is required.")]
+    [Required(ErrorMessage = "Date of birth is required.")]
     [Display(Name = "Date Of Birth", Prompt = "Enter date of birth...")]
     public DateOnly? DateOfBirth { get; set; }
 

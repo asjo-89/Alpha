@@ -10,7 +10,7 @@
             </button>
         </div>
 
-        <form class="form" method="post" asp-action="AddMember" asp-controller="Admin" enctype="multipart/form-data">
+        <form class="form" method="post" asp-action="AddMember" asp-controller="Admin" enctype="multipart/form-data" novalidate>
             <div class="image-preview-container">
                 <div id="circle" class="border-circle show">
                     <div class="camera" id="camera">
@@ -118,6 +118,7 @@
     </div>
 </div>
 
+@await Html.PartialAsync("_ValidationScriptsPartial");
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -140,19 +141,17 @@
 
                 reader.onload = (e) => {
                     imagePreview.src = e.target.result;
-                    // circle.style.display = "none";
                     circle.classList.remove('show');
-                    // imagePreview.style.display = "block";
                     imagePreview.classList.add('show');
                 };
 
                 reader.readAsDataURL(image);
             } else {
-                // circle.style.display = "block";
                 circle.classList.add('show');
-                // imagePreview.style.display = "none";
                 imagePreview.classList.remove('show');
             }
         })
     })
+
+
 </script>

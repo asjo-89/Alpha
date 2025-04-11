@@ -49,26 +49,30 @@ namespace Alpha_Mvc.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var members = await _memberService.GetMemberUsersAsync();
+                //var members = await _memberService.GetMemberUsersAsync();
 
-                var viewModel = new TeamMembersViewModel
-                {
-                    Users = members.Data.Select(member => new UserModel
-                    {
-                        Id = member.Id,
-                        FirstName = member.FirstName,
-                        LastName = member.LastName,
-                        Email = member.Email,
-                        PhoneNumber = member.PhoneNumber ?? "",
-                        JobTitle = member.JobTitle ?? "No role assigned",
-                        ImageUrl = Url.Content($"{member.ImageUrl}")
-                    }),
-                    Member = new CreateMemberFormModel()
-                };
+                //var viewModel = new TeamMembersViewModel
+                //{
+                //    Users = members.Data.Select(member => new UserModel
+                //    {
+                //        Id = member.Id,
+                //        FirstName = member.FirstName,
+                //        LastName = member.LastName,
+                //        Email = member.Email,
+                //        PhoneNumber = member.PhoneNumber ?? "",
+                //        JobTitle = member.JobTitle ?? "No role assigned",
+                //        ImageUrl = Url.Content($"{member.ImageUrl}")
+                //    }),
+                //    Member = new CreateMemberFormModel()
+                //};
 
-
-
-                return RedirectToAction("AddMember");
+                var errors = ModelState
+                    .Where(x => x.Value?.Errors.Count > 0)
+                    .ToDictionary(
+                        kvp => kvp.Key,
+                        kvp => kvp.Value?.Errors.Select(x => x.ErrorMessage).ToArray()
+                     );
+                return BadRequest(new { success = false, errors });
             }
 
             MemberUserEntity entity = new()
@@ -175,7 +179,8 @@ namespace Alpha_Mvc.Controllers
             using (var fileStream = new FileStream(filePath, FileMode.Create))
             {
                 await model.ProfileImage.CopyToAsync(fileStream);
-            };
+            }
+            ;
 
             MemberUserFormData memberModel = new()
             {
