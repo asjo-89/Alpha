@@ -23,11 +23,6 @@ public class MemberUserEntity : IdentityUser<Guid>
     public DateOnly? DateOfBirth { get; set; }
 
 
-    [Required, ProtectedPersonalData]
-    [DataType(DataType.Password)]
-    public string Password { get; set; } = null!;
-
-
     [ProtectedPersonalData]
     public Guid? AddressId { get; set; }
     public Guid? PictureId { get; set; }

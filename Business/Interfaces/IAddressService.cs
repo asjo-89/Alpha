@@ -1,9 +1,11 @@
 ﻿using Business.Models;
+using Data.Entities;
+using Domain.Models;
 
 namespace Business.Interfaces
 {
     public interface IAddressService
     {
-        Task<AddressResult> CreateAsync(string streetName, string postalCode, string city);
+        Task<AddressResult<Address>> CreateAsync(string streetName, string postalCode, string city, Guid id);
     }
 }

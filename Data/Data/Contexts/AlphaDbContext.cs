@@ -24,9 +24,9 @@ public class AlphaDbContext(DbContextOptions<AlphaDbContext> options) : Identity
 
         builder.Entity<MemberUserEntity>()
             .HasOne(mu => mu.Address)
-            .WithMany(a => a.Members)
-            .HasForeignKey(mu => mu.AddressId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .WithOne(a => a.Member)
+            .HasForeignKey<MemberUserEntity>(mu => mu.AddressId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         builder.Entity<MemberUserEntity>()
             .HasOne(mu => mu.Picture)

@@ -82,7 +82,7 @@ public class AuthService(SignInManager<MemberUserEntity> signInManager, UserMana
         {
             await _memberRepository.BeginTransactionAsync();
 
-            var result = await _userManager.CreateAsync(entity, entity.Password);
+            var result = await _userManager.CreateAsync(entity);
 
             //Kolla getall!
             var members = await _memberRepository.GetAllAsync

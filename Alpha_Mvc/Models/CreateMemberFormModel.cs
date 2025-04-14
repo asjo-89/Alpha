@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Domain.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Alpha_Mvc.Models;
 
@@ -46,15 +47,21 @@ public class CreateMemberFormModel
     public string City { get; set; } = null!;
 
 
+    [Required(ErrorMessage = "Day is required.")]
     public int BirthDay { get; set; }
+
+    [Required(ErrorMessage = "Month is required.")]
     public int BirthMonth { get; set; }
+
+    [Required(ErrorMessage = "Year is required.")]
     public int BirthYear { get; set; }
 
-    [Required(ErrorMessage = "Date of birth is required.")]
-    [Display(Name = "Date Of Birth", Prompt = "Enter date of birth...")]
-    public DateOnly? DateOfBirth { get; set; }
+    public DateOnly DateOfBirth { get; set; } 
 
-    [Required(ErrorMessage = "You need to select a profile image.")]
+    [Required(ErrorMessage = "to select a profile image.")]
     [DataType(DataType.ImageUrl)]
     public IFormFile ProfileImage { get; set; } = null!;
+    public string? ImageUrl { get; set; }
+
+    public Guid? RoleId { get; set; }
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Dtos;
 
@@ -43,11 +44,10 @@ public class MemberUserFormData
     [DataType(DataType.Text)]
     public string JobTitle { get; set; } = null!;
 
-
+    // For authentication only
     [Required(ErrorMessage = "Required")]
     [Display(Name = "Role", Prompt = "Select role")]
-    [DataType(DataType.Text)]
-    public string RoleName { get; set; } = null!;
+    public Guid? RoleId { get; set; }
 
 
     [Required(ErrorMessage = "Required")]
@@ -67,8 +67,12 @@ public class MemberUserFormData
     [DataType(DataType.Text)]
     public string City { get; set; } = null!;
 
+    public Guid? AddressID { get; set; }
+
 
     [Required(ErrorMessage = "Required")]
     [DataType(DataType.ImageUrl)]
-    public string ImageUrl { get; set; } = null!;
+    public string? ImageUrl { get; set; }
+
+    public Guid? PictureId { get; set; }
 }

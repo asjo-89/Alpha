@@ -11,17 +11,19 @@ using System.Linq.Expressions;
 
 namespace Business.Services;
 
-public class MemberUserService(IMemberUserRepository memberRepository, UserManager<MemberUserEntity> userManager) : IMemberUserService
+public class MemberUserService(IMemberUserRepository memberRepository, UserManager<MemberUserEntity> userManager, RoleManager<IdentityRole<Guid>> roleManager) : IMemberUserService
 {
     private readonly IMemberUserRepository _memberRepository = memberRepository;
     private readonly UserManager<MemberUserEntity> _userManager = userManager;
+    private readonly RoleManager<IdentityRole<Guid>> _roleManager = roleManager;
+
 
 
 
     public async Task<MemberUserResult<bool>> CreateAsync(MemberUserFormData formData)
     {
         if (formData == null)
-            return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "All reaquired fields must be completed.", Data = false };
+            return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "All required fields must be completed.", Data = false };
 
         var entity = formData.MapTo<MemberUserEntity>();
         var exists = await _memberRepository.ExistsAsync(x => x.Email == entity.Email);
@@ -33,10 +35,25 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
         {
             await _memberRepository.BeginTransactionAsync();
 
-            var result = await _userManager.CreateAsync(entity, entity.Password);
+            entity.UserName = entity.Email;
 
-            if (result == null!)
+            exists = await _memberRepository.ExistsAsync(x => x.Email == entity.Email);
+
+            if (exists.Success)
+                return new MemberUserResult<bool> { Succeeded = false, StatusCode = 409, ErrorMessage = $"Member with email address {formData.Email} already exists.", Data = false };
+
+            var result = await _userManager.CreateAsync(entity);
+
+            if (!result.Succeeded)
                 return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "Failed to create member.", Data = false };
+
+            var role = await _roleManager.FindByIdAsync(formData.RoleId.ToString()!);
+            if (role == null)
+                return new MemberUserResult<bool> { Succeeded = false, StatusCode = 404, ErrorMessage = "The role could not be found.", Data = false };
+
+            var addedRole = await _userManager.AddToRoleAsync(entity, role.Name!);
+            if (!addedRole.Succeeded)
+                return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "Failed to assign role to member.", Data = false };
 
             await _memberRepository.CommitTransactionAsync();
 

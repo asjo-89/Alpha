@@ -4,6 +4,7 @@ using Data.Entities;
 using Data.Interfaces;
 using Data.Repositories;
 using Domain.Extensions;
+using Domain.Models;
 using System.Diagnostics;
 
 namespace Business.Services;
@@ -12,10 +13,10 @@ public class PictureService(IPictureRepository pictureRepository) : IPictureServ
 {
     private readonly IPictureRepository _pictureRepository = pictureRepository;
 
-    public async Task<PictureResult> CreateAsync(string url)
+    public async Task<PictureResult<Picture>> CreateAsync(string url)
     {
         if (string.IsNullOrEmpty(url))
-            return new PictureResult { Succeeded = false, StatusCode = 400, ErrorMessage = "No picture url was provided." };
+            return new PictureResult<Picture> { Succeeded = false, StatusCode = 400, ErrorMessage = "No picture url was provided." };
 
         try
         {
@@ -27,18 +28,19 @@ public class PictureService(IPictureRepository pictureRepository) : IPictureServ
             };
 
             var result = await _pictureRepository.CreateAsync(entity);
+
             if (!result.Success)
-                return new PictureResult { Succeeded = false, StatusCode = result.StatusCode, ErrorMessage = "Failed to save picture." };
+                return new PictureResult<Picture> { Succeeded = false, StatusCode = result.StatusCode, ErrorMessage = "Failed to save picture." };
 
             await _pictureRepository.CommitTransactionAsync();
 
-            return new PictureResult { Succeeded = true, StatusCode = 201 };
+            return new PictureResult<Picture> { Succeeded = true, StatusCode = 201, Data = entity.MapTo<Picture>() };
         }
         catch (Exception ex)
         {
             var rollback = await _pictureRepository.RollbackTransactionAsync();
             Debug.WriteLine($"**********\n{ex.Message}\n**********");
-            return new PictureResult { Succeeded = false, StatusCode = 500, ErrorMessage = $"Failed to save picture: {ex.Message} " };
+            return new PictureResult<Picture> { Succeeded = false, StatusCode = 500, ErrorMessage = $"Failed to save picture: {ex.Message} " };
         }
     }
 

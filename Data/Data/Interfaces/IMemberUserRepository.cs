@@ -5,4 +5,5 @@ namespace Data.Interfaces;
 
 public interface IMemberUserRepository : IBaseRepository<MemberUserEntity, MemberUser>
 {
+    Task<MemberUserEntity> GetAddressAsync(Guid id);
 }

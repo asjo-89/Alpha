@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities;
 
-[Index(nameof(StreetAddress), IsUnique = true)]
 public class AddressEntity
 {
     [Key]
@@ -26,6 +26,5 @@ public class AddressEntity
 
 
     // Navigation
-
-    public virtual ICollection<MemberUserEntity> Members { get; set; } = [];
+    public virtual MemberUserEntity Member { get; set; } = null!;
 }

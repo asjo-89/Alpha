@@ -38,12 +38,9 @@ namespace Data.Migrations
 
                     b.Property<string>("StreetAddress")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("StreetAddress")
-                        .IsUnique();
 
                     b.ToTable("Addresses");
                 });
@@ -122,10 +119,6 @@ namespace Data.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
@@ -150,7 +143,9 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AddressId");
+                    b.HasIndex("AddressId")
+                        .IsUnique()
+                        .HasFilter("[AddressId] IS NOT NULL");
 
                     b.HasIndex("Email")
                         .IsUnique()
@@ -425,9 +420,9 @@ namespace Data.Migrations
             modelBuilder.Entity("Data.Entities.MemberUserEntity", b =>
                 {
                     b.HasOne("Data.Entities.AddressEntity", "Address")
-                        .WithMany("Members")
-                        .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .WithOne("Member")
+                        .HasForeignKey("Data.Entities.MemberUserEntity", "AddressId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Data.Entities.PictureEntity", "Picture")
                         .WithMany("Members")
@@ -557,7 +552,8 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.AddressEntity", b =>
                 {
-                    b.Navigation("Members");
+                    b.Navigation("Member")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Data.Entities.ClientEntity", b =>
