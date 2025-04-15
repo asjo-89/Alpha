@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Alpha_Mvc.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Alpha_Mvc.Models.ViewModels;
+namespace Alpha_Mvc.ViewModels;
 
 public class TeamMembersViewModel
 {

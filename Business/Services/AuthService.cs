@@ -1,4 +1,5 @@
-﻿using Business.Interfaces;
+﻿using Business.Factories;
+using Business.Interfaces;
 using Business.Models;
 using Data.Entities;
 using Data.Interfaces;
@@ -54,29 +55,25 @@ public class AuthService(SignInManager<MemberUserEntity> signInManager, UserMana
     }
 
 
-    public async Task<MemberUserResult<bool>> CreateUserAsync(CreateUserFormData formData)
+    public async Task<MemberUserResult<bool>> CreateUserAsync(CreateAccountDto dto)
     {
-        if (formData == null)
+        if (dto == null)
             return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "All required fields must be completed.", Data = false };
 
         var pictureResult = await _pictureRepository.GetAsync(
-            filterBy: x => x.ImageUrl == formData.ImageUrl, 
+            filterBy: x => x.ImageUrl == dto.ImageUrl, 
             includes: null!
         );
 
         if (pictureResult.Data == null)
             return new MemberUserResult<bool> { Succeeded = false, StatusCode = 404, ErrorMessage = "Picture not found.", Data = false };
 
-        formData.PictureId = pictureResult.Data.Id;
-
-        // problem här!
-        var entity = formData.MapTo<MemberUserEntity>();
-        entity.UserName = formData.Email;
+        dto.PictureId = pictureResult.Data.Id;
+        var entity = AccountFactory.CreateEntityFromDto(dto);
 
         var exists = await _memberRepository.ExistsAsync(x => x.Email == entity.Email);
-
         if (exists.Success)
-            return new MemberUserResult<bool> { Succeeded = false, StatusCode = 409, ErrorMessage = $"Member with email address {formData.Email} already exists.", Data = false };
+            return new MemberUserResult<bool> { Succeeded = false, StatusCode = 409, ErrorMessage = $"Member with email address {dto.Email} already exists.", Data = false };
 
         try
         {
@@ -88,7 +85,7 @@ public class AuthService(SignInManager<MemberUserEntity> signInManager, UserMana
             var members = await _memberRepository.GetAllAsync
                 (
                     orderByDescending: false,
-                    orderBy: x => x.Email,
+                    orderBy: x => x.Email!,
                     filterBy: null!,
                     includes: null!
                 );

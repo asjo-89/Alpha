@@ -51,7 +51,7 @@ public class ProjectService(IProjectRepository projectRepository) : IProjectServ
 
 
         return result.Success
-            ? new ProjectResult<IEnumerable<Project>> { Succeeded = true, StatusCode = 200, Data = result.MapTo<IEnumerable<Project>>() }
+            ? new ProjectResult<IEnumerable<Project>> { Succeeded = true, StatusCode = 200, Data = result.Data?.Select(entity => entity.MapTo<Project>()) }
             : new ProjectResult<IEnumerable<Project>> { Succeeded = false, StatusCode = 404, ErrorMessage = "No projects was found." };
     }
 

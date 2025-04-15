@@ -7,6 +7,6 @@ namespace Business.Interfaces
     {
         Task<AuthResult<bool>> SignInAsync(SignInFormData formData);
         Task<AuthResult<bool>> SignOutAsync(MemberUserFormData formData);
-        Task<MemberUserResult<bool>> CreateUserAsync(CreateUserFormData formData);
+        Task<MemberUserResult<bool>> CreateUserAsync(CreateAccountDto dto);
     }
 }

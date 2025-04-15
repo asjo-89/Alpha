@@ -55,7 +55,7 @@ public class ClientService(IClientRepository clientRepository) : IClientService
 
 
         return result.Success
-            ? new ClientResult<IEnumerable<Client>> { Succeeded = true, StatusCode = 200, Data = result.MapTo<IEnumerable<Client>>() }
+            ? new ClientResult<IEnumerable<Client>> { Succeeded = true, StatusCode = 200, Data = result.Data?.Select(entity => entity.MapTo<Client>()) }
             : new ClientResult<IEnumerable<Client>> { Succeeded = false, StatusCode = 404, ErrorMessage = "No clients was found." };
     }
 

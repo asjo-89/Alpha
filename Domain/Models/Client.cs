@@ -6,4 +6,5 @@ public class Client
     public string ClientName { get; set; } = null!;
     public string Email { get; set; } = null!;
     public string? PhoneNumber { get; set; }
+    public IEnumerable<Project> Projects { get; set; } = [];
 }

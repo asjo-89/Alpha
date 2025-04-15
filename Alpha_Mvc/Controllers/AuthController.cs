@@ -1,4 +1,6 @@
-﻿using Alpha_Mvc.Models;
+﻿
+using Alpha_Mvc.Factories;
+using Alpha_Mvc.Models;
 using Business.Interfaces;
 using Domain.Dtos;
 using Domain.Extensions;
@@ -47,20 +49,9 @@ public class AuthController(IAuthService authService, IPictureService pictureSer
         if (!ModelState.IsValid)
             return View(form);
 
-        //if (string.IsNullOrEmpty(form.ImageUrl))
-        //{
-        //    var exists = await _pictureService.ExistsAsync("~/wwwRoot/Images/Profiles/Profile1.png");
-        //    if (!exists.Succeeded)
-        //    {
-        //        await _pictureService.CreateAsync("~/wwwRoot/Images/Profiles/Profile1.png");
-        //    }
+        var dto = AccountFactory.CreateDtoFromModel(form);
 
-        //    form.ImageUrl = "~/wwwRoot/Images/Profiles/Profile1.png";
-        //}
-
-        var newUser = form.MapTo<CreateUserFormData>();
-
-        var result = await _authService.CreateUserAsync(newUser);
+        var result = await _authService.CreateUserAsync(dto);
 
         switch (result.StatusCode)
         {

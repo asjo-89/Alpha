@@ -4,7 +4,7 @@ namespace Alpha_Mvc.Models;
 
 public class CreateAccountModel
 {
-    public Guid Id { get; set; }
+    //public Guid Id { get; set; }
 
     [Required(ErrorMessage = "First name is required.")]
     [Display(Name = "First Name", Prompt = "Enter first name...")]
@@ -42,5 +42,4 @@ public class CreateAccountModel
     [Range(typeof(bool), "true", "true", ErrorMessage = "You need to accept the terms and conditions.")]
     public bool TermsAndConditions { get; set; } = false;
 
-    public string? ImageUrl { get; set; } = "~/Images/Profiles/Profile1.png";
 }

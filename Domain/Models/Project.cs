@@ -11,7 +11,8 @@ public class Project
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public decimal? Budget { get; set; }
-    public string Picture { get; set; } = null!;
+    public DateTime Created { get; set; }
+    public Picture Picture { get; set; } = null!;
     public Client Client { get; set; } = null!;
     public Status Status { get; set; } = null!;
     public IEnumerable<MemberUser>? ProjectMembers { get; set; } = [];

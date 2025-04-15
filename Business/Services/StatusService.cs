@@ -55,7 +55,7 @@ public class StatusService(IStatusRepository statusRepository) : IStatusService
 
 
         return result.Success
-            ? new StatusResult<IEnumerable<Status>> { Succeeded = true, StatusCode = 200, Data = result.MapTo<IEnumerable<Status>>() }
+            ? new StatusResult<IEnumerable<Status>> { Succeeded = true, StatusCode = 200, Data = result.Data?.Select(entity => entity.MapTo<Status>()) }
             : new StatusResult<IEnumerable<Status>> { Succeeded = false, StatusCode = 404, ErrorMessage = "No statuses was found." };
     }
 

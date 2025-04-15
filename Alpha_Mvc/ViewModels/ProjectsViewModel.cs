@@ -1,6 +1,7 @@
-﻿using Domain.Models;
+﻿using Alpha_Mvc.Models;
+using Domain.Models;
 
-namespace Alpha_Mvc.Models.ViewModels;
+namespace Alpha_Mvc.ViewModels;
 
 public class ProjectsViewModel
 {

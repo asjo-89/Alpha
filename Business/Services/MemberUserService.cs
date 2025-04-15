@@ -94,6 +94,17 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
             : new MemberUserResult<MemberUser> { Succeeded = false, StatusCode = 404, ErrorMessage = "No member was found." };
     }
 
+    public async Task<MemberUserResult<MemberUser>> GetMemberUserAsync(Guid id)
+    {
+        var result = await _memberRepository.GetAsync(
+            filterBy: x => x.Id == id,
+            includes: [x => x.Address, x => x.Picture]);
+
+        return result.Success
+            ? new MemberUserResult<MemberUser> { Succeeded = true, StatusCode = 200, Data = result.Data?.MapTo<MemberUser>() }
+            : new MemberUserResult<MemberUser> { Succeeded = false, StatusCode = 404, ErrorMessage = "No member was found." };
+    }
+
 
     public async Task<MemberUserResult<bool>> ExistsAsync(Guid id)
     {
@@ -134,12 +145,31 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
     }
 
 
-    public async Task<MemberUserResult<bool>> DeleteAsync(MemberUserFormData formData)
+    public async Task<MemberUserResult<bool>> DeleteAsync(MemberUser data)
     {
-        var entity = formData.MapTo<MemberUserEntity>();
 
         try
         {
+            var entityFromDb = await _memberRepository.GetAsync(
+    filterBy: x => x.Id == data.Id,
+    includes: [x => x.Address, x => x.Picture]
+);
+
+            if (entityFromDb == null)
+            {
+                return new MemberUserResult<bool>
+                {
+                    Succeeded = false,
+                    StatusCode = 404,
+                    ErrorMessage = "User not found.",
+                    Data = false
+                };
+            }
+
+            // Mappa modellen till entiteten
+            var entity = entityFromDb.MapTo<MemberUserEntity>();
+
+
             await _memberRepository.BeginTransactionAsync();
 
             var result = await _userManager.DeleteAsync(entity);

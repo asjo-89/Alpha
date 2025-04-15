@@ -1,5 +1,5 @@
 ﻿using Alpha_Mvc.Models;
-using Alpha_Mvc.Models.ViewModels;
+using Alpha_Mvc.ViewModels;
 using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

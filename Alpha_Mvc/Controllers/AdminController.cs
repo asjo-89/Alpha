@@ -1,5 +1,5 @@
 using Alpha_Mvc.Models;
-using Alpha_Mvc.Models.ViewModels;
+using Alpha_Mvc.ViewModels;
 using Business.Interfaces;
 using Data.Entities;
 using Domain.Dtos;
@@ -203,11 +203,11 @@ namespace Alpha_Mvc.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> DeleteMember(UserModel model)
+        public async Task<IActionResult> DeleteMember(Guid id)
         {
-            var formData = model.MapTo<MemberUserFormData>();
+            var memberUser = await _memberService.GetMemberUserAsync(id);
 
-            var result = await _memberService.DeleteAsync(formData);
+            var result = await _memberService.DeleteAsync(memberUser.Data);
 
             if (result.Succeeded)
             {

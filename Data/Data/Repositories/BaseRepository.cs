@@ -9,7 +9,7 @@ using System.Linq.Expressions;
 
 namespace Data.Repositories;
 
-public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> where TEntity : class
+public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> where TEntity : class where TModel : class, new()
 {
     protected readonly AlphaDbContext _context;
     protected readonly DbSet<TEntity> _entity;
@@ -105,14 +105,14 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
     }
 
     // Get all with specific order and based on specific data
-    public async Task<RepositoryResult<IEnumerable<TSelect>>> GetAllAsync<TSelect>
+    public async Task<RepositoryResult<IEnumerable<TSelect>>> GetAllAsync<TSelect> 
         (
             Expression<Func<TEntity, TSelect>> selector,
             bool orderByDescending = false,
             Expression<Func<TEntity, object>> orderBy = null!,
             Expression<Func<TEntity, bool>> filterBy = null!,
             params Expression<Func<TEntity, object>>[] includes
-        )
+        ) where TSelect : class, new()
     {
         IQueryable<TEntity> query = _entity;
 
@@ -132,9 +132,9 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
                 : query.OrderBy(orderBy);
         }
 
-        var entities = await query.Select(selector).ToListAsync();
+        var result = await query.Select(selector).ToListAsync();
 
-        var result = entities.Select(entity => entity!.MapTo<TSelect>());
+        //var result = entities.Select(entity => entity!.MapTo<TSelect>());
         return new RepositoryResult<IEnumerable<TSelect>> { Success = true, StatusCode = 200, Data = result };
     }
 
@@ -147,7 +147,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
             params Expression<Func<TEntity, object>>[] includes
         )
     {
-        IQueryable<TEntity> query = _entity;
+        IQueryable<TEntity> query = _entity.AsNoTracking();
 
         if (includes != null && includes.Length != 0)
         {
