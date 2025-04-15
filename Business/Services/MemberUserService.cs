@@ -115,12 +115,12 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
     }
 
 
-    public async Task<MemberUserResult<bool>> UpdateAsync(MemberUserDto formData)
+    public async Task<MemberUserResult<bool>> UpdateAsync(MemberUserDto dto)
     {
-        if (formData == null)
+        if (dto == null)
             return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "All reaquired fields are not completed.", Data = false };
 
-        var entity = formData.MapTo<MemberUserEntity>();
+        var entity = MemberUserFactory.CreateEntityFromDto(dto);
 
         try
         {

@@ -1,4 +1,5 @@
-﻿using Business.Interfaces;
+﻿using Business.Factories;
+using Business.Interfaces;
 using Business.Models;
 using Data.Entities;
 using Data.Interfaces;
@@ -34,7 +35,7 @@ public class PictureService(IPictureRepository pictureRepository) : IPictureServ
 
             await _pictureRepository.CommitTransactionAsync();
 
-            return new PictureResult<Picture> { Succeeded = true, StatusCode = 201, Data = entity.MapTo<Picture>() };
+            return new PictureResult<Picture> { Succeeded = true, StatusCode = 201, Data = PictureFactory.CreateModelFromEntity(entity) };
         }
         catch (Exception ex)
         {

@@ -26,5 +26,5 @@ public class AddressEntity
 
 
     // Navigation
-    public virtual MemberUserEntity Member { get; set; } = null!;
+    public virtual MemberUserEntity? Member { get; set; }
 }

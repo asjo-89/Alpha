@@ -35,6 +35,7 @@ public static class MemberUserFactoryMCV
             StreetAddress = model.StreetAddress,
             PostalCode = model.PostalCode,
             City = model.City,
+            RoleId = model.RoleId,
             ImageUrl = model.ImageUrl
         };
     }

@@ -1,7 +1,7 @@
 ﻿using Data.Entities;
 using Domain.Models;
 
-namespace Data.Factories;
+namespace Business.Factories;
 
 public static class PictureFactory
 {

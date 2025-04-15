@@ -96,31 +96,23 @@ namespace Alpha_Mvc.Controllers
             }
             // *
 
-            model.ImageUrl = relativePath;         
+            model.ImageUrl = relativePath;       
+            
             var picture = await _pictureService.CreateAsync(model.ImageUrl);
-
-            var dto = MemberUserFactoryMCV.CreateDtoFromModel(model);
-
             if (!picture.Succeeded)
                 return BadRequest();
 
-            dto.PictureId = picture.Data?.Id;            
+            var address = await _addressService.CreateAsync(model.StreetAddress, model.PostalCode, model.City);
+            if (!address.Succeeded)
+                return BadRequest();
+
+            var dto = MemberUserFactoryMCV.CreateDtoFromModel(model);
+            dto.PictureId = picture.Data?.Id;
+            dto.AddressId = address.Data?.Id;
 
             var result = await _memberService.CreateAsync(dto);
-
             if (result.Succeeded)
             {
-                var newMember = await _memberService.GetMemberUserAsync(dto.Email);
-                var address = await _addressService.CreateAsync(model.StreetAddress, model.PostalCode, model.City, newMember.Data.Id);
-                if (!address.Succeeded)
-                    return BadRequest();
-
-                dto.AddressId = address.Data.Id;
-                var update = await _memberService.UpdateAsync(dto);
-
-                if (update.Succeeded)
-                    return RedirectToAction("Index");
-
                 return BadRequest();
             }
             else
