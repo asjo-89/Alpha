@@ -15,7 +15,7 @@ public static class MemberUserFactory
             PhoneNumber = model.PhoneNumber,
             JobTitle = model.JobTitle,
             DateOfBirth = model.DateOfBirth,
-            AddressId = model.AddressId,
+            AddressId = model.Address.Id,
             PictureId = model.PictureId,
         };
     }
@@ -40,11 +40,7 @@ public static class MemberUserFactory
                 PostalCode = entity.Address.PostalCode,
                 City = entity.Address.City
             } : null,
-            Picture = entity.Picture != null ? new Picture
-            {
-                Id = entity.Picture.Id,
-                ImageUrl = entity.Picture.ImageUrl
-            } : null
+            ImageUrl = entity.Picture!.ImageUrl ?? ""
         };
     }
 }

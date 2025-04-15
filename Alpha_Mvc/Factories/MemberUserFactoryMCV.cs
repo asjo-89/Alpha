@@ -1,13 +1,30 @@
-﻿using Data.Entities;
+﻿using Alpha_Mvc.Models;
+using Data.Entities;
+using Domain.Dtos;
 using Domain.Models;
 
-namespace Data.Factories;
+namespace Alpha_Mvc.Factories;
 
-public static class MemberUserFactory
+public static class MemberUserFactoryMCV
 {
-    public static MemberUserEntity CreateEntityFromModel(MemberUser model)
+    public static MemberUserEntity CreateEntityFromModel(MemberUserDto dto)
     {
         return new MemberUserEntity
+        {
+            FirstName = dto.FirstName,
+            LastName = dto.LastName,
+            Email = dto.Email,
+            PhoneNumber = dto.PhoneNumber,
+            JobTitle = dto.JobTitle,
+            DateOfBirth = dto.DateOfBirth,
+            AddressId = dto.AddressId,
+            PictureId = dto.PictureId,
+        };
+    }
+
+    public static MemberUserDto CreateDtoFromModel(MemberFormModel model)
+    {
+        return new MemberUserDto
         {
             FirstName = model.FirstName,
             LastName = model.LastName,
@@ -15,8 +32,10 @@ public static class MemberUserFactory
             PhoneNumber = model.PhoneNumber,
             JobTitle = model.JobTitle,
             DateOfBirth = model.DateOfBirth,
-            AddressId = model.AddressId,
-            PictureId = model.PictureId,
+            StreetAddress = model.StreetAddress,
+            PostalCode = model.PostalCode,
+            City = model.City,
+            ImageUrl = model.ImageUrl
         };
     }
 
@@ -40,11 +59,7 @@ public static class MemberUserFactory
                 PostalCode = entity.Address.PostalCode,
                 City = entity.Address.City
             } : null,
-            Picture = entity.Picture != null ? new Picture
-            {
-                Id = entity.Picture.Id,
-                ImageUrl = entity.Picture.ImageUrl
-            } : null
+            ImageUrl = entity.Picture.ImageUrl
         };
     }
 }

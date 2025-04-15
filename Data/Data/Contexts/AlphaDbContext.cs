@@ -30,8 +30,8 @@ public class AlphaDbContext(DbContextOptions<AlphaDbContext> options) : Identity
 
         builder.Entity<MemberUserEntity>()
             .HasOne(mu => mu.Picture)
-            .WithOne(p => p.Member)
-            .HasForeignKey<MemberUserEntity>(mu => mu.PictureId)
+            .WithMany(p => p.Members)
+            .HasForeignKey(mu => mu.PictureId)
             .OnDelete(DeleteBehavior.Restrict);
 
         #endregion
@@ -40,8 +40,8 @@ public class AlphaDbContext(DbContextOptions<AlphaDbContext> options) : Identity
 
         builder.Entity<ProjectEntity>()
             .HasOne(p => p.Picture)
-            .WithOne(pic => pic.ProjectEntity)
-            .HasForeignKey<ProjectEntity>(p => p.PictureId)
+            .WithMany(pic => pic.ProjectEntities)
+            .HasForeignKey(p => p.PictureId)
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.Entity<ProjectEntity>()

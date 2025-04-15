@@ -3,7 +3,7 @@ using Domain.Models;
 
 namespace Data.Factories;
 
-public static class PictureFactory
+public static class PictureFactoryData
 {
     public static PictureEntity CreateEntityFromModel(Picture model)
     {

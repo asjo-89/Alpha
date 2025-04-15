@@ -1,4 +1,3 @@
-@using Alpha_Mvc.Models.ViewModels
 @using Alpha_Mvc.ViewModels
 @model TeamMembersViewModel
 
@@ -19,7 +18,7 @@
 
 <div class="content">
 
-    @foreach (UserModel member in Model.Users)
+    @foreach (MemberUserModel member in Model.Users)
     {        
         @await Html.PartialAsync("Partials/_MembersCard", member)
     }

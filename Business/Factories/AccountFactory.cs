@@ -10,18 +10,11 @@ public static class AccountFactory
         return new MemberUserEntity
         {
             UserName = dto.Email,
+            FirstName = dto.FirstName,
+            LastName = dto.LastName,
             Email = dto.Email,
             PictureId = dto.PictureId
         };
     }
 
-    //public static CreateAccountDto CreateDtoFromModel(CreateAccou dto)
-    //{
-    //    return new MemberUserEntity
-    //    {
-    //        UserName = dto.Email,
-    //        Email = dto.Email,
-    //        PictureId = dto.PictureId
-    //    };
-    //}
 }

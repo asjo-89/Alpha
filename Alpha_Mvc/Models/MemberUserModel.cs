@@ -2,7 +2,7 @@
 
 namespace Alpha_Mvc.Models;
 
-public class UserModel
+public class MemberUserModel
 {
     public Guid Id { get; set; }
 

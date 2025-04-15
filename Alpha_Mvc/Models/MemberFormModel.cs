@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Alpha_Mvc.Models;
 
-public class CreateMemberFormModel
+public class MemberFormModel
 {
     [Required(ErrorMessage = "First name is required.")]
     [Display(Name = "First Name", Prompt = "Enter first name...")]

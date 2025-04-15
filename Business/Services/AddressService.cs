@@ -1,8 +1,8 @@
-﻿using Business.Interfaces;
+﻿using Business.Factories;
+using Business.Interfaces;
 using Business.Models;
 using Data.Entities;
 using Data.Interfaces;
-using Domain.Extensions;
 using Domain.Models;
 using System.Diagnostics;
 
@@ -24,7 +24,6 @@ public class AddressService(IAddressRepository addressRepository, IMemberUserRep
         {
             var started = await _addressRepository.BeginTransactionAsync();
 
-            //var member = await _memberRepository.GetAsync(x => x.Id == id);
             var member = await _memberRepository.GetAddressAsync(id);
             if (member == null)
                 return new AddressResult<Address> { Succeeded = false, StatusCode = 404, ErrorMessage = "Unable to find member when trying to add address." };
@@ -45,7 +44,7 @@ public class AddressService(IAddressRepository addressRepository, IMemberUserRep
 
             await _addressRepository.CommitTransactionAsync();
 
-            return new AddressResult<Address> { Succeeded = true, StatusCode = 201, Data = address.MapTo<Address>() };
+            return new AddressResult<Address> { Succeeded = true, StatusCode = 201, Data = AddressFactory.CreateModelFromEntity(address) };
         }
         catch (Exception ex)
         {

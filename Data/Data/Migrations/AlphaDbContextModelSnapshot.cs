@@ -42,7 +42,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Addresses");
+                    b.ToTable("Addresses", (string)null);
                 });
 
             modelBuilder.Entity("Data.Entities.ClientEntity", b =>
@@ -67,7 +67,7 @@ namespace Data.Migrations
                     b.HasIndex("ClientName")
                         .IsUnique();
 
-                    b.ToTable("Clients");
+                    b.ToTable("Clients", (string)null);
                 });
 
             modelBuilder.Entity("Data.Entities.MemberUserEntity", b =>
@@ -176,7 +176,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pictures");
+                    b.ToTable("Pictures", (string)null);
                 });
 
             modelBuilder.Entity("Data.Entities.ProjectEntity", b =>
@@ -222,7 +222,7 @@ namespace Data.Migrations
 
                     b.HasIndex("StatusId");
 
-                    b.ToTable("Projects");
+                    b.ToTable("Projects", (string)null);
                 });
 
             modelBuilder.Entity("Data.Entities.ProjectMemberEntity", b =>
@@ -237,7 +237,7 @@ namespace Data.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("ProjectMembers");
+                    b.ToTable("ProjectMembers", (string)null);
                 });
 
             modelBuilder.Entity("Data.Entities.ProjectNoteEntity", b =>
@@ -265,7 +265,7 @@ namespace Data.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("ProjectNotes");
+                    b.ToTable("ProjectNotes", (string)null);
                 });
 
             modelBuilder.Entity("Data.Entities.StatusEntity", b =>
@@ -283,7 +283,7 @@ namespace Data.Migrations
                     b.HasIndex("StatusName")
                         .IsUnique();
 
-                    b.ToTable("Statuses");
+                    b.ToTable("Statuses", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>

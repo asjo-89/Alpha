@@ -24,9 +24,9 @@ public class AuthController(IAuthService authService, IPictureService pictureSer
         if (!ModelState.IsValid)
             return View(form);
 
-        var formData = form.MapTo<SignInFormData>();
+        var dto = AccountFactoryMCV.SignInDtoFromModel(form);
 
-        var result = await _authService.SignInAsync(formData);
+        var result = await _authService.SignInAsync(dto);
         if (result.Succeeded)
         {
             return RedirectToAction("Index", "Home");
@@ -49,7 +49,7 @@ public class AuthController(IAuthService authService, IPictureService pictureSer
         if (!ModelState.IsValid)
             return View(form);
 
-        var dto = AccountFactory.CreateDtoFromModel(form);
+        var dto = AccountFactoryMCV.CreateDtoFromModel(form);
 
         var result = await _authService.CreateUserAsync(dto);
 

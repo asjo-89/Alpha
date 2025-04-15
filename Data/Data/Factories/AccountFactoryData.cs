@@ -1,11 +1,10 @@
-﻿using Alpha_Mvc.Models;
+﻿
 using Data.Entities;
 using Domain.Dtos;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Data.Factories;
 
-public static class AccountFactory
+public static class AccountFactoryData
 {
     public static MemberUserEntity CreateEntityFromDto(CreateAccountDto dto)
     {
@@ -16,4 +15,5 @@ public static class AccountFactory
             PictureId = dto.PictureId,
         };
     }
+
 }

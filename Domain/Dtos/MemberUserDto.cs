@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Dtos;
 
-public class MemberUserFormData
+public class MemberUserDto
 {
     public Guid Id { get; set; }
 
@@ -67,7 +67,7 @@ public class MemberUserFormData
     [DataType(DataType.Text)]
     public string City { get; set; } = null!;
 
-    public Guid? AddressID { get; set; }
+    public Guid? AddressId { get; set; }
 
 
     [Required(ErrorMessage = "Required")]

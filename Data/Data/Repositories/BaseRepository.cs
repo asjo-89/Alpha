@@ -48,7 +48,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
 
 
     // Get all with specific order.
-    public async Task<RepositoryResult<IEnumerable<TModel>>> GetAllAsync
+    public async Task<RepositoryResult<IEnumerable<TEntity>>> GetAllAsync
         (
             bool orderByDescending = false,
             Expression<Func<TEntity, object>> orderBy = null!,
@@ -76,32 +76,9 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
 
         var entities = await query.ToListAsync();
 
-        foreach (var entity in entities)
-        {
-            
-        }
-
-        //var result = entities.Select(entity => entity.MapTo<TModel>());
-        var result = entities.Select(entity =>
-        {
-            var mappedEntity = entity.MapTo<TModel>();
-
-            // Kontrollera om TModel har en ImageUrl-egenskap och mappa den manuellt
-            var pictureProperty = entity.GetType().GetProperty("Picture");
-            var imageUrlProperty = mappedEntity.GetType().GetProperty("ImageUrl");
-
-            if (pictureProperty != null && imageUrlProperty != null)
-            {
-                var picture = pictureProperty.GetValue(entity) as PictureEntity;
-                imageUrlProperty.SetValue(mappedEntity, picture?.ImageUrl);
-            }
-
-            return mappedEntity;
-        });
-
         return entities.Count != 0
-            ? new RepositoryResult<IEnumerable<TModel>> { Success = true, StatusCode = 200, Data = result ?? [] }
-            : new RepositoryResult<IEnumerable<TModel>> { Success = false, StatusCode = 404, Error = "No entities found." };
+            ? new RepositoryResult<IEnumerable<TEntity>> { Success = true, StatusCode = 200, Data = entities ?? [] }
+            : new RepositoryResult<IEnumerable<TEntity>> { Success = false, StatusCode = 404, Error = "No entities found." };
     }
 
     // Get all with specific order and based on specific data
@@ -141,7 +118,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
 
 
     // Get one with specific data
-    public async Task<RepositoryResult<TModel>> GetAsync
+    public async Task<RepositoryResult<TEntity>> GetAsync
         (
             Expression<Func<TEntity, bool>> filterBy = null!,
             params Expression<Func<TEntity, object>>[] includes
@@ -157,10 +134,9 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
 
         var entity = await query.FirstOrDefaultAsync(filterBy);
         if (entity == null)
-            return new RepositoryResult<TModel> { Success = false, StatusCode = 404, Error = "Entity could not be found." };
+            return new RepositoryResult<TEntity> { Success = false, StatusCode = 404, Error = "Entity could not be found." };
 
-        var result = entity.MapTo<TModel>();
-        return new RepositoryResult<TModel> { Success = true, StatusCode = 200, Data = result };
+        return new RepositoryResult<TEntity> { Success = true, StatusCode = 200, Data = entity };
     }
 
 

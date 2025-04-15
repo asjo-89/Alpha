@@ -1,9 +1,11 @@
+using Alpha_Mvc.Factories;
 using Alpha_Mvc.Models;
 using Alpha_Mvc.ViewModels;
 using Business.Interfaces;
 using Data.Entities;
 using Domain.Dtos;
 using Domain.Extensions;
+using Domain.Models;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -22,7 +24,7 @@ namespace Alpha_Mvc.Controllers
         private readonly IPictureService _pictureService = pictureService;
 
         public CreateProjectFormModel createProjectFormModel = new();
-        public CreateMemberFormModel createMemberFormModel = new();
+        public MemberFormModel createMemberFormModel = new();
 
         public TeamMembersViewModel teamMembersViewModel = new();
 
@@ -36,7 +38,7 @@ namespace Alpha_Mvc.Controllers
 
             var viewModel = new TeamMembersViewModel
             {
-                Users = members.Data.Select(member => new UserModel
+                Users = members.Data.Select(member => new MemberUserModel
                 {
                     Id = member.Id,
                     FirstName = member.FirstName,
@@ -46,7 +48,7 @@ namespace Alpha_Mvc.Controllers
                     JobTitle = member.JobTitle ?? "No role assigned",
                     ImageUrl = Url.Content($"{member.ImageUrl}")
                 }),
-                Member = new CreateMemberFormModel(),
+                Member = new MemberFormModel(),
                 Roles = roles.Select(role => new SelectListItem
                 {
                     Value = role.Id.ToString(),
@@ -58,7 +60,7 @@ namespace Alpha_Mvc.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddMember([Bind(Prefix = "Member")]CreateMemberFormModel model)
+        public async Task<IActionResult> AddMember([Bind(Prefix = "Member")]MemberFormModel model)
         {
             if (model.BirthDay > 0 && model.BirthMonth > 0 && model.BirthYear > 0)
             {
@@ -80,6 +82,7 @@ namespace Alpha_Mvc.Controllers
                 return BadRequest(new { success = false, errors });
             }
             
+            // * Lägg ut i egen metod
             var directoryPath = Path.Combine(_environment.WebRootPath, "uploads");
             Directory.CreateDirectory(directoryPath);
 
@@ -91,26 +94,34 @@ namespace Alpha_Mvc.Controllers
             {
                 await model.ProfileImage.CopyToAsync(fileStream);
             }
-            
-            model.ImageUrl = relativePath;            
-            var dto = model.MapTo<MemberUserFormData>();
+            // *
 
+            model.ImageUrl = relativePath;         
             var picture = await _pictureService.CreateAsync(model.ImageUrl);
+
+            var dto = MemberUserFactoryMCV.CreateDtoFromModel(model);
+
             if (!picture.Succeeded)
                 return BadRequest();
+
             dto.PictureId = picture.Data?.Id;            
 
-            var newModel = await _memberService.CreateAsync(dto);
-            if (newModel != null)
+            var result = await _memberService.CreateAsync(dto);
+
+            if (result.Succeeded)
             {
                 var newMember = await _memberService.GetMemberUserAsync(dto.Email);
                 var address = await _addressService.CreateAsync(model.StreetAddress, model.PostalCode, model.City, newMember.Data.Id);
                 if (!address.Succeeded)
                     return BadRequest();
 
-                dto.AddressID = address.Data.Id;
-                var test = await _memberService.UpdateAsync(dto);
-                return RedirectToAction("Index");
+                dto.AddressId = address.Data.Id;
+                var update = await _memberService.UpdateAsync(dto);
+
+                if (update.Succeeded)
+                    return RedirectToAction("Index");
+
+                return BadRequest();
             }
             else
             {
@@ -118,7 +129,7 @@ namespace Alpha_Mvc.Controllers
 
                 var viewModel = new TeamMembersViewModel
                 {
-                    Users = members.Data.Select(member => new UserModel
+                    Users = members.Data.Select(member => new MemberUserModel
                     {
                         Id = member.Id,
                         FirstName = member.FirstName,
@@ -128,7 +139,7 @@ namespace Alpha_Mvc.Controllers
                         JobTitle = member.JobTitle ?? "No role assigned",
                         ImageUrl = Url.Content($"{member.ImageUrl}")
                     }),
-                    Member = new CreateMemberFormModel()
+                    Member = new MemberFormModel()
                 };
 
                 ModelState.AddModelError("viewModel", "Failed to create member.");
@@ -139,7 +150,7 @@ namespace Alpha_Mvc.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> EditMember(UserModel model)
+        public async Task<IActionResult> EditMember(MemberUserModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -147,7 +158,7 @@ namespace Alpha_Mvc.Controllers
 
                 var viewModel = new TeamMembersViewModel
                 {
-                    Users = members.Data.Select(member => new UserModel
+                    Users = members.Data.Select(member => new MemberUserModel
                     {
                         Id = member.Id,
                         FirstName = member.FirstName,
@@ -157,7 +168,7 @@ namespace Alpha_Mvc.Controllers
                         JobTitle = member.JobTitle ?? "No role assigned",
                         ImageUrl = Url.Content($"{member.ImageUrl}")
                     }),
-                    Member = new CreateMemberFormModel()
+                    Member = new MemberFormModel()
                 };
                 return View("Index", viewModel);
             }
@@ -180,7 +191,7 @@ namespace Alpha_Mvc.Controllers
             }
             ;
 
-            MemberUserFormData memberModel = new()
+            MemberUserDto memberModel = new()
             {
                 Id = model.Id,
                 FirstName = model.FirstName,

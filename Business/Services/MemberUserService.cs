@@ -1,4 +1,5 @@
-﻿using Business.Interfaces;
+﻿using Business.Factories;
+using Business.Interfaces;
 using Business.Models;
 using Data.Entities;
 using Data.Interfaces;
@@ -20,39 +21,33 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
 
 
 
-    public async Task<MemberUserResult<bool>> CreateAsync(MemberUserFormData formData)
+    public async Task<MemberUserResult<bool>> CreateAsync(MemberUserDto dto)
     {
-        if (formData == null)
+        if (dto == null)
             return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "All required fields must be completed.", Data = false };
 
-        var entity = formData.MapTo<MemberUserEntity>();
+        var entity = MemberUserFactory.CreateEntityFromDto(dto);
         var exists = await _memberRepository.ExistsAsync(x => x.Email == entity.Email);
 
         if (exists.Success)
-            return new MemberUserResult<bool> { Succeeded = false, StatusCode = 409, ErrorMessage = $"Member with email address {formData.Email} already exists.", Data = false };
+            return new MemberUserResult<bool> { Succeeded = false, StatusCode = 409, ErrorMessage = $"Member with email address {dto.Email} already exists.", Data = false };
 
         try
         {
             await _memberRepository.BeginTransactionAsync();
-
-            entity.UserName = entity.Email;
-
-            exists = await _memberRepository.ExistsAsync(x => x.Email == entity.Email);
-
-            if (exists.Success)
-                return new MemberUserResult<bool> { Succeeded = false, StatusCode = 409, ErrorMessage = $"Member with email address {formData.Email} already exists.", Data = false };
 
             var result = await _userManager.CreateAsync(entity);
 
             if (!result.Succeeded)
                 return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "Failed to create member.", Data = false };
 
-            var role = await _roleManager.FindByIdAsync(formData.RoleId.ToString()!);
+            var role = await _roleManager.FindByIdAsync(dto.RoleId.ToString()!);
+
             if (role == null)
                 return new MemberUserResult<bool> { Succeeded = false, StatusCode = 404, ErrorMessage = "The role could not be found.", Data = false };
 
-            var addedRole = await _userManager.AddToRoleAsync(entity, role.Name!);
-            if (!addedRole.Succeeded)
+            var addedToRole = await _userManager.AddToRoleAsync(entity, role.Name!);
+            if (!addedToRole.Succeeded)
                 return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "Failed to assign role to member.", Data = false };
 
             await _memberRepository.CommitTransactionAsync();
@@ -74,11 +69,13 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
             orderByDescending: false,
             orderBy: x => x.Email,
             filterBy: null!,
-            includes: x => x.Picture
+            includes: [x => x.Picture, x => x.Address]
         );
 
+        var members = result.Data.Select(MemberUserFactory.CreateModelFromEntity);
+
         return result.Success
-            ? new MemberUserResult<IEnumerable<MemberUser>> { Succeeded = true, StatusCode = 200, Data = result.Data ?? [] }
+            ? new MemberUserResult<IEnumerable<MemberUser>> { Succeeded = true, StatusCode = 200, Data = members ?? [] }
             : new MemberUserResult<IEnumerable<MemberUser>> { Succeeded = false, StatusCode = 404, ErrorMessage = "No members was found." };
     }
 
@@ -87,10 +84,11 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
     {
         var result = await _memberRepository.GetAsync(
             filterBy: x => x.FirstName.ToLower() == value.ToLower() || x.LastName.ToLower() == value.ToLower() || x.Email == value.ToLower(),
-            includes: null!);
+            includes: null!
+        );
 
         return result.Success
-            ? new MemberUserResult<MemberUser> { Succeeded = true, StatusCode = 200, Data = result.Data?.MapTo<MemberUser>() }
+            ? new MemberUserResult<MemberUser> { Succeeded = true, StatusCode = 200, Data = MemberUserFactory.CreateModelFromEntity(result.Data!) }
             : new MemberUserResult<MemberUser> { Succeeded = false, StatusCode = 404, ErrorMessage = "No member was found." };
     }
 
@@ -98,10 +96,11 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
     {
         var result = await _memberRepository.GetAsync(
             filterBy: x => x.Id == id,
-            includes: [x => x.Address, x => x.Picture]);
+            includes: [x => x.Address, x => x.Picture]
+        );
 
         return result.Success
-            ? new MemberUserResult<MemberUser> { Succeeded = true, StatusCode = 200, Data = result.Data?.MapTo<MemberUser>() }
+            ? new MemberUserResult<MemberUser> { Succeeded = true, StatusCode = 200, Data = MemberUserFactory.CreateModelFromEntity(result.Data!) }
             : new MemberUserResult<MemberUser> { Succeeded = false, StatusCode = 404, ErrorMessage = "No member was found." };
     }
 
@@ -116,7 +115,7 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
     }
 
 
-    public async Task<MemberUserResult<bool>> UpdateAsync(MemberUserFormData formData)
+    public async Task<MemberUserResult<bool>> UpdateAsync(MemberUserDto formData)
     {
         if (formData == null)
             return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "All reaquired fields are not completed.", Data = false };
