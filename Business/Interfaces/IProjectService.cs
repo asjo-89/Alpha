@@ -1,14 +1,15 @@
-﻿using Business.Dtos;
-using Business.Models;
-using System.Linq.Expressions;
+﻿using Business.Models;
+using Domain.Dtos;
+using Domain.Models;
 
-namespace Business.Interfaces;
-
-public interface IProjectService
+namespace Business.Interfaces
 {
-    Task<bool> CreateAsync(ProjectRegForm form);
-    Task<IEnumerable<ProjectModel>> GetAllAsync();
-    Task<ProjectModel> GetOneAsync(Expression<Func<ProjectModel, bool>> expression);
-    Task<bool> UpdateAsync(ProjectModel model);
-    Task<bool> DeleteAsync(ProjectModel model);
+    public interface IProjectService
+    {
+        Task<ProjectResult<bool>> CreateAsync(ProjectFormData formData);
+        Task<ProjectResult<bool>> DeleteAsync(ProjectFormData formData);
+        Task<ProjectResult<Project>> GetMemberUserAsync(string value);
+        Task<ProjectResult<IEnumerable<Project>>> GetMemberUsersAsync();
+        Task<ProjectResult<bool>> UpdateAsync(ProjectFormData formData);
+    }
 }

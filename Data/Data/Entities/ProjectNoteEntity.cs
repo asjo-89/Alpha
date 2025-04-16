@@ -8,24 +8,31 @@ public class ProjectNoteEntity
     [Key]
     public Guid Id { get; set; }
 
-    [Required]
-    [Column(TypeName = "nvarchar(max)")]
-    public string Note { get; set; } = null!;
 
     [Required]
-    public DateTime Created { get; set; }
+    public string Content { get; set; } = null!;
 
     [Required]
-    public Guid EmployeeId { get; set; }
+    [Column(TypeName = "date")]
+    public DateTime Created { get; set; } = DateTime.Now;
+
+
+
+
+    [Required]
+    public Guid MemberId { get; set; }
 
     [Required]
     public Guid ProjectId { get; set; }
 
 
-    // Relations
-    [ForeignKey(nameof(EmployeeId))]
-    public MemberUserEntity Employee { get; set; } = null!;
+    // Navigation
+
+
+    [ForeignKey(nameof(MemberId))]
+    public virtual MemberUserEntity Member { get; set; } = null!;
+
 
     [ForeignKey(nameof(ProjectId))]
-    public ProjectEntity Project {  get; set; } = null!;
+    public virtual ProjectEntity Project { get; set; } = null!;
 }

@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities;
 
@@ -9,11 +8,15 @@ public class PictureEntity
     public Guid Id { get; set; }
 
     [Required]
-    [Column(TypeName = "nvarchar(max)")]
-    public string PictureUrl { get; set; } = null!;
+    public string ImageUrl { get; set; } = null!;
 
 
-    // Relations
-    public ICollection<ProjectEntity> Projects { get; set; } = [];
-    public ICollection<MemberUserEntity> Employees { get; set; } = [];
+
+
+
+    // Navigation
+
+    public virtual ICollection<MemberUserEntity>? Members { get; set; } = [];
+
+    public virtual ICollection<ProjectEntity>? ProjectEntities { get; set; } = [];
 }

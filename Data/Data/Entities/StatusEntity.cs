@@ -1,18 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace Data.Entities;
 
+[Index(nameof(StatusName), IsUnique = true)]
 public class StatusEntity
 {
     [Key]
     public Guid Id { get; set; }
 
     [Required]
-    [Column(TypeName = "nvarchar(10)")]
     public string StatusName { get; set; } = null!;
 
 
-    //Relations
-    public ICollection<ProjectEntity> Projects { get; set; } = [];
+    // Navigation
+
+    public virtual ICollection<ProjectEntity>? Projects { get; set; } = [];
 }

@@ -1,23 +1,28 @@
+using Alpha_Mvc.Factories;
+using Alpha_Mvc.Interfaces;
 using Alpha_Mvc.Models;
-using Alpha_Mvc.Models.ViewModels;
-using AspNetCoreGeneratedDocument;
-using Business.Dtos;
-using Business.Factories;
+using Alpha_Mvc.ViewModels;
 using Business.Interfaces;
-using Business.Models;
-using Data.Entities;
+using Domain.Dtos;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Alpha_Mvc.Controllers
 {
-    public class AdminController(IWebHostEnvironment environment, IMemberService memberService) : Controller
+    public class AdminController(IWebHostEnvironment environment, RoleManager<IdentityRole<Guid>> roleManager, IMemberUserService memberService, IAddressService addressService, IPictureService pictureService, IFileService fileService) : Controller
     {
         private readonly IWebHostEnvironment _environment = environment;
-        private readonly IMemberService _memberService = memberService;
+        private readonly RoleManager<IdentityRole<Guid>> _roleManager = roleManager;
+
+        private readonly IFileService _fileService = fileService;
+        private readonly IMemberUserService _memberService = memberService;
+        private readonly IAddressService _addressService = addressService;
+        private readonly IPictureService _pictureService = pictureService;
 
         public CreateProjectFormModel createProjectFormModel = new();
-        public CreateMemberFormModel createMemberFormModel = new();
+        public MemberFormModel createMemberFormModel = new();
 
         public TeamMembersViewModel teamMembersViewModel = new();
 
@@ -26,162 +31,146 @@ namespace Alpha_Mvc.Controllers
             ViewData["Title"] = "Admin";
             ViewData["Header"] = "Team Members";
 
-            var members = await _memberService.GetAllMembersAsync();
+            var members = await _memberService.GetMemberUsersAsync();
+            var roles = await _roleManager.Roles.ToListAsync();
 
             var viewModel = new TeamMembersViewModel
             {
-                Users = members.Select(member => new UserModel
+                Users = members.Data.Select(member => new MemberUserModel
                 {
                     Id = member.Id,
                     FirstName = member.FirstName,
                     LastName = member.LastName,
                     Email = member.Email,
-                    PhoneNumber = member.PhoneNumber,
-                    JobTitle = member.JobTitle,
-                    ProfilePicture = Url.Content($"~/{member.ProfileImage}")
+                    PhoneNumber = member.PhoneNumber ?? "",
+                    JobTitle = member.JobTitle ?? "No role assigned",
+                    ImageUrl = Url.Content($"{member.ImageUrl}")
                 }),
-                Member = new CreateMemberFormModel()
+                Member = new MemberFormModel(),
+                Roles = roles.Select(role => new SelectListItem
+                {
+                    Value = role.Id.ToString(),
+                    Text = role.Name,
+                }).ToList()
             };
             return View(viewModel);
         }
 
 
         [HttpPost]
-        public async Task<IActionResult> AddMember(CreateMemberFormModel model)
+        public async Task<IActionResult> AddMember([Bind(Prefix = "Member")] MemberFormModel model)
         {
+            Console.WriteLine("AddMember");
+            if (model.BirthDay > 0 && model.BirthMonth > 0 && model.BirthYear > 0)
+            {
+                model.DateOfBirth = new DateOnly(model.BirthYear, model.BirthMonth, model.BirthDay);
+            }
+
             if (!ModelState.IsValid)
             {
-                var members = await _memberService.GetAllMembersAsync();
+                var errors = ModelState
+                    .Where(x => x.Value?.Errors.Count > 0)
+                    .ToDictionary(
+                        kvp => kvp.Key,
+                        kvp => kvp.Value?.Errors.Select(x => x.ErrorMessage).ToArray()
+                     );
+                foreach (var error in errors)
+                {
+                    Console.WriteLine($"Key: {error.Key}, Errors: {string.Join(", ", error.Value)}");
+                }
+                return BadRequest(new { success = false, errors });
+            }
+
+            var relativePath = await _fileService.CreateFile(model.ProfileImage);
+
+            var picture = await _pictureService.CreateAsync(relativePath);
+            if (!picture.Succeeded)
+                return BadRequest();
+
+
+            var dto = MemberUserFactoryMCV.CreateDtoFromModel(model);
+            dto.PictureId = picture.Data?.Id;
+
+
+            var result = await _memberService.CreateAsync(dto);
+
+            var newMember = await _memberService.GetMemberUserAsync(dto.Email);
+
+            var address = await _addressService.CreateAsync(model.StreetAddress, model.PostalCode, model.City, newMember.Data.Id);
+           
+            if (!result.Succeeded || !address.Succeeded)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                var members = await _memberService.GetMemberUsersAsync();
+
                 var viewModel = new TeamMembersViewModel
                 {
-                    Member = model,
-                    Users = members.Select(member => new UserModel
+                    Users = members.Data.Select(member => new MemberUserModel
                     {
                         Id = member.Id,
                         FirstName = member.FirstName,
                         LastName = member.LastName,
                         Email = member.Email,
-                        PhoneNumber = member.PhoneNumber,
-                        JobTitle = member.JobTitle
+                        PhoneNumber = member.PhoneNumber ?? "",
+                        JobTitle = member.JobTitle ?? "No role assigned",
+                        ImageUrl = Url.Content($"{member.ImageUrl}")
                     }),
+                    Member = new MemberFormModel()
+                };
+
+                ModelState.AddModelError("viewModel", "Failed to create member.");
+                return View("Index", viewModel);
+            }
+
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> EditMember(MemberUserModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                var members = await _memberService.GetMemberUsersAsync();
+
+                var viewModel = new TeamMembersViewModel
+                {
+                    Users = members.Data.Select(member => new MemberUserModel
+                    {
+                        Id = member.Id,
+                        FirstName = member.FirstName,
+                        LastName = member.LastName,
+                        Email = member.Email,
+                        PhoneNumber = member.PhoneNumber ?? "",
+                        JobTitle = member.JobTitle ?? "No role assigned",
+                        ImageUrl = Url.Content($"{member.ImageUrl}")
+                    }),
+                    Member = new MemberFormModel()
                 };
                 return View("Index", viewModel);
             }
 
-            MemberUserEntity entity = new()
-            {
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                Email = model.Email,
-                Password = ""
-            };
+            var existingMember = await _memberService.ExistsAsync(model.Id);
+            if (!existingMember.Data) return null!;
 
-            var existingEntity = await _memberService.ExistsAsync(x => x.Email == entity.Email);
-            if (existingEntity)
-            {
-                // returnera att användaren redan finns.
-            }
+            string? relativePath = null;
 
             var directoryPath = Path.Combine(_environment.WebRootPath, "uploads");
             Directory.CreateDirectory(directoryPath);
 
             var fileName = $"{Guid.NewGuid()}_{model.ProfileImage.FileName}";
             var filePath = Path.Combine(directoryPath, fileName);
-            var relativePath = $"uploads/{fileName}";
+            relativePath = $"uploads/{fileName}";
 
             using (var fileStream = new FileStream(filePath, FileMode.Create))
-            {                
+            {
                 await model.ProfileImage.CopyToAsync(fileStream);
             }
+            ;
 
-            CreateMemberRegForm dto = new CreateMemberRegForm()
-            {
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                Email = model.Email,
-                PhoneNumber = model.PhoneNumber,
-                JobTitle = model.JobTitle,
-                StreetAddress = model.StreetAddress,
-                PostalCode = model.PostalCode,
-                City = model.City,
-                PassWord = "AddMember123!",
-                DateOfBirth = new (model.BirthYear, model.BirthMonth, model.BirthDay),
-                ProfileImage = relativePath,
-            };
-
-            var newModel = await _memberService.AddMemberAsync(dto);
-            if (newModel != null) 
-            {
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                var members = await _memberService.GetAllMembersAsync();
-                var viewModel = new TeamMembersViewModel
-                {
-                    Member = model,
-                    Users = members.Select(member => new UserModel
-                    {
-                        Id = member.Id,
-                        FirstName = member.FirstName,
-                        LastName = member.LastName,
-                        Email = member.Email,
-                        PhoneNumber = member.PhoneNumber,
-                        JobTitle = member.JobTitle,
-                        ProfilePicture = Url.Content($"~/{member.ProfileImage}")
-                    }),
-                };
-
-                ModelState.AddModelError("viewModel", "Failed to create member.");
-                return View("Index", viewModel);
-            }
-            
-        }
-
-
-        [HttpPost]
-        public async Task<IActionResult> EditMember(UserModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                var members = await _memberService.GetAllMembersAsync();
-                var viewModel = new TeamMembersViewModel
-                {
-                    Member = new CreateMemberFormModel(),
-                    Users = members.Select(member => new UserModel
-                    {
-                        Id = member.Id,
-                        FirstName = member.FirstName,
-                        LastName = member.LastName,
-                        Email = member.Email,
-                        PhoneNumber = member.PhoneNumber,
-                        JobTitle = member.JobTitle
-                    }),
-                };
-                return View("Index", viewModel);
-            }
-
-            var existingMember = await _memberService.GetMemberAsync(x => x.Id == model.Id);
-            if (existingMember == null) return null!;
-
-            string? relativePath = null;
-
-            if (model.ProfilePicture != null)
-            {
-                var directoryPath = Path.Combine(_environment.WebRootPath, "uploads");
-                Directory.CreateDirectory(directoryPath);
-
-                var fileName = $"{Guid.NewGuid()}_{model.ProfileImage.FileName}";
-                var filePath = Path.Combine(directoryPath, fileName);
-                relativePath = $"uploads/{fileName}";
-
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    await model.ProfileImage.CopyToAsync(fileStream);
-                };
-            }
-
-            var memberModel = new MemberModel()
+            MemberUserDto memberModel = new()
             {
                 Id = model.Id,
                 FirstName = model.FirstName,
@@ -193,29 +182,56 @@ namespace Alpha_Mvc.Controllers
                 PostalCode = model.PostalCode,
                 City = model.City,
                 DateOfBirth = new(model.BirthYear, model.BirthMonth, model.BirthDay),
-                ProfileImage = relativePath ?? existingMember.ProfileImage
+                ImageUrl = relativePath
             };
 
-            MemberModel updatedModel = await _memberService.UpdateMember(memberModel);
-            if (updatedModel == null) return null!;
+            var updatedModel = await _memberService.UpdateAsync(memberModel);
+            if (!updatedModel.Data) return null!;
 
             return RedirectToAction("Index");
-            
         }
 
 
         [HttpPost]
         public async Task<IActionResult> DeleteMember(Guid id)
         {
-            var result = await _memberService.DeleteMember(id);
+            var memberUser = await _memberService.GetMemberUserAsync(id);
 
-            if (result)
-            {
-                return RedirectToAction("Index");
+            if (!memberUser.Succeeded || memberUser.Data == null || memberUser.Data.ImageUrl == null)
+                return NotFound($"Status code: {memberUser.StatusCode}\nError message: \n{memberUser.ErrorMessage}");
+
+            var filePath = Path.Combine(_environment.WebRootPath, memberUser.Data.ImageUrl.TrimStart('/'));
+            var result = await _memberService.DeleteAsync(id);
+
+            if (result.Succeeded)
+            {                
+                var deleteFile = _fileService.DeleteFile(filePath);
+                
+                return deleteFile
+                    ? RedirectToAction("Index")
+                    : BadRequest();
             }
             else
             {
-                return View("Index");
+                var members = await _memberService.GetMemberUsersAsync();
+
+                var viewModel = new TeamMembersViewModel
+                {
+                    Users = members.Data.Select(member => new MemberUserModel
+                    {
+                        Id = member.Id,
+                        FirstName = member.FirstName,
+                        LastName = member.LastName,
+                        Email = member.Email,
+                        PhoneNumber = member.PhoneNumber ?? "",
+                        JobTitle = member.JobTitle ?? "No role assigned",
+                        ImageUrl = Url.Content($"{member.ImageUrl}")
+                    }),
+                    Member = new MemberFormModel()
+                };
+
+                ModelState.AddModelError("viewModel", "Failed to create member.");
+                return View("Index", viewModel);
             }
         }
 
@@ -226,6 +242,6 @@ namespace Alpha_Mvc.Controllers
         {
             ViewData["Title"] = "Admin";
             return View(createProjectFormModel);
-        }        
+        }
     }
 }

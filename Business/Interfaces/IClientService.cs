@@ -1,15 +1,15 @@
-﻿using Business.Dtos;
-using Business.Models;
-using System.Linq.Expressions;
+﻿using Business.Models;
+using Domain.Dtos;
+using Domain.Models;
 
-
-namespace Business.Interfaces;
-
-public interface IClientService
+namespace Business.Interfaces
 {
-    Task<bool> CreateAsync(ClientRegForm form);
-    Task<IEnumerable<ClientModel>> GetAllAsync();
-    Task<ClientModel> GetOneAsync(Expression<Func<ClientModel, bool>> expression);
-    Task<bool> UpdateAsync(ClientModel model);
-    Task<bool> DeleteAsync(ClientModel model);
+    public interface IClientService
+    {
+        Task<ClientResult<bool>> CreateAsync(ClientFormData formData);
+        Task<ClientResult<bool>> DeleteAsync(ClientFormData formData);
+        Task<ClientResult<Client>> GetClientAsync(string value);
+        Task<ClientResult<IEnumerable<Client>>> GetClientsAsync();
+        Task<ClientResult<bool>> UpdateAsync(ClientFormData formData);
+    }
 }

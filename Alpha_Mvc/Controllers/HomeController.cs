@@ -1,5 +1,6 @@
 ﻿using Alpha_Mvc.Models;
-using Alpha_Mvc.Models.ViewModels;
+using Alpha_Mvc.ViewModels;
+using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,19 +15,15 @@ namespace Alpha_Mvc.Controllers
             ViewData["Title"] = "Home";
             ViewData["Header"] = "Projects";
 
-            ProjectsViewModel viewModel = new ProjectsViewModel()
+            ProjectsViewModel viewModel = new()
             {
                 ProjectForm = new ProjectFormModel(),
-                ProjectModel = new ProjectModel(),
+                ProjectModel = new Project(),
                 ClientModel = new ClientModel(),
                 StatusModel = new StatusModel(),
             };
 
             return View(viewModel);
         }
-
-
-        [HttpPost]
-        public async Task<IActionResult> CreateProjectAsync()
     }
 }

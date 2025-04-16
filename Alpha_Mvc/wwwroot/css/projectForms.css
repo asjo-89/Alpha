@@ -154,7 +154,7 @@
     .border-circle {
         width: 150px;
         aspect-ratio: 1;
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         border: 2px dashed var(--grey-300);
@@ -228,4 +228,10 @@
     background-repeat: no-repeat;
     background-position: 10px center;
     padding-left: 2.5rem;
+}
+
+.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -9,19 +10,25 @@ public class AddressEntity
     [Key]
     public Guid Id { get; set; }
 
-    [Required]
-    [Column(TypeName = "nvarchar(50)")]
-    public string StreetName { get; set; } = null!;
+    [Required, ProtectedPersonalData]
+    public string StreetAddress { get; set; } = null!;
 
-    [Required]
-    [Column(TypeName = "int")]
-    public int PostalCode { get; set; }
 
-    [Required]
-    [Column(TypeName = "nvarchar(20)")]
+    [Required, ProtectedPersonalData]
+    public string PostalCode { get; set; } = null!;
+
+
+    [Required, ProtectedPersonalData]
     public string City { get; set; } = null!;
 
+    public Guid MemberUserId { get; set; }
 
-    // Relations
-    public ICollection<MemberUserEntity> Employees { get; set; } = [];
+
+
+
+
+    // Navigation
+
+    [ForeignKey(nameof(MemberUserId))]
+    public virtual MemberUserEntity? Member { get; set; }
 }

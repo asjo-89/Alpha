@@ -1,16 +1,17 @@
-﻿using Alpha_Mvc.Models;
-using Business.Dtos;
-using Business.Services;
-using Data.Entities;
-using Microsoft.AspNetCore.Identity;
+﻿
+using Alpha_Mvc.Factories;
+using Alpha_Mvc.Models;
+using Business.Interfaces;
+using Domain.Dtos;
+using Domain.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Alpha_Mvc.Controllers;
 
-public class AuthController(AuthService authService, SignInManager<MemberUserEntity> signInManager) : Controller
+public class AuthController(IAuthService authService, IPictureService pictureService) : Controller
 {
-    private readonly AuthService _authService = authService;
-    private readonly SignInManager<MemberUserEntity> _signInManager = signInManager;
+    private readonly IAuthService _authService = authService;
+    private readonly IPictureService _pictureService = pictureService;
 
     public IActionResult SignIn()
     {
@@ -23,7 +24,9 @@ public class AuthController(AuthService authService, SignInManager<MemberUserEnt
         if (!ModelState.IsValid)
             return View(form);
 
-        var result = await _signInManager.PasswordSignInAsync(form.Email, form.Password, true, false);
+        var dto = AccountFactoryMCV.SignInDtoFromModel(form);
+
+        var result = await _authService.SignInAsync(dto);
         if (result.Succeeded)
         {
             return RedirectToAction("Index", "Home");
@@ -33,49 +36,39 @@ public class AuthController(AuthService authService, SignInManager<MemberUserEnt
         return View(form);
     }
 
+
     public IActionResult CreateAccount()
     {
         return View();
     }
 
+
     [HttpPost]
     public async Task<IActionResult> CreateAccount(CreateAccountModel form)
     {
-        if (!ModelState.IsValid) 
+        if (!ModelState.IsValid)
             return View(form);
 
-        if (await _authService.ExistsAsync(form.Email))
-        {
-            ModelState.AddModelError("Exists", "User already exists.");
-            return View(form);
-        }
+        var dto = AccountFactoryMCV.CreateDtoFromModel(form);
 
-        var user = new CreateAccountRegForm()
-        {
-            FirstName = form.FirstName,
-            LastName = form.LastName,
-            Email = form.Email,
-            Password = form.Password
-        };
+        var result = await _authService.CreateUserAsync(dto);
 
-        var result = await _authService.CreateAsync(user);
-
-        switch (result)
+        switch (result.StatusCode)
         {
             case 201:
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("SignIn");
 
             case 400:
-            {
-                ModelState.AddModelError("Invalid form", "Required fields can not be empty..");
-                return View(form);
-            }
+                {
+                    ModelState.AddModelError("Invalid form", "Required fields can not be empty..");
+                    return View(form);
+                }
 
             default:
-            {
-                ModelState.AddModelError("Unexpected Error", "An unexpected error occured.");
-                return View(form);
-            }
+                {
+                    ModelState.AddModelError("Unexpected Error", "An unexpected error occured.");
+                    return View(form);
+                }
         }
     }
 }

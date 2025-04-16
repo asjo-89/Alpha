@@ -1,58 +1,44 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities;
 
+[Index(nameof(Email), IsUnique = true)]
 public class MemberUserEntity : IdentityUser<Guid>
 {
     [ProtectedPersonalData]
-    [Required]
-    [Column(TypeName = "nvarchar(50)")]
-    public string FirstName { get; set; } = null!;
+    public string? FirstName { get; set; }
 
     [ProtectedPersonalData]
-    [Required]
-    [Column(TypeName = "nvarchar(50)")]
-    public string LastName { get; set; } = null!;
+    public string? LastName { get; set; }
+    
+    [ProtectedPersonalData]
+    public string? JobTitle { get; set; }
+
 
     [ProtectedPersonalData]
-    [Column(TypeName = "varchar(20)")]
-    public new string? PhoneNumber { get; set; }
-
-    [ProtectedPersonalData]
-    [Required]
-    [Column(TypeName = "varchar(250)")]
-    [EmailAddress]
-    public override string? Email { get; set; } = null!;
-
-    // Lägg i ProfileEntity
-    [ProtectedPersonalData]
-    [DataType(DataType.Date)]
+    [Column(TypeName = "date")]
     public DateOnly? DateOfBirth { get; set; }
 
-    // Ta bort
-    [Required]
-    [Column(TypeName = "nvarchar(100)")]
-    [DataType(DataType.Password)]
-    public string Password { get; set; } = null!;
 
-    // Lägg i ProfileEntity
     [ProtectedPersonalData]
-    public Guid? AddressId { get; set; }
-
-    // Lägg i ProfileEntity
     public Guid? PictureId { get; set; }
 
 
-    // Relations
-    public ICollection<ProjectEmployeeEntity> ProjectEmployees { get; set; } = [];
-    public ICollection<ProjectNoteEntity> Notes { get; set; } = [];
 
-    [ForeignKey(nameof(AddressId))]
-    public AddressEntity? Address { get; set; }
+
+
+    // Navigation
+
+    public virtual AddressEntity? Address { get; set; } 
+
 
     [ForeignKey(nameof(PictureId))]
-    public PictureEntity? Picture { get; set; }
+    public virtual PictureEntity? Picture { get; set; }
 
+    public virtual ICollection<ProjectMemberEntity>? ProjectMembers { get; set; } = [];
+
+    public virtual ICollection<ProjectNoteEntity>? ProjectNotes { get; set; } = [];
 }

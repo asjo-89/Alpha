@@ -1,8 +1,9 @@
 ﻿using Data.Entities;
+using Data.Models;
+using Domain.Models;
 
 namespace Data.Interfaces;
 
-public interface IAddressRepository
+public interface IAddressRepository : IBaseRepository<AddressEntity, Address>
 {
-    Task<AddressEntity> GetOrAddAsync(string streetAddress, int postalCode, string city);
 }

@@ -1,9 +1,8 @@
 ﻿using Data.Entities;
-using System.Linq.Expressions;
+using Domain.Models;
 
 namespace Data.Interfaces;
 
-public interface IPictureRepository
+public interface IPictureRepository : IBaseRepository<PictureEntity, Picture>
 {
-    Task<PictureEntity> GetOrAddAsync(string url);
 }

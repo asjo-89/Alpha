@@ -1,5 +1,6 @@
+using Alpha_Mvc.Interfaces;
+using Alpha_Mvc.Services;
 using Business.Interfaces;
-using Business.Models;
 using Business.Services;
 using Data.Contexts;
 using Data.Entities;
@@ -14,33 +15,51 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AlphaDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddIdentity<MemberUserEntity, IdentityRole<Guid>>(x =>
-    {
-        x.Password.RequiredLength = 8;
-        x.User.RequireUniqueEmail = true;
-        x.SignIn.RequireConfirmedEmail = false;
-    })
+builder.Services.AddIdentity<MemberUserEntity, IdentityRole<Guid>>()
     .AddEntityFrameworkStores<AlphaDbContext>()
     .AddDefaultTokenProviders();
 
-builder.Services.ConfigureApplicationCookie(x =>
+builder.Services.Configure<IdentityOptions>(options =>
 {
-    x.LoginPath = "/auth/signin";
-    x.LogoutPath = "/auth/signout";
-    x.AccessDeniedPath = "/auth/accessDenied";
-    x.ExpireTimeSpan = TimeSpan.FromMinutes(15);
-    x.SlidingExpiration = true;
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequiredLength = 8;
+    options.Password.RequiredUniqueChars = 1;
+    options.User.RequireUniqueEmail = true;
+    options.SignIn.RequireConfirmedEmail = false;
+});
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.LoginPath = "/Auth/SignIn";
+    options.LogoutPath = "/Auth/SignOut";
+    options.AccessDeniedPath = "/Auth/Denied";
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+    options.SlidingExpiration = true;
 });
 
-builder.Services.AddScoped<AuthService>();
-builder.Services.AddScoped<IBaseRepository<MemberUserEntity>, BaseRepository<MemberUserEntity>>();
-builder.Services.AddScoped<IBaseRepository<MemberModel>, BaseRepository<MemberModel>>();
+builder.Services.AddScoped<IFileService, FileService>();    
+
 builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddScoped<IMemberUserRepository, MemberUserRepository>();
 builder.Services.AddScoped<IPictureRepository, PictureRepository>();
-builder.Services.AddScoped<IBaseRepository<AddressEntity>, BaseRepository<AddressEntity>>();
-builder.Services.AddScoped<IBaseRepository<PictureEntity>, BaseRepository<PictureEntity>>();
-builder.Services.AddScoped<IMemberService, MemberService>();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IProjectNoteRepository, ProjectNoteRepository>();
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
+builder.Services.AddScoped<IStatusRepository, StatusRepository>();
+
+
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<IClientService, ClientService>();
+builder.Services.AddScoped<IMemberUserService, MemberUserService>();
+builder.Services.AddScoped<IPictureService, PictureService>();
+builder.Services.AddScoped<IProjectNoteService, ProjectNoteService>();
+builder.Services.AddScoped<IProjectService, ProjectService>();
+builder.Services.AddScoped<IStatusService, StatusService>();
+
 
 var app = builder.Build();
 if (!app.Environment.IsDevelopment())
@@ -58,7 +77,7 @@ app.UseAuthorization();
 using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole<Guid>>>();
-    string[] roles = { "Administrator", "User", "Frontend Developer", "Backend Developer" };
+    string[] roles = { "Administrator", "User" };
 
     foreach(var role in roles)
     {
@@ -68,6 +87,13 @@ using (var scope = app.Services.CreateScope())
             await roleManager.CreateAsync(new IdentityRole<Guid>(role));
         }
     }
+
+    
+    var picService = scope.ServiceProvider.GetRequiredService<IPictureService>();
+    var result = await picService.ExistsAsync("~/Images/Profiles/Profile2.png");
+
+    if (!result.Succeeded)
+        await picService.CreateAsync("~/Images/Profiles/Profile2.png");
 };
 
 app.MapStaticAssets();

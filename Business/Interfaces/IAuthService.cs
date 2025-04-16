@@ -1,12 +1,12 @@
-﻿using Business.Dtos;
-using Data.Entities;
-using Microsoft.AspNetCore.Identity;
+﻿using Business.Models;
+using Domain.Dtos;
 
-namespace Business.Interfaces;
-
-public interface IAuthService
+namespace Business.Interfaces
 {
-    Task<int> CreateAsync(CreateAccountRegForm form);
-
-    Task<bool> ExistsAsync(string email);
+    public interface IAuthService
+    {
+        Task<AuthResult<bool>> SignInAsync(SignInDto formData);
+        Task<AuthResult<bool>> SignOutAsync(MemberUserDto formData);
+        Task<MemberUserResult<bool>> CreateUserAsync(CreateAccountDto dto);
+    }
 }

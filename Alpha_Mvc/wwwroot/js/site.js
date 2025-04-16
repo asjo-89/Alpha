@@ -27,6 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!modalContainer.contains(e.target) || exitButton.contains(e.target)) {
                 modal.classList.remove('show');
+
+                modal.querySelectorAll('form').forEach(form => {
+                    form.reset();
+
+                    const imagePreview = form.querySelector('#image-preview');
+                    if (imagePreview) {
+                        imagePreview.src = '';
+                        imagePreview.classList.remove('show');
+                    }
+
+                    const container = form.querySelector('#circle');
+                    if (container) 
+                        container.classList.add('show');
+                })
             }
         });
     });
@@ -50,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         click.classList.remove('show');
                     }
                 })
-            }      
-            
+            }
+
             dropDown.classList.toggle('show');
         });
 

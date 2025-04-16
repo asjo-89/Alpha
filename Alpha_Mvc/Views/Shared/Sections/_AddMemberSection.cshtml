@@ -1,4 +1,5 @@
-﻿@model CreateMemberFormModel
+﻿@using Alpha_Mvc.ViewModels
+@model TeamMembersViewModel
 
 
 <div class="modal" id="addMemberModal">
@@ -10,13 +11,12 @@
             </button>
         </div>
 
-        <form class="form" method="post" asp-action="AddMember" asp-controller="Admin" enctype="multipart/form-data">
+        <form class="form" action="/Admin/AddMember" method="post" enctype="multipart/form-data" novalidate>
             <div class="image-preview-container">
-                <div id="circle" class="border-circle">
+                <div id="circle" class="border-circle show">
                     <div class="camera" id="camera">
                         <i class="fa-solid fa-camera"></i>
                     </div>
-
                 </div>
 
                 <img id="image-preview" class="image-preview" src="#" />
@@ -24,91 +24,105 @@
 
             <div class="form-inputs-container">
                 <div class="form-group">
-                    <label asp-for="ProfileImage" hidden></label>
-                    <input asp-for="ProfileImage" class="image-input" accept="image/*" hidden />
-                    <span asp-validation-for="ProfileImage"></span>
+                    <label asp-for="Member.ProfileImage" hidden></label>
+                    <input asp-for="Member.ProfileImage" class="image-input" accept="image/*" hidden />
+                    <span asp-validation-for="Member.ProfileImage"></span>
                 </div>
 
                 <div class="form-group">
                     <div class="input-container">
-                        <label class="label" asp-for="FirstName"></label>
-                        <input type="text" class="input" asp-for="FirstName">
-                        <span asp-validation-for="FirstName"></span>
+                        <label class="label" asp-for="Member.FirstName"></label>
+                        <input type="text" class="input" asp-for="Member.FirstName">
+                        <span asp-validation-for="Member.FirstName"></span>
                     </div>
                     <div class="input-container">
-                        <label class="label" asp-for="LastName"></label>
-                        <input type="text" class="input" asp-for="LastName">
-                        <span asp-validation-for="LastName"></span>
+                        <label class="label" asp-for="Member.LastName"></label>
+                        <input type="text" class="input" asp-for="Member.LastName">
+                        <span asp-validation-for="Member.LastName"></span>
                     </div>
                 </div>
 
                 <div class="input-container">
-                    <label class="label" asp-for="Email"></label>
-                    <input type="email" class="input" asp-for="Email">
-                    <span asp-validation-for="Email"></span>
+                    <label class="label" asp-for="Member.Email"></label>
+                    <input type="email" class="input" asp-for="Member.Email">
+                    <span asp-validation-for="Member.Email"></span>
                 </div>
 
                 <div class="input-container">
-                    <label class="label" asp-for="PhoneNumber"></label>
-                    <input type="text" class="input" asp-for="PhoneNumber">
-                    <span asp-validation-for="PhoneNumber"></span>
-                </div>
-
-                <div class="input-container">
-                    <label class="label" asp-for="JobTitle"></label>
-                    <input type="text" class="input" asp-for="JobTitle">
-                    <span asp-validation-for="JobTitle"></span>
-                </div>
-
-                <div class="input-container">
-                    <label class="label" asp-for="StreetAddress"></label>
-                    <input type="text" class="input street" asp-for="StreetAddress">
-                    <span asp-validation-for="StreetAddress"></span>
+                    <label class="label" asp-for="Member.PhoneNumber"></label>
+                    <input type="text" class="input" asp-for="Member.PhoneNumber">
+                    <span asp-validation-for="Member.PhoneNumber"></span>
                 </div>
 
                 <div class="form-group">
                     <div class="input-container">
-                        <label class="label" asp-for="PostalCode"></label>
-                        <input class="input postal-code" asp-for="PostalCode">
-                        <span asp-validation-for="PostalCode" class="postal-span"></span>
+                        <label class="label" asp-for="Member.JobTitle"></label>
+                        <input type="text" class="input" asp-for="Member.JobTitle">
+                        <span asp-validation-for="Member.JobTitle"></span>
+                    </div>
+
+                    <div class="input-container">
+                        <label class="label" asp-for="Member.RoleId">Role</label>
+                        <select id="role" class="input" asp-for="Member.RoleId" asp-items="Model.Roles">
+                            <option value="">Select a role...</option>
+                        </select>
+                        <span asp-validation-for="Member.RoleId"></span>
+                    </div>
+                </div>
+                
+
+                <div class="input-container">
+                    <label class="label" asp-for="Member.StreetAddress"></label>
+                    <input type="text" class="input street" asp-for="Member.StreetAddress">
+                    <span asp-validation-for="Member.StreetAddress"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-container">
+                        <label class="label" asp-for="Member.PostalCode"></label>
+                        <input class="input postal-code" asp-for="Member.PostalCode">
+                        <span asp-validation-for="Member.PostalCode" class="postal-span"></span>
                     </div>
                     <div class="input-container">
-                        <label class="label" asp-for="City"></label>
-                        <input type="text" class="input city" asp-for="City">
-                        <span asp-validation-for="City" class="city-span"></span>
+                        <label class="label" asp-for="Member.City"></label>
+                        <input type="text" class="input city" asp-for="Member.City">
+                        <span asp-validation-for="Member.City" class="city-span"></span>
                     </div>
 
                 </div>
                 <div class="form-group">
                     <div class="day">
-                        <label class="label day-label" asp-for="BirthDay">Day</label>
-                        <select id="day" class="input day" asp-for="BirthDay">
+                        <label class="label day-label" asp-for="Member.BirthDay">Day</label>
+                        <select id="day" class="input day" asp-for="Member.BirthDay">
                             <option value="">-- Select Day --</option>
                             @for (int i = 1; i <= 31; i++)
                             {
                                 <option value="@i">@i</option>
                             }
                         </select>
+                        <span asp-validation-for="Member.BirthDay"></span>
                     </div>
                     <div class="month">
-                        <label class="label birth-label" asp-for="BirthMonth">Month</label>
-                        <select id="month" class="input month" asp-for="BirthMonth">
+                        <label class="label birth-label" asp-for="Member.BirthMonth">Month</label>
+                        <select id="month" class="input month" asp-for="Member.BirthMonth">
                             <option value="">-- Select Month --</option>
                             @for (int i = 1; i <= 12; i++)
                             {
                                 <option value="@i">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(@i)</option>
                             }
                         </select>
+                        <span asp-validation-for="Member.BirthMonth"></span>
                     </div>
                     <div class="year">
-                        <label class="label birth-label" asp-for="BirthYear">Year</label>
-                        <select id="year" class="input year" asp-for="BirthYear">
+                        <label class="label birth-label" asp-for="Member.BirthYear">Year</label>
+                        <select id="year" class="input year" asp-for="Member.BirthYear">
                             <option value="">-- Select Year --</option>
                             @for (int i = DateTime.Now.Year; i >= 1900; i--)
                             {
                                 <option value="@i">@i</option>
                             }
                         </select>
+                        <span asp-validation-for="Member.BirthYear"></span>
                     </div>
                 </div>
             </div>
@@ -119,11 +133,13 @@
     </div>
 </div>
 
+@await Html.PartialAsync("_ValidationScriptsPartial");
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
+
         const camera = document.querySelector("#camera");
-        const imageInput = document.querySelector("#ProfileImage");
+        const imageInput = document.querySelector("#Member_ProfileImage");
 
         if (!imageInput) return;
 
@@ -132,6 +148,7 @@
         });
 
         imageInput.addEventListener("change", (e) => {
+
             const image = e.target.files[0];
             const circle = document.querySelector("#circle");
             const imagePreview = document.querySelector("#image-preview");
@@ -141,14 +158,14 @@
 
                 reader.onload = (e) => {
                     imagePreview.src = e.target.result;
-                    circle.style.display = "none";
-                    imagePreview.style.display = "block";
+                    circle.classList.remove('show');
+                    imagePreview.classList.add('show');
                 };
 
                 reader.readAsDataURL(image);
             } else {
-                circle.style.display = "block";
-                imagePreview.style.display = "none";
+                circle.classList.add('show');
+                imagePreview.classList.remove('show');
             }
         })
     })

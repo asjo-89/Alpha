@@ -1,4 +1,4 @@
-@using Alpha_Mvc.Models.ViewModels
+@using Alpha_Mvc.ViewModels
 @model TeamMembersViewModel
 
 @{
@@ -6,7 +6,7 @@
     ViewData["Css2"] = "~/css/projectForms.css";
 }
 
-@await Html.PartialAsync("Sections/_AddMemberSection", Model.Member)
+@await Html.PartialAsync("Sections/_AddMemberSection", Model)
 
 <div class="top">
     <h2>Team Members</h2>
@@ -18,9 +18,11 @@
 
 <div class="content">
 
-    @foreach (UserModel member in Model.Users)
+    @foreach (MemberUserModel member in Model.Users)
     {        
         @await Html.PartialAsync("Partials/_MembersCard", member)
     }
 
 </div>
+
+@await Html.PartialAsync("_ValidationScriptsPartial");
