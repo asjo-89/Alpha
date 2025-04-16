@@ -11,7 +11,7 @@
             </button>
         </div>
 
-        <form class="form" method="post" asp-action="AddMember" asp-controller="Admin" enctype="multipart/form-data" novalidate>
+        <form class="form" action="/Admin/AddMember" method="post" enctype="multipart/form-data" novalidate>
             <div class="image-preview-container">
                 <div id="circle" class="border-circle show">
                     <div class="camera" id="camera">
@@ -137,6 +137,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
+
         const camera = document.querySelector("#camera");
         const imageInput = document.querySelector("#Member_ProfileImage");
 

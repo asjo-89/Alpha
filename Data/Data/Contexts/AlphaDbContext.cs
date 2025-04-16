@@ -23,16 +23,20 @@ public class AlphaDbContext(DbContextOptions<AlphaDbContext> options) : Identity
         #region MemberUserEntity
 
         builder.Entity<MemberUserEntity>()
-            .HasOne(mu => mu.Address)
-            .WithOne(a => a.Member)
-            .HasForeignKey<MemberUserEntity>(mu => mu.AddressId)
-            .OnDelete(DeleteBehavior.Cascade);
-
-        builder.Entity<MemberUserEntity>()
             .HasOne(mu => mu.Picture)
             .WithMany(p => p.Members)
             .HasForeignKey(mu => mu.PictureId)
             .OnDelete(DeleteBehavior.Restrict);
+
+        #endregion
+
+        #region AddressEntity
+
+        builder.Entity<AddressEntity>()
+            .HasOne(a => a.Member)
+            .WithOne(mu => mu.Address)
+            .HasForeignKey<AddressEntity>(a => a.MemberUserId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         #endregion
 

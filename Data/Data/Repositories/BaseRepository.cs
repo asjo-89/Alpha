@@ -26,6 +26,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
     #region CRUD
     public async Task<RepositoryResult<bool>> CreateAsync(TEntity entity)
     {
+        Console.WriteLine("BaseCreate");
         if (entity == null)
             return new RepositoryResult<bool> { Success = false, StatusCode = 400, Error = "Entity must not be null." };
 

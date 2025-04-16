@@ -41,7 +41,6 @@ public static class ProjectNoteFactory
                             City = entity.Member.Address.City ?? "City is missing."
                         }
                         : null,
-                    AddressId = entity.Member.AddressId,
                     ImageUrl = entity.Member.Picture?.ImageUrl ?? "Profile image is missing.",
                     PictureId = entity.Member.PictureId
                 }

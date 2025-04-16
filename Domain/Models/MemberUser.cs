@@ -10,9 +10,7 @@ public class MemberUser
     public string? JobTitle { get; set; }
     public DateOnly? DateOfBirth { get; set; }
     public Address? Address { get; set; }
-    public Guid? AddressId { get; set; }
     public Guid? PictureId { get; set; }
-    //public Picture? Picture { get; set; }
     public string? ImageUrl { get; set; }
 
 

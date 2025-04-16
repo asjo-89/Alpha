@@ -17,7 +17,6 @@ public static class MemberUserFactoryMCV
             PhoneNumber = dto.PhoneNumber,
             JobTitle = dto.JobTitle,
             DateOfBirth = dto.DateOfBirth,
-            AddressId = dto.AddressId,
             PictureId = dto.PictureId,
         };
     }
@@ -51,7 +50,6 @@ public static class MemberUserFactoryMCV
             PhoneNumber = entity.PhoneNumber,
             JobTitle = entity.JobTitle,
             DateOfBirth = entity.DateOfBirth,
-            AddressId = entity.AddressId,
             PictureId = entity.PictureId,
             Address = entity.Address != null ? new Address
             {

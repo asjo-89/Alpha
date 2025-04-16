@@ -5,11 +5,8 @@
     if (!form) return;
 
     
-    modals.forEach(modal => {
-        
-
+    modals.forEach(modal => {   
         const form = modal.querySelector("form");
-
         const fields = form.querySelectorAll("input[data-val='true']");
 
         fields.forEach(field => {
@@ -18,85 +15,50 @@
             });
         });
 
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
+        if (!form.dataset.listenerAttached) {
 
-            clearErrorMessages(form);
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                form.querySelector("button[type='submit']").disabled = true;
 
-            const formData = new FormData(form);
+                clearErrorMessages(form);
+                const formData = new FormData(form);
 
-            try {
-                const response = await fetch(form.action, {
-                    method: 'post',
-                    body: formData
-                });
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'post',
+                        body: formData
+                    });
 
-                if (!response.ok) {
-                    const data = await response.json();
+                    if (!response.ok) {
+                        const data = await response.json();
 
-                    Object.keys(data.errors).forEach(key => {
-                        let input = form.querySelector(`[name="${key}"]`);
+                        Object.keys(data.errors).forEach(key => {
+                            let input = form.querySelector(`[name="${key}"]`);
 
-                        if (input)
-                            input.classList.add('input-validation-error');
+                            if (input)
+                                input.classList.add('input-validation-error');
 
-                        let field = form.querySelector(`[data-valmsg-for="${key}"]`);
+                            let field = form.querySelector(`[data-valmsg-for="${key}"]`);
 
-                        if (field) {
-                            field.innerText = data.errors[key].join('\n');
-                            field.classList.add('field-validation-error');
-                        }
-                    })
+                            if (field) {
+                                field.innerText = data.errors[key].join('\n');
+                                field.classList.add('field-validation-error');
+                            }
+                        })
+                    }
+                    else
+                        location.reload();
                 }
-                else
-                    location.reload();
-            }
-            catch {
-                console.log('Error when submitting the form.');
-            }
-        })
+                catch {
+                    console.log('Error when submitting the form.');
+                }
 
+                form.querySelector("button[type='submit']").disabled.false;
+            });
+            form.dataset.listenerAttached = "true";
+        };
     })
-
-    //form.forEach(form =>
-    //    form.addEventListener('submit', async (e) => {
-    //        e.preventDefault();
-
-    //        clearErrorMessages(form);
-
-    //        const formData = new FormData(form);
-
-    //        try {
-    //            const response = await fetch(form.action, {
-    //                method: 'post',
-    //                body: formData
-    //            });
-
-    //            if (!response.ok) {
-    //                const data = await response.json();
-
-    //                Object.keys(data.errors).forEach(key => {
-    //                    let input = form.querySelector(`[name="${key}"]`);
-
-    //                    if (input)
-    //                        input.classList.add('input-validation-error');
-
-    //                    let field = form.querySelector(`[data-valmsg-for="${key}"]`);
-
-    //                    if (field) {
-    //                        field.innerText = data.errors[key].join('\n');
-    //                        field.classList.add('field-validation-error');
-    //                    }
-    //                })
-    //            }
-    //            else
-    //                location.reload();
-    //        }
-    //        catch {
-    //            console.log('Error when submitting the form.');
-    //        }
-    //    })
-    //);
 });
 
 

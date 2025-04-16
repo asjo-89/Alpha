@@ -21,10 +21,14 @@ public class AddressEntity
     [Required, ProtectedPersonalData]
     public string City { get; set; } = null!;
 
+    public Guid MemberUserId { get; set; }
+
 
 
 
 
     // Navigation
+
+    [ForeignKey(nameof(MemberUserId))]
     public virtual MemberUserEntity? Member { get; set; }
 }

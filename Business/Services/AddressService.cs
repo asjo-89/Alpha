@@ -15,7 +15,7 @@ public class AddressService(IAddressRepository addressRepository, IMemberUserRep
 
 
 
-    public async Task<AddressResult<Address>> CreateAsync(string streetName, string postalCode, string city)
+    public async Task<AddressResult<Address>> CreateAsync(string streetName, string postalCode, string city, Guid id)
     {
         if (streetName == null && postalCode == null && city == null)
             return new AddressResult<Address> { Succeeded = false, StatusCode = 400, ErrorMessage = "All required fields must be completed." };
@@ -28,7 +28,8 @@ public class AddressService(IAddressRepository addressRepository, IMemberUserRep
             {
                 StreetAddress = streetName ?? "",
                 PostalCode = postalCode ?? "",
-                City = city
+                City = city,
+                MemberUserId = id
             };
 
             var result = await _addressRepository.CreateAsync(address);

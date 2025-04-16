@@ -7,5 +7,6 @@ namespace Business.Interfaces
     {
         Task<PictureResult<Picture>> CreateAsync(string url);
         Task<PictureResult> ExistsAsync(string url);
+        //Task<PictureResult<bool>> DeleteAsync(Picture model);
     }
 }

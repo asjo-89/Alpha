@@ -17,7 +17,6 @@ public static class MemberUserFactory
             PhoneNumber = dto.PhoneNumber,
             JobTitle = dto.JobTitle,
             DateOfBirth = dto.DateOfBirth,
-            AddressId = dto.AddressId,
             PictureId = dto.PictureId,
         };
     }
@@ -41,6 +40,28 @@ public static class MemberUserFactory
                 City = entity.Address.City
             } : null,
             ImageUrl = entity.Picture?.ImageUrl
+        };
+    }
+
+    public static MemberUserEntity CreateEntityFromModel(MemberUser model)
+    {
+        return new MemberUserEntity
+        {
+            Id = model.Id,
+            FirstName = model.FirstName ?? "First name is missing.",
+            LastName = model.LastName ?? "Last name is missing.",
+            Email = model.Email ?? "Email is missing.",
+            PhoneNumber = model.PhoneNumber,
+            JobTitle = model.JobTitle,
+            DateOfBirth = model.DateOfBirth,
+            Address = model.Address != null ? new AddressEntity
+            {
+                Id = model.Address.Id,
+                StreetAddress = model.Address.StreetAddress,
+                PostalCode = model.Address.PostalCode,
+                City = model.Address.City
+            } : null,
+            PictureId = model.PictureId
         };
     }
 }

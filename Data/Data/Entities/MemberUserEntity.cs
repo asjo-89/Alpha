@@ -24,7 +24,6 @@ public class MemberUserEntity : IdentityUser<Guid>
 
 
     [ProtectedPersonalData]
-    public Guid? AddressId { get; set; }
     public Guid? PictureId { get; set; }
 
 
@@ -33,7 +32,6 @@ public class MemberUserEntity : IdentityUser<Guid>
 
     // Navigation
 
-    [ForeignKey(nameof(AddressId))]
     public virtual AddressEntity? Address { get; set; } 
 
 

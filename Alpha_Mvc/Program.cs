@@ -1,3 +1,5 @@
+using Alpha_Mvc.Interfaces;
+using Alpha_Mvc.Services;
 using Business.Interfaces;
 using Business.Services;
 using Data.Contexts;
@@ -38,6 +40,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.SlidingExpiration = true;
 });
 
+builder.Services.AddScoped<IFileService, FileService>();    
 
 builder.Services.AddScoped<IAddressRepository, AddressRepository>();
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
@@ -87,10 +90,10 @@ using (var scope = app.Services.CreateScope())
 
     
     var picService = scope.ServiceProvider.GetRequiredService<IPictureService>();
-    var result = await picService.ExistsAsync("~/Images/Profiles/Profile1.png");
+    var result = await picService.ExistsAsync("~/Images/Profiles/Profile2.png");
 
     if (!result.Succeeded)
-        await picService.CreateAsync("~/Images/Profiles/Profile1.png");
+        await picService.CreateAsync("~/Images/Profiles/Profile2.png");
 };
 
 app.MapStaticAssets();

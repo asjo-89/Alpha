@@ -7,16 +7,19 @@ using Domain.Dtos;
 using Domain.Extensions;
 using Domain.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Linq.Expressions;
 
 namespace Business.Services;
 
-public class MemberUserService(IMemberUserRepository memberRepository, UserManager<MemberUserEntity> userManager, RoleManager<IdentityRole<Guid>> roleManager) : IMemberUserService
+public class MemberUserService(IMemberUserRepository memberRepository, UserManager<MemberUserEntity> userManager, RoleManager<IdentityRole<Guid>> roleManager, IPictureService pictureService, IPictureRepository pictureRepository) : IMemberUserService
 {
     private readonly IMemberUserRepository _memberRepository = memberRepository;
     private readonly UserManager<MemberUserEntity> _userManager = userManager;
     private readonly RoleManager<IdentityRole<Guid>> _roleManager = roleManager;
+    private readonly IPictureService _pictureService = pictureService;
+    private readonly IPictureRepository _pictureRepository = pictureRepository;
 
 
 
@@ -65,42 +68,60 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
 
     public async Task<MemberUserResult<IEnumerable<MemberUser>>> GetMemberUsersAsync()
     {
-        var result = await _memberRepository.GetAllAsync(
-            orderByDescending: false,
-            orderBy: x => x.Email,
-            filterBy: null!,
-            includes: [x => x.Picture, x => x.Address]
-        );
+        //var result = await _memberRepository.GetAllAsync(
+        //    orderByDescending: false,
+        //    orderBy: x => x.Email,
+        //    filterBy: null!,
+        //    includes: [x => x.Picture, x => x.Address]
+        //);
 
-        var members = result.Data.Select(MemberUserFactory.CreateModelFromEntity);
+        //var members = result.Data.Select(MemberUserFactory.CreateModelFromEntity);
 
-        return result.Success
-            ? new MemberUserResult<IEnumerable<MemberUser>> { Succeeded = true, StatusCode = 200, Data = members ?? [] }
+        var members = await _userManager.Users
+            .Include(x => x.Address)
+            .Include(x => x.Picture)
+            .ToListAsync();
+
+        return members.Count > 0
+            ? new MemberUserResult<IEnumerable<MemberUser>> { Succeeded = true, StatusCode = 200, Data = members.Select(MemberUserFactory.CreateModelFromEntity) ?? [] }
             : new MemberUserResult<IEnumerable<MemberUser>> { Succeeded = false, StatusCode = 404, ErrorMessage = "No members was found." };
     }
 
 
     public async Task<MemberUserResult<MemberUser>> GetMemberUserAsync(string value)
     {
-        var result = await _memberRepository.GetAsync(
-            filterBy: x => x.FirstName.ToLower() == value.ToLower() || x.LastName.ToLower() == value.ToLower() || x.Email == value.ToLower(),
-            includes: null!
-        );
+        //var result = await _memberRepository.GetAsync(
+        //    filterBy: x => x.FirstName.ToLower() == value.ToLower() || x.LastName.ToLower() == value.ToLower() || x.Email == value.ToLower(),
+        //    includes: null!
+        //);
 
-        return result.Success
-            ? new MemberUserResult<MemberUser> { Succeeded = true, StatusCode = 200, Data = MemberUserFactory.CreateModelFromEntity(result.Data!) }
+        if (string.IsNullOrEmpty(value))
+            return new MemberUserResult<MemberUser> { Succeeded = false, StatusCode = 400, ErrorMessage = "Invalid search term provided." };
+
+        var member = await _userManager.Users
+            .Include(x => x.Address)
+            .Include(x => x.Picture)
+            .FirstOrDefaultAsync(x => x.FirstName!.ToLower() == value.ToLower() || x.LastName!.ToLower() == value.ToLower() || x.Email == value.ToLower());
+
+        return member != null
+            ? new MemberUserResult<MemberUser> { Succeeded = true, StatusCode = 200, Data = MemberUserFactory.CreateModelFromEntity(member) }
             : new MemberUserResult<MemberUser> { Succeeded = false, StatusCode = 404, ErrorMessage = "No member was found." };
     }
 
     public async Task<MemberUserResult<MemberUser>> GetMemberUserAsync(Guid id)
     {
-        var result = await _memberRepository.GetAsync(
-            filterBy: x => x.Id == id,
-            includes: [x => x.Address, x => x.Picture]
-        );
+        if (id == Guid.Empty)
+        {
+            return new MemberUserResult<MemberUser> { Succeeded = false, StatusCode = 400, ErrorMessage = "Invalid id provided." };
+        }
 
-        return result.Success
-            ? new MemberUserResult<MemberUser> { Succeeded = true, StatusCode = 200, Data = MemberUserFactory.CreateModelFromEntity(result.Data!) }
+        var member = await _userManager.Users
+            .Include(x => x.Address)
+            .Include(x => x.Picture)
+            .FirstOrDefaultAsync(x => x.Id == id);
+
+        return member != null
+            ? new MemberUserResult<MemberUser> { Succeeded = true, StatusCode = 200, Data = MemberUserFactory.CreateModelFromEntity(member) }
             : new MemberUserResult<MemberUser> { Succeeded = false, StatusCode = 404, ErrorMessage = "No member was found." };
     }
 
@@ -144,37 +165,34 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
     }
 
 
-    public async Task<MemberUserResult<bool>> DeleteAsync(MemberUser data)
+    public async Task<MemberUserResult<bool>> DeleteAsync(Guid id)
     {
-
         try
         {
-            var entityFromDb = await _memberRepository.GetAsync(
-    filterBy: x => x.Id == data.Id,
-    includes: [x => x.Address, x => x.Picture]
-);
-
-            if (entityFromDb == null)
-            {
-                return new MemberUserResult<bool>
-                {
-                    Succeeded = false,
-                    StatusCode = 404,
-                    ErrorMessage = "User not found.",
-                    Data = false
-                };
-            }
-
-            // Mappa modellen till entiteten
-            var entity = entityFromDb.MapTo<MemberUserEntity>();
-
+            if (id == Guid.Empty)
+                return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "Invalid member provided." };
 
             await _memberRepository.BeginTransactionAsync();
 
-            var result = await _userManager.DeleteAsync(entity);
-            if (result == null)
+            var memberToDelete = await _userManager.Users
+                .Include(x => x.Picture)
+                .Include(x => x.Address)
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            if (memberToDelete == null)
+                return new MemberUserResult<bool> { Succeeded = false, StatusCode = 404, ErrorMessage = "Member not found." };
+
+            var result = await _userManager.DeleteAsync(memberToDelete);
+
+            if (!result.Succeeded)
                 return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "Unable to delete member.", Data = false };
 
+            if (memberToDelete.Picture != null)
+            {
+                var pictureResult = await _pictureRepository.DeleteAsync(memberToDelete.Picture);
+                if (!pictureResult.Success)
+                    return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "Unable to delete picture.", Data = false };
+            }
             await _memberRepository.CommitTransactionAsync();
 
             return new MemberUserResult<bool> { Succeeded = true, StatusCode = 200, Data = true };

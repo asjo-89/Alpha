@@ -6,6 +6,6 @@ namespace Business.Interfaces
 {
     public interface IAddressService
     {
-        Task<AddressResult<Address>> CreateAsync(string streetName, string postalCode, string city);
+        Task<AddressResult<Address>> CreateAsync(string streetName, string postalCode, string city, Guid id);
     }
 }

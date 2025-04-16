@@ -15,7 +15,6 @@ public static class MemberUserFactory
             PhoneNumber = model.PhoneNumber,
             JobTitle = model.JobTitle,
             DateOfBirth = model.DateOfBirth,
-            AddressId = model.Address.Id,
             PictureId = model.PictureId,
         };
     }
@@ -31,7 +30,6 @@ public static class MemberUserFactory
             PhoneNumber = entity.PhoneNumber,
             JobTitle = entity.JobTitle,
             DateOfBirth = entity.DateOfBirth,
-            AddressId = entity.AddressId,
             PictureId = entity.PictureId,
             Address = entity.Address != null ? new Address
             {
