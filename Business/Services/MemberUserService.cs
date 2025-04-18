@@ -140,14 +140,22 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
     {
         if (dto == null)
             return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "All reaquired fields are not completed.", Data = false };
-
-        var entity = MemberUserFactory.CreateEntityFromDto(dto);
-
+                
         try
         {
             await _memberRepository.BeginTransactionAsync();
 
-            var result = await _userManager.UpdateAsync(entity);
+            var memberToUpdate = await _userManager.Users
+                .Include(x => x.Picture)
+                .Include(x => x.Address)
+                .FirstOrDefaultAsync(x => x.Id == dto.Id);
+
+            if (memberToUpdate == null)
+                return new MemberUserResult<bool> { Succeeded = false, StatusCode = 404, ErrorMessage = "Member to update was not found." };
+
+            MemberUserFactory.UpdateEntityFromDto(memberToUpdate, dto);
+
+            var result = await _userManager.UpdateAsync(memberToUpdate);
 
             if (result == null)
                 return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "Unable to update member.", Data = false };

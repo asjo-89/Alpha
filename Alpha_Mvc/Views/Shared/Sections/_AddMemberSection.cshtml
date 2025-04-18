@@ -13,19 +13,19 @@
 
         <form class="form" action="/Admin/AddMember" method="post" enctype="multipart/form-data" novalidate>
             <div class="image-preview-container">
-                <div id="circle" class="border-circle show">
-                    <div class="camera" id="camera">
+                <div id="add-circle" class="border-circle show">
+                    <div class="camera" id="add-camera">
                         <i class="fa-solid fa-camera"></i>
                     </div>
                 </div>
 
-                <img id="image-preview" class="image-preview" src="#" />
+                <img id="add-image-preview" class="image-preview" src="#" />
             </div>
 
             <div class="form-inputs-container">
                 <div class="form-group">
                     <label asp-for="Member.ProfileImage" hidden></label>
-                    <input asp-for="Member.ProfileImage" class="image-input" accept="image/*" hidden />
+                    <input id="add-image-input" asp-for="Member.ProfileImage" class="image-input" accept="image/*" hidden />
                     <span asp-validation-for="Member.ProfileImage"></span>
                 </div>
 
@@ -133,13 +133,12 @@
     </div>
 </div>
 
-@await Html.PartialAsync("_ValidationScriptsPartial");
+@await Html.PartialAsync("_ValidationScriptsPartial")
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-
-        const camera = document.querySelector("#camera");
-        const imageInput = document.querySelector("#Member_ProfileImage");
+        const camera = document.querySelector("#add-camera");
+        const imageInput = document.querySelector("#add-image-input");
 
         if (!imageInput) return;
 
@@ -150,8 +149,8 @@
         imageInput.addEventListener("change", (e) => {
 
             const image = e.target.files[0];
-            const circle = document.querySelector("#circle");
-            const imagePreview = document.querySelector("#image-preview");
+            const circle = document.querySelector("#add-circle");
+            const imagePreview = document.querySelector("#add-image-preview");
 
             if (image) {
                 const reader = new FileReader();
@@ -168,5 +167,32 @@
                 imagePreview.classList.remove('show');
             }
         })
+
+        document.addEventListener('click', (e) => {
+        const modals = document.querySelectorAll('.modal');
+
+        modals.forEach(modal => {
+            const modalContainer = modal.querySelector('.modal-container');
+            const exitButton = modal.querySelector('[data-close="true"]');
+
+            if (!modalContainer.contains(e.target) || exitButton.contains(e.target)) {
+                modal.classList.remove('show');
+
+                modal.querySelectorAll('form').forEach(form => {
+                    form.reset();
+
+                    const imagePreview = form.querySelector('#image-preview');
+                    if (imagePreview) {
+                        imagePreview.src = '';
+                        imagePreview.classList.remove('show');
+                    }
+
+                    const container = form.querySelector('#circle');
+                    if (container)
+                        container.classList.add('show');
+                })
+            }
+        });
+    });
     })
 </script>

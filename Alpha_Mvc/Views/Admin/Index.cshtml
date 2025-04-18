@@ -4,9 +4,10 @@
 @{
     ViewData["Css"] = "~/css/admin.css";
     ViewData["Css2"] = "~/css/projectForms.css";
+    ViewData["Roles"] = Model.Roles;
 }
 
-@await Html.PartialAsync("Sections/_AddMemberSection", Model)
+@await Html.PartialAsync("Sections/_AddMemberSection", Model) 
 
 <div class="top">
     <h2>Team Members</h2>
@@ -25,4 +26,4 @@
 
 </div>
 
-@await Html.PartialAsync("_ValidationScriptsPartial");
+@await Html.PartialAsync("_ValidationScriptsPartial")

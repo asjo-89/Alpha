@@ -46,18 +46,18 @@ public class MemberUserModel
     public string City { get; set; } = null!;
 
 
-    public int BirthDay { get; set; }
-    public int BirthMonth { get; set; }
-    public int BirthYear { get; set; }
+    public int? BirthDay { get; set; }
+    public int? BirthMonth { get; set; }
+    public int? BirthYear { get; set; }
 
     [Display(Name = "Date Of Birth", Prompt = "Enter date of birth...")]
-    public DateOnly? DateOfBirth { get; set; }
+    public DateOnly DateOfBirth { get; set; }
 
-    [Required(ErrorMessage = "You need to select a profile image.")]
     [DataType(DataType.ImageUrl)]
-    public string ImageUrl { get; set; } = null!;
+    public string? ImageUrl { get; set; }
 
     [Required(ErrorMessage = "You need to select a profile image.")]
     [DataType(DataType.ImageUrl)]
     public IFormFile ProfileImage { get; set; } = null!;
+    public Guid? RoleId { get; set; }
 }

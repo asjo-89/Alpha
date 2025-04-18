@@ -7,6 +7,7 @@
     
     modals.forEach(modal => {   
         const form = modal.querySelector("form");
+        if (!form) return;
         const fields = form.querySelectorAll("input[data-val='true']");
 
         fields.forEach(field => {

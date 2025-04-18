@@ -9,41 +9,53 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
             const target = button.getAttribute('data-target');
             const modal = document.querySelector(target);
+            //const memberId = button.getAttribute('data-member-id');
 
             if (modal) {
-                modal.classList.toggle('show');
+                //if (memberId) {
+                //    fetch(`/Admin/EditMemberModal?id=${memberId}`)
+                //        .then(response => response.text())
+                //        .then(content => {
+                //            modal.innerHTML = content;
+                //            modal.classList.toggle("show");
+                //        })
+                //        .catch(error => console.error('Error loading modal:', error));
+                //}
+                //else {
+                    modal.classList.toggle('show');
+                //}
             }
         });
     });
 
 
     // Close modal by clicking outside
-    document.addEventListener('click', (e) => {
-        const modals = document.querySelectorAll('.modal');
+    //document.addEventListener('click', (e) => {
+    //    const modals = document.querySelectorAll('.modal');
 
-        modals.forEach(modal => {
-            const modalContainer = modal.querySelector('.modal-container');
-            const exitButton = modal.querySelector('[data-close="true"]');
+    //    modals.forEach(modal => {
+    //        const modalContainer = modal.querySelector('.modal-container');
+    //        const exitButton = modal.querySelector('[data-close="true"]');
 
-            if (!modalContainer.contains(e.target) || exitButton.contains(e.target)) {
-                modal.classList.remove('show');
+    //        if (!modalContainer.contains(e.target) || exitButton.contains(e.target)) {
+    //            modal.classList.remove('show');
 
-                modal.querySelectorAll('form').forEach(form => {
-                    form.reset();
+    //            modal.querySelectorAll('form').forEach(form => {
+    //                form.reset();
 
-                    const imagePreview = form.querySelector('#image-preview');
-                    if (imagePreview) {
-                        imagePreview.src = '';
-                        imagePreview.classList.remove('show');
-                    }
+    //                const imagePreview = form.querySelector('#image-preview');
+    //                if (imagePreview) {
+    //                    imagePreview.src = '';
+    //                    imagePreview.classList.remove('show');
+    //                }
 
-                    const container = form.querySelector('#circle');
-                    if (container) 
-                        container.classList.add('show');
-                })
-            }
-        });
-    });
+    //                const container = form.querySelector('#circle');
+    //                if (container) 
+    //                    container.classList.add('show');
+    //            })
+    //        }
+    //    });
+    //});
 
 
 

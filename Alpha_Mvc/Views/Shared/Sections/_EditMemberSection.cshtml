@@ -1,156 +1,209 @@
-﻿@model MemberUserModel
+﻿@model EditMemberViewModel
 
 
-<div class="modal" id="editMemberModal_@Model.Id">
+<div class="modal" id="editMemberModal_@Model.Member.Id">
     <div class="modal-container">
         <div class="top">
-            <h3>Add Member</h3>
+            <h3>Edit Member</h3>
             <button type="button" class="exit" data-close="true">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
+        <p>RoleId: @Model.Member.RoleId</p>
+        <p>StreetAddress: @Model.Member.StreetAddress</p>
+        <p>BirthDay: @Model.Member.BirthDay</p>
+        <p>BirthMonth: @Model.Member.BirthMonth</p>
+        <p>BirthYear: @Model.Member.BirthYear</p>
+        <form class="form" method="post" asp-action="EditMember" asp-route-id="@Model.Member.Id" enctype="multipart/form-data" novalidate>
+            <input type="hidden" asp-for="Member.Id" />
 
-        <form class="form" method="post" asp-action="EditMember" asp-controller="Admin" enctype="multipart/form-data">
             <div class="image-preview-container">
-                <div id="circle" class="border-circle">
-                    <div class="camera" id="camera-edit">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-
+                <div id="circle_@Model.Member.Id" class="border-circle show" style="border: none; cursor: pointer;">
+                    <img id="image-preview_@Model.Member.Id" class="image-preview show" src="@Url.Content($"~/{Model.Member.ImageUrl}")" />
                 </div>
-
-                <img id="image-preview" class="image-preview" src="#" />
             </div>
 
             <div class="form-inputs-container">
                 <div class="form-group">
-                    <label asp-for="ProfileImage" hidden></label>
-                    <input asp-for="ProfileImage" id="Pic" class="image-input" accept="image/*" hidden />
-                    <span asp-validation-for="ProfileImage"></span>
+                    <label asp-for="Member.ProfileImage" hidden></label>
+                    <input id="input_@Model.Member.Id" asp-for="Member.ProfileImage" class="image-input" accept="image/*" hidden />
+                    <span asp-validation-for="Member.ProfileImage"></span>
                 </div>
 
                 <div class="form-group">
                     <div class="input-container">
-                        <label class="label" asp-for="FirstName"></label>
-                        <input type="text" class="input" asp-for="FirstName">
-                        <span asp-validation-for="FirstName"></span>
+                        <label class="label" asp-for="Member.FirstName"></label>
+                        <input type="text" class="input" asp-for="Member.FirstName">
+                        <span asp-validation-for="Member.FirstName"></span>
                     </div>
                     <div class="input-container">
-                        <label class="label" asp-for="LastName"></label>
-                        <input type="text" class="input" asp-for="LastName">
-                        <span asp-validation-for="LastName"></span>
+                        <label class="label" asp-for="Member.LastName"></label>
+                        <input type="text" class="input" asp-for="Member.LastName">
+                        <span asp-validation-for="Member.LastName"></span>
                     </div>
                 </div>
 
                 <div class="input-container">
-                    <label class="label" asp-for="Email"></label>
-                    <input type="email" class="input" asp-for="Email">
-                    <span asp-validation-for="Email"></span>
+                    <label class="label" asp-for="Member.Email"></label>
+                    <input type="email" class="input" asp-for="Member.Email">
+                    <span asp-validation-for="Member.Email"></span>
                 </div>
 
                 <div class="input-container">
-                    <label class="label" asp-for="PhoneNumber"></label>
-                    <input type="text" class="input" asp-for="PhoneNumber">
-                    <span asp-validation-for="PhoneNumber"></span>
-                </div>
-
-                <div class="input-container">
-                    <label class="label" asp-for="JobTitle"></label>
-                    <input type="text" class="input" asp-for="JobTitle">
-                    <span asp-validation-for="JobTitle"></span>
-                </div>
-
-                <div class="input-container">
-                    <label class="label" asp-for="StreetAddress"></label>
-                    <input type="text" class="input street" asp-for="StreetAddress">
-                    <span asp-validation-for="StreetAddress"></span>
+                    <label class="label" asp-for="Member.PhoneNumber"></label>
+                    <input type="text" class="input" asp-for="Member.PhoneNumber">
+                    <span asp-validation-for="Member.PhoneNumber"></span>
                 </div>
 
                 <div class="form-group">
                     <div class="input-container">
-                        <label class="label" asp-for="PostalCode"></label>
-                        <input class="input postal-code" asp-for="PostalCode">
-                        <span asp-validation-for="PostalCode" class="postal-span"></span>
-                    </div>
-                    <div class="input-container">
-                        <label class="label" asp-for="City"></label>
-                        <input type="text" class="input city" asp-for="City">
-                        <span asp-validation-for="City" class="city-span"></span>
+                        <label class="label" asp-for="Member.JobTitle"></label>
+                        <input type="text" class="input" asp-for="Member.JobTitle">
+                        <span asp-validation-for="Member.JobTitle"></span>
                     </div>
 
+                    <p>RoleId: @Model.Member.RoleId</p>
+                    <div class="input-container">
+                        <label class="label" asp-for="Member.RoleId">Role</label>
+                        <select id="role" class="input" asp-for="Member.RoleId" asp-items="Model.Roles">
+                            <option value="">Select a role...</option>
+                        </select>
+                        <span asp-validation-for="Member.RoleId"></span>
+                    </div>
                 </div>
+
+                <p>StreetAddress: @Model.Member.StreetAddress</p>
+                <p>PostalCode: @Model.Member.PostalCode</p>
+                <p>City: @Model.Member.City</p>
+                <div class="input-container">
+                    <label class="label" asp-for="Member.StreetAddress"></label>
+                    <input type="text" class="input street" asp-for="Member.StreetAddress">
+                    <span asp-validation-for="Member.StreetAddress"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-container">
+                        <label class="label" asp-for="Member.PostalCode"></label>
+                        <input class="input postal-code" asp-for="Member.PostalCode">
+                        <span asp-validation-for="Member.PostalCode" class="postal-span"></span>
+                    </div>
+                    <div class="input-container">
+                        <label class="label" asp-for="Member.City"></label>
+                        <input type="text" class="input city" asp-for="Member.City">
+                        <span asp-validation-for="Member.City" class="city-span"></span>
+                    </div>
+                </div>
+
+                <p>BirthDay: @Model.Member.BirthDay</p>
+                <p>BirthMonth: @Model.Member.BirthMonth</p>
+                <p>BirthYear: @Model.Member.BirthYear</p>
                 <div class="form-group">
                     <div class="day">
-                        <label class="label day-label" asp-for="BirthDay">Day</label>
-                        <select id="day" class="input day" asp-for="BirthDay">
-                            <option value="">-- Select Day --</option>
+                        <label class="label day-label" asp-for="Member.BirthDay">Day</label>
+                        <select id="day" class="input day" asp-for="Member.BirthDay">
+                            <option value="@Model.Member.BirthDay">@Model.Member.BirthDay</option>
                             @for (int i = 1; i <= 31; i++)
                             {
                                 <option value="@i">@i</option>
                             }
                         </select>
+                        <span asp-validation-for="Member.BirthDay"></span>
                     </div>
                     <div class="month">
-                        <label class="label birth-label" asp-for="BirthMonth">Month</label>
-                        <select id="month" class="input month" asp-for="BirthMonth">
-                            <option value="">-- Select Month --</option>
+                        <label class="label birth-label" asp-for="Member.BirthMonth">Month</label>
+                        <select id="month" class="input month" asp-for="Member.BirthMonth">
+                            <option value="@Model.Member.BirthMonth">@Model.Member.BirthMonth</option>
                             @for (int i = 1; i <= 12; i++)
                             {
                                 <option value="@i">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(@i)</option>
                             }
                         </select>
+                        <span asp-validation-for="Member.BirthMonth"></span>
                     </div>
                     <div class="year">
-                        <label class="label birth-label" asp-for="BirthYear">Year</label>
-                        <select id="year" class="input year" asp-for="BirthYear">
-                            <option value="">-- Select Year --</option>
+                        <label class="label birth-label" asp-for="Member.BirthYear">Year</label>
+                        <select id="year" class="input year" asp-for="Member.BirthYear">
+                            <option value="@Model.Member.BirthYear">@Model.Member.BirthYear</option>
                             @for (int i = DateTime.Now.Year; i >= 1900; i--)
                             {
                                 <option value="@i">@i</option>
                             }
                         </select>
+                        <span asp-validation-for="Member.BirthYear"></span>
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn">
-                Add Member
+            <button type="submit" class="btn" data-member-id="@Model.Member.Id">
+                Save Changes
             </button>
         </form>
     </div>
 </div>
 
 
+@await Html.PartialAsync("_ValidationScriptsPartial")
+
+
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const camera = document.querySelector("#camera-edit");
-        const imageInput = document.querySelector("#Pic");
+        const imageInput = document.querySelector("#input_@Model.Member.Id");
+        const circle = document.querySelector("#circle_@Model.Member.Id");
 
         if (!imageInput) return;
 
-        camera.addEventListener("click", () => {
+        circle.addEventListener("click", () => {
             imageInput.click();
-            console.log("Klick klick!");
+            console.log("1");
         });
 
         imageInput.addEventListener("change", (e) => {
+            console.log("2");
             const image = e.target.files[0];
-            const circle = document.querySelector("#circle");
-            const imagePreview = document.querySelector("#image-preview");
+            const imagePreview = document.querySelector("#image-preview_@Model.Member.Id");
 
+            console.log("3");
             if (image) {
+                console.log("4");
                 const reader = new FileReader();
 
                 reader.onload = (e) => {
+                    console.log("5");
                     imagePreview.src = e.target.result;
-                    circle.style.display = "none";
-                    imagePreview.style.display = "block";
                 };
-
+                console.log("6");
                 reader.readAsDataURL(image);
-            } else {
-                circle.style.display = "block";
-                imagePreview.style.display = "none";
+            } 
+            else {
+                console.log("7");
             }
         })
+
+
+        document.addEventListener('click', (e) => {
+        const modals = document.querySelectorAll('editMemberModal_@Model.Member.Id');
+
+            modals.forEach(modal => {
+                const modalContainer = modal.querySelector('.modal-container');
+                const exitButton = modal.querySelector('[data-close="true"]');
+
+                if (!modalContainer.contains(e.target) || exitButton.contains(e.target)) {
+                    modal.classList.remove('show');
+
+                    modal.querySelectorAll('form').forEach(form => {
+                        form.reset();
+
+                        const imagePreview = form.querySelector('#edit-image-preview');
+                        if (imagePreview) {
+                            imagePreview.src = '';
+                            imagePreview.classList.remove('show');
+                        }
+
+                        const container = form.querySelector('#edit-circle');
+                        if (container)
+                            container.classList.add('show');
+                    })
+                }
+            });
+        });                             
     })
 </script>

@@ -39,6 +39,25 @@ public static class MemberUserFactoryMCV
         };
     }
 
+    public static MemberUserDto CreateDtoFromModel(MemberUserModel model)
+    {
+        return new MemberUserDto
+        {
+            Id = model.Id,
+            FirstName = model.FirstName,
+            LastName = model.LastName,
+            Email = model.Email,
+            PhoneNumber = model.PhoneNumber,
+            JobTitle = model.JobTitle,
+            DateOfBirth = model.DateOfBirth,
+            StreetAddress = model.StreetAddress,
+            PostalCode = model.PostalCode,
+            City = model.City,
+            RoleId = model.RoleId,
+            ImageUrl = model.ImageUrl
+        };
+    }
+
     public static MemberUser CreateModelFromEntity(MemberUserEntity entity)
     {
         return new MemberUser

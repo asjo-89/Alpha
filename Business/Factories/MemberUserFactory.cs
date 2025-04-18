@@ -21,6 +21,21 @@ public static class MemberUserFactory
         };
     }
 
+    public static MemberUserEntity UpdateEntityFromDto(MemberUserEntity entity, MemberUserDto dto)
+    {
+        entity.Id = dto.Id;
+        entity.UserName = dto.Email;
+        entity.FirstName = dto.FirstName;
+        entity.LastName = dto.LastName;
+        entity.Email = dto.Email;
+        entity.PhoneNumber = dto.PhoneNumber;
+        entity.JobTitle = dto.JobTitle;
+        entity.DateOfBirth = dto.DateOfBirth;
+        entity.PictureId = dto.PictureId;
+
+        return entity;
+    }
+
     public static MemberUser CreateModelFromEntity(MemberUserEntity entity)
     {
         return new MemberUser
