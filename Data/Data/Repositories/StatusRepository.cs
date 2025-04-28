@@ -1,10 +1,10 @@
-﻿using Data.Contexts;
-using Data.Entities;
-using Data.Interfaces;
-using Domain.Models;
+﻿//using Data.Contexts;
+//using Data.Entities;
+//using Data.Interfaces;
+//using Domain.Models;
 
-namespace Data.Repositories;
+//namespace Data.Repositories;
 
-public class StatusRepository(AlphaDbContext context) : BaseRepository<StatusEntity, Status>(context), IStatusRepository
-{
-}
+//public class StatusRepository(AlphaDbContext context) : BaseRepository<StatusEntity, Status>(context), IStatusRepository
+//{
+//}

@@ -12,7 +12,7 @@ public static class ProjectNoteFactory
             Content = model.Content,
             Created = model.Created,
             MemberId = model.Member.Id,
-            ProjectId = model.Project.Id
+            ProjectId = model.ProjectId
         };
     }
 

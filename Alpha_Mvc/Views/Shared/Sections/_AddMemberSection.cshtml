@@ -1,5 +1,4 @@
-﻿@using Alpha_Mvc.ViewModels
-@model TeamMembersViewModel
+﻿@model TeamMembersViewModel
 
 
 <div class="modal" id="addMemberModal">
@@ -139,15 +138,17 @@
     document.addEventListener("DOMContentLoaded", () => {
         const camera = document.querySelector("#add-camera");
         const imageInput = document.querySelector("#add-image-input");
-
+        console.log(camera);
+        console.log(imageInput);
         if (!imageInput) return;
 
         camera.addEventListener("click", () => {
             imageInput.click();
+            console.log("klick kamera");
         });
 
         imageInput.addEventListener("change", (e) => {
-
+            console.log("klick input");
             const image = e.target.files[0];
             const circle = document.querySelector("#add-circle");
             const imagePreview = document.querySelector("#add-image-preview");
@@ -166,33 +167,33 @@
                 circle.classList.add('show');
                 imagePreview.classList.remove('show');
             }
-        })
+        });
 
         document.addEventListener('click', (e) => {
-        const modals = document.querySelectorAll('.modal');
+            const modals = document.querySelectorAll('.modal');
 
-        modals.forEach(modal => {
-            const modalContainer = modal.querySelector('.modal-container');
-            const exitButton = modal.querySelector('[data-close="true"]');
+            modals.forEach(modal => {
+                const modalContainer = modal.querySelector('.modal-container');
+                const exitButton = modal.querySelector('[data-close="true"]');
 
-            if (!modalContainer.contains(e.target) || exitButton.contains(e.target)) {
-                modal.classList.remove('show');
+                if (!modalContainer.contains(e.target) || exitButton.contains(e.target)) {
+                    modal.classList.remove('show');
 
-                modal.querySelectorAll('form').forEach(form => {
-                    form.reset();
+                    modal.querySelectorAll('form').forEach(form => {
+                        form.reset();
 
-                    const imagePreview = form.querySelector('#image-preview');
-                    if (imagePreview) {
-                        imagePreview.src = '';
-                        imagePreview.classList.remove('show');
-                    }
+                        const imagePreview = form.querySelector('#add-image-preview');
+                        if (imagePreview) {
+                            imagePreview.src = '';
+                            imagePreview.classList.remove('show');
+                        }
 
-                    const container = form.querySelector('#circle');
-                    if (container)
-                        container.classList.add('show');
-                })
-            }
+                        const container = form.querySelector('#add-circle');
+                        if (container)
+                            container.classList.add('show');
+                    });
+                }
+            });   
         });
     });
-    })
 </script>

@@ -6,9 +6,9 @@ namespace Business.Interfaces;
 
 public interface IStatusService
 {
-    Task<StatusResult<bool>> CreateAsync(StatusFormData formData);
-    Task<StatusResult<bool>> DeleteAsync(StatusFormData formData);
-    Task<StatusResult<Status>> GetClientAsync(string value);
-    Task<StatusResult<IEnumerable<Status>>> GetClientsAsync();
-    Task<StatusResult<bool>> UpdateAsync(StatusFormData formData);
+    Task<StatusResult<bool>> CreateAsync(StatusDto formData);
+    Task<StatusResult<bool>> DeleteAsync(StatusDto formData);
+    Task<StatusResult<Status>> GetStatusAsync(string value);
+    Task<StatusResult<IEnumerable<Status>>> GetStatusesAsync();
+    Task<StatusResult<bool>> UpdateAsync(StatusDto formData);
 }

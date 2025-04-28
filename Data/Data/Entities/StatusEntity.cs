@@ -1,19 +1,19 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿//using Microsoft.EntityFrameworkCore;
+//using System.ComponentModel.DataAnnotations;
 
-namespace Data.Entities;
+//namespace Data.Entities;
 
-[Index(nameof(StatusName), IsUnique = true)]
-public class StatusEntity
-{
-    [Key]
-    public Guid Id { get; set; }
+//[Index(nameof(StatusName), IsUnique = true)]
+//public class StatusEntity
+//{
+//    [Key]
+//    public Guid Id { get; set; }
 
-    [Required]
-    public string StatusName { get; set; } = null!;
+//    [Required]
+//    public string StatusName { get; set; } = null!;
 
 
-    // Navigation
+//    // Navigation
 
-    public virtual ICollection<ProjectEntity>? Projects { get; set; } = [];
-}
+//    public virtual ICollection<ProjectEntity>? Projects { get; set; } = [];
+//}

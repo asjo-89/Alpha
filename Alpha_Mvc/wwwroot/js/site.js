@@ -1,23 +1,26 @@
 ﻿
 document.addEventListener('DOMContentLoaded', () => {
-
     // Open modal
     const modalButtons = document.querySelectorAll('[data-modal="true"]');
 
     modalButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.stopPropagation();
+
             const target = button.getAttribute('data-target');
             const modal = document.querySelector(target);
-            //const memberId = button.getAttribute('data-member-id');
+            //console.log(modal);
+            //let projectId = button.getAttribute('data-project-id');
+            //console.log(projectId)
 
             if (modal) {
-                //if (memberId) {
-                //    fetch(`/Admin/EditMemberModal?id=${memberId}`)
+
+                //if (projectId) {
+                //    fetch(`/Project/EditProjectModal?id=${projectId}`)
                 //        .then(response => response.text())
                 //        .then(content => {
-                //            modal.innerHTML = content;
-                //            modal.classList.toggle("show");
+                //            document.querySelector("#modalContent").innerHTML = content;
+                //            document.querySelector("#editProjectModal").classList.toggle("show");
                 //        })
                 //        .catch(error => console.error('Error loading modal:', error));
                 //}
@@ -89,6 +92,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    const memberSelect = document.getElementById('member-select');
+    if (memberSelect) {
+        new Choices(memberSelect, {
+            removeItemButton: true,
+            placeholderValue: 'Select members...',
+            searchPlaceholderValue: 'Search members',
+            maxItemCount: -1,
+            shouldSort: false
+        });
+    }
 
 });
 

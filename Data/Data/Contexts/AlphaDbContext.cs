@@ -13,7 +13,7 @@ public class AlphaDbContext(DbContextOptions<AlphaDbContext> options) : Identity
     public virtual DbSet<ProjectEntity> Projects { get; set; }
     public virtual DbSet<ProjectMemberEntity> ProjectMembers { get; set; }
     public virtual DbSet<ProjectNoteEntity> ProjectNotes { get; set; }
-    public virtual DbSet<StatusEntity> Statuses { get; set; }
+    //public virtual DbSet<StatusEntity> Statuses { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -54,11 +54,11 @@ public class AlphaDbContext(DbContextOptions<AlphaDbContext> options) : Identity
             .HasForeignKey(p => p.ClientId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        builder.Entity<ProjectEntity>()
-            .HasOne(p => p.Status)
-            .WithMany(s => s.Projects)
-            .HasForeignKey(p => p.StatusId)
-            .OnDelete(DeleteBehavior.Restrict);
+        //builder.Entity<ProjectEntity>()
+        //    .HasOne(p => p.Status)
+        //    .WithMany(s => s.Projects)
+        //    .HasForeignKey(p => p.StatusId)
+        //    .OnDelete(DeleteBehavior.Restrict);
 
         #endregion
 

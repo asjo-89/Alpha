@@ -9,21 +9,14 @@ namespace Alpha_Mvc.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        public ProjectsViewModel projectsViewModel = new();
         public IActionResult Index()
         {
             ViewData["Title"] = "Home";
-            ViewData["Header"] = "Projects";
+            ViewData["Header"] = "Dashboard";
 
-            ProjectsViewModel viewModel = new()
-            {
-                ProjectForm = new ProjectFormModel(),
-                ProjectModel = new Project(),
-                ClientModel = new ClientModel(),
-                StatusModel = new StatusModel(),
-            };
+            
 
-            return View(viewModel);
+            return View();
         }
     }
 }

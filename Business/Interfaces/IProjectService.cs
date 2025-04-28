@@ -6,10 +6,13 @@ namespace Business.Interfaces
 {
     public interface IProjectService
     {
-        Task<ProjectResult<bool>> CreateAsync(ProjectFormData formData);
-        Task<ProjectResult<bool>> DeleteAsync(ProjectFormData formData);
-        Task<ProjectResult<Project>> GetMemberUserAsync(string value);
-        Task<ProjectResult<IEnumerable<Project>>> GetMemberUsersAsync();
-        Task<ProjectResult<bool>> UpdateAsync(ProjectFormData formData);
+        Task<ProjectResult<Project>> CreateAsync(ProjectDto formData);
+        Task<ProjectResult<bool>> DeleteAsync(Guid id);
+        Task<ProjectResult<Project>> GetProjectAsync(string value);
+        Task<ProjectResult<IEnumerable<Project>>> GetProjectsAsync();
+        Task<ProjectResult<Project>> GetProjectAsync(Guid id);
+        Task<ProjectResult<bool>> UpdateAsync(ProjectDto formData);
+        Task<ProjectResult<List<Project>>> GetProjectsWithDetailsAsync();
+        Task<ProjectResult<List<Project>>> GetProjectCardsAsync();
     }
 }

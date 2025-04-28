@@ -4,12 +4,10 @@ using Business.Models;
 using Data.Entities;
 using Data.Interfaces;
 using Domain.Dtos;
-using Domain.Extensions;
 using Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
-using System.Linq.Expressions;
 
 namespace Business.Services;
 
@@ -88,6 +86,35 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
     }
 
 
+    public async Task<IEnumerable<object>> GetMemberUsersAsync(string term)
+    {
+        if (string.IsNullOrEmpty(term))
+            return new List<object>();
+
+        var members = await _userManager.Users
+            .Where(x => x.FirstName.ToLower().Contains(term.ToLower()) ||
+                     x.LastName.ToLower().Contains(term.ToLower()) ||
+                     x.Email.ToLower().Contains(term.ToLower()))
+            .Select(x => new { x.Id, x.Picture.ImageUrl, FullName = $"{x.FirstName} {x.LastName}", x.Email })
+            .ToListAsync();
+
+        return members;
+    }
+
+    public async Task<IEnumerable<object>> GetMemberUsersAsync(Guid id)
+    {
+        if (id == Guid.Empty)
+            return [];
+
+        var members = await _userManager.Users
+            .Where(x => x.Id == id)
+            .Select(x => new { x.Id, x.Picture.ImageUrl, FullName = $"{x.FirstName} {x.LastName}", x.Email })
+            .ToListAsync();
+
+        return members;
+    }
+
+
     public async Task<MemberUserResult<MemberUser>> GetMemberUserAsync(string value)
     {
         //var result = await _memberRepository.GetAsync(
@@ -107,6 +134,7 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
             ? new MemberUserResult<MemberUser> { Succeeded = true, StatusCode = 200, Data = MemberUserFactory.CreateModelFromEntity(member) }
             : new MemberUserResult<MemberUser> { Succeeded = false, StatusCode = 404, ErrorMessage = "No member was found." };
     }
+
 
     public async Task<MemberUserResult<MemberUser>> GetMemberUserAsync(Guid id)
     {

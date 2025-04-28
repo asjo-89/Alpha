@@ -1,8 +1,8 @@
-﻿using Data.Entities;
-using Domain.Models;
+﻿//using Data.Entities;
+//using Domain.Models;
 
-namespace Data.Interfaces;
+//namespace Data.Interfaces;
 
-public interface IStatusRepository : IBaseRepository<StatusEntity, Status>
-{
-}
+//public interface IStatusRepository : IBaseRepository<StatusEntity, Status>
+//{
+//}

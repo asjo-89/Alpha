@@ -27,6 +27,8 @@ public class ProjectEntity
 
     public DateTime Created { get; set; } = DateTime.Now;
 
+    [Required]  
+    public string StatusName { get; set; } = null!;
 
 
 
@@ -35,9 +37,6 @@ public class ProjectEntity
 
     [Required]
     public Guid ClientId { get; set; }
-
-    [Required]
-    public Guid StatusId { get; set; }
 
 
 
@@ -51,11 +50,7 @@ public class ProjectEntity
     [ForeignKey(nameof(ClientId))]
     public virtual ClientEntity Client { get; set; } = null!;
 
-    [ForeignKey(nameof(StatusId))]
-    public virtual StatusEntity Status { get; set; } = null!;
 
     public virtual ICollection<ProjectMemberEntity>? ProjectMembers { get; set; } = [];
-
-
     public virtual ICollection<ProjectNoteEntity>? ProjectNotes { get; set; } = [];
 }

@@ -41,7 +41,13 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .7rem;
+    gap: .9rem;
+}
+
+.project-image {
+    width: 56px;
+    aspect-ratio: 1;
+    border-radius: 7px;
 }
 
 .customer {
@@ -49,23 +55,32 @@ hr {
 }
 
 .options {
-    width: 26px;
+    width: 30px;
     aspect-ratio: 1;
-    place-self: flex-start;
+    padding: .1rem;
+    border-radius: .5rem;
 }
 
+.stroke {
+    width: 100%;
+    border: 1px solid var(--grey-200);
+}
+
+.dropdown-container {
+    align-self: flex-start;
+}
 
 .card {
     width: 350px;
     height: 276px;
     background-color: var(--surface);
     border-radius: var(--border-radius);
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: .7rem;
+    gap: .9rem;
     box-shadow: 0 8px 7px var(--grey-400);
 }
 
@@ -96,7 +111,9 @@ hr {
 }
 
 .profile-img {
-    width: 30px;
+    width: 22px;
     aspect-ratio: 1;
-    margin-left: .4rem;
+    border-radius: 50%;
+    margin-right: .4rem;
+    
 }

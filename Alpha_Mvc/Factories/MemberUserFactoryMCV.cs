@@ -7,19 +7,19 @@ namespace Alpha_Mvc.Factories;
 
 public static class MemberUserFactoryMCV
 {
-    public static MemberUserEntity CreateEntityFromModel(MemberUserDto dto)
-    {
-        return new MemberUserEntity
-        {
-            FirstName = dto.FirstName,
-            LastName = dto.LastName,
-            Email = dto.Email,
-            PhoneNumber = dto.PhoneNumber,
-            JobTitle = dto.JobTitle,
-            DateOfBirth = dto.DateOfBirth,
-            PictureId = dto.PictureId,
-        };
-    }
+    //public static MemberUserEntity CreateEntityFromModel(MemberUserDto dto)
+    //{
+    //    return new MemberUserEntity
+    //    {
+    //        FirstName = dto.FirstName,
+    //        LastName = dto.LastName,
+    //        Email = dto.Email,
+    //        PhoneNumber = dto.PhoneNumber,
+    //        JobTitle = dto.JobTitle,
+    //        DateOfBirth = dto.DateOfBirth,
+    //        PictureId = dto.PictureId,
+    //    };
+    //}
 
     public static MemberUserDto CreateDtoFromModel(MemberFormModel model)
     {
@@ -78,6 +78,19 @@ public static class MemberUserFactoryMCV
                 City = entity.Address.City
             } : null,
             ImageUrl = entity.Picture.ImageUrl
+        };
+    }
+
+    public static MemberUserModel CreateModelFromDomainModel(MemberUser domain)
+    {
+        return new MemberUserModel
+        {
+            Id = domain.Id,
+            FirstName = domain.FirstName ?? "First name is missing",
+            LastName = domain.LastName ?? "Last name is missing",
+            Email = domain.Email ?? "Email is missing",
+            PhoneNumber = domain.PhoneNumber ?? "Phone number is missing",
+            ImageUrl = domain.ImageUrl
         };
     }
 }

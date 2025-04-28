@@ -1,7 +1,5 @@
-﻿@model ProjectFormModel
+﻿@model CreateProjectFormModel
 
-@{
-}
 
 <div class="modal" id="addProjectModal">
     <div class="modal-container">
@@ -12,40 +10,44 @@
             </button>
         </div>
 
-        <div class="image-preview-container">
-            <div id="circle" class="border-circle">
-                <div class="camera" id="camera-project">
-                    <i class="fa-solid fa-camera"></i>
+        <form class="form" method="post" action="/Project/AddProject" enctype="multipart/form-data" novalidate>
+            <div class="image-preview-container">
+                <div id="add-proj-circle" class="border-circle show">
+                    <div class="camera" id="add-camera-project">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
                 </div>
 
+                <img id="add-proj-image-preview" class="image-preview" src="#" />
             </div>
 
-            <img id="image-preview" class="image-preview" src="#" />
-        </div>
-
-        <form class="form" method="post">
             <div class="form-inputs-container">
                 <div class="form-group">
-                    <label asp-for="ProjectImage" hidden></label>
-                    <input asp-for="ProjectImage" class="image-input" accept="image/*" hidden />
-                    <span asp-validation-for="ProjectImage"></span>
+                    <label asp-for="Picture" hidden></label>
+                    <input id="add-proj-image-input" asp-for="Picture" class="image-input" accept="image/*" hidden />
+                    <span asp-validation-for="Picture"></span>
                 </div>
 
                 <div class="input-container">
-                    <label class="label" asp-for="ProjectName">Project Name</label>
-                    <input type="text" class="input" asp-for="ProjectName">
-                    <span asp-validation-for="ProjectName"></span>
+                    <label class="label" asp-for="ProjectTitle">Project Name</label>
+                    <input type="text" class="input" asp-for="ProjectTitle" name="ProjectTitle">
+                    <span asp-validation-for="ProjectTitle"></span>
                 </div>
 
                 <div class="input-container">
                     <label class="label" asp-for="ClientName">Client Name</label>
-                    <input type="text" class="input" asp-for="ClientName">
+                    <input type="text" class="input" asp-for="ClientName" name="ClientName">
+
+                    @* <label class="label" asp-for="ClientId">Client Name</label> *@
+                    @* <select class="input" asp-for="ClientId" asp-items="Model.Clients"> *@
+                    @*     <option selected value="">Select a client...</option> *@
+                    @* </select> *@
                     <span asp-validation-for="ClientName"></span>
                 </div>
                 <div class="input-container">
-                    <label class="label" asp-for="ProjectDescription">Description</label>
-                    <textarea type="text" class="input text-area" asp-for="ProjectDescription"></textarea>
-                    <span asp-validation-for="ProjectDescription"></span>
+                    <label class="label" asp-for="Description">Description</label>
+                    <textarea type="text" class="input text-area" asp-for="Description"></textarea>
+                    <span asp-validation-for="Description"></span>
                 </div>
                 <div class="form-group">
                     <div class="start">
@@ -60,8 +62,17 @@
                     </div>
                 </div>
                 <div class="input-container">
-                    <label class="label" for="members">Members</label>
-                    <input type="text" class="input form-search" id="members" placeholder="Choose members">
+                    <label class="label">Members</label>
+                    <div id="tag-members" class="search-container">
+                        <input type="text" id="member-search" class="members-search-input" placeholder="Add members..." />
+                        <input type="hidden" id="SelectedIds" name="SelectedIds" />
+                        
+                        <button type="button" class="search-button" for="search-input"> 
+                            <img src="/images/Icons/Search.svg" /> 
+                        </button> 
+
+                        <div id="member-results" class="search-results"></div>
+                    </div>
                 </div>
                 <div class="input-container">
                     <label class="label" asp-for="Budget">Budget</label>
@@ -70,43 +81,94 @@
                 </div>
             </div>
             <button type="submit" class="btn">
-                Create
+                Create Project
             </button>
         </form>
     </div>
 </div>
 
+@await Html.PartialAsync("_ValidationScriptsPartial")
 
 <script>
+    let preSelectedMembers = [];
+
+    initTagSelector({
+        containerId: 'tag-members',
+        inputId: 'member-search',
+        resultsId: 'member-results',
+        searchUrl: (query) => '@Url.Action("SearchMembers", "Member")' + '?term=' + encodeURIComponent(query),
+        displayName: 'fullName',
+        displayEmail: 'email',
+        imageProperty: 'imageUrl',
+        tagClass: 'member',
+        emptyMessage: 'No members found.',
+        preSelected: preSelectedMembers
+    });
+    
     document.addEventListener("DOMContentLoaded", () => {
-        const camera = document.querySelector("#camera-project");
-        const imageInput = document.querySelector("#ProjectImage");
+        const camera = document.querySelector("#add-camera-project");
+        const imageInput = document.querySelector("#add-proj-image-input");
 
         if (!imageInput) return;
 
         camera.addEventListener("click", () => {
             imageInput.click();
+            console.log("klick kamera");
         });
 
         imageInput.addEventListener("change", (e) => {
+            console.log("klick input");
             const image = e.target.files[0];
-            const circle = document.querySelector("#circle");
-            const imagePreview = document.querySelector("#image-preview");
+            const circle = document.querySelector("#add-proj-circle");
+            const imagePreview = document.querySelector("#add-proj-image-preview");
 
             if (image) {
+                console.log("1")
                 const reader = new FileReader();
 
                 reader.onload = (e) => {
                     imagePreview.src = e.target.result;
-                    circle.style.display = "none";
-                    imagePreview.style.display = "block";
+                    circle.classList.remove('show');
+                    imagePreview.classList.add('show');
                 };
 
                 reader.readAsDataURL(image);
-            } else {
-                circle.style.display = "block";
-                imagePreview.style.display = "none";
             }
-        })
-    })
+            else {
+                circle.classList.add('show');
+                imagePreview.classList.remove('show');
+            }
+        });
+
+
+        document.addEventListener('click', (e) => {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                const modalContainer = modal.querySelector('.modal-container');
+                const exitButton = modal.querySelector('[data-close="true"]');
+
+                if (!modalContainer.contains(e.target) || exitButton.contains(e.target)) {
+                    modal.classList.remove('show');
+
+                    modal.querySelectorAll('form').forEach(form => {
+                        form.reset();
+
+                        const imagePreview = form.querySelector('#add-proj-image-preview');
+                        if (imagePreview) {
+                            imagePreview.src = '';
+                            imagePreview.classList.remove('show');
+                        }
+
+                        const container = form.querySelector('#add-proj-circle');
+                        if (container) {
+                            container.classList.add('show');
+                        }
+
+                    });
+                }
+            });
+        });
+
+    });
+
 </script>

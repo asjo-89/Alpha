@@ -1,7 +1,7 @@
 ﻿using Data.Entities;
 using Domain.Models;
 
-namespace Data.Factories;
+namespace Business.Factories;
 
 public static class ProjectNoteFactory
 {
@@ -12,7 +12,7 @@ public static class ProjectNoteFactory
             Content = model.Content,
             Created = model.Created,
             MemberId = model.Member.Id,
-            ProjectId = model.Project.Id
+            ProjectId = model.ProjectId
         };
     }
 
@@ -31,19 +31,20 @@ public static class ProjectNoteFactory
                     Email = entity.Member.Email ?? "Email is missing.",
                     PhoneNumber = entity.Member.PhoneNumber ?? "Phone number is missing.",
                     JobTitle = entity.Member.JobTitle ?? "Job title is missing.",
-                    DateOfBirth = entity.Member.DateOfBirth,
-                    Address = entity.Member.Address != null
-                        ? new Address
-                        {
-                            Id = entity.Member.Address.Id,
-                            StreetAddress = entity.Member.Address.StreetAddress ?? "Street address is missing.",
-                            PostalCode = entity.Member.Address.PostalCode ?? "Postal code is missing.",
-                            City = entity.Member.Address.City ?? "City is missing."
-                        }
-                        : null,
+                    //DateOfBirth = entity.Member.DateOfBirth,
+                    //Address = entity.Member.Address != null
+                    //    ? new Address
+                    //    {
+                    //        Id = entity.Member.Address.Id,
+                    //        StreetAddress = entity.Member.Address.StreetAddress ?? "Street address is missing.",
+                    //        PostalCode = entity.Member.Address.PostalCode ?? "Postal code is missing.",
+                    //        City = entity.Member.Address.City ?? "City is missing."
+                    //    }
+                    //    : null,
                     ImageUrl = entity.Member.Picture?.ImageUrl ?? "Profile image is missing.",
                     PictureId = entity.Member.PictureId
-                }
+                },
+            ProjectId = entity.ProjectId
         };
     }
 }
