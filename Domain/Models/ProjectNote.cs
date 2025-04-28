@@ -9,5 +9,5 @@ public class ProjectNote
     public string Content { get; set; } = null!;
     public DateTime Created { get; set; }
     public MemberUser Member { get; set; } = null!;
-    public Project Project { get; set; } = null!;
+    public Guid ProjectId { get; set; }
 }

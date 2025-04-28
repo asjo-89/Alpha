@@ -1,8 +1,6 @@
 ﻿using Data.Contexts;
-using Data.Entities;
 using Data.Interfaces;
 using Data.Models;
-using Domain.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System.Linq.Expressions;
@@ -24,6 +22,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
 
 
     #region CRUD
+        
     public async Task<RepositoryResult<bool>> CreateAsync(TEntity entity)
     {
         Console.WriteLine("BaseCreate");

@@ -4,6 +4,8 @@ using Alpha_Mvc.Models;
 using Alpha_Mvc.ViewModels;
 using Business.Interfaces;
 using Data.Entities;
+using Domain.Dtos;
+using Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -22,7 +24,6 @@ namespace Alpha_Mvc.Controllers
         private readonly IAddressService _addressService = addressService;
         private readonly IPictureService _pictureService = pictureService;
 
-        public CreateProjectFormModel createProjectFormModel = new();
         public MemberFormModel createMemberFormModel = new();
 
         public TeamMembersViewModel teamMembersViewModel = new();
@@ -46,6 +47,13 @@ namespace Alpha_Mvc.Controllers
                     PhoneNumber = member.PhoneNumber ?? "",
                     JobTitle = member.JobTitle ?? "No role assigned",
                     ImageUrl = Url.Content($"{member.ImageUrl}"),
+                    StreetAddress = member.Address?.StreetAddress ?? "",
+                    PostalCode = member.Address?.PostalCode ?? "",
+                    City = member.Address?.City ?? "",
+                    BirthDay = member.DateOfBirth?.Day ?? 0,
+                    BirthMonth = member.DateOfBirth?.Month ?? 0,
+                    BirthYear = member.DateOfBirth?.Year ?? 0,
+                    PictureId = member.PictureId
                 }),
                 Member = new MemberFormModel(),
                 Roles = roles.Select(role => new SelectListItem
@@ -54,6 +62,8 @@ namespace Alpha_Mvc.Controllers
                     Text = role.Name,
                 }).ToList()
             };
+
+            ViewBag.Roles = viewModel.Roles;
 
 
             return View(viewModel);
@@ -126,73 +136,65 @@ namespace Alpha_Mvc.Controllers
             }
         }
 
-        [HttpGet]
-        public async Task<IActionResult> EditMemberModal(Guid id)
-        {
-            var memberResult = await _memberService.GetMemberUserAsync(id);
-            if (!memberResult.Succeeded || memberResult.Data == null)
-                return NotFound("Member was not found.");
+        //[HttpGet]
+        //public async Task<IActionResult> EditMemberModal(Guid id)
+        //{
+        //    var memberResult = await _memberService.GetMemberUserAsync(id);
+        //    if (!memberResult.Succeeded || memberResult.Data == null)
+        //        return NotFound("Member was not found.");
 
-            var roles = await _roleManager.Roles.ToListAsync();
-            var memberUser = await _userManager.FindByIdAsync(id.ToString());
-            if (memberUser == null)
-                return NotFound("No member was found.");
+        //    var roles = await _roleManager.Roles.ToListAsync();
+        //    var memberUser = await _userManager.FindByIdAsync(id.ToString());
+        //    if (memberUser == null)
+        //        return NotFound("No member was found.");
 
-            var memberRoles = await _userManager.GetRolesAsync(memberUser) ?? new List<string>();
-            if (memberRoles == null)
-                return NotFound($"No role found for member with with id {id} was found.");
+        //    var memberRoles = await _userManager.GetRolesAsync(memberUser) ?? new List<string>();
+        //    if (memberRoles == null)
+        //        return NotFound($"No role found for member with with id {id} was found.");
             
-            var role = memberRoles.FirstOrDefault() ?? "";
+        //    var role = memberRoles.FirstOrDefault() ?? "";
 
-            var editViewModel = new EditMemberViewModel
-            {
-                Member = new MemberUserModel
-                {
-                    Id = memberResult.Data.Id,
-                    FirstName = memberResult.Data.FirstName,
-                    LastName = memberResult.Data.LastName,
-                    Email = memberResult.Data.Email,
-                    PhoneNumber = memberResult.Data.PhoneNumber ?? "",
-                    JobTitle = memberResult.Data.JobTitle ?? "",
-                    StreetAddress = memberResult.Data.Address?.StreetAddress ?? "",
-                    PostalCode = memberResult.Data.Address?.PostalCode ?? "",
-                    City = memberResult.Data.Address?.City ?? "",
-                    BirthDay = memberResult.Data.DateOfBirth?.Day,
-                    BirthMonth = memberResult.Data.DateOfBirth?.Month,
-                    BirthYear = memberResult.Data.DateOfBirth?.Year,
-                    ImageUrl = memberResult.Data.ImageUrl
-                },
-                Roles = roles.Select(role => new SelectListItem
-                {
-                    Value = role.Id.ToString(),
-                    Text = role.Name
-                }).ToList()
+        //    var editViewModel = new EditMemberViewModel
+        //    {
+        //        Member = new MemberUserModel
+        //        {
+        //            Id = memberResult.Data.Id,
+        //            FirstName = memberResult.Data.FirstName,
+        //            LastName = memberResult.Data.LastName,
+        //            Email = memberResult.Data.Email,
+        //            PhoneNumber = memberResult.Data.PhoneNumber ?? "",
+        //            JobTitle = memberResult.Data.JobTitle ?? "",
+        //            StreetAddress = memberResult.Data.Address?.StreetAddress ?? "",
+        //            PostalCode = memberResult.Data.Address?.PostalCode ?? "",
+        //            City = memberResult.Data.Address?.City ?? "",
+        //            BirthDay = memberResult.Data.DateOfBirth?.Day,
+        //            BirthMonth = memberResult.Data.DateOfBirth?.Month,
+        //            BirthYear = memberResult.Data.DateOfBirth?.Year,
+        //            ImageUrl = memberResult.Data.ImageUrl
+        //        },
+        //        Roles = roles.Select(role => new SelectListItem
+        //        {
+        //            Value = role.Id.ToString(),
+        //            Text = role.Name
+        //        }).ToList()
 
-            };
-                Console.WriteLine($"##########\n{editViewModel.Member.StreetAddress}\n" +
-                    $"{editViewModel.Member.PostalCode}\n" +
-                    $"{editViewModel.Member.City}\n" +
-                    $"{editViewModel.Member.RoleId}\n" +
-                    $"{editViewModel.Member.BirthDay}\n" +
-                    $"{editViewModel.Member.BirthMonth}\n" +
-                    $"{editViewModel.Member.BirthYear}");
-            Console.WriteLine($"Roles: {string.Join(", ", editViewModel.Roles.Select(r => r.Text))}");
+        //    };
 
-
-            return PartialView("Sections/_EditMemberSection", editViewModel); 
-        }
+        //    return PartialView("Sections/_EditMemberSection", editViewModel); 
+        //}
 
         [HttpPost]
-        public async Task<IActionResult> EditMember(EditMemberViewModel model)
+        public async Task<IActionResult> EditMember(MemberUserModel model, string? existingUrl)
         {
-            if (model.Member.BirthDay > 0 && model.Member.BirthMonth > 0 && model.Member.BirthYear > 0)
+            if (model.BirthDay > 0 && model.BirthMonth > 0 && model.BirthYear > 0)
             {
-                model.Member.DateOfBirth = new DateOnly(model.Member.BirthYear.Value, model.Member.BirthMonth.Value, model.Member.BirthDay.Value);
+                model.DateOfBirth = new DateOnly(model.BirthYear.Value, model.BirthMonth.Value, model.BirthDay.Value);
             }
 
             if (!ModelState.IsValid)
             {
                 var members = await _memberService.GetMemberUsersAsync();
+                var roles = await _roleManager.Roles.ToListAsync();
 
                 var viewModel = new TeamMembersViewModel
                 {
@@ -204,45 +206,70 @@ namespace Alpha_Mvc.Controllers
                         Email = member.Email,
                         PhoneNumber = member.PhoneNumber ?? "",
                         JobTitle = member.JobTitle ?? "No role assigned",
-                        ImageUrl = Url.Content($"{member.ImageUrl}")
+                        ImageUrl = Url.Content($"{member.ImageUrl}"),
+                        StreetAddress = member.Address?.StreetAddress ?? "",
+                        PostalCode = member.Address?.PostalCode ?? "",
+                        City = member.Address?.City ?? "",
+                        BirthDay = member.DateOfBirth?.Day ?? 0,
+                        BirthMonth = member.DateOfBirth?.Month ?? 0,
+                        BirthYear = member.DateOfBirth?.Year ?? 0
                     }),
-                    Member = new MemberFormModel()
+                    Member = new MemberFormModel(),
+                    Roles = roles.Select(role => new SelectListItem
+                    {
+                        Value = role.Id.ToString(),
+                        Text = role.Name,
+                    }).ToList()
                 };
-                return View("Index", viewModel);
+
+                ViewBag.Roles = viewModel.Roles;
+
+                ModelState.AddModelError("viewModel", "Failed to update member.");
+                return PartialView("Sections/_EditMemberSection", viewModel);
             }
 
-            var existingMember = await _memberService.ExistsAsync(model.Member.Id);
-            if (!existingMember.Succeeded) return NotFound("Member was not found.");
+            string relativePath = "";
+            var memberDto = new MemberUserDto();
 
-            var relativePath = await _fileService.CreateFile(model.Member.ProfileImage);
-
-            if(relativePath == model.Member.ImageUrl)
+            if (model.ProfileImage == null)
             {
-                _fileService.DeleteFile(relativePath);
-                var dto = MemberUserFactoryMCV.CreateDtoFromModel(model.Member);
-
-                var updatedModel = await _memberService.UpdateAsync(dto);
-                if (!updatedModel.Succeeded) 
-                    return BadRequest($"An error occured updating the member.\n{updatedModel.StatusCode}\n{updatedModel.ErrorMessage}");
-
-                return RedirectToAction("Index");
+                relativePath = existingUrl;
+                model.ImageUrl = Url.Content(relativePath);
+                memberDto = MemberUserFactoryMCV.CreateDtoFromModel(model);
+                memberDto.PictureId = model.PictureId;
             }
+            else
+            {
+                relativePath = await _fileService.CreateFile(model.ProfileImage);
+                var picture = await _pictureService.CreateAsync(relativePath);
+                if (!picture.Succeeded || picture.Data == null)
+                    return BadRequest($"An error occured creating the new image.\n{picture.StatusCode}\n{picture.ErrorMessage}");
 
-            var picture = await _pictureService.CreateAsync(relativePath);
-            if (!picture.Succeeded || picture.Data == null)
-                return BadRequest($"An error occured creating the new image.\n{picture.StatusCode}\n{picture.ErrorMessage}");
-            
-            model.Member.ImageUrl = Url.Content(relativePath);
-            var memberDto = MemberUserFactoryMCV.CreateDtoFromModel(model.Member);
-            memberDto.PictureId = picture.Data.Id;
-
+                model.ImageUrl = Url.Content(relativePath);
+                memberDto = MemberUserFactoryMCV.CreateDtoFromModel(model);
+                memberDto.PictureId = picture.Data.Id;                
+            }
             var result = await _memberService.UpdateAsync(memberDto);
 
             var newMember = await _memberService.GetMemberUserAsync(memberDto.Email);
             if (!newMember.Succeeded || newMember.Data == null)
-                return BadRequest($"An error occured creating the new image.\n{picture.StatusCode}\n{picture.ErrorMessage}");
+                return BadRequest($"An error occured updating member.");
 
-            var address = await _addressService.CreateAsync(model.Member.StreetAddress, model.Member.PostalCode, model.Member.City, newMember.Data.Id);
+            //if (relativePath == model.ImageUrl)
+            //{
+            //    _fileService.DeleteFile(relativePath);
+            //    var dto = MemberUserFactoryMCV.CreateDtoFromModel(model);
+
+            //    var updatedModel = await _memberService.UpdateAsync(dto);
+            //    if (!updatedModel.Succeeded) 
+            //        return BadRequest($"An error occured updating the member.\n{updatedModel.StatusCode}\n{updatedModel.ErrorMessage}");
+
+            //    return RedirectToAction("Index");
+            //}
+
+
+
+            var address = await _addressService.CreateAsync(model.StreetAddress, model.PostalCode, model.City, newMember.Data.Id);
 
             if (!result.Succeeded || !address.Succeeded)
             {
@@ -251,6 +278,7 @@ namespace Alpha_Mvc.Controllers
             else
             {
                 var members = await _memberService.GetMemberUsersAsync();
+                var roles = await _roleManager.Roles.ToListAsync();
 
                 var viewModel = new TeamMembersViewModel
                 {
@@ -262,11 +290,23 @@ namespace Alpha_Mvc.Controllers
                         Email = member.Email,
                         PhoneNumber = member.PhoneNumber ?? "",
                         JobTitle = member.JobTitle ?? "No role assigned",
-                        ImageUrl = Url.Content($"{member.ImageUrl}")
+                        ImageUrl = Url.Content($"{member.ImageUrl}"),
+                        StreetAddress = member.Address?.StreetAddress ?? "",
+                        PostalCode = member.Address?.PostalCode ?? "",
+                        City = member.Address?.City ?? "",
+                        BirthDay = member.DateOfBirth?.Day ?? 0,
+                        BirthMonth = member.DateOfBirth?.Month ?? 0,
+                        BirthYear = member.DateOfBirth?.Year ?? 0
                     }),
-                    Member = new MemberFormModel()
+                    Member = new MemberFormModel(),
+                    Roles = roles.Select(role => new SelectListItem
+                    {
+                        Value = role.Id.ToString(),
+                        Text = role.Name,
+                    }).ToList()
                 };
 
+                ViewBag.Roles = viewModel.Roles;
                 ModelState.AddModelError("viewModel", "Failed to create member.");
                 return View("Index", viewModel);
             }
@@ -314,15 +354,6 @@ namespace Alpha_Mvc.Controllers
                 ModelState.AddModelError("viewModel", "Failed to create member.");
                 return View("Index", viewModel);
             }
-        }
-
-
-        [Route("add-project")]
-        [HttpPost]
-        public IActionResult AddProject()
-        {
-            ViewData["Title"] = "Admin";
-            return View(createProjectFormModel);
         }
     }
 }

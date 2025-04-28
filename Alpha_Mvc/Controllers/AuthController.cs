@@ -2,8 +2,6 @@
 using Alpha_Mvc.Factories;
 using Alpha_Mvc.Models;
 using Business.Interfaces;
-using Domain.Dtos;
-using Domain.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Alpha_Mvc.Controllers;

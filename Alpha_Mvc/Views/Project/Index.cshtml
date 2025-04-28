@@ -1,0 +1,38 @@
+﻿@model ProjectsViewModel
+@{
+    ViewData["Css"] = "~/css/home.css";
+    ViewData["Css2"] = "~/css/projectForms.css";
+}
+
+@await Html.PartialAsync("Sections/_AddProjectSection", Model.CreateProjectForm)
+
+<div class="top">
+    <h2>Projects</h2>
+    <button type="button" data-modal="true" data-target="#addProjectModal" class="btn">
+        <i class="fa-solid fa-plus"></i>
+        <span>Add Project</span>
+    </button>
+</div>
+
+<div class="filter-bar">
+    <span class="alternative active">ALL [8]</span>
+    <span class="alternative">STARTED [8]</span>
+    <span class="alternative">COMPLETED [0]</span>
+</div>
+<hr />
+<div class="content">
+    @if (Model.Cards.Any())
+    {
+        foreach (var card in Model.Cards)
+        {
+            @await Html.PartialAsync("Partials/_ProjectCard", card)
+        }
+    }
+    else
+    {
+        <p>No projects was found.</p>
+    }
+</div>
+
+
+

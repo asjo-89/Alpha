@@ -8,6 +8,7 @@ using Data.Interfaces;
 using Data.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
@@ -40,15 +41,17 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.SlidingExpiration = true;
 });
 
-builder.Services.AddScoped<IFileService, FileService>();    
+builder.Services.AddScoped<IFileService, FileService>();
 
+//builder.Services.AddScoped(typeof(IBaseRepository<,>), typeof(BaseRepository<,>));
 builder.Services.AddScoped<IAddressRepository, AddressRepository>();
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
 builder.Services.AddScoped<IMemberUserRepository, MemberUserRepository>();
 builder.Services.AddScoped<IPictureRepository, PictureRepository>();
 builder.Services.AddScoped<IProjectNoteRepository, ProjectNoteRepository>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
-builder.Services.AddScoped<IStatusRepository, StatusRepository>();
+builder.Services.AddScoped<IProjectMemberRepository, ProjectMemberRepository>();
+//builder.Services.AddScoped<IStatusRepository, StatusRepository>();
 
 
 builder.Services.AddScoped<IAuthService, AuthService>();
@@ -56,9 +59,10 @@ builder.Services.AddScoped<IAddressService, AddressService>();
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<IMemberUserService, MemberUserService>();
 builder.Services.AddScoped<IPictureService, PictureService>();
-builder.Services.AddScoped<IProjectNoteService, ProjectNoteService>();
+//builder.Services.AddScoped<IProjectNoteService, ProjectNoteService>();
 builder.Services.AddScoped<IProjectService, ProjectService>();
-builder.Services.AddScoped<IStatusService, StatusService>();
+builder.Services.AddScoped<IProjectMemberService, ProjectMemberService>();
+//builder.Services.AddScoped<IStatusService, StatusService>();
 
 
 var app = builder.Build();
@@ -90,16 +94,16 @@ using (var scope = app.Services.CreateScope())
 
     
     var picService = scope.ServiceProvider.GetRequiredService<IPictureService>();
-    var result = await picService.ExistsAsync("~/Images/Profiles/Profile2.png");
+    var result = await picService.ExistsAsync("Images/Profiles/Profile2.png");
 
     if (!result.Succeeded)
-        await picService.CreateAsync("~/Images/Profiles/Profile2.png");
+        await picService.CreateAsync("Images/Profiles/Profile2.png");
 };
 
 app.MapStaticAssets();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    pattern: "{controller=Home}/{action=Index}")
     .WithStaticAssets();
 
 app.Run();

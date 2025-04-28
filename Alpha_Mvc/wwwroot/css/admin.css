@@ -9,12 +9,17 @@
     scroll-behavior: smooth;
 }
 
+.stroke {
+    width: 100%;
+    border: 1px solid var(--grey-200);
+}
+
 .card {
     width: 300px;
     height: 460px;
     background-color: var(--surface);
     border-radius: var(--border-radius);
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -29,7 +34,7 @@
     margin-top: 150px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -54,14 +59,19 @@
 .role {
     font-size: .8rem;
     width: auto;
-    padding: .7rem 1.5rem;
+    padding: .5rem 1.5rem;
     background-color: var(--grey-200);
-    border-radius: var(--border-radius);
+    border-radius: 7px;
     margin-bottom: 1rem;
 }
 
-.email, .phone {
-    font-size: 1rem;
+
+.contact-info {
+    color: var(--body-dark);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    flex-direction: column;
 }
 
 .message {

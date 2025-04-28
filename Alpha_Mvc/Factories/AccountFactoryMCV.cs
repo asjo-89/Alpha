@@ -25,7 +25,7 @@ public static class AccountFactoryMCV
             LastName = model.LastName,
             Email = model.Email,
             Password = model.Password,
-            ImageUrl = "~/Images/Profiles/Profile1.png"
+            ImageUrl = "Images/Profiles/Profile1.png"
         };
     }
 

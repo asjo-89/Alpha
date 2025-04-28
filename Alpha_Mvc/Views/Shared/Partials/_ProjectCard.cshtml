@@ -1,24 +1,55 @@
-﻿@{
+﻿@model ProjectCardModel
+
+@{
     ViewData["Css"] = "~/css/home.css";
+
+         var editViewModel = new ProjectsViewModel
+            {
+                EditProjectForm = new EditProjectFormModel
+                {
+                    Id = Model.Id,
+                    ProjectTitle = Model.ProjectTitle,
+                    Description = Model.Description,
+                    ClientName = Model.ClientName,
+                    StartDate = Model.StartDate,
+                    EndDate = Model.EndDate,
+                    Budget = Model.Budget,
+                    ImageUrl = Model.ImageUrl,
+                    MemberUsers = Model.MemberUsers.ToList()
+                }
+            };                                             
 }
+
+@await Html.PartialAsync("Sections/_EditProjectSection", editViewModel)
 
 <div class="card">
     <div class="project-head">
-        <img src="/images/Projects/Img_proj_1.svg" alt="Project image." />
+        <img class="project-image" src="@Model.ImageUrl" alt="Project image." />
         <div class="title-group">
-            <h6>Website Redesign</h6>
-            <p class="customer">GitLab Inc.</p>
+            <h6>@Model.ProjectTitle</h6>
+            <p class="customer">@Model.ClientName</p>
         </div>
-        <img class="options" src="/images/Icons/Dots.svg" alt="An image of three dots.">
+        <div class="dropdown-container">
+            <img id="menu-button" class="options" src="/images/Icons/Dots.svg" alt="An image of three dots.">
+            <div class="dropdown-content">
+                <button class="menu-option option-edit" data-project-id="@Model.Id" data-modal="true" data-target="#editProjectModal">Edit Project</button>
+                <div class="stroke"></div>
+                <form class="dropdown-form" asp-action="DeleteProject" asp-route-id="@Model.Id" asp-controller="Project">
+                    <button type="submit" class="menu-option option-delete">Delete Project</button>
+                </form>
+            </div>
+        </div>
     </div>
     <div class="description">
-        It is necessary to develop a website redesign in a corporate style.
+        @Model.Description
     </div>
     <div class="extras">
-        <span class="status">1 week left</span>
+        <span class="status">@Model.StatusName</span>
         <div class="profile-group">
-            <img class="profile-img" src="/images/Profiles/Img_profile_1.svg" />
-            <img class="profile-img" src="/images/Profiles/Img_profile_2.svg" />
+            @foreach (var member in @Model.MemberUsers) 
+            {
+                <img class="profile-img" src="@member.ImageUrl" />
+            }
         </div>
     </div>
 </div>

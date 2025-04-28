@@ -21,9 +21,8 @@ public class MemberUserModel
     public string Email { get; set; } = null!;
 
 
-    [Required(ErrorMessage = "Phone number is required.")]
     [Display(Name = "Phone number", Prompt = "Enter phone number...")]
-    public string PhoneNumber { get; set; } = null!;
+    public string? PhoneNumber { get; set; }
 
 
     [Required(ErrorMessage = "Job title is required.")]
@@ -56,8 +55,8 @@ public class MemberUserModel
     [DataType(DataType.ImageUrl)]
     public string? ImageUrl { get; set; }
 
-    [Required(ErrorMessage = "You need to select a profile image.")]
     [DataType(DataType.ImageUrl)]
-    public IFormFile ProfileImage { get; set; } = null!;
+    public IFormFile? ProfileImage { get; set; }
+    public Guid? PictureId { get; set; }
     public Guid? RoleId { get; set; }
 }

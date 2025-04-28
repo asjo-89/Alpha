@@ -15,7 +15,7 @@ public class ProjectNotesModel
     public DateTime Created { get; set; }
 
     [Required]
-    public Guid EmployeeId { get; set; }
+    public MemberUserModel Member { get; set; } = new();
 
     [Required]
     public Guid ProjectId { get; set; }

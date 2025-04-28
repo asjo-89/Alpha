@@ -4,31 +4,42 @@ namespace Alpha_Mvc.Models;
 
 public class CreateProjectFormModel
 {
-    public Guid Id { get; set; }
-
     [Required(ErrorMessage = "You need to select a picture.")]
-    public string ImageUrl { get; set; } = null!;
+    public IFormFile Picture { get; set; } = null!;
+    public string? ImageUrl { get; set; }
 
     [Required(ErrorMessage = "You need to enter a name for the project.")]
-    public string ProjectName { get; set; } = null!;
+    [Display(Name = "Project Title", Prompt = "Enter a title...")]
+    public string ProjectTitle { get; set; } = null!;
 
     [Required(ErrorMessage = "You need to select a client.")]
+    [Display(Name = "Client", Prompt = "Choose a client...")]
     public string ClientName { get; set; } = null!;
+    //public Guid ClientId { get; set; }
 
     [Required(ErrorMessage = "You need to enter a description.")]
+    [Display(Name = "Description", Prompt = "Enter a description...")]
     public string Description { get; set; } = null!;
 
     [Required(ErrorMessage = "You need to enter a start date.")]
+    [Display(Name = "Start Date")]
     [DataType(DataType.Date)]
     public DateTime StartDate { get; set; }
 
     [Required(ErrorMessage = "You need to enter an end date.")]
+    [Display(Name = "End Date")]
     [DataType(DataType.Date)]
     public DateTime EndDate { get; set; }
 
-    [Required(ErrorMessage = "You need to select at least one member.")]
-    public string Members { get; set; } = null!;
-
     [Required(ErrorMessage = "You need to enter a budget.")]
-    public decimal Budget { get; set; }
+    [Display(Name = "Budget", Prompt = "Enter a budget...")]
+    public decimal? Budget { get; set; }
+
+    //[Required(ErrorMessage = "You need to select at least one member.")]
+    //[Display(Name = "Members", Prompt = "Choose members...")]
+    //public List<Guid> SelectedMembers { get; set; } = [];
+
+    //public List<MySelectListItem>? AllMembers { get; set; } = [];
+
+    //public List<SelectListItem>? Clients { get; set; } = [];
 }

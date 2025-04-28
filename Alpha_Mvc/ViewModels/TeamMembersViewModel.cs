@@ -1,5 +1,4 @@
 ﻿using Alpha_Mvc.Models;
-using Domain.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Alpha_Mvc.ViewModels;

@@ -57,7 +57,7 @@
 ::-webkit-scrollbar-track {
     background: var(--surface);
     border-radius: 0 10px 10px 0;
-    margin-block: 2rem;
+    margin-block: .3rem;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -301,7 +301,7 @@ h6 {
 .dropdown-container {
     position: relative;
     display: inline-block;
-    place-self: flex-end;
+    align-self: flex-end;
 }
 
 .dropdown-content {    
@@ -309,7 +309,7 @@ h6 {
     position: absolute;
     display: none;
     flex-direction: column;
-    gap: .5rem;
+    gap: .3rem;
     padding: .7rem;
     border-radius: 1rem;
     right: 0;
@@ -334,6 +334,16 @@ h6 {
 
     .menu-option:hover {
         background-color: var(--grey-100);
+    }
+
+    .option-edit {
+        width: 100%;
+        font-size: 1rem;
+        color: var(--body-dark);
+        border: none;
+        background-color: transparent;
+        display: flex;
+        justify-content: flex-start;
     }
 
     .option-edit::before {
@@ -365,4 +375,107 @@ h6 {
 
     .options:hover {
         background-color: var(--grey-100);
+    }
+
+
+/* Search field */
+
+.search-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: .4rem;
+    border: 2px solid var(--grey-200);
+    border-radius: .7rem;
+    font-size: .8rem;
+    margin-top: .2rem;
+    position: relative;
+}
+
+    .search-results {
+        display: none;
+        width: auto;
+        max-height: 180px;
+        overflow-y: auto;
+        flex-direction: column;
+        border: 2px solid var(--grey-200);
+        border-top: none;
+        padding: .7rem;
+        margin: 0;
+        gap: .3rem;
+        border-radius: 0 0 14px 14px;
+        position: absolute;
+        top: 44px;
+        left: 7px;
+        z-index: 5;
+        background-color: var(--surface);
+    }
+
+    .search-button {
+        position: absolute;
+        top: 7px;
+        right: .4rem;
+        border: none;
+        padding: .2rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .btn-delete-search {
+        cursor: pointer;
+        color: var(--body-light);
+        margin-left: .7rem;
+    }
+
+        .btn-delete-search:hover {
+            color: var(--grey-500);
+        }
+
+
+    .search-item {
+        border-radius: 8px;
+        padding: .5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .search-item.active,
+    .search-item:hover {
+        background-color: var(--accent-opacity-higher);
+        transition: all, .25s ease-in-out;
+    }
+
+    .member {
+        width: auto;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        background-color: var(--grey-200);
+        border-radius: 8px;
+        padding: .3rem .6rem;
+        font-size: .8rem;
+    }
+
+    .members-search-input {
+        border-radius: 7px;
+        padding: .5rem;
+        outline: none;
+        border: none;
+        flex-grow: 1;
+    }
+
+    .tag-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .email {
+        color: var(--grey-500);
+    }
+    .search-results .profile-img {
+        width: 32px;
+        align-self: flex-start
     }
