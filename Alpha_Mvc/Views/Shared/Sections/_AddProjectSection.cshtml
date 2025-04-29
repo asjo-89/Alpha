@@ -37,11 +37,6 @@
                 <div class="input-container">
                     <label class="label" asp-for="ClientName">Client Name</label>
                     <input type="text" class="input" asp-for="ClientName" name="ClientName">
-
-                    @* <label class="label" asp-for="ClientId">Client Name</label> *@
-                    @* <select class="input" asp-for="ClientId" asp-items="Model.Clients"> *@
-                    @*     <option selected value="">Select a client...</option> *@
-                    @* </select> *@
                     <span asp-validation-for="ClientName"></span>
                 </div>
                 <div class="input-container">
@@ -52,12 +47,12 @@
                 <div class="form-group">
                     <div class="start">
                         <label class="label" asp-for="StartDate">Start Date</label>
-                        <input type="date" class="input" asp-for="StartDate">
+                        <input type="date" max="@DateTime.MaxValue.ToString("yyyy-MM-dd")" min="1900-01-01" class="input" asp-for="StartDate">
                         <span asp-validation-for="StartDate"></span>
                     </div>
                     <div class="end">
                         <label class="label" asp-for="EndDate">End Date</label>
-                        <input type="date" class="input" asp-for="EndDate">
+                        <input type="date" max="@DateTime.MaxValue.ToString("yyyy-MM-dd")" min="1900-01-01" class="input" asp-for="EndDate">
                         <span asp-validation-for="EndDate"></span>
                     </div>
                 </div>
@@ -147,7 +142,7 @@
                 const modalContainer = modal.querySelector('.modal-container');
                 const exitButton = modal.querySelector('[data-close="true"]');
 
-                if (!modalContainer.contains(e.target) || exitButton.contains(e.target)) {
+                if ( exitButton.contains(e.target)) {
                     modal.classList.remove('show');
 
                     modal.querySelectorAll('form').forEach(form => {

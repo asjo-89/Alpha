@@ -24,12 +24,12 @@ public class CreateProjectFormModel
     [Required(ErrorMessage = "You need to enter a start date.")]
     [Display(Name = "Start Date")]
     [DataType(DataType.Date)]
-    public DateTime StartDate { get; set; }
+    public DateTime? StartDate { get; set; } = null!;
 
     [Required(ErrorMessage = "You need to enter an end date.")]
     [Display(Name = "End Date")]
     [DataType(DataType.Date)]
-    public DateTime EndDate { get; set; }
+    public DateTime? EndDate { get; set; } = null!;
 
     [Required(ErrorMessage = "You need to enter a budget.")]
     [Display(Name = "Budget", Prompt = "Enter a budget...")]

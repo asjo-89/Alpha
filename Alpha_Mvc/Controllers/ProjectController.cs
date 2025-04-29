@@ -37,6 +37,7 @@ namespace Alpha_Mvc.Controllers
             var members = await _memberService.GetMemberUsersAsync();
             var clients = await _clientService.GetClientsAsync();
             var cards = await _projectService.GetProjectCardsAsync();
+            var projects = await _projectService.GetProjectsWithDetailsAsync();
 
             var viewModel = new ProjectsViewModel
             {
@@ -59,6 +60,39 @@ namespace Alpha_Mvc.Controllers
             return View(viewModel);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> EditProject(Guid id)
+        {
+            var result = await _projectService.GetProjectAsync(id);
+            if (!result.Succeeded || result.Data == null)
+                return NotFound("Project was not found.");
+
+            var members = await _pmService.GetProjectMembersWithDetailsAsync(result.Data.Id);
+
+            var viewModel = new
+            {
+                Project = new 
+                { 
+                    result.Data.Id,
+                    result.Data.ProjectTitle,
+                    result.Data.Client.ClientName,
+                    result.Data.Description,
+                    result.Data.StartDate,
+                    result.Data.EndDate,
+                    result.Data.Budget,
+                    result.Data.ImageUrl
+                },
+                Members = members.Select(member => new
+                {
+                    member.Id,
+                    member.FirstName,
+                    member.LastName,
+                    member.ImageUrl
+                })
+            };
+
+            return Json(viewModel);
+        }
 
         [HttpPost]
         public async Task<IActionResult> AddProject(CreateProjectFormModel model, string SelectedIds)
@@ -131,58 +165,6 @@ namespace Alpha_Mvc.Controllers
             //ModelState.AddModelError("viewModel", "Failed to create member.");
             return RedirectToAction("Index", viewModel);            
         }
-
-        //[HttpGet]
-        //public async Task<IActionResult> EditProjectModal(Guid id)
-        //{
-        //    var projectResult = await _projectService.GetProjectAsync(id);
-        //    if (!projectResult.Succeeded || projectResult.Data == null)
-        //        return NotFound("Project was not found.");
-
-        //    var projectMember = await _pmService.GetProjectMembersAsync(id);
-        //    var members = new List<MemberUser>();
-
-        //    foreach (var member in projectMember)
-        //    {
-        //        var result = await _memberService.GetMemberUserAsync(member.MemberId);
-        //        if(result.Data != null)
-        //            members.Add(result.Data);
-        //    }
-
-        //    var allMembers = await _memberService.GetMemberUsersAsync();
-        //    //var clients = await _clientService.GetClientsAsync();
-        //    //var client = clients.Data.FirstOrDefault(client => client.Id == projectResult.Data.ClientId);
-
-        //    var viewModel = new ProjectsViewModel
-        //    {
-        //        EditProjectForm = new EditProjectFormModel
-        //        {
-        //            Id = id,
-        //            ProjectTitle = projectResult.Data.ProjectTitle,
-        //            Description = projectResult.Data.Description ?? "",
-        //            ClientName = projectResult.Data.Client.ClientName ?? "",
-        //            Budget = projectResult.Data.Budget,
-        //            StartDate = projectResult.Data.StartDate,
-        //            EndDate = projectResult.Data.EndDate,
-        //            MemberUsers = members.ToList(),
-        //            ImageUrl = projectResult.Data.ImageUrl,
-                    
-        //        },
-        //        AllMembers = allMembers.Data?.Select(member => new MySelectListItem
-        //        {
-        //            Value = member.Id.ToString(),
-        //            Text = $"{member.FirstName} {member.LastName}",
-        //            ImageUrl = member.ImageUrl
-        //        }).ToList() ?? [],
-        //        //MemberUsers = 
-        //        //Clients = project.Data?.Select(client => new SelectListItem
-        //        //{
-        //        //    Value = client.Id.ToString(),
-        //        //    Text = client.ClientName
-        //        //}).ToList() ?? []
-        //    };
-        //    return PartialView("Sections/_EditProjectSection", viewModel);
-        //}
 
         [HttpPost]
         public async Task<IActionResult> EditProject(EditProjectFormModel model, string SelectedIds)

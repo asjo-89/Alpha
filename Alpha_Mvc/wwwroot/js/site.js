@@ -1,7 +1,35 @@
 ﻿
 document.addEventListener('DOMContentLoaded', () => {
-    // Open modal
+
+    // Open edit project modal
+    const editProjectModal = document.querySelector('#editProjectModal');
     const modalButtons = document.querySelectorAll('[data-modal="true"]');
+
+    const circle = document.querySelector("#edit-proj-circle");
+    const imagePreview = document.querySelector("#edit-proj-image-preview");
+
+    //const modal = document.getElementById("editProjectModal");
+    //const closeModalBtn = document.getElementById("closeModalButton");
+
+    //if (modal && closeModalBtn) {
+    //    document.querySelectorAll(".option-edit").forEach(button => {
+    //        button.addEventListener("click", () => {
+    //            modal.classList.remove("hidden");
+
+    //            modal.querySelector('[name="Id"]').value = button.dataset.id;
+    //            modal.querySelector('[name="ProjectTitle"]').value = button.dataset.title;
+    //            modal.querySelector('[name="Budget"]').value = button.dataset.budget;
+    //            modal.querySelector('[name="StartDate"]').value = button.dataset.start;
+    //            modal.querySelector('[name="EndDate"]').value = button.dataset.end;
+    //        });
+    //    });
+
+    //    closeModalBtn.addEventListener("click", () => {
+    //        modal.classList.add("hidden");
+    //    });
+    //} else {
+    //    console.error("Modal or close button not found in the DOM.");
+    //}
 
     modalButtons.forEach(button => {
         button.addEventListener('click', (e) => {
@@ -9,53 +37,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const target = button.getAttribute('data-target');
             const modal = document.querySelector(target);
-            //console.log(modal);
-            //let projectId = button.getAttribute('data-project-id');
-            //console.log(projectId)
 
-            if (modal) {
 
-                //if (projectId) {
-                //    fetch(`/Project/EditProjectModal?id=${projectId}`)
-                //        .then(response => response.text())
-                //        .then(content => {
-                //            document.querySelector("#modalContent").innerHTML = content;
-                //            document.querySelector("#editProjectModal").classList.toggle("show");
-                //        })
-                //        .catch(error => console.error('Error loading modal:', error));
-                //}
-                //else {
-                    modal.classList.toggle('show');
-                //}
+            if (e.target.matches('#edit-project-button')) {
+                clearForm(modal);
+                const projectId = e.target.dataset.projectId;
+                fetch(`/Project/EditProject?id=${projectId}`)
+                    .then(response => {
+                        if (!response.ok)
+                            return console.error(`HTTP error! Status: ${response.status}`);
+                        return response.json()
+                    })
+                    .then(data => {
+                        console.log('Data received from server:', data);
+                        populateFields(data.project);
+                        populateMembers(data);
+                        editProjectModal.classList.add('show');
+                        circle.classList.remove('show');
+                        imagePreview.classList.add('show');
+                    })
+                    .catch(error => console.error('Error getting data for project:', error));
+            }
+            else {
+                clearForm(modal);
+                if (modal) {
+                    modal.classList.add('show');
+                } else {
+                    console.error('Modal not found for target:', target);
+                }
             }
         });
     });
 
+    // Open modal
+    //const modalButtons = document.querySelectorAll('[data-modal="true"]');
 
-    // Close modal by clicking outside
-    //document.addEventListener('click', (e) => {
-    //    const modals = document.querySelectorAll('.modal');
+    //modalButtons.forEach(button => {
+    //    button.addEventListener('click', (e) => {
+    //        e.stopPropagation();
 
-    //    modals.forEach(modal => {
-    //        const modalContainer = modal.querySelector('.modal-container');
-    //        const exitButton = modal.querySelector('[data-close="true"]');
+    //        const target = button.getAttribute('data-target');
+    //        const modal = document.querySelector(target);
 
-    //        if (!modalContainer.contains(e.target) || exitButton.contains(e.target)) {
-    //            modal.classList.remove('show');
-
-    //            modal.querySelectorAll('form').forEach(form => {
-    //                form.reset();
-
-    //                const imagePreview = form.querySelector('#image-preview');
-    //                if (imagePreview) {
-    //                    imagePreview.src = '';
-    //                    imagePreview.classList.remove('show');
-    //                }
-
-    //                const container = form.querySelector('#circle');
-    //                if (container) 
-    //                    container.classList.add('show');
-    //            })
+    //        if (modal) {
+    //            modal.classList.toggle('show');
     //        }
     //    });
     //});
@@ -93,19 +118,72 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const memberSelect = document.getElementById('member-select');
-    if (memberSelect) {
-        new Choices(memberSelect, {
-            removeItemButton: true,
-            placeholderValue: 'Select members...',
-            searchPlaceholderValue: 'Search members',
-            maxItemCount: -1,
-            shouldSort: false
-        });
+
+    // Populate fields in modal for edit project
+    function populateFields(project) {
+        if (!project) {
+            console.error('No project data received.');
+            return;
+        }
+
+        console.log('Project data received:', project);
+
+        const formatDate = (dateString) => {
+            const date = new Date(dateString);
+            if (isNaN(date)) return ''; 
+            return date.toISOString().split('T')[0];
+        };
+        //const startDateField = document.querySelector('[name="StartDate"]');
+        //console.log('StartDate field:', startDateField);
+
+        //console.log(formatDate(project.startDate));
+
+        document.querySelector('[name="Id"]').value = project.id;
+        document.querySelector('[name="ProjectName"]').value = project.projectTitle;
+        document.querySelector('[name="ProjectBudget"]').value = project.budget;
+        document.querySelector('[name="ProjectStartDate"]').value = formatDate(project.startDate);
+        document.querySelector('[name="ProjectEndDate"]').value = formatDate(project.endDate);
+        document.querySelector('[name="ProjectDescription"]').value = project.description;
+        document.querySelector('[name="ClientsName"]').value = project.clientName;
+        document.querySelector('#edit-proj-image-preview').src = project.imageUrl;
+    };
+
+
+    // Populate preselected members on editProject
+    function populateMembers(data) {
+        console.log('Data received:', data);
+        const preSelected = data.members.map(member => ({
+            id: member.id,
+            fullName: `${member.firstName} ${member.lastName}`,
+            imageUrl: member.imageUrl
+        }));
+        console.log('Preselected before initTagSelector:', preSelected);
+
+        initTagSelector({
+            containerId: 'tag-members-edit',
+            inputId: 'member-search-edit',
+            resultsId: 'member-results-edit',
+            searchUrl: (query) => `/Member/SearchMembers?term=${encodeURIComponent(query)}`,
+            displayName: 'fullName',
+            displayEmail: 'email',
+            imageProperty: 'imageUrl',
+            tagClass: 'member-edit',
+            emptyMessage: 'No members found.',
+            preSelected: preSelected
+        }); 
     }
 
+    function clearForm(modal) {
+        const form = modal.querySelector('form');
+        const inputs = form.querySelectorAll('input, textarea, select');
+        let counter = 1;
+        inputs.forEach(input => {
+            if (!input.value) {
+                input.value = "";
+                console.log("input cleared", counter);
+
+            }
+            counter++;
+        });
+    }
 });
-
-
-
-

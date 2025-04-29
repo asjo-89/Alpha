@@ -448,7 +448,7 @@ h6 {
         transition: all, .25s ease-in-out;
     }
 
-    .member {
+    .member, .member-edit {
         width: auto;
         display: flex;
         align-items: center;
