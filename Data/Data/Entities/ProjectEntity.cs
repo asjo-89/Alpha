@@ -16,11 +16,11 @@ public class ProjectEntity
 
     [Required]
     [Column(TypeName = "date")]
-    public DateTime StartDate { get; set; }
+    public DateTime? StartDate { get; set; }
 
     [Required]
     [Column(TypeName = "date")]
-    public DateTime EndDate { get; set; }
+    public DateTime? EndDate { get; set; }
 
     [Precision(18, 2)]
     public decimal? Budget {  get; set; }

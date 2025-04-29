@@ -3,6 +3,7 @@ using Data.Entities;
 using Data.Interfaces;
 using Domain.Dtos;
 using Domain.Models;
+using System.Linq.Expressions;
 
 namespace Business.Services;
 
@@ -72,6 +73,28 @@ public class ProjectMemberService(IProjectMemberRepository repository) : IProjec
             ProjectId = member.ProjectId,
             MemberId = member.MemberId
         });
+    }
+
+    public async Task<IEnumerable<MemberUser>> GetProjectMembersWithDetailsAsync(Guid id)
+    {
+        if (id == Guid.Empty)
+            return new List<MemberUser>();
+
+        var pmList = await _repository.GetAllAsync(
+            filterBy: x => x.ProjectId == id || x.MemberId == id,
+            includes:
+            [
+                x => x.Member,
+                x => x.Member.Picture
+            ]);
+
+        return pmList.Data.Select(member => new MemberUser
+        {
+            Id = member.Member.Id,
+            FirstName = member.Member.FirstName,
+            LastName = member.Member.LastName,
+            ImageUrl = member.Member.Picture.ImageUrl
+        }) ?? new List<MemberUser>();
     }
 
     public async Task<bool> DeleteAsync(IEnumerable<ProjectMember> projectMembers)

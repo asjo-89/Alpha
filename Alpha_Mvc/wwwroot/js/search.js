@@ -5,9 +5,16 @@
     const tagContainer = document.getElementById(config.containerId);
     const input = document.getElementById(config.inputId);
     const results = document.getElementById(config.resultsId);
+    
+    clearTags();
 
-    if (Array.isArray(config.preselected)) {
-        config.preselected.forEach(item => addTag(item));
+    if (Array.isArray(config.preSelected)) {
+        console.log('Preselected members:', config.preSelected);
+        config.preSelected.forEach(item => {
+            addTag(item);
+        });
+    } else {
+        console.error('Preselected is not an array:', config.preSelected);
     }
 
     input.addEventListener('focus', () => {
@@ -73,6 +80,8 @@
    
     function addTag(item) {
         const id = String(item.id);
+        console.log("SelectedIds" + { selectedIds });
+
         if (selectedIds.includes(id))
             return;
 
@@ -82,17 +91,18 @@
         const tag = document.createElement('span');
         tag.classList.add(config.tagClass || 'tag');
 
-        if (Array.isArray(config.preselected)) {
-            config.preselected.forEach(item => addTag(item));
-        }
-
-
         if (config.tagClass === 'tag') {
             tag.innerHTML = `
                 <span>${item[config.displayName]}</span>
             `;
         }
         else if (config.tagClass === 'member') {
+            tag.innerHTML = `
+                <img class="profile-img" src="${item[config.imageProperty]}">
+                <span>${item[config.displayName]}</span>
+            `;
+        }
+        else if (config.tagClass === 'member-edit') {
             tag.innerHTML = `
                 <img class="profile-img" src="${item[config.imageProperty]}">
                 <span>${item[config.displayName]}</span>
@@ -150,6 +160,12 @@
         }
     };
 
+    function clearTags() {
+        tagContainer.querySelectorAll(`.${config.tagClass}`).forEach(tag => tag.remove());
+        selectedIds = [];
+        updateSelectedIdsInput();
+    }
+
 
     function renderSearchResults(data) {
         results.innerHTML = '';
@@ -177,6 +193,15 @@
                         `;
                     }
                     else if (config.tagClass === 'member') {
+                        resultItem.innerHTML = `
+                            <img class="profile-img" src="${config.imageFolder || ''}${item[config.imageProperty]}">
+                            <div class="tag-info">
+                                <span>${item[config.displayName]}</span>
+                                <span class="email">${item[config.displayEmail]}</span>
+                            </div>
+                        `;
+                    }
+                    else if (config.tagClass === 'member-edit') {
                         resultItem.innerHTML = `
                             <img class="profile-img" src="${config.imageFolder || ''}${item[config.imageProperty]}">
                             <div class="tag-info">

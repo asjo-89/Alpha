@@ -2,7 +2,7 @@
 
 public static class StatusHelper
 {
-    public static string SetStatus(DateTime start, DateTime end)
+    public static string SetStatus(DateTime? start, DateTime? end)
     {
         var currentDate = DateTime.Now;
 

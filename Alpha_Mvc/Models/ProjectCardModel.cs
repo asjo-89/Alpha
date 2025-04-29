@@ -10,8 +10,8 @@ public class ProjectCardModel
     public string Description { get; set; } = null!;
     public string ClientName { get; set; } = null!;
     public string ImageUrl { get; set; } = null!;
-    public DateTime StartDate { get; set; } 
-    public DateTime EndDate { get; set; }
+    public DateTime? StartDate { get; set; } 
+    public DateTime? EndDate { get; set; }
     public string StatusName { get; set; } = null!;
     public decimal? Budget {  get; set; }
     public List<MemberUser> MemberUsers { get; set; } = [];
