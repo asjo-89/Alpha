@@ -59,15 +59,8 @@
 
                     <div class="input-container">
                         <label class="label" asp-for="RoleId">Role</label>
-                        <select id="role" class="input" asp-for="RoleId">
+                        <select id="role" class="input" asp-for="RoleId" asp-items="ViewBag.Roles">
                             <option value="">Select a role...</option> 
-
-                            @foreach(var role in ViewBag.Roles)
-                            {
-                                <option value="@role.Value" selected="@(role.Value == Model.RoleId.ToString() ? "selected" : "")">
-                                    @role.Text
-                                </option>
-                            }
                         </select>
                         <span asp-validation-for="RoleId"></span>
                     </div>

@@ -55,6 +55,15 @@ public class PictureService(IPictureRepository pictureRepository) : IPictureServ
 
     }
 
+    public async Task<PictureResult<Guid>> GetPictureIdAsync(string url)
+    {
+        var result = await _pictureRepository.GetAsync(x => x.ImageUrl == url);
+
+        return result.Success && result.Data != null
+            ? new PictureResult<Guid> { Succeeded = true, StatusCode = 200, Data = result.Data.Id }
+            : new PictureResult<Guid> { Succeeded = false, StatusCode = 404, ErrorMessage = $"No picture found." };
+    }
+
     //public async Task<PictureResult<bool>> DeleteAsync(Picture picture)
     //{
     //    //var picture = await _pictureRepository.GetAsync(

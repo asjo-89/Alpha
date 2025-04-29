@@ -53,7 +53,8 @@ namespace Alpha_Mvc.Controllers
                     BirthDay = member.DateOfBirth?.Day ?? 0,
                     BirthMonth = member.DateOfBirth?.Month ?? 0,
                     BirthYear = member.DateOfBirth?.Year ?? 0,
-                    PictureId = member.PictureId
+                    PictureId = member.PictureId,
+                    RoleId = member.RoleId
                 }),
                 Member = new MemberFormModel(),
                 Roles = roles.Select(role => new SelectListItem
@@ -135,54 +136,7 @@ namespace Alpha_Mvc.Controllers
                 return View("Index", viewModel);
             }
         }
-
-        //[HttpGet]
-        //public async Task<IActionResult> EditMemberModal(Guid id)
-        //{
-        //    var memberResult = await _memberService.GetMemberUserAsync(id);
-        //    if (!memberResult.Succeeded || memberResult.Data == null)
-        //        return NotFound("Member was not found.");
-
-        //    var roles = await _roleManager.Roles.ToListAsync();
-        //    var memberUser = await _userManager.FindByIdAsync(id.ToString());
-        //    if (memberUser == null)
-        //        return NotFound("No member was found.");
-
-        //    var memberRoles = await _userManager.GetRolesAsync(memberUser) ?? new List<string>();
-        //    if (memberRoles == null)
-        //        return NotFound($"No role found for member with with id {id} was found.");
-            
-        //    var role = memberRoles.FirstOrDefault() ?? "";
-
-        //    var editViewModel = new EditMemberViewModel
-        //    {
-        //        Member = new MemberUserModel
-        //        {
-        //            Id = memberResult.Data.Id,
-        //            FirstName = memberResult.Data.FirstName,
-        //            LastName = memberResult.Data.LastName,
-        //            Email = memberResult.Data.Email,
-        //            PhoneNumber = memberResult.Data.PhoneNumber ?? "",
-        //            JobTitle = memberResult.Data.JobTitle ?? "",
-        //            StreetAddress = memberResult.Data.Address?.StreetAddress ?? "",
-        //            PostalCode = memberResult.Data.Address?.PostalCode ?? "",
-        //            City = memberResult.Data.Address?.City ?? "",
-        //            BirthDay = memberResult.Data.DateOfBirth?.Day,
-        //            BirthMonth = memberResult.Data.DateOfBirth?.Month,
-        //            BirthYear = memberResult.Data.DateOfBirth?.Year,
-        //            ImageUrl = memberResult.Data.ImageUrl
-        //        },
-        //        Roles = roles.Select(role => new SelectListItem
-        //        {
-        //            Value = role.Id.ToString(),
-        //            Text = role.Name
-        //        }).ToList()
-
-        //    };
-
-        //    return PartialView("Sections/_EditMemberSection", editViewModel); 
-        //}
-
+                
         [HttpPost]
         public async Task<IActionResult> EditMember(MemberUserModel model, string? existingUrl)
         {
@@ -232,14 +186,16 @@ namespace Alpha_Mvc.Controllers
             var memberDto = new MemberUserDto();
 
             if (model.ProfileImage == null)
-            {
-                relativePath = existingUrl;
-                model.ImageUrl = Url.Content(relativePath);
+            { 
+                var pictureId = await _pictureService.GetPictureIdAsync(existingUrl);
                 memberDto = MemberUserFactoryMCV.CreateDtoFromModel(model);
-                memberDto.PictureId = model.PictureId;
+                memberDto.PictureId = pictureId.Data;
             }
             else
             {
+                var member = await _memberService.GetMemberUserAsync(model.Id);
+                _fileService.DeleteFile(member.Data.ImageUrl);
+
                 relativePath = await _fileService.CreateFile(model.ProfileImage);
                 var picture = await _pictureService.CreateAsync(relativePath);
                 if (!picture.Succeeded || picture.Data == null)
@@ -255,20 +211,7 @@ namespace Alpha_Mvc.Controllers
             if (!newMember.Succeeded || newMember.Data == null)
                 return BadRequest($"An error occured updating member.");
 
-            //if (relativePath == model.ImageUrl)
-            //{
-            //    _fileService.DeleteFile(relativePath);
-            //    var dto = MemberUserFactoryMCV.CreateDtoFromModel(model);
-
-            //    var updatedModel = await _memberService.UpdateAsync(dto);
-            //    if (!updatedModel.Succeeded) 
-            //        return BadRequest($"An error occured updating the member.\n{updatedModel.StatusCode}\n{updatedModel.ErrorMessage}");
-
-            //    return RedirectToAction("Index");
-            //}
-
-
-
+           
             var address = await _addressService.CreateAsync(model.StreetAddress, model.PostalCode, model.City, newMember.Data.Id);
 
             if (!result.Succeeded || !address.Succeeded)

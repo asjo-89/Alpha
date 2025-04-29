@@ -66,22 +66,27 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
 
     public async Task<MemberUserResult<IEnumerable<MemberUser>>> GetMemberUsersAsync()
     {
-        //var result = await _memberRepository.GetAllAsync(
-        //    orderByDescending: false,
-        //    orderBy: x => x.Email,
-        //    filterBy: null!,
-        //    includes: [x => x.Picture, x => x.Address]
-        //);
-
-        //var members = result.Data.Select(MemberUserFactory.CreateModelFromEntity);
-
         var members = await _userManager.Users
             .Include(x => x.Address)
-            .Include(x => x.Picture)
+            .Include(x => x.Picture)            
             .ToListAsync();
 
+        var list = new List<MemberUser>();
+
+        foreach (var member in members)
+        {
+            var roles = await _userManager.GetRolesAsync(member);
+
+            var roleId = roles.Any()
+                ? (await _roleManager.FindByNameAsync(roles.FirstOrDefault()))?.Id
+                : null;
+            var model = MemberUserFactory.CreateModelFromEntity(member);
+            model.RoleId = roleId != null ? roleId : Guid.Empty;
+
+            list.Add(model);
+        }
         return members.Count > 0
-            ? new MemberUserResult<IEnumerable<MemberUser>> { Succeeded = true, StatusCode = 200, Data = members.Select(MemberUserFactory.CreateModelFromEntity) ?? [] }
+            ? new MemberUserResult<IEnumerable<MemberUser>> { Succeeded = true, StatusCode = 200, Data = list ?? [] }
             : new MemberUserResult<IEnumerable<MemberUser>> { Succeeded = false, StatusCode = 404, ErrorMessage = "No members was found." };
     }
 

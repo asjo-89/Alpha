@@ -12,6 +12,6 @@ public class MemberUser
     public Address? Address { get; set; }
     public Guid? PictureId { get; set; }
     public string? ImageUrl { get; set; }
-
+    public Guid? RoleId { get; set; }
 
 }

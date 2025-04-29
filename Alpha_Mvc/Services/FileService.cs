@@ -25,7 +25,7 @@ public class FileService(IWebHostEnvironment environment) : IFileService
 
     public bool DeleteFile(string filePath)
     {
-        if (filePath == null) return false;
+        if (filePath == null || filePath == "Images/Profiles/Profile2.png") return false;
 
         File.Delete(filePath);
         return true;
