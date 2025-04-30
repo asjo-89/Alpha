@@ -128,6 +128,7 @@ public class ProjectService(IProjectRepository projectRepository, IPictureReposi
                 StatusName = p.StatusName,
                 Budget = p.Budget,       
                 EndDate = p.EndDate,
+                StartDate = p.StartDate,
                 ProjectMembers = p.ProjectMembers!.Select(member => new MemberUser
                 {
                     Id = member.Member.Id,

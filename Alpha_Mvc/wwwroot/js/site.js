@@ -1,43 +1,67 @@
-﻿console.log('site.js loaded');
+﻿
+window.setupCountdown = function (id, endDate, startDate) {
 
-window.setupCountdown = function (id, endDate) {
-
-    console.log('@Model.EndDate?.ToString("o")')
     const dueDate = new Date(endDate);
+    const startingDate = new Date(startDate);
+    const dateNow = Date.now();
 
     const span = document.querySelector(`#countDown_${id}`);
 
-    if (isNaN(dueDate)) {
-        console.log("Invalid Date");
-    }
-    else {
-        console.log("Valid Date", dueDate);
-        CountDown();
+    if (isNaN(dueDate) || isNaN(startingDate)) {
+        console.warn("Invalid date format.");
+        return;
     }
 
+    //if (dateFns.isBefore(dateNow, startingDate))
+    //{
+    //    const days = dateFns.differenceInDays(startingDate, dateNow);
+    //    span.innerText = `Starts in ${days} days`;
+    //}
+    //else if (dateFns.isBefore(dateNow, dueDate)) {
+    //    const days = dateFns.differenceInDays(dueDate, dateNow);
+    //    span.innerText = `${days} days left`;
+    //}
+    //else
+    //{
+    //    const days = dateFns.differenceInDays(dateNow, dueDate);
+    //    span.innerText = `${days} days overdue`;
+    //}
+
+
+    CountDown();
+
     function CountDown() {
-        const dateNow = Date.now();
+
         const timeLeft = dueDate - dateNow;
-        console.error("###############");
-        console.log(timeLeft);
+        const timeToStart = startingDate - dateNow;
+
+        const daysToStart = Math.floor(timeToStart / (1000 * 60 * 60 * 24));
+        const weeksToStart = Math.floor(daysToStart / 7);
 
         const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
         const weeks = Math.floor(days / 7);
 
-        if (days < 7 && days >= 0) {
-            span.innerText = `${days} days left`;
+        if (daysToStart >= 0 && daysToStart <= 6) {
+            span.innerText = `Starts in ${Math.abs(daysToStart)} day(s)`;
+        }
+        else if (daysToStart >= 0 && daysToStart >= 7) {
+            span.innerText = `Starts in ${Math.abs(weeksToStart)} week(s)`;
+        }
+
+        else if (days < 7 && days >= 0) {
+            span.innerText = `${days} day(s) left`;
         }
         else if (days >= 7) {
-            span.innerText = `${weeks} weeks left`;
+            span.innerText = `${weeks} week(s) left`;
         }
         else if (days < 0 && days >= -6) {
-            span.innerText = `${Math.abs(days)} days overdue`;
+            span.innerText = `${Math.abs(days)} day(s) overdue`;
         }
         else if (days <= -7) {
-            span.innerText = `${Math.abs(weeks)} weeks overdue`;
+            span.innerText = `${Math.abs(weeks)} week(s) overdue`;
         }
     }
-};
+};      
 
 document.addEventListener('DOMContentLoaded', () => {
 

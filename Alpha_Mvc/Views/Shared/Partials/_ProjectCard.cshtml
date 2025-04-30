@@ -57,7 +57,16 @@
 
 <script>
      document.addEventListener('DOMContentLoaded', function() {
-        window.setupCountdown('@Model.Id', @Html.Raw(JsonSerializer.Serialize(Model.EndDate)));
-     });
+    console.log("End Date:", '@Model.EndDate');
+            console.log("Start Date:", '@Model.StartDate');
+
+            const endDate = '@Model.EndDate?.ToString("yyyy-MM-dd")';
+            const startDate = '@Model.StartDate?.ToString("yyyy-MM-dd")';
+
+            // Kontrollera värden innan vidare användning
+            console.log("Serialized End Date:", endDate);
+            console.log("Serialized Start Date:", startDate);
+
+            window.setupCountdown('@Model.Id', endDate, startDate);     });
 </script>
 
