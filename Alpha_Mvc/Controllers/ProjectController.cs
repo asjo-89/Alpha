@@ -54,7 +54,7 @@ namespace Alpha_Mvc.Controllers
                     Text = client.ClientName
                 }).ToList() ?? []
             };
-
+            
             ViewBag.AllMembers = viewModel.AllMembers;
 
             return View(viewModel);

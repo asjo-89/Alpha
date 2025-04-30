@@ -1,4 +1,44 @@
-﻿
+﻿console.log('site.js loaded');
+
+window.setupCountdown = function (id, endDate) {
+
+    console.log('@Model.EndDate?.ToString("o")')
+    const dueDate = new Date(endDate);
+
+    const span = document.querySelector(`#countDown_${id}`);
+
+    if (isNaN(dueDate)) {
+        console.log("Invalid Date");
+    }
+    else {
+        console.log("Valid Date", dueDate);
+        CountDown();
+    }
+
+    function CountDown() {
+        const dateNow = Date.now();
+        const timeLeft = dueDate - dateNow;
+        console.error("###############");
+        console.log(timeLeft);
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const weeks = Math.floor(days / 7);
+
+        if (days < 7 && days >= 0) {
+            span.innerText = `${days} days left`;
+        }
+        else if (days >= 7) {
+            span.innerText = `${weeks} weeks left`;
+        }
+        else if (days < 0 && days >= -6) {
+            span.innerText = `${Math.abs(days)} days overdue`;
+        }
+        else if (days <= -7) {
+            span.innerText = `${Math.abs(weeks)} weeks overdue`;
+        }
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // Open edit project modal

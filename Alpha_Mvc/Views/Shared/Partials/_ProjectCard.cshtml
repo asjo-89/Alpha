@@ -1,9 +1,10 @@
-﻿@model ProjectCardModel
+﻿@using System.Text.Json
+@model ProjectCardModel
 
 @{
     ViewData["Css"] = "~/css/home.css";
-
-         var editViewModel = new ProjectsViewModel
+    Console.WriteLine(Model.EndDate);
+    var editViewModel = new ProjectsViewModel
             {
                 EditProjectForm = new EditProjectFormModel
                 {
@@ -44,7 +45,7 @@
         @Model.Description
     </div>
     <div class="extras">
-        <span class="status">@Model.StatusName</span>
+        <span id="countDown_@Model.Id" class="status"></span>
         <div class="profile-group">
             @foreach (var member in @Model.MemberUsers) 
             {
@@ -53,3 +54,10 @@
         </div>
     </div>
 </div>
+
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
+        window.setupCountdown('@Model.Id', @Html.Raw(JsonSerializer.Serialize(Model.EndDate)));
+     });
+</script>
+
