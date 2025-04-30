@@ -12,22 +12,6 @@ window.setupCountdown = function (id, endDate, startDate) {
         return;
     }
 
-    //if (dateFns.isBefore(dateNow, startingDate))
-    //{
-    //    const days = dateFns.differenceInDays(startingDate, dateNow);
-    //    span.innerText = `Starts in ${days} days`;
-    //}
-    //else if (dateFns.isBefore(dateNow, dueDate)) {
-    //    const days = dateFns.differenceInDays(dueDate, dateNow);
-    //    span.innerText = `${days} days left`;
-    //}
-    //else
-    //{
-    //    const days = dateFns.differenceInDays(dateNow, dueDate);
-    //    span.innerText = `${days} days overdue`;
-    //}
-
-
     CountDown();
 
     function CountDown() {
