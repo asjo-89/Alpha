@@ -377,6 +377,56 @@ h6 {
         background-color: var(--grey-100);
     }
 
+    .user {
+        display: flex;
+        gap: 1rem;
+        padding: .7rem 1rem;
+        min-width: 250px;
+        transition: all .2s ease-in-out;
+    }
+
+    .user:hover, 
+    .sign-out:hover {
+        background-color: var(--grey-200);
+        border-radius: 14px;
+    }
+
+    .dropdown-container .profile-small {
+        width: 44px;
+        border-radius: 50%;
+    }
+
+    .user .profile-small {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .name {
+        color: var(--color-heading);
+        font-weight: var(--font-semibold);
+    }
+
+    .sign-out {
+        border: none;
+        background-color: transparent;
+        display: flex;
+        border-radius: 10px;
+        gap: .5rem;
+        color: var(--color-heading);
+        font-weight: var(--font-regular);
+        padding: 1rem 1.3rem;
+        transition: all .2s ease-in-out;
+        font-size: var(--button-font-size);
+    }
+
+    .sign-out::before {
+        content: "\f08b";
+        font-family: FontAweSome;
+        margin-right: .5rem;
+        color: var(--grey-500);
+    }
+
 
 /* Search field */
 
