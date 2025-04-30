@@ -5,19 +5,22 @@ using Data.Entities;
 using Data.Interfaces;
 using Domain.Dtos;
 using Domain.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace Business.Services;
 
-public class MemberUserService(IMemberUserRepository memberRepository, UserManager<MemberUserEntity> userManager, RoleManager<IdentityRole<Guid>> roleManager, IPictureService pictureService, IPictureRepository pictureRepository) : IMemberUserService
+public class MemberUserService(IMemberUserRepository memberRepository, UserManager<MemberUserEntity> userManager, RoleManager<IdentityRole<Guid>> roleManager, IPictureService pictureService, IPictureRepository pictureRepository, IHttpContextAccessor contextAccessor) : IMemberUserService
 {
     private readonly IMemberUserRepository _memberRepository = memberRepository;
     private readonly UserManager<MemberUserEntity> _userManager = userManager;
     private readonly RoleManager<IdentityRole<Guid>> _roleManager = roleManager;
     private readonly IPictureService _pictureService = pictureService;
     private readonly IPictureRepository _pictureRepository = pictureRepository;
+    private readonly IHttpContextAccessor _contextAccessor = contextAccessor;
 
 
 
@@ -64,11 +67,26 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
     }
 
 
+    public async Task<MemberUserResult<MemberUser>> GetLoggedInUserAsync()
+    {
+        var userId = _contextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (userId == null)
+            return new MemberUserResult<MemberUser> { Succeeded = false, StatusCode = 404, ErrorMessage = "No logged in user was found." };
+
+        var userEntity = await _userManager.Users
+            .Include(x => x.Picture)
+            .FirstOrDefaultAsync(x => x.Id == Guid.Parse(userId));
+
+        return userEntity != null
+            ? new MemberUserResult<MemberUser> { Succeeded = true, StatusCode = 200, Data = MemberUserFactory.CreateModelFromEntity(userEntity) }
+            : new MemberUserResult<MemberUser> { Succeeded = false, StatusCode = 500, ErrorMessage = "Something went wrong getting logged in user." };
+    }
+
     public async Task<MemberUserResult<IEnumerable<MemberUser>>> GetMemberUsersAsync()
     {
         var members = await _userManager.Users
             .Include(x => x.Address)
-            .Include(x => x.Picture)            
+            .Include(x => x.Picture)
             .ToListAsync();
 
         var list = new List<MemberUser>();
@@ -173,7 +191,7 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
     {
         if (dto == null)
             return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "All reaquired fields are not completed.", Data = false };
-                
+
         try
         {
             await _memberRepository.BeginTransactionAsync();

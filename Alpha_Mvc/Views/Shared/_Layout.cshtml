@@ -20,7 +20,7 @@
     <div class="wrapper">
         <div class="container">            
             <header>
-                @await Html.PartialAsync("Partials/_Header")
+                @await Component.InvokeAsync("Header")
             </header>
 
             <aside class="sidebar">

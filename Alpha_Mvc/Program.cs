@@ -20,6 +20,8 @@ builder.Services.AddIdentity<MemberUserEntity, IdentityRole<Guid>>()
     .AddEntityFrameworkStores<AlphaDbContext>()
     .AddDefaultTokenProviders();
 
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.Configure<IdentityOptions>(options =>
 {
     options.Password.RequireDigit = false;

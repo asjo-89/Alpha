@@ -1,0 +1,34 @@
+﻿@model MemberUserModel
+
+@{
+    ViewData["Css"] = "~/css/home.css";
+}
+
+<div class="topbar">
+    <form class="search-form" action="" method="post">
+        <input class="search-input" name="query" type="text" placeholder="Search..." />
+    </form>
+    <div class="user-menu">
+        <img src="/images/Icons/Notification_inactive.svg" class="notification" />
+        <img src="/images/Icons/Settings.svg" class="settings" />
+        <div class="stroke">|</div>
+
+        <div class="dropdown-container">
+            <img id="menu-button" src="@Model.ImageUrl" class="profile-small" />
+            <div class="dropdown-content">
+                <div class="user">
+                    <img class="profile-small" src="@Model.ImageUrl" />
+                    <div class="user-group">
+                        <p class="name">@Model.FirstName @Model.LastName</p>
+                        <p class="email">@Model.Email</p>
+                    </div>
+                </div>
+                <form class="dropdown-form" method="post" asp-controller="Auth" asp-action="SignOut">
+                    <button type="submit" class="sign-out">
+                        <p>Sign Out</p>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

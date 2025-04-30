@@ -35,6 +35,16 @@ public class AuthController(IAuthService authService, IPictureService pictureSer
     }
 
 
+    [HttpPost]
+    public async Task<IActionResult> SignOut(MemberUserModel member)
+    {
+        var dto = MemberUserFactoryMCV.CreateDtoFromModel(member);
+        await _authService.SignOutAsync(dto);
+
+        return View("SignIn");
+    }
+
+
     public IActionResult CreateAccount()
     {
         return View();

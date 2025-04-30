@@ -8,6 +8,7 @@ public interface IMemberUserService
 {
     Task<MemberUserResult<bool>> CreateAsync(MemberUserDto formData);
     Task<MemberUserResult<bool>> DeleteAsync(Guid id);
+    Task<MemberUserResult<MemberUser>> GetLoggedInUserAsync();
     Task<MemberUserResult<MemberUser>> GetMemberUserAsync(string value);
     Task<MemberUserResult<IEnumerable<MemberUser>>> GetMemberUsersAsync();
     Task<IEnumerable<object>> GetMemberUsersAsync(Guid id);
