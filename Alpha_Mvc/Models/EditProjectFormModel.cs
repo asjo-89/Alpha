@@ -8,15 +8,14 @@ public class EditProjectFormModel
 {
     public Guid Id { get; set; }
 
-    [Required(ErrorMessage = "You need to select a picture.")]
-    public IFormFile Picture { get; set; } = null!;
-    public string ImageUrl { get; set; } = null!;
+    public IFormFile? Picture { get; set; }
+    public string? ImageUrl { get; set; }
+    public string? CurrentUrl { get; set; }
 
     [Required(ErrorMessage = "You need to enter a name for the project.")]
     [Display(Name = "Project Title", Prompt = "Enter a title...")]
     public string ProjectTitle { get; set; } = null!;
 
-    [Required(ErrorMessage = "You need to select a client.")]
     [Display(Name = "Client")]
     public Guid? ClientId { get; set; }
     public string ClientName { get; set; } = null!;

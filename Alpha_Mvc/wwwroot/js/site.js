@@ -55,6 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const circle = document.querySelector("#edit-proj-circle");
     const imagePreview = document.querySelector("#edit-proj-image-preview");
+    if (editProjectModal) {
+        const imageInput = editProjectModal.querySelector('#edit-proj-image-input');
+        const currentUrlField = editProjectModal.querySelector('#current-url');
+
+        if (imageInput && currentUrlField) {
+            imageInput.addEventListener('change', (e) => {
+                const image = e.target.files[0];
+                if (image) {
+                    currentUrlField.value = "";
+                }
+            });
+        }
+    }
 
     //const modal = document.getElementById("editProjectModal");
     //const closeModalBtn = document.getElementById("closeModalButton");
@@ -117,23 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Open modal
-    //const modalButtons = document.querySelectorAll('[data-modal="true"]');
-
-    //modalButtons.forEach(button => {
-    //    button.addEventListener('click', (e) => {
-    //        e.stopPropagation();
-
-    //        const target = button.getAttribute('data-target');
-    //        const modal = document.querySelector(target);
-
-    //        if (modal) {
-    //            modal.classList.toggle('show');
-    //        }
-    //    });
-    //});
-
-
 
     // Dropdown menu cards
     document.addEventListener('click', (e) => {
@@ -187,12 +183,13 @@ document.addEventListener('DOMContentLoaded', () => {
         //console.log(formatDate(project.startDate));
 
         document.querySelector('[name="Id"]').value = project.id;
-        document.querySelector('[name="ProjectName"]').value = project.projectTitle;
-        document.querySelector('[name="ProjectBudget"]').value = project.budget;
-        document.querySelector('[name="ProjectStartDate"]').value = formatDate(project.startDate);
-        document.querySelector('[name="ProjectEndDate"]').value = formatDate(project.endDate);
-        document.querySelector('[name="ProjectDescription"]').value = project.description;
-        document.querySelector('[name="ClientsName"]').value = project.clientName;
+        document.querySelector('[name="ProjectTitle"]').value = project.projectTitle;
+        document.querySelector('[name="Budget"]').value = project.budget;
+        document.querySelector('[name="StartDate"]').value = formatDate(project.startDate);
+        document.querySelector('[name="EndDate"]').value = formatDate(project.endDate);
+        document.querySelector('[name="Description"]').value = project.description;
+        document.querySelector('[name="ClientName"]').value = project.clientName;
+        document.querySelector('[name="CurrentUrl"]').value = project.imageUrl;
         document.querySelector('#edit-proj-image-preview').src = project.imageUrl;
     };
 
