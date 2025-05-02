@@ -6,7 +6,7 @@
 
 }
 
- <div class="modal" id="editProjectModal"> 
+ <div class="modal" id="editProjectModal_@Model.EditProjectForm.Id" data-project-id="@Model.EditProjectForm.Id"> 
 
      <div class="modal-container" id="modalContent"> 
          <div class="top"> 
@@ -32,7 +32,7 @@
                  <div class="form-group"> 
                     <input type="hidden" Id="current-url" name="CurrentUrl" value="@Model.EditProjectForm.ImageUrl" />
                     <label asp-for="@Model.EditProjectForm.Picture" hidden></label>
-                    <input id="edit-proj-image-input" asp-for="@Model.EditProjectForm.Picture" class="image-input" accept="image/*" hidden />
+                    <input id="edit-proj-image-input" asp-for="@Model.EditProjectForm.Picture" name="Picture" src="#" class="image-input" accept="image/*" hidden />
                     <span asp-validation-for="@Model.EditProjectForm.Picture"></span>
                 </div> 
 
@@ -68,7 +68,7 @@
                      <label class="label">Members</label> 
                      <div id="tag-members-edit" class="search-container"> 
                          <input type="text" id="member-search-edit" class="members-search-input" placeholder="Add members..." /> 
-                         <input type="hidden" id="SelectedIds" name="SelectedIds" /> 
+                         <input type="hidden" id="SelectedIdsEdit" name="SelectedIds" /> 
 
                          <button type="button" class="search-button" for="search-input"> 
                              <img src="/images/Icons/Search.svg" /> 
@@ -93,31 +93,58 @@
  @await Html.PartialAsync("_ValidationScriptsPartial")
 
 <script>
+
+     const preSelected = JSON.parse(`@Html.Raw(JsonSerializer.Serialize(Model.MemberUsers.Select(member => new
+        {
+            id = member.Id,
+            fullName = $"{member.FirstName} {member.LastName}",
+            email = member.Email,
+            imageUrl = member.ImageUrl
+        }) ?? Enumerable.Empty<object>()))`);
+
+    initTagSelector({
+            containerId: 'tag-members-edit',
+            inputId: 'member-search-edit',
+            resultsId: 'member-results-edit',
+            searchUrl: (query) => `/Member/SearchMembers?term=${encodeURIComponent(query)}`,
+            displayName: 'fullName',
+            displayEmail: 'email',
+            imageProperty: 'imageUrl',
+            tagClass: 'member-edit',
+            emptyMessage: 'No members found.',
+            preSelected: preSelected
+        });
+
+
      document.addEventListener("DOMContentLoaded", () => { 
-         const camera = document.querySelector("#edit-camera-project"); 
+         const image = document.querySelector("#edit-proj-image-preview");
          const imageInput = document.querySelector("#edit-proj-image-input"); 
 
          if (!imageInput) return; 
 
-         camera.addEventListener("click", () => { 
+         image.addEventListener("click", () => { 
              imageInput.click(); 
          }); 
 
          imageInput.addEventListener("change", (e) => { 
-             const image = e.target.files[0]; 
+             const imageSelect = e.target.files[0]; 
+             console.log("preSelected image", imageSelect);
              const circle = document.querySelector("#edit-proj-circle"); 
              const imagePreview = document.querySelector("#edit-proj-image-preview"); 
 
-             if (image) { 
+             if (imageSelect) { 
+                 console.log("1");
                  const reader = new FileReader(); 
 
                  reader.onload = (e) => { 
+                     console.log("2");
                      imagePreview.src = e.target.result; 
                      circle.classList.remove('show'); 
                      imagePreview.classList.add('show'); 
                  }; 
-
-                 reader.readAsDataURL(image); 
+                 console.log("3");
+                 reader.readAsDataURL(imageSelect); 
+                 console.log("4");
              } 
              else { 
                  circle.classList.add('show'); 

@@ -40,6 +40,8 @@ public class EditProjectFormModel
     public decimal? Budget { get; set; }
 
 
+
+    //public List<string> SelectedIds { get; set; } = [];
     public List<MemberUser> MemberUsers { get; set; } = [];
 
     //[Required(ErrorMessage = "You need to select at least one member.")]

@@ -64,6 +64,7 @@ namespace Alpha_Mvc.Controllers
         public async Task<IActionResult> EditProject(Guid id)
         {
             var result = await _projectService.GetProjectAsync(id);
+            Console.WriteLine($"#########################\n{result.Data}");
             if (!result.Succeeded || result.Data == null)
                 return NotFound("Project was not found.");
 
@@ -95,7 +96,7 @@ namespace Alpha_Mvc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProject(CreateProjectFormModel model, string SelectedIds)
+        public async Task<IActionResult> AddProject(CreateProjectFormModel model, string? SelectedIds)
         {
             if (!ModelState.IsValid)
             {
@@ -167,7 +168,7 @@ namespace Alpha_Mvc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditProject(EditProjectFormModel model, string SelectedIds = null!)
+        public async Task<IActionResult> EditProject(EditProjectFormModel model, string? SelectedIds)
         {
             if (!ModelState.IsValid)
             {
@@ -190,10 +191,12 @@ namespace Alpha_Mvc.Controllers
                         Text = client.ClientName
                     }).ToList() ?? []
                 };
-                return View("Index", editViewModel);
+                return RedirectToAction("Index", editViewModel);
             }
 
-            if (model.CurrentUrl == null && model.Picture != null)
+            var client = await _clientService.GetClientAsync(model.ClientName);
+
+            if (model.Picture != null)
             {
 
                 var relativePath = await _fileService.CreateFile(model.Picture);
@@ -217,6 +220,7 @@ namespace Alpha_Mvc.Controllers
                 model.ImageUrl = Url.Content(relativePath);
                 var dto = ProjectFactoryMVC.CreateDtoFromEditForm(model);
                 dto.PictureId = picture.Data.Id;
+                dto.ClientId = client.Data?.Id;
 
                 var result = await _projectService.UpdateAsync(dto);
 
@@ -224,7 +228,7 @@ namespace Alpha_Mvc.Controllers
                 {
                     return BadRequest("Failed to update project");
                 }
-                var existingMembers = await _pmService.ExistingAsync(dto);
+                var existingMembers = await _pmService.GetProjectMembersAsync(dto.Id);
                 if (existingMembers.Any())
                 {
                     var remove = await _pmService.DeleteAsync(existingMembers);
@@ -249,6 +253,8 @@ namespace Alpha_Mvc.Controllers
 
                 var pictureId = await _pictureService.GetPictureIdAsync(model.ImageUrl!);
                 dto.PictureId = pictureId.Data;
+                dto.Id = model.Id;
+                dto.ClientId = client.Data?.Id;
 
                 var result = await _projectService.UpdateAsync(dto);
 
@@ -256,7 +262,7 @@ namespace Alpha_Mvc.Controllers
                 {
                     return BadRequest("Failed to update project");
                 }
-                var existingMembers = await _pmService.ExistingAsync(dto);
+                var existingMembers = await _pmService.GetProjectMembersAsync(dto.Id);
                 if (existingMembers.Any())
                 {
                     var remove = await _pmService.DeleteAsync(existingMembers);

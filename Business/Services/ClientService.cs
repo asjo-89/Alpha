@@ -68,8 +68,7 @@ public class ClientService(IClientRepository clientRepository) : IClientService
     public async Task<ClientResult<Client>> GetClientAsync(string value)
     {
         var result = await _clientRepository.GetAsync(
-            filterBy: x => x.ClientName.ToLower() == value.ToLower() && x.Email == value.ToLower(),
-            includes: null!);
+            x => x.ClientName.ToLower() == value.ToLower());
 
         return result.Success
             ? new ClientResult<Client> { Succeeded = true, StatusCode = 200, Data = ClientFactory.CreateModelFromEntity(result.Data!) }

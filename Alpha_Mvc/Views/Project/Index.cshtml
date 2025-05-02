@@ -2,6 +2,7 @@
 @{
     ViewData["Css"] = "~/css/home.css";
     ViewData["Css2"] = "~/css/projectForms.css";
+    Layout = "_Layout";
 }
 
 @await Html.PartialAsync("Sections/_AddProjectSection", Model.CreateProjectForm)

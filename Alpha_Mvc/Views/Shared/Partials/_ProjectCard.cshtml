@@ -33,7 +33,7 @@
         <div class="dropdown-container">
             <img id="menu-button" class="options" src="/images/Icons/Dots.svg" alt="An image of three dots.">
             <div class="dropdown-content">
-                <button id="edit-project-button" class="menu-option option-edit" data-modal="true" data-target="#editProjectModal" data-project-id="@Model.Id">Edit Project</button>
+                <button id="edit-project-button" class="menu-option option-edit" data-modal="true" data-target="#editProjectModal_@Model.Id" data-project-id="@Model.Id">Edit Project</button>
                 <div class="stroke"></div>
                 <form class="dropdown-form" asp-action="DeleteProject" asp-route-id="@Model.Id" asp-controller="Project">
                     <button type="submit" class="menu-option option-delete">Delete Project</button>

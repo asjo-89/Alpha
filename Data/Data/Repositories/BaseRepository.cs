@@ -56,7 +56,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
             params Expression<Func<TEntity, object>>[] includes
         )
     {
-        IQueryable<TEntity> query = _entity;
+        IQueryable<TEntity> query = _entity.AsNoTracking();
 
         if (filterBy != null)
             query = query.Where(filterBy);
@@ -91,7 +91,7 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
             params Expression<Func<TEntity, object>>[] includes
         ) where TSelect : class, new()
     {
-        IQueryable<TEntity> query = _entity;
+        IQueryable<TEntity> query = _entity.AsNoTracking();
 
         if (filterBy != null)
             query = query.Where(filterBy);
