@@ -25,7 +25,6 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
         
     public async Task<RepositoryResult<bool>> CreateAsync(TEntity entity)
     {
-        Console.WriteLine("BaseCreate");
         if (entity == null)
             return new RepositoryResult<bool> { Success = false, StatusCode = 400, Error = "Entity must not be null." };
 
@@ -81,6 +80,8 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
             : new RepositoryResult<IEnumerable<TEntity>> { Success = false, StatusCode = 404, Error = "No entities found." };
     }
 
+
+
     // Get all with specific order and based on specific data
     public async Task<RepositoryResult<IEnumerable<TSelect>>> GetAllAsync<TSelect> 
         (
@@ -111,7 +112,6 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
 
         var result = await query.Select(selector).ToListAsync();
 
-        //var result = entities.Select(entity => entity!.MapTo<TSelect>());
         return new RepositoryResult<IEnumerable<TSelect>> { Success = true, StatusCode = 200, Data = result };
     }
 
@@ -195,6 +195,10 @@ public class BaseRepository<TEntity, TModel> : IBaseRepository<TEntity, TModel> 
         }
     }
     #endregion
+
+
+
+
 
     #region Transactions
     public async Task<RepositoryResult> BeginTransactionAsync()
