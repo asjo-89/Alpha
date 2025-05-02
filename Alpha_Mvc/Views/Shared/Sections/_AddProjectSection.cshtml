@@ -84,86 +84,86 @@
 
 @await Html.PartialAsync("_ValidationScriptsPartial")
 
-<script>
-    let preSelectedMembers = [];
+    <script>
+        let preSelectedMembers = [];
 
-    initTagSelector({
-        containerId: 'tag-members',
-        inputId: 'member-search',
-        resultsId: 'member-results',
-        searchUrl: (query) => '@Url.Action("SearchMembers", "Member")' + '?term=' + encodeURIComponent(query),
-        displayName: 'fullName',
-        displayEmail: 'email',
-        imageProperty: 'imageUrl',
-        tagClass: 'member',
-        emptyMessage: 'No members found.',
-        preSelected: preSelectedMembers
-    });
+        initTagSelector({
+            containerId: 'tag-members',
+            inputId: 'member-search',
+            resultsId: 'member-results',
+            searchUrl: (query) => '@Url.Action("SearchMembers", "Member")' + '?term=' + encodeURIComponent(query),
+            displayName: 'fullName',
+            displayEmail: 'email',
+            imageProperty: 'imageUrl',
+            tagClass: 'member',
+            emptyMessage: 'No members found.',
+            preSelected: preSelectedMembers
+        });
     
-    document.addEventListener("DOMContentLoaded", () => {
-        const camera = document.querySelector("#add-camera-project");
-        const imageInput = document.querySelector("#add-proj-image-input");
+        document.addEventListener("DOMContentLoaded", () => {
+            const camera = document.querySelector("#add-camera-project");
+            const imageInput = document.querySelector("#add-proj-image-input");
 
-        if (!imageInput) return;
+            if (!imageInput) return;
 
-        camera.addEventListener("click", () => {
-            imageInput.click();
-            console.log("klick kamera");
-        });
+            camera.addEventListener("click", () => {
+                imageInput.click();
+                console.log("klick kamera");
+            });
 
-        imageInput.addEventListener("change", (e) => {
-            console.log("klick input");
-            const image = e.target.files[0];
-            const circle = document.querySelector("#add-proj-circle");
-            const imagePreview = document.querySelector("#add-proj-image-preview");
+            imageInput.addEventListener("change", (e) => {
+                console.log("klick input");
+                const image = e.target.files[0];
+                const circle = document.querySelector("#add-proj-circle");
+                const imagePreview = document.querySelector("#add-proj-image-preview");
 
-            if (image) {
-                console.log("1")
-                const reader = new FileReader();
+                if (image) {
+                    console.log("1")
+                    const reader = new FileReader();
 
-                reader.onload = (e) => {
-                    imagePreview.src = e.target.result;
-                    circle.classList.remove('show');
-                    imagePreview.classList.add('show');
-                };
+                    reader.onload = (e) => {
+                        imagePreview.src = e.target.result;
+                        circle.classList.remove('show');
+                        imagePreview.classList.add('show');
+                    };
 
-                reader.readAsDataURL(image);
-            }
-            else {
-                circle.classList.add('show');
-                imagePreview.classList.remove('show');
-            }
-        });
-
-
-        document.addEventListener('click', (e) => {
-            const modals = document.querySelectorAll('.modal');
-            modals.forEach(modal => {
-                const modalContainer = modal.querySelector('.modal-container');
-                const exitButton = modal.querySelector('[data-close="true"]');
-
-                if ( exitButton.contains(e.target)) {
-                    modal.classList.remove('show');
-
-                    modal.querySelectorAll('form').forEach(form => {
-                        form.reset();
-
-                        const imagePreview = form.querySelector('#add-proj-image-preview');
-                        if (imagePreview) {
-                            imagePreview.src = '';
-                            imagePreview.classList.remove('show');
-                        }
-
-                        const container = form.querySelector('#add-proj-circle');
-                        if (container) {
-                            container.classList.add('show');
-                        }
-
-                    });
+                    reader.readAsDataURL(image);
+                }
+                else {
+                    circle.classList.add('show');
+                    imagePreview.classList.remove('show');
                 }
             });
+
+
+            document.addEventListener('click', (e) => {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    const modalContainer = modal.querySelector('.modal-container');
+                    const exitButton = modal.querySelector('[data-close="true"]');
+
+                    if ( exitButton.contains(e.target)) {
+                        modal.classList.remove('show');
+
+                        modal.querySelectorAll('form').forEach(form => {
+                            form.reset();
+
+                            const imagePreview = form.querySelector('#add-proj-image-preview');
+                            if (imagePreview) {
+                                imagePreview.src = '';
+                                imagePreview.classList.remove('show');
+                            }
+
+                            const container = form.querySelector('#add-proj-circle');
+                            if (container) {
+                                container.classList.add('show');
+                            }
+
+                        });
+                    }
+                });
+            });
+
         });
 
-    });
-
-</script>
+    </script>

@@ -32,7 +32,13 @@ public class ProjectMemberRepository(AlphaDbContext context) : BaseRepository<Pr
 
         try
         {
-            _context.ProjectMembers.RemoveRange(entities);
+            var entitiesToRemove = entities.Select(entity => new ProjectMemberEntity
+            {
+                ProjectId = entity.ProjectId,
+                MemberId = entity.MemberId
+            }).ToList();
+
+            _context.ProjectMembers.RemoveRange(entitiesToRemove);
             await _context.SaveChangesAsync();
             return true;
         }

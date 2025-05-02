@@ -1,35 +1,80 @@
 ﻿
+window.setupCountdown = function (id, endDate, startDate) {
+
+    const dueDate = new Date(endDate);
+    const startingDate = new Date(startDate);
+    const dateNow = Date.now();
+
+    const span = document.querySelector(`#countDown_${id}`);
+
+    if (isNaN(dueDate) || isNaN(startingDate)) {
+        console.warn("Invalid date format.");
+        return;
+    }
+
+    CountDown();
+
+    function CountDown() {
+
+        const timeLeft = dueDate - dateNow;
+        const timeToStart = startingDate - dateNow;
+
+        const daysToStart = Math.floor(timeToStart / (1000 * 60 * 60 * 24));
+        const weeksToStart = Math.floor(daysToStart / 7);
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const weeks = Math.floor(days / 7);
+
+        if (daysToStart >= 0 && daysToStart <= 6) {
+            span.innerText = `Starts in ${Math.abs(daysToStart)} day(s)`;
+        }
+        else if (daysToStart >= 0 && daysToStart >= 7) {
+            span.innerText = `Starts in ${Math.abs(weeksToStart)} week(s)`;
+        }
+
+        else if (days < 7 && days >= 0) {
+            span.innerText = `${days} day(s) left`;
+        }
+        else if (days >= 7) {
+            span.innerText = `${weeks} week(s) left`;
+        }
+        else if (days < 0 && days >= -6) {
+            span.innerText = `${Math.abs(days)} day(s) overdue`;
+        }
+        else if (days <= -7) {
+            span.innerText = `${Math.abs(weeks)} week(s) overdue`;
+        }
+    }
+};      
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // Open edit project modal
-    const editProjectModal = document.querySelector('#editProjectModal');
     const modalButtons = document.querySelectorAll('[data-modal="true"]');
+    const projectModal = document.querySelector('[data-project-id]');
+    let editProjectModal = null;
 
     const circle = document.querySelector("#edit-proj-circle");
     const imagePreview = document.querySelector("#edit-proj-image-preview");
 
-    //const modal = document.getElementById("editProjectModal");
-    //const closeModalBtn = document.getElementById("closeModalButton");
+    if (projectModal) {
+        const projectId = projectModal.getAttribute('data-project-id');
+        editProjectModal = document.querySelector(`#editProjectModal_${projectId}`);
 
-    //if (modal && closeModalBtn) {
-    //    document.querySelectorAll(".option-edit").forEach(button => {
-    //        button.addEventListener("click", () => {
-    //            modal.classList.remove("hidden");
+        if (editProjectModal) {
+            const imageInput = editProjectModal.querySelector('#edit-proj-image-input');
+            const currentUrlField = editProjectModal.querySelector('#current-url');
 
-    //            modal.querySelector('[name="Id"]').value = button.dataset.id;
-    //            modal.querySelector('[name="ProjectTitle"]').value = button.dataset.title;
-    //            modal.querySelector('[name="Budget"]').value = button.dataset.budget;
-    //            modal.querySelector('[name="StartDate"]').value = button.dataset.start;
-    //            modal.querySelector('[name="EndDate"]').value = button.dataset.end;
-    //        });
-    //    });
-
-    //    closeModalBtn.addEventListener("click", () => {
-    //        modal.classList.add("hidden");
-    //    });
-    //} else {
-    //    console.error("Modal or close button not found in the DOM.");
-    //}
+            if (imageInput && currentUrlField) {
+                imageInput.addEventListener('change', (e) => {
+                const image = e.target.files[0];
+                    if (image) {
+                        currentUrlField.value = "";
+                    }
+                });
+            }
+        }
+    }
 
     modalButtons.forEach(button => {
         button.addEventListener('click', (e) => {
@@ -42,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target.matches('#edit-project-button')) {
                 clearForm(modal);
                 const projectId = e.target.dataset.projectId;
+
                 fetch(`/Project/EditProject?id=${projectId}`)
                     .then(response => {
                         if (!response.ok)
@@ -52,9 +98,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         console.log('Data received from server:', data);
                         populateFields(data.project);
                         populateMembers(data);
-                        editProjectModal.classList.add('show');
-                        circle.classList.remove('show');
-                        imagePreview.classList.add('show');
+
+                        if (editProjectModal) {
+                            editProjectModal.classList.add('show');
+                            circle.classList.remove('show');
+                            imagePreview.classList.add('show');
+                        }
+                        else {
+                            console.error('editProjectModal was not found');
+                        }
                     })
                     .catch(error => console.error('Error getting data for project:', error));
             }
@@ -68,23 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Open modal
-    //const modalButtons = document.querySelectorAll('[data-modal="true"]');
-
-    //modalButtons.forEach(button => {
-    //    button.addEventListener('click', (e) => {
-    //        e.stopPropagation();
-
-    //        const target = button.getAttribute('data-target');
-    //        const modal = document.querySelector(target);
-
-    //        if (modal) {
-    //            modal.classList.toggle('show');
-    //        }
-    //    });
-    //});
-
 
 
     // Dropdown menu cards
@@ -138,14 +173,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //console.log(formatDate(project.startDate));
 
-        document.querySelector('[name="Id"]').value = project.id;
-        document.querySelector('[name="ProjectName"]').value = project.projectTitle;
-        document.querySelector('[name="ProjectBudget"]').value = project.budget;
-        document.querySelector('[name="ProjectStartDate"]').value = formatDate(project.startDate);
-        document.querySelector('[name="ProjectEndDate"]').value = formatDate(project.endDate);
-        document.querySelector('[name="ProjectDescription"]').value = project.description;
-        document.querySelector('[name="ClientsName"]').value = project.clientName;
-        document.querySelector('#edit-proj-image-preview').src = project.imageUrl;
+        editProjectModal.querySelector('[name="Id"]').value = project.id;
+        editProjectModal.querySelector('[name="ProjectTitle"]').value = project.projectTitle;
+        console.error(document.querySelector('[name="ProjectTitle"]').value);
+        editProjectModal.querySelector('[name="Budget"]').value = project.budget;
+        editProjectModal.querySelector('[name="StartDate"]').value = formatDate(project.startDate);
+        editProjectModal.querySelector('[name="EndDate"]').value = formatDate(project.endDate);
+        editProjectModal.querySelector('[name="Description"]').value = project.description;
+        editProjectModal.querySelector('[name="ClientName"]').value = project.clientName;
+        editProjectModal.querySelector('[name="CurrentUrl"]').value = project.imageUrl;
+        editProjectModal.querySelector('#edit-proj-image-preview').src = project.imageUrl;
     };
 
 
@@ -155,6 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const preSelected = data.members.map(member => ({
             id: member.id,
             fullName: `${member.firstName} ${member.lastName}`,
+            email: member.email,
             imageUrl: member.imageUrl
         }));
         console.log('Preselected before initTagSelector:', preSelected);

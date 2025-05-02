@@ -54,7 +54,7 @@ namespace Alpha_Mvc.Controllers
                     Text = client.ClientName
                 }).ToList() ?? []
             };
-
+            
             ViewBag.AllMembers = viewModel.AllMembers;
 
             return View(viewModel);
@@ -64,6 +64,7 @@ namespace Alpha_Mvc.Controllers
         public async Task<IActionResult> EditProject(Guid id)
         {
             var result = await _projectService.GetProjectAsync(id);
+            Console.WriteLine($"#########################\n{result.Data}");
             if (!result.Succeeded || result.Data == null)
                 return NotFound("Project was not found.");
 
@@ -95,7 +96,7 @@ namespace Alpha_Mvc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProject(CreateProjectFormModel model, string SelectedIds)
+        public async Task<IActionResult> AddProject(CreateProjectFormModel model, string? SelectedIds)
         {
             if (!ModelState.IsValid)
             {
@@ -167,7 +168,7 @@ namespace Alpha_Mvc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditProject(EditProjectFormModel model, string SelectedIds)
+        public async Task<IActionResult> EditProject(EditProjectFormModel model, string? SelectedIds)
         {
             if (!ModelState.IsValid)
             {
@@ -190,54 +191,99 @@ namespace Alpha_Mvc.Controllers
                         Text = client.ClientName
                     }).ToList() ?? []
                 };
-                return View("Index", editViewModel);
+                return RedirectToAction("Index", editViewModel);
             }
 
-            var relativePath = await _fileService.CreateFile(model.Picture);
+            var client = await _clientService.GetClientAsync(model.ClientName);
 
-            if (relativePath == model.ImageUrl)
+            if (model.Picture != null)
             {
-                _fileService.DeleteFile(relativePath);
-                var projectDto = ProjectFactoryMVC.CreateDtoFromEditForm(model);
 
-                var updatedProject = await _projectService.UpdateAsync(projectDto);
-                if (!updatedProject.Succeeded)
-                    return BadRequest($"An error occured updating the member.\n{updatedProject.StatusCode}\n{updatedProject.ErrorMessage}");
+                var relativePath = await _fileService.CreateFile(model.Picture);
 
-                return RedirectToAction("Index");
-            }
-
-            var picture = await _pictureService.CreateAsync(relativePath);
-            if (!picture.Succeeded || picture.Data == null)
-                return BadRequest($"An error occured creating the new image.\n{picture.StatusCode}\n{picture.ErrorMessage}");
-
-            model.ImageUrl = Url.Content(relativePath);
-            var dto = ProjectFactoryMVC.CreateDtoFromEditForm(model);
-            dto.PictureId = picture.Data.Id;
-            var result = await _projectService.UpdateAsync(dto);
-
-            if (!result.Succeeded)
-            {
-                return BadRequest("Failed to update project");
-            }
-
-            var existingMembers = await _pmService.ExistingAsync(dto);
-            if (existingMembers.Any())
-            {
-                var remove = await _pmService.DeleteAsync(existingMembers);
-            }
-
-            if (!string.IsNullOrEmpty(SelectedIds))
-            {
-                var memberIds = JsonSerializer.Deserialize<List<Guid>>(SelectedIds);
-                if (memberIds != null)
+                if (relativePath == model.ImageUrl)
                 {
-                    foreach (var member in memberIds)
+                    _fileService.DeleteFile(relativePath);
+                    var projectDto = ProjectFactoryMVC.CreateDtoFromEditForm(model);
+
+                    var updatedProject = await _projectService.UpdateAsync(projectDto);
+                    if (!updatedProject.Succeeded)
+                        return BadRequest($"An error occured updating the member.\n{updatedProject.StatusCode}\n{updatedProject.ErrorMessage}");
+
+                    return RedirectToAction("Index");
+                }
+
+                var picture = await _pictureService.CreateAsync(relativePath);
+                if (!picture.Succeeded || picture.Data == null)
+                    return BadRequest($"An error occured creating the new image.\n{picture.StatusCode}\n{picture.ErrorMessage}");
+
+                model.ImageUrl = Url.Content(relativePath);
+                var dto = ProjectFactoryMVC.CreateDtoFromEditForm(model);
+                dto.PictureId = picture.Data.Id;
+                dto.ClientId = client.Data?.Id;
+
+                var result = await _projectService.UpdateAsync(dto);
+
+                if (!result.Succeeded)
+                {
+                    return BadRequest("Failed to update project");
+                }
+                var existingMembers = await _pmService.GetProjectMembersAsync(dto.Id);
+                if (existingMembers.Any())
+                {
+                    var remove = await _pmService.DeleteAsync(existingMembers);
+                }
+
+                if (!string.IsNullOrEmpty(SelectedIds))
+                {
+                    var memberIds = JsonSerializer.Deserialize<List<Guid>>(SelectedIds);
+                    if (memberIds != null)
                     {
-                        await _pmService.AddAsync(new ProjectMemberDto { ProjectId = model.Id, MemberId = member });
+                        foreach (var member in memberIds)
+                        {
+                            await _pmService.AddAsync(new ProjectMemberDto { ProjectId = model.Id, MemberId = member });
+                        }
                     }
                 }
             }
+            else
+            {
+                model.ImageUrl = model.CurrentUrl;
+                var dto = ProjectFactoryMVC.CreateDtoFromEditForm(model);
+
+                var pictureId = await _pictureService.GetPictureIdAsync(model.ImageUrl!);
+                dto.PictureId = pictureId.Data;
+                dto.Id = model.Id;
+                dto.ClientId = client.Data?.Id;
+
+                var result = await _projectService.UpdateAsync(dto);
+
+                if (!result.Succeeded)
+                {
+                    return BadRequest("Failed to update project");
+                }
+                var existingMembers = await _pmService.GetProjectMembersAsync(dto.Id);
+                if (existingMembers.Any())
+                {
+                    var remove = await _pmService.DeleteAsync(existingMembers);
+                }
+
+                if (!string.IsNullOrEmpty(SelectedIds))
+                {
+                    var memberIds = JsonSerializer.Deserialize<List<Guid>>(SelectedIds);
+                    if (memberIds != null)
+                    {
+                        foreach (var member in memberIds)
+                        {
+                            await _pmService.AddAsync(new ProjectMemberDto { ProjectId = model.Id, MemberId = member });
+                        }
+                    }
+                }
+            }
+                
+            
+
+            
 
             var members = await _memberService.GetMemberUsersAsync();
             var clients = await _clientService.GetClientsAsync();

@@ -86,7 +86,13 @@
             return;
 
         selectedIds.push(id);
-        updateSelectedIdsInput();
+
+        if (config.containerId == 'tag-members-edit') {
+            updateSelectedIdsInputEdit();
+        }
+        else {
+            updateSelectedIdsInput();
+        }
 
         const tag = document.createElement('span');
         tag.classList.add(config.tagClass || 'tag');
@@ -117,7 +123,13 @@
             e.stopPropagation();
             selectedIds = selectedIds.filter(i => i !== id);
             tag.remove();
-            updateSelectedIdsInput();
+
+            if (containerId == 'tag-members-edit') {
+                updateSelectedIdsInputEdit();
+            }
+            else {
+                updateSelectedIdsInput();
+            }
         });
 
         tag.appendChild(deleteBtn);
@@ -138,16 +150,31 @@
 
         selectedIds = selectedIds.filter(id => id !== lastId);
         lastTag.remove();
-        updateSelectedIdsInput();
+
+        if (containerId == 'tag-members-edit') {
+            updateSelectedIdsInputEdit();
+        }
+        else {
+            updateSelectedIdsInput();
+        }
     };
 
 
     function updateSelectedIdsInput() {
-        const hideInput = document.getElementById('SelectedIds');
-        if (hideInput) {
-            hideInput.value = JSON.stringify(selectedIds);
+        const hiddenInput = document.getElementById('SelectedIds');
+        if (hiddenInput) {
+            hiddenInput.value = JSON.stringify(selectedIds);
 
-            console.log("SelectedIds uppdaterat:", hideInput.value);
+            console.log("SelectedIds uppdaterat:", hiddenInput.value);
+        }
+    };
+
+    function updateSelectedIdsInputEdit() {
+        const hiddenInput = document.getElementById('SelectedIdsEdit');
+        if (hiddenInput) {
+            hiddenInput.value = JSON.stringify(selectedIds);
+
+            console.log("SelectedIdsEdit uppdaterat:", hiddenInput.value);
         }
     };
 

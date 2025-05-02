@@ -79,4 +79,13 @@ public static class MemberUserFactory
             PictureId = model.PictureId
         };
     }
+
+    public static ProjectMember CreateModelFromEntity(ProjectMemberEntity entity)
+    {
+        return new ProjectMember
+        {
+            ProjectId = entity.ProjectId,
+            MemberId = entity.MemberId
+        };
+    }
 }

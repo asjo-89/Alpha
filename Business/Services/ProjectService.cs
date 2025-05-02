@@ -126,7 +126,9 @@ public class ProjectService(IProjectRepository projectRepository, IPictureReposi
                 },
                 ImageUrl = p.Picture.ImageUrl,
                 StatusName = p.StatusName,
-                Budget = p.Budget,                
+                Budget = p.Budget,       
+                EndDate = p.EndDate,
+                StartDate = p.StartDate,
                 ProjectMembers = p.ProjectMembers!.Select(member => new MemberUser
                 {
                     Id = member.Member.Id,
@@ -171,6 +173,8 @@ public class ProjectService(IProjectRepository projectRepository, IPictureReposi
             return new ProjectResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "All reaquired fields are not completed.", Data = false };
 
         var entity = ProjectFactory.CreateEntityFromDto(formData);
+        entity.Id = formData.Id!.Value;
+        entity.ClientId = formData.ClientId!.Value;
 
         try
         {

@@ -1,4 +1,5 @@
-﻿using Business.Interfaces;
+﻿using Business.Factories;
+using Business.Interfaces;
 using Data.Entities;
 using Data.Interfaces;
 using Domain.Dtos;
@@ -59,7 +60,7 @@ public class ProjectMemberService(IProjectMemberRepository repository) : IProjec
         }
     }
 
-    public async Task<IEnumerable<ProjectMember>> GetProjectMembersAsync(Guid id)
+    public async Task<IEnumerable<ProjectMember>> GetProjectMembersAsync(Guid? id)
     {
         if (id == Guid.Empty) 
             return new List<ProjectMember>();
@@ -73,6 +74,20 @@ public class ProjectMemberService(IProjectMemberRepository repository) : IProjec
             ProjectId = member.ProjectId,
             MemberId = member.MemberId
         });
+    }
+
+    public async Task<ProjectMember> GetProjectMemberAsync(Guid id)
+    {
+        if (id == Guid.Empty)
+            return new ProjectMember();
+
+        var projectMember = await _repository.GetAsync(
+            filterBy: x => x.MemberId == id || x.MemberId == id);
+
+        if (projectMember.Data == null)
+            return new ProjectMember();
+
+        return MemberUserFactory.CreateModelFromEntity(projectMember.Data);
     }
 
     public async Task<IEnumerable<MemberUser>> GetProjectMembersWithDetailsAsync(Guid id)

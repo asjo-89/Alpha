@@ -8,7 +8,8 @@ namespace Business.Interfaces
         Task<bool> AddAsync(ProjectMemberDto dto);
         Task<bool> DeleteAsync(IEnumerable<ProjectMember> projectMembers);
         Task<List<ProjectMember>> ExistingAsync(ProjectDto dto);
-        Task<IEnumerable<ProjectMember>> GetProjectMembersAsync(Guid id);
+        Task<IEnumerable<ProjectMember>> GetProjectMembersAsync(Guid? id);
         Task<IEnumerable<MemberUser>> GetProjectMembersWithDetailsAsync(Guid id);
+        Task<ProjectMember> GetProjectMemberAsync(Guid id);
     }
 }
