@@ -23,7 +23,7 @@
 
 @await Html.PartialAsync("Sections/_EditProjectSection", editViewModel)
 
-<div class="card">
+<div id="project-card" class="card" data-status="@Model.StatusName.ToLower()">
     <div class="project-head">
         <img class="project-image" src="@Model.ImageUrl" alt="Project image." />
         <div class="title-group">
@@ -56,8 +56,10 @@
 </div>
 
 <script>
-     document.addEventListener('DOMContentLoaded', function() {
-    console.log("End Date:", '@Model.EndDate');
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+            console.log("End Date:", '@Model.EndDate');
             console.log("Start Date:", '@Model.StartDate');
 
             const endDate = '@Model.EndDate?.ToString("yyyy-MM-dd")';
