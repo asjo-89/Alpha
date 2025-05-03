@@ -132,10 +132,24 @@
     </div>
 </div>
 
-@await Html.PartialAsync("_ValidationScriptsPartial")
 
 <script>
+
+    var errorMessages = @Html.Raw(Json.Serialize(ViewData.ModelState));
+
+
+
     document.addEventListener("DOMContentLoaded", () => {
+         const openModalButton = document.querySelector('[data-target="#addMemberModal"]');
+    if (openModalButton) {
+        openModalButton.addEventListener('click', () => {
+            const modal = document.querySelector('#addMemberModal');
+            if (modal && typeof initFormValidation === 'function') {
+                initFormValidation(modal); // Initiera när modalen öppnas
+            }
+        });
+    }
+
         const camera = document.querySelector("#add-camera");
         const imageInput = document.querySelector("#add-image-input");
         console.log(camera);

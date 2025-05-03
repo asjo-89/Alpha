@@ -44,7 +44,6 @@ public class MemberUserDto
     [DataType(DataType.Text)]
     public string JobTitle { get; set; } = null!;
 
-    // For authentication only
     [Required(ErrorMessage = "Required")]
     [Display(Name = "Role", Prompt = "Select role")]
     public Guid? RoleId { get; set; }

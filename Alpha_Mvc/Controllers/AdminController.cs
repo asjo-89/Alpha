@@ -46,13 +46,7 @@ namespace Alpha_Mvc.Controllers
                     Email = member.Email,
                     PhoneNumber = member.PhoneNumber ?? "",
                     JobTitle = member.JobTitle ?? "No role assigned",
-                    ImageUrl = Url.Content($"{member.ImageUrl}"),
-                    //StreetAddress = member.Address?.StreetAddress ?? "",
-                    //PostalCode = member.Address?.PostalCode ?? "",
-                    //City = member.Address?.City ?? "",
-                    //BirthDay = member.DateOfBirth?.Day ?? 0,
-                    //BirthMonth = member.DateOfBirth?.Month ?? 0,
-                    //BirthYear = member.DateOfBirth?.Year ?? 0,
+                    ImageUrl = Url.Content($"~/{member.ImageUrl}"),
                     PictureId = member.PictureId,
                     RoleId = member.RoleId
                 }),
@@ -90,7 +84,35 @@ namespace Alpha_Mvc.Controllers
                 {
                     Console.WriteLine($"Key: {error.Key}, Errors: {string.Join(", ", error.Value)}");
                 }
-                return BadRequest(new { success = false, errors });
+                var members = await _memberService.GetMemberUsersAsync();
+                var roles = await _roleManager.Roles.ToListAsync();
+
+                var viewModel = new TeamMembersViewModel
+                {
+                    Users = members.Data.Select(member => new MemberUserModel
+                    {
+                        Id = member.Id,
+                        FirstName = member.FirstName,
+                        LastName = member.LastName,
+                        Email = member.Email,
+                        PhoneNumber = member.PhoneNumber ?? "",
+                        JobTitle = member.JobTitle ?? "No role assigned",
+                        ImageUrl = Url.Content($"~/{member.ImageUrl}"),
+                        PictureId = member.PictureId,
+                        RoleId = member.RoleId
+                    }),
+                    Member = new MemberFormModel(),
+                    Roles = roles.Select(role => new SelectListItem
+                    {
+                        Value = role.Id.ToString(),
+                        Text = role.Name,
+                    }).ToList()
+                };
+
+                ViewBag.Roles = viewModel.Roles;
+                ViewBag.ShowModal = true;
+
+                return View("Index", viewModel);
             }
 
             var relativePath = await _fileService.CreateFile(model.ProfileImage);
@@ -132,7 +154,22 @@ namespace Alpha_Mvc.Controllers
                     Member = new MemberFormModel()
                 };
 
-                ModelState.AddModelError("viewModel", "Failed to create member.");
+                var errors = ModelState
+                    .Where(x => x.Value?.Errors.Count > 0)
+                    .ToDictionary(kvp => kvp.Key, kvp => kvp.Value?.Errors.Select(x => x.ErrorMessage).ToArray());
+
+                foreach (var error in errors)
+                {
+                    Console.WriteLine($"Key: {error.Key}, Errors: {string.Join(", ", error.Value)}");
+                }
+
+                foreach(var error in errors)
+                {
+                    foreach(var errorMsg in error.Value)
+                    {
+                        ModelState.AddModelError(error.Key, errorMsg);
+                    }
+                }
                 return View("Index", viewModel);
             }
         }

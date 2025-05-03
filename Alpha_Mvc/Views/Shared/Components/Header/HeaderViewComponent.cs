@@ -20,7 +20,7 @@ public class HeaderViewComponent(IMemberUserService memberService) : ViewCompone
                 FirstName = "Unknown",
                 LastName = "Unknown",
                 Email = "Unknown",
-                ImageUrl = "/images/Profiles/Profile2.png"
+                ImageUrl = "~/images/Profiles/Profile2.png"
             };
         }
         var userModel = MemberUserFactoryMCV.CreateModelFromDomainModel(loggedInUser?.Data!);

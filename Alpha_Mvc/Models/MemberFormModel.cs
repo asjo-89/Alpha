@@ -24,6 +24,9 @@ public class MemberFormModel
 
     [Required(ErrorMessage = "Phone number is required.")]
     [Display(Name = "Phone number", Prompt = "Enter phone number...")]
+
+    [RegularExpression(@"^(?:(?:\+|00)(?:[1-9]\d{0,2})[ ]?)?(?:\(?\d{1,4}\)?)?(?>[ \-])?(?:\d{1,4})(?>[ ])?(?:\d{1,4})?(?>[ ])?(?:\d{1,9})$", 
+        ErrorMessage = "Invalid phone number.")]
     public string PhoneNumber { get; set; } = null!;
 
 
@@ -63,5 +66,7 @@ public class MemberFormModel
     public IFormFile ProfileImage { get; set; } = null!;
     public string? ImageUrl { get; set; }
 
+
+    [Required(ErrorMessage = "Role is required.")]
     public Guid? RoleId { get; set; }
 }

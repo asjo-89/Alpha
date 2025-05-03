@@ -1,107 +1,145 @@
-﻿document.addEventListener("DOMContentLoaded", () => {
-    const modals = document.querySelectorAll('.modal');
+﻿
+document.addEventListener('DOMContentLoaded', () => {
+    const forms = document.querySelectorAll('form');
+    if (!forms) return;
 
-    const form = document.querySelector("form");
-    if (!form) return;
+    forms.forEach(form => {
+        const inputs = form.querySelectorAll("input[data-val='true']");
+        const pswInput = form.querySelector('#password');
 
-    
-    modals.forEach(modal => {   
-        const form = modal.querySelector("form");
-        if (!form) return;
-        const fields = form.querySelectorAll("input[data-val='true']");
+        if (!inputs || form.hasAttribute('data-no-validation')) return;
 
-        fields.forEach(field => {
-            field.addEventListener("input", () => {
-                validateFields(field);
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                if (input.id === "checkbox") return;
+
+                validateInputs(input);
             });
         });
 
-        if (!form.dataset.listenerAttached) {
+        if (pswInput) {
+            pswInput.addEventListener('input', () => {
+                validatePswRealTime(pswInput);
+            })
+        }
 
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                form.querySelector("button[type='submit']").disabled = true;
+        if (!form.dataset.listenerAttached) {
+            form.addEventListener('submit', async () => {
+                const submitButton = form.querySelector("button[type='submit']");
+                submitButton.disabled = true;
 
                 clearErrorMessages(form);
-                const formData = new FormData(form);
 
                 try {
-                    const response = await fetch(form.action, {
+                    const formData = new FormData(form);
+
+                    const res = await fetch(form.action, {
                         method: 'post',
                         body: formData
                     });
 
-                    if (!response.ok) {
-                        const data = await response.json();
-
+                    if (!res.ok) {
+                        const data = await res.json();
                         Object.keys(data.errors).forEach(key => {
-                            let input = form.querySelector(`[name="${key}"]`);
+                            let input = form.querySelector(`[name='${key}']`);
 
                             if (input)
                                 input.classList.add('input-validation-error');
 
-                            let field = form.querySelector(`[data-valmsg-for="${key}"]`);
+                            let inputError = form.querySelector(`[data-valmsg-for='${key}']`);
 
-                            if (field) {
-                                field.innerText = data.errors[key].join('\n');
-                                field.classList.add('field-validation-error');
+                            if (inputError) {
+                                inputError.innerText = data.errors[key].join('\n');
+                                inputError.classList.add('field-validation-error');
                             }
-                        })
+                        });
                     }
-                    else
-                        location.reload();
                 }
                 catch {
-                    console.log('Error when submitting the form.');
+                    console.warn("Error occured submitting form.");
                 }
 
-                form.querySelector("button[type='submit']").disabled.false;
+                form.querySelector("button[type='submit']").disabled = false;
             });
-            form.dataset.listenerAttached = "true";
-        };
+            form.dataset.listenerAttached = 'true';
+        }
     })
-});
 
 
-function clearErrorMessages(form) {
-    form.querySelectorAll('[data-val="true]').forEach(input => {
-        input.classList.remove('input-validation-error');
-    });
-
-    form.querySelectorAll('[data-valmsg-for]').forEach(field => {
-        field.classList.remove('field-validation-error');
-        field.innerText = "";
-    })
-};
 
 
-function validateFields(field) {
-    let span = document.querySelector(`span[data-valmsg-for='${field.name}']`);
-    if (!span) return;
+    function clearErrorMessages(form) {
+        form.querySelectorAll('[data-val="true]').forEach(input => {
+            input.classList.remove('input-validation-error');
+        });
 
-    let errorMsg = "";
-    let value = field.value.trim();
-
-    if (field.hasAttribute("data-val-required") && value === "") {
-        errorMsg = field.getAttribute("data-val-required");
+        form.querySelectorAll('[data-valmsg-for]').forEach(field => {
+            field.classList.remove('field-validation-error');
+            field.innerText = "";
+        })
     };
 
-    if (field.hasAttribute("data-val-regex") && value !== "") {
-        let regexPattern = new RegExp(field.getAttribute("data-val-regex-pattern"));
 
-        if (!regexPattern.test(value))
-            errorMsg = field.getAttribute("data-val-regex");
+
+    function validateInputs(input) {
+        let span = document.querySelector(`span[data-valmsg-for='${input.name}']`);
+        if (!span) return;
+
+        const isPswSpan = span.id === "psw-validation-signin" || span.id === "psw-validation-create";
+
+
+        let errorMessage = "";
+        let value = input.value.trim();
+
+        if (input.hasAttribute('data-val-required') && value === "")
+            errorMessage = input.getAttribute('data-val-required');
+
+        if (input.hasAttribute('data-val-regex') && value !== "" && !isPswSpan) {
+            let regexPattern = new RegExp(input.getAttribute('data-val-regex-pattern'));
+
+            if (!regexPattern.test(value))
+                errorMessage = input.getAttribute('data-val-regex');
+        }
+
+        if (errorMessage) {
+            input.classList.add("input-validation-error");
+            span.classList.remove("field-validation-valid");
+            span.classList.add("field-validation-error");
+            span.textContent = errorMessage;
+        } else {
+            input.classList.remove("input-validation-error");
+            span.classList.remove("field-validation-error");
+            span.classList.add("field-validation-valid");
+            span.textContent = "";
+        }
     }
 
-    if (errorMsg) {
-        field.classList.add("input-validation-error");
-        span.classList.remove("field-validation-valid");
-        span.classList.add("field-validation-error");
-        span.textContent = errorMsg;
-    } else {
-        field.classList.remove("input-validation-error");
-        span.classList.remove("field-validation-error");
-        span.classList.add("field-validation-valid");
-        span.textContent = "";
-    }
-};
+
+
+    function validatePswRealTime(input) {
+        const value = input.value;
+        const rulesUl = document.querySelector('#rules-list-signin') || document.querySelector('#rules-list-create');
+
+        const rules = {
+            length: /.{8}/,
+            upper: /[A-Z]/,
+            lower: /[a-z]/,
+            digit: /\d/,
+            special: /[#?!@$%^&*-]/
+        };
+
+        Object.entries(rules).forEach(([key, regex]) => {
+            rulesUl.style.display = "flex";
+            const listItem = document.querySelector(`#${rulesUl.id} li[data-rule='${key}']`);
+           
+            if (!listItem) return;
+
+            if (regex.test(value)) {
+                listItem.style.display = "none";
+            }
+            else {
+                listItem.style.display = "list-item";
+            }
+        });
+    };
+});

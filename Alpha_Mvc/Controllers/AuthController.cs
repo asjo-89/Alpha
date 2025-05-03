@@ -9,7 +9,6 @@ namespace Alpha_Mvc.Controllers;
 public class AuthController(IAuthService authService, IPictureService pictureService) : Controller
 {
     private readonly IAuthService _authService = authService;
-    private readonly IPictureService _pictureService = pictureService;
 
     public IActionResult SignIn()
     {

@@ -13,7 +13,7 @@ public class FileService(IWebHostEnvironment environment) : IFileService
 
         var fileName = $"{Guid.NewGuid()}_{file.FileName}";
         var filePath = Path.Combine(directoryPath, fileName);
-        var relativePath = $"uploads/{fileName}";
+        var relativePath = $"~/uploads/{fileName}";
 
         using (var fileStream = new FileStream(filePath, FileMode.Create))
         {
@@ -25,7 +25,7 @@ public class FileService(IWebHostEnvironment environment) : IFileService
 
     public bool DeleteFile(string filePath)
     {
-        if (filePath == null || filePath == "Images/Profiles/Profile2.png") return false;
+        if (filePath == null || filePath == "~/Images/Profiles/Profile2.png") return false;
 
         File.Delete(filePath);
         return true;

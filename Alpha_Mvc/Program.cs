@@ -99,7 +99,7 @@ using (var scope = app.Services.CreateScope())
     var result = await picService.ExistsAsync("Images/Profiles/Profile2.png");
 
     if (!result.Succeeded)
-        await picService.CreateAsync("Images/Profiles/Profile2.png");
+        await picService.CreateAsync("images/Profiles/Profile2.png");
 };
 
 app.MapStaticAssets();
