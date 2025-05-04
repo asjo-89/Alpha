@@ -140,31 +140,26 @@
         if (!imageInput) return;
 
         circle.addEventListener("click", () => {
+            imageInput.disabled = true;
             imageInput.click();
-            console.log("1");
         });
 
         imageInput.addEventListener("change", (e) => {
-            console.log("2");
+            console.log(imageInput
             const image = e.target.files[0];
             const imagePreview = document.querySelector("#image-preview_@Model.Id");
 
-            console.log("3");
             if (image) {
-                console.log("4");
                 const reader = new FileReader();
 
                 reader.onload = (e) => {
-                    console.log("5");
                     imagePreview.src = e.target.result;
                 };
-                console.log("6");
+
                 reader.readAsDataURL(image);
             } 
-            else {
-                console.log("7");
-            }
-        })
+            imageInput.disabled = false;
+        });
 
 
         document.addEventListener('click', (e) => {

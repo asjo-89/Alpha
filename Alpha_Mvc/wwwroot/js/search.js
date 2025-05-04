@@ -5,7 +5,7 @@
     const tagContainer = document.getElementById(config.containerId);
     const input = document.getElementById(config.inputId);
     const results = document.getElementById(config.resultsId);
-    
+
     clearTags();
 
     if (Array.isArray(config.preSelected)) {
@@ -77,7 +77,7 @@
         };
     });
 
-   
+
     function addTag(item) {
         const id = String(item.id);
         console.log("SelectedIds" + { selectedIds });
@@ -89,6 +89,9 @@
 
         if (config.containerId == 'tag-members-edit') {
             updateSelectedIdsInputEdit();
+        }
+        else if (config.containerId === "tag-members") {
+            updateSelectedIdsInpuAdd();
         }
         else {
             updateSelectedIdsInput();
@@ -124,8 +127,11 @@
             selectedIds = selectedIds.filter(i => i !== id);
             tag.remove();
 
-            if (containerId == 'tag-members-edit') {
+            if (config.containerId == 'tag-members-edit') {
                 updateSelectedIdsInputEdit();
+            }
+            else if (config.containerId === "tag-members") {
+                updateSelectedIdsInpuAdd();
             }
             else {
                 updateSelectedIdsInput();
@@ -151,8 +157,11 @@
         selectedIds = selectedIds.filter(id => id !== lastId);
         lastTag.remove();
 
-        if (containerId == 'tag-members-edit') {
+        if (config.containerId == 'tag-members-edit') {
             updateSelectedIdsInputEdit();
+        }
+        else if (config.containerId === "tag-members") {
+            updateSelectedIdsInpuAdd();
         }
         else {
             updateSelectedIdsInput();
@@ -168,13 +177,72 @@
             console.log("SelectedIds uppdaterat:", hiddenInput.value);
         }
     };
+    function updateSelectedIdsInpuAdd() {
+        //const hiddenInput = document.getElementById('SelectedIdsEdit');
+        //if (hiddenInput) {
+        //    hiddenInput.value = JSON.stringify(selectedIds);
 
+        //    console.log("SelectedIdsEdit uppdaterat:", hiddenInput.value);
+        //}
+
+        //const container = document.getElementById('tag-members-edit');
+        //const existingInputs = container.querySelectorAll('input[name="SelectedIds"]');
+        //existingInputs.forEach(e => e.remove());
+
+        //selectedIds.forEach(id => {
+        //    const input = document.createElement('input');
+        //    input.type = 'hidden';
+        //    input.name = 'SelectedIds';
+        //    input.value = id;
+        //    container.appendChild(input);
+        //});
+        const hiddenInputAdd = document.getElementById('SelectedIds');
+
+        if (hiddenInputAdd) {
+            hiddenInputAdd.value = selectedIds.join(',');
+            console.log("SelectedIdsAdd updated:", hiddenInputAdd.value);
+            const errorContainer = document.getElementById('selected-ids-error-add');
+            if (selectedIds.length === 0) {
+                errorContainer.textContent = "You need to select member(s).";
+                errorContainer.classList.add('field-validation-error');
+            } else {
+                errorContainer.textContent = "";
+                errorContainer.classList.remove('field-validation-error');
+            }
+        }
+    };
     function updateSelectedIdsInputEdit() {
-        const hiddenInput = document.getElementById('SelectedIdsEdit');
-        if (hiddenInput) {
-            hiddenInput.value = JSON.stringify(selectedIds);
+        //const hiddenInput = document.getElementById('SelectedIdsEdit');
+        //if (hiddenInput) {
+        //    hiddenInput.value = JSON.stringify(selectedIds);
 
-            console.log("SelectedIdsEdit uppdaterat:", hiddenInput.value);
+        //    console.log("SelectedIdsEdit uppdaterat:", hiddenInput.value);
+        //}
+
+        //const container = document.getElementById('tag-members-edit');
+        //const existingInputs = container.querySelectorAll('input[name="SelectedIds"]');
+        //existingInputs.forEach(e => e.remove());
+
+        //selectedIds.forEach(id => {
+        //    const input = document.createElement('input');
+        //    input.type = 'hidden';
+        //    input.name = 'SelectedIds';
+        //    input.value = id;
+        //    container.appendChild(input);
+        //});
+        const hiddenInputEdit = document.getElementById('SelectedIdsEdit');
+
+        if (hiddenInputEdit) {
+            hiddenInputEdit.value = selectedIds.join(',');
+            console.log("SelectedIdsEdit updated:", hiddenInputEdit.value);
+            const errorContainer = document.getElementById('selected-ids-error');
+            if (selectedIds.length === 0) {
+                errorContainer.textContent = "You need to select member(s).";
+                errorContainer.classList.add('field-validation-error');
+            } else {
+                errorContainer.textContent = "";
+                errorContainer.classList.remove('field-validation-error');
+            }
         }
     };
 

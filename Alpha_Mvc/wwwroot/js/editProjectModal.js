@@ -42,7 +42,6 @@ function initEdit() {
     document.addEventListener('click', (e) => {
         const modals = document.querySelectorAll('.modal');
         modals.forEach(modal => {
-            const modalContainer = modal.querySelector('.modal-container');
             const exitButton = modal.querySelector('[data-close="true"]');
 
             if (exitButton.contains(e.target)) {

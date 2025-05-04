@@ -18,10 +18,15 @@ public class MemberUserModel
 
     [Required(ErrorMessage = "Email is required.")]
     [Display(Name = "Email", Prompt = "Enter email address...")]
+    [DataType(DataType.EmailAddress)]
+    [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", ErrorMessage = "Invalid email address.")]
+
     public string Email { get; set; } = null!;
 
 
     [Display(Name = "Phone number", Prompt = "Enter phone number...")]
+    [RegularExpression(@"^(?:\+46|0)([ ]?)(\d{1,3})([ -]?)(\d{2,3})([ -]?)(\d{2})([ -]?)(\d{2})$", ErrorMessage = "Invalid phone number.")]
+
     public string? PhoneNumber { get; set; }
 
 
@@ -37,6 +42,7 @@ public class MemberUserModel
 
     [Required(ErrorMessage = "Postal code is required.")]
     [Display(Name = "Postal Code", Prompt = "Enter postal code...")]
+    [RegularExpression(@"^\d+$", ErrorMessage = "Only digits allowed.")]
     public string PostalCode { get; set; } = null!;
 
 

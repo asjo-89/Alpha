@@ -4,24 +4,21 @@
 @{
     ViewData["Css"] = "~/css/home.css";
     Console.WriteLine(Model.EndDate);
-    var editViewModel = new ProjectsViewModel
-            {
-                EditProjectForm = new EditProjectFormModel
-                {
-                    Id = Model.Id,
-                    ProjectTitle = Model.ProjectTitle,
-                    Description = Model.Description,
-                    ClientName = Model.ClientName,
-                    StartDate = Model.StartDate,
-                    EndDate = Model.EndDate,
-                    Budget = Model.Budget,
-                    ImageUrl = Model.ImageUrl,
-                    MemberUsers = Model.MemberUsers.ToList()
-                }
-            };                                             
+    var editProjectForm = new EditProjectFormModel
+                        {
+                            Id = Model.Id,
+                            ProjectTitle = Model.ProjectTitle,
+                            Description = Model.Description,
+                            ClientName = Model.ClientName,
+                            StartDate = Model.StartDate,
+                            EndDate = Model.EndDate,
+                            Budget = Model.Budget,
+                            ImageUrl = Model.ImageUrl,
+                            MemberUsers = Model.MemberUsers.ToList()
+                        };                                            
 }
 
-@await Html.PartialAsync("Sections/_EditProjectSection", editViewModel)
+@await Html.PartialAsync("Sections/_EditProjectSection", editProjectForm)
 
 <div id="project-card" class="card" data-status="@Model.StatusName.ToLower()">
     <div class="project-head">
@@ -35,7 +32,7 @@
             <div class="dropdown-content">
                 <button id="edit-project-button" class="menu-option option-edit" data-modal="true" data-target="#editProjectModal_@Model.Id" data-project-id="@Model.Id">Edit Project</button>
                 <div class="stroke"></div>
-                <form class="dropdown-form" asp-action="DeleteProject" asp-route-id="@Model.Id" asp-controller="Project">
+                <form class="dropdown-form" method="post" asp-action="DeleteProject" asp-route-id="@Model.Id" asp-controller="Project">
                     <button type="submit" class="menu-option option-delete">Delete Project</button>
                 </form>
             </div>
@@ -59,15 +56,8 @@
 
     document.addEventListener('DOMContentLoaded', function() {
 
-            console.log("End Date:", '@Model.EndDate');
-            console.log("Start Date:", '@Model.StartDate');
-
             const endDate = '@Model.EndDate?.ToString("yyyy-MM-dd")';
             const startDate = '@Model.StartDate?.ToString("yyyy-MM-dd")';
-
-            // Kontrollera värden innan vidare användning
-            console.log("Serialized End Date:", endDate);
-            console.log("Serialized Start Date:", startDate);
 
             window.setupCountdown('@Model.Id', endDate, startDate);     });
 </script>

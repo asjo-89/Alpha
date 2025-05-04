@@ -18,7 +18,7 @@
                     </div>
                 </div>
 
-                <img id="add-image-preview" class="image-preview" src="#" />
+                <img id="add-image-preview" class="image-preview" />
             </div>
 
             <div class="form-inputs-container">
@@ -135,7 +135,7 @@
 
 <script>
 
-    var errorMessages = @Html.Raw(Json.Serialize(ViewData.ModelState));
+    var errorMessages = @Html.Raw(Json.Serialize(ViewData.ModelState))
 
 
 
@@ -145,24 +145,21 @@
         openModalButton.addEventListener('click', () => {
             const modal = document.querySelector('#addMemberModal');
             if (modal && typeof initFormValidation === 'function') {
-                initFormValidation(modal); // Initiera när modalen öppnas
+                initFormValidation(modal); 
             }
         });
     }
 
         const camera = document.querySelector("#add-camera");
         const imageInput = document.querySelector("#add-image-input");
-        console.log(camera);
-        console.log(imageInput);
+
         if (!imageInput) return;
 
         camera.addEventListener("click", () => {
             imageInput.click();
-            console.log("klick kamera");
         });
 
         imageInput.addEventListener("change", (e) => {
-            console.log("klick input");
             const image = e.target.files[0];
             const circle = document.querySelector("#add-circle");
             const imagePreview = document.querySelector("#add-image-preview");
@@ -187,10 +184,9 @@
             const modals = document.querySelectorAll('.modal');
 
             modals.forEach(modal => {
-                const modalContainer = modal.querySelector('.modal-container');
                 const exitButton = modal.querySelector('[data-close="true"]');
 
-                if (!modalContainer.contains(e.target) || exitButton.contains(e.target)) {
+                if (exitButton.contains(e.target)) {
                     modal.classList.remove('show');
 
                     modal.querySelectorAll('form').forEach(form => {

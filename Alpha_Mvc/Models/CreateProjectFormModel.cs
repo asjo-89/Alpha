@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Domain.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Alpha_Mvc.Models;
 
@@ -33,7 +34,14 @@ public class CreateProjectFormModel
 
     [Required(ErrorMessage = "You need to enter a budget.")]
     [Display(Name = "Budget", Prompt = "Enter a budget...")]
+    [RegularExpression(@"^\d+$", ErrorMessage ="Only digits allowed.")]
     public decimal? Budget { get; set; }
+
+
+    [Required(ErrorMessage = "You have to select member(s).")]
+    public List<string> SelectedIds { get; set; } = [];
+
+    public string? ErrorMessage { get; set; }
 
     //[Required(ErrorMessage = "You need to select at least one member.")]
     //[Display(Name = "Members", Prompt = "Choose members...")]

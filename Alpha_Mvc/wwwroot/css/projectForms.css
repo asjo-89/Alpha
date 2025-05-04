@@ -136,10 +136,7 @@
     }
 
     .input {
-        width: 100%;
         padding: .7rem;
-        border: 2px solid var(--grey-200);
-        border-radius: .7rem;
         margin-top: .2rem;
     }   
 
@@ -194,7 +191,7 @@
 .form-group {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     column-gap: .7rem;
 }
@@ -238,4 +235,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.start,
+.end,
+.day,
+.month,
+.year {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
 }
