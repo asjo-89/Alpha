@@ -99,10 +99,18 @@
             errorMessage = input.getAttribute('data-val-required');
 
         if (input.hasAttribute('data-val-regex') && value !== "") {
-            let regexPattern = new RegExp(input.getAttribute('data-val-regex-pattern'));
-
-            if (!regexPattern.test(value))
-                errorMessage = input.getAttribute('data-val-regex');
+            let patternAttr = input.getAttribute('data-val-regex-pattern');
+            if (patternAttr) {
+                try {
+                    let regexPattern = new RegExp(patternAttr);
+                    if (!regexPattern.test(value))
+                        errorMessage = input.getAttribute('data-val-regex');
+                } catch (e) {
+                    console.warn(`Ogiltigt RegExp-mönster för ${input.name}:`, patternAttr, e);
+                }
+            } else {
+                console.warn(`Regex-attribut saknas eller är tomt på fältet ${input.name}`);
+            }
         }
 
         if (errorMessage) {

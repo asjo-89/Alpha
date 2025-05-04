@@ -90,7 +90,7 @@ public static class MemberUserFactoryMCV
             LastName = domain.LastName ?? "Last name is missing",
             Email = domain.Email ?? "Email is missing",
             PhoneNumber = domain.PhoneNumber ?? "Phone number is missing",
-            ImageUrl = $"/{domain.ImageUrl}"
+            ImageUrl = domain.ImageUrl
         };
     }
 }

@@ -46,7 +46,7 @@ namespace Alpha_Mvc.Controllers
                     Email = member.Email,
                     PhoneNumber = member.PhoneNumber ?? "",
                     JobTitle = member.JobTitle ?? "No role assigned",
-                    ImageUrl = Url.Content($"~/{member.ImageUrl}"),
+                    ImageUrl = member.ImageUrl,
                     PictureId = member.PictureId,
                     RoleId = member.RoleId
                 }),
@@ -133,7 +133,33 @@ namespace Alpha_Mvc.Controllers
            
             if (!result.Succeeded || !address.Succeeded)
             {
-                return BadRequest();
+                var members = await _memberService.GetMemberUsersAsync();
+                var roles = await _roleManager.Roles.ToListAsync();
+
+                var viewModel = new TeamMembersViewModel
+                {
+                    Users = members.Data.Select(member => new MemberUserModel
+                    {
+                        Id = member.Id,
+                        FirstName = member.FirstName,
+                        LastName = member.LastName,
+                        Email = member.Email,
+                        PhoneNumber = member.PhoneNumber ?? "",
+                        JobTitle = member.JobTitle ?? "No role assigned",
+                        ImageUrl = Url.Content($"~/{member.ImageUrl}"),
+                        PictureId = member.PictureId,
+                        RoleId = member.RoleId
+                    }),
+                    Member = new MemberFormModel(),
+                    Roles = roles.Select(role => new SelectListItem
+                    {
+                        Value = role.Id.ToString(),
+                        Text = role.Name,
+                    }).ToList()
+                };
+
+                ViewBag.Roles = viewModel.Roles;
+                return View("Index", viewModel);
             }
             else
             {
@@ -231,7 +257,7 @@ namespace Alpha_Mvc.Controllers
             else
             {
                 var member = await _memberService.GetMemberUserAsync(model.Id);
-                _fileService.DeleteFile(member.Data.ImageUrl);
+                //_fileService.DeleteFile(member.Data.ImageUrl);
 
                 relativePath = await _fileService.CreateFile(model.ProfileImage);
                 var picture = await _pictureService.CreateAsync(relativePath);

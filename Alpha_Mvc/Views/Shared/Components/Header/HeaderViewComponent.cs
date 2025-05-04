@@ -13,15 +13,17 @@ public class HeaderViewComponent(IMemberUserService memberService) : ViewCompone
     {
         var loggedInUser = await _memberService.GetLoggedInUserAsync();
 
-        if (loggedInUser == null)
+        if (loggedInUser?.Data == null)
         {
             var user = new MemberUser
             {
                 FirstName = "Unknown",
                 LastName = "Unknown",
                 Email = "Unknown",
-                ImageUrl = "~/images/Profiles/Profile2.png"
+                ImageUrl = "images/Profiles/Profile2.png"
             };
+
+            return View(MemberUserFactoryMCV.CreateModelFromDomainModel(user));
         }
         var userModel = MemberUserFactoryMCV.CreateModelFromDomainModel(loggedInUser?.Data!);
         return View(userModel);

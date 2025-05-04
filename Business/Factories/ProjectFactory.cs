@@ -43,7 +43,7 @@ public static class ProjectFactory
             PhoneNumber = entity.Client.PhoneNumber
         },
         StatusName = entity.StatusName,
-        ProjectMembers = entity.ProjectMembers?.Select(member =>
+        ProjectMembers = entity.ProjectMembers.Select(member =>
             new MemberUser
             {
                 Id = member.MemberId,

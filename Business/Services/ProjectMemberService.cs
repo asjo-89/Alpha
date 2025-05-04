@@ -18,7 +18,11 @@ public class ProjectMemberService(IProjectMemberRepository repository) : IProjec
             return new List<ProjectMember>();
 
         var projectMembers = await _repository.GetAllAsync(
-            filterBy: x => x.ProjectId == dto.Id);
+            filterBy: x => x.ProjectId == dto.Id,
+            includes: [
+                x => x.Member,
+                x => x.Project
+                ]);
 
         var list = projectMembers.Data?.Select(pm => new ProjectMember
         {
@@ -46,9 +50,10 @@ public class ProjectMemberService(IProjectMemberRepository repository) : IProjec
             await _repository.BeginTransactionAsync();
 
             var result = await _repository.AddAsync(entity);
+                          
             if (!result)
                 return false;
-
+            
             await _repository.CommitTransactionAsync();
             return true;
         }

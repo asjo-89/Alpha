@@ -3,6 +3,7 @@ using Alpha_Mvc.Interfaces;
 using Alpha_Mvc.Models;
 using Alpha_Mvc.ViewModels;
 using Business.Interfaces;
+using Business.Models;
 using Domain.Dtos;
 using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -114,11 +115,15 @@ namespace Alpha_Mvc.Controllers
             var relativePath = await _fileService.CreateFile(model.Picture);            
 
             var picture = await _pictureService.CreateAsync(relativePath);
-            if (!picture.Succeeded || picture.Data == null)
+            if (!picture.Succeeded)
                 return BadRequest("Picture could not be created.");
+
             var client = await _clientService.CreateAsync(model.ClientName);
 
-            var dto = ProjectFactoryMVC.CreateDtoFromCreateForm(model);
+            if (!client.Succeeded)
+                return BadRequest("Client was not created.");
+
+            var dto = ProjectFactoryMVC.CreateDtoFromCreateForm(model, client.Data.Id);
             dto.PictureId = picture.Data.Id;
             dto.ClientId = client.Data.Id;
 
@@ -144,27 +149,27 @@ namespace Alpha_Mvc.Controllers
                 }
             }
 
-            var members = await _memberService.GetMemberUsersAsync();
-            var clients = await _clientService.GetClientsAsync();
-            var cards = await _projectService.GetProjectCardsAsync();
+            //var members = await _memberService.GetMemberUsersAsync();
+            //var clients = await _clientService.GetClientsAsync();
+            //var cards = await _projectService.GetProjectCardsAsync();
 
-            var viewModel = new ProjectsViewModel
-            {
-                Cards = cards.Data?.Select(ProjectFactoryMVC.CreateCardFromDomainModel).ToList() ?? [],
-                AllMembers = members.Data?.Select(member => new MySelectListItem
-                {
-                    Value = member.Id.ToString(),
-                    Text = $"{member.FirstName} {member.LastName}",
-                }).ToList() ?? [],
-                Clients = clients.Data?.Select(client => new SelectListItem
-                {
-                    Value = client.Id.ToString(),
-                    Text = client.ClientName
-                }).ToList() ?? []
-            };
+            //var viewModel = new ProjectsViewModel
+            //{
+            //    Cards = cards.Data?.Select(ProjectFactoryMVC.CreateCardFromDomainModel).ToList() ?? [],
+            //    AllMembers = members.Data?.Select(member => new MySelectListItem
+            //    {
+            //        Value = member.Id.ToString(),
+            //        Text = $"{member.FirstName} {member.LastName}",
+            //    }).ToList() ?? [],
+            //    Clients = clients.Data?.Select(client => new SelectListItem
+            //    {
+            //        Value = client.Id.ToString(),
+            //        Text = client.ClientName
+            //    }).ToList() ?? []
+            //};
 
             //ModelState.AddModelError("viewModel", "Failed to create member.");
-            return RedirectToAction("Index", viewModel);            
+            return RedirectToAction("Index");            
         }
 
         [HttpPost]
@@ -194,11 +199,21 @@ namespace Alpha_Mvc.Controllers
                 return RedirectToAction("Index", editViewModel);
             }
 
-            var client = await _clientService.GetClientAsync(model.ClientName);
+            var client = new ClientResult<Client>();
+            var existingClient = await _clientService.GetClientAsync(model.ClientName);
+
+            if (!existingClient.Succeeded)
+            {
+                client = await _clientService.CreateAsync(model.ClientName);
+            }
+
+            if (!existingClient.Succeeded && !client.Succeeded)
+            {
+                return BadRequest("Client was not created.");
+            }
 
             if (model.Picture != null)
             {
-
                 var relativePath = await _fileService.CreateFile(model.Picture);
 
                 if (relativePath == model.ImageUrl)
@@ -208,19 +223,27 @@ namespace Alpha_Mvc.Controllers
 
                     var updatedProject = await _projectService.UpdateAsync(projectDto);
                     if (!updatedProject.Succeeded)
-                        return BadRequest($"An error occured updating the member.\n{updatedProject.StatusCode}\n{updatedProject.ErrorMessage}");
+                        return BadRequest($"An error occurred updating the member.\n{updatedProject.StatusCode}\n{updatedProject.ErrorMessage}");
 
                     return RedirectToAction("Index");
                 }
 
                 var picture = await _pictureService.CreateAsync(relativePath);
                 if (!picture.Succeeded || picture.Data == null)
-                    return BadRequest($"An error occured creating the new image.\n{picture.StatusCode}\n{picture.ErrorMessage}");
+                    return BadRequest($"An error occurred creating the new image.\n{picture.StatusCode}\n{picture.ErrorMessage}");
 
                 model.ImageUrl = Url.Content(relativePath);
                 var dto = ProjectFactoryMVC.CreateDtoFromEditForm(model);
                 dto.PictureId = picture.Data.Id;
-                dto.ClientId = client.Data?.Id;
+
+                if(existingClient.Data != null)
+                {
+                    dto.ClientId = existingClient.Data?.Id;
+                }
+                else if (existingClient == null && client.Data != null)
+                {
+                    dto.ClientId = client.Data?.Id;
+                }
 
                 var result = await _projectService.UpdateAsync(dto);
 
@@ -254,7 +277,15 @@ namespace Alpha_Mvc.Controllers
                 var pictureId = await _pictureService.GetPictureIdAsync(model.ImageUrl!);
                 dto.PictureId = pictureId.Data;
                 dto.Id = model.Id;
-                dto.ClientId = client.Data?.Id;
+
+                if (existingClient.Data != null)
+                {
+                    dto.ClientId = existingClient.Data?.Id;
+                }
+                else if (existingClient == null && client.Data != null)
+                {
+                    dto.ClientId = client.Data?.Id;
+                }
 
                 var result = await _projectService.UpdateAsync(dto);
 
@@ -280,10 +311,6 @@ namespace Alpha_Mvc.Controllers
                     }
                 }
             }
-                
-            
-
-            
 
             var members = await _memberService.GetMemberUsersAsync();
             var clients = await _clientService.GetClientsAsync();
@@ -307,7 +334,6 @@ namespace Alpha_Mvc.Controllers
 
             ModelState.AddModelError("viewModel", "Failed to update project.");
             return View("Index", viewModel);
-            
         }
 
 

@@ -6,7 +6,7 @@ namespace Alpha_Mvc.Factories;
 
 public static class ProjectFactoryMVC
 {
-    public static ProjectDto CreateDtoFromCreateForm(CreateProjectFormModel formModel) => new ProjectDto
+    public static ProjectDto CreateDtoFromCreateForm(CreateProjectFormModel formModel, Guid clientId) => new ProjectDto
     {
         ProjectTitle = formModel.ProjectTitle,
         Description = formModel.Description ?? "",
@@ -14,7 +14,7 @@ public static class ProjectFactoryMVC
         EndDate = formModel.EndDate,
         Budget = formModel.Budget,
         ImageUrl = formModel.ImageUrl,
-        ClientId = Guid.Empty,
+        ClientId = clientId,
         //Members = formModel.SelectedMembers.Select(member =>
         //    new MemberUserDto
         //    {

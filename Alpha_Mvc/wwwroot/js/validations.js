@@ -95,10 +95,19 @@ document.addEventListener('DOMContentLoaded', () => {
             errorMessage = input.getAttribute('data-val-required');
 
         if (input.hasAttribute('data-val-regex') && value !== "" && !isPswSpan) {
-            let regexPattern = new RegExp(input.getAttribute('data-val-regex-pattern'));
+            let patternAttribute = input.getAttribute('data-val-regex-pattern');
 
-            if (!regexPattern.test(value))
-                errorMessage = input.getAttribute('data-val-regex');
+            if(patternAttribute) {
+                try {
+                    let regexPattern = new RegExp(patternAttribute);
+                    if (!regexPattern.test(value))
+                        errorMessage = input.getAttribute('data-val-regex');
+                } catch (e) {
+                    console.warn(`Ogiltigt RegExp-mönster för ${input.name}:`, patternAttribute, e);
+                }
+            } else {
+                console.warn(`Regex-attribut saknas eller är tomt på fältet ${input.name}`);
+            }
         }
 
         if (errorMessage) {
