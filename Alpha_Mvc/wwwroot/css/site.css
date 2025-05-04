@@ -78,7 +78,8 @@ body, html {
 }
 
 .wrapper {
-    width: 100svw;
+    min-width: 1440px;
+    width: 100vw;
     height: auto;
     background-color: var(--bg-wrapper);
     overflow-x: hidden;
@@ -145,7 +146,7 @@ body, html {
     background-color: transparent;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: .7rem;
     overflow-y: auto;
 }
 
@@ -213,6 +214,7 @@ body, html {
 .profile-small {
     width: 40px;
     aspect-ratio: 1;
+    cursor: pointer;
 }
 
 .logo {
@@ -337,6 +339,7 @@ h6 {
         padding: 1rem;
         color: var(--body-dark);
         border-radius: 1rem;
+        cursor: pointer;
     }
 
     .menu-option:hover {
@@ -378,6 +381,10 @@ h6 {
         content: "\f1f8";
         font-family: FontAweSome;
         margin-right: .5rem;
+    }
+
+    .options {
+        cursor: pointer;
     }
 
     .options:hover {

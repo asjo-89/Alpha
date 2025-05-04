@@ -35,6 +35,9 @@ public class ProjectRepository(AlphaDbContext context) : BaseRepository<ProjectE
         var entity = await _context.Projects
             .Include(x => x.Picture)
             .Include(x => x.Client)
+            .Include(x => x.ProjectMembers)
+                .ThenInclude(x => x.Member)
+                .ThenInclude(x => x.Address)
             .FirstOrDefaultAsync(x => x.Id == id);
 
         return entity != null 

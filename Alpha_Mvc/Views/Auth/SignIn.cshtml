@@ -17,6 +17,8 @@
         <div class="line"></div>
     </div>
 
+    @Html.ValidationSummary(true, "", new { @class = "field-validation-error" })
+
     <form class="login-form" method="post" asp-action="SignIn" asp-controller="Auth" novalidate>
         <div class="form-inputs-container">
             <div class="input-container">
@@ -27,10 +29,19 @@
         
             <div class="input-container">
                 <label class="label" asp-for="Password"></label>
-                <input class="input" type="password" asp-for="Password" />
-                <span asp-validation-for="Password"></span>
+                <input id="password" class="input" type="password" asp-for="Password" />
+                <span id="psw-validation-signin" asp-validation-for="Password"></span>
             </div>
+
         </div>
+
+        <ul id="rules-list-signin" class="rules-list">
+            <li data-rule="length" class="field-validation-error">Must be 8 characters long</li>
+            <li data-rule="upper" class="field-validation-error">Must have one upper case letter</li>
+            <li data-rule="lower" class="field-validation-error">Must have one lower case letter</li>
+            <li data-rule="digit" class="field-validation-error">Must have one digit</li>
+            <li data-rule="special" class="field-validation-error">Must have one special character (#?!&#64;$%^&*-)</li>
+        </ul>
 
         <div class="form-group-check form-group-remember">
             <div class="checkbox-group">
@@ -52,4 +63,9 @@
     </div>
 </div>
 
-@await Html.PartialAsync("_ValidationScriptsPartial");
+
+
+
+@section Scripts {
+    <script src="~/js/validations.js" asp-append-version="true"></script>
+}

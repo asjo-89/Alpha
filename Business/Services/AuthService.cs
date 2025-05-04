@@ -60,7 +60,7 @@ public class AuthService(SignInManager<MemberUserEntity> signInManager, UserMana
             return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "All required fields must be completed.", Data = false };
 
         var pictureResult = await _pictureRepository.GetAsync(
-            filterBy: x => x.ImageUrl == "~/Images/Profiles/Profile2.png", 
+            filterBy: x => x.ImageUrl == dto.ImageUrl, 
             includes: null!
         );
 

@@ -183,5 +183,16 @@ p {
     font-size: 1rem;
 }
 
+.rules-list {
+    align-self: flex-start;
+    margin-top: .5rem;
+    display: none;
+    flex-direction: column;
+    list-style-position: inside;
+}
+
+.rules-list li {
+    display: list-item;
+}
 
 

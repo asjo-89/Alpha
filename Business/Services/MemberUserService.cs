@@ -208,8 +208,15 @@ public class MemberUserService(IMemberUserRepository memberRepository, UserManag
 
             var result = await _userManager.UpdateAsync(memberToUpdate);
 
-            if (result == null)
-                return new MemberUserResult<bool> { Succeeded = false, StatusCode = 400, ErrorMessage = "Unable to update member.", Data = false };
+
+            if (!result.Succeeded)
+                return new MemberUserResult<bool>
+                {
+                    Succeeded = false,
+                    StatusCode = 400,
+                    ErrorMessage = string.Join("; ", result.Errors.Select(error => $"{error.Code}: {error.Description}")),
+                    Data = false
+                };
 
             await _memberRepository.CommitTransactionAsync();
 

@@ -25,4 +25,29 @@
 
 </div>
 
-@await Html.PartialAsync("_ValidationScriptsPartial")
+
+
+
+@section Scripts {
+    <script src="~/js/validationModal.js" asp-append-version="true"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const showModal = '@ViewBag.ShowModal' === 'true';
+
+            if(showModal) {
+                const modal = document.querySelector('#addMemberModal');
+                if (modal) {
+                    modal.classList.add('show');
+
+                    if (typeof initFormValidation === 'function') {
+                        initFormValidation(modal);
+                    }
+                    else {
+                        console.error('Modal not found');
+                    }
+                }
+            }
+        });
+    </script>
+}

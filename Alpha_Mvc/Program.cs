@@ -96,10 +96,10 @@ using (var scope = app.Services.CreateScope())
 
     
     var picService = scope.ServiceProvider.GetRequiredService<IPictureService>();
-    var result = await picService.ExistsAsync("Images/Profiles/Profile2.png");
+    var result = await picService.ExistsAsync("images/Profiles/Profile2.png");
 
     if (!result.Succeeded)
-        await picService.CreateAsync("Images/Profiles/Profile2.png");
+        await picService.CreateAsync("images/Profiles/Profile2.png");
 };
 
 app.MapStaticAssets();

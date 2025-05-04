@@ -40,8 +40,8 @@
             <div class="form-group">
                 <div class="input-container">
                     <label class="label" asp-for="Password"></label>
-                    <input type="password" class="input first-input" asp-for="Password" />
-                    <span asp-validation-for="Password"></span>
+                    <input id="password" type="password" class="input first-input" asp-for="Password" />
+                    <span id="psw-validation-create" asp-validation-for="Password"></span>
                 </div>
 
                 <div class="input-container">
@@ -51,6 +51,13 @@
                 </div>
             </div>
         </div>
+        <ul id="rules-list-create" class="rules-list">
+            <li data-rule="length" class="field-validation-error">Must be 8 characters long</li>
+            <li data-rule="upper" class="field-validation-error">Must have one upper case letter</li>
+            <li data-rule="lower" class="field-validation-error">Must have one lower case letter</li>
+            <li data-rule="digit" class="field-validation-error">Must have one digit</li>
+            <li data-rule="special" class="field-validation-error">Must have one special character (#?!&#64;$%^&*-)</li>
+        </ul>
 
         <div class="form-group-check">
             <div class="checkbox-group">
@@ -72,4 +79,8 @@
     </div>
 </div>
 
-@await Html.PartialAsync("_ValidationScriptsPartial")
+
+
+@section Scripts {
+    <script src="~/js/validations.js" asp-append-version="true"></script>
+}

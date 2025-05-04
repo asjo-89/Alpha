@@ -3,13 +3,15 @@
     ViewData["Css"] = "~/css/home.css";
     ViewData["Css2"] = "~/css/projectForms.css";
     Layout = "_Layout";
+
+    var total = Model.Cards.Count();
+    var started = Model.Cards.Count(x => x.StatusName == "Started");
+    var completed = Model.Cards.Count(x => x.StatusName == "Completed");
+    var pending = Model.Cards.Count(x => x.StatusName == "Pending");
 }
 
 @await Html.PartialAsync("Sections/_AddProjectSection", Model.CreateProjectForm)
 
-@* <div id="editProjectModalContatiner"> *@
-@*     @await Html.PartialAsync("Sections/_EditProjectSection", Model) *@
-@* </div> *@
 
 <div class="top">
     <h2>Projects</h2>
@@ -19,12 +21,13 @@
     </button>
 </div>
 
-<div class="filter-bar">
-    <span class="alternative active">ALL [8]</span>
-    <span class="alternative">STARTED [8]</span>
-    <span class="alternative">COMPLETED [0]</span>
+<div id="filter-bar" class="filter-bar">
+    <button id="All" class="alternative active">ALL [@total]</button>
+    <button id="Started"class="alternative">STARTED [@started]</button>
+    <button id="Completed" class="alternative">COMPLETED [@completed]</button>
+    <button id="Pending" class="alternative">PENDING [@pending]</button>
+    <hr />
 </div>
-<hr />
 <div class="content">
     @if (Model.Cards.Any())
     {
@@ -39,5 +42,20 @@
     }
 </div>
 
+@* @await Html.PartialAsync("_ValidationScriptsPartial"); *@
 
+
+@section Scripts {
+    <script src="~/js/sorting.js" asp-append-version="true"></script>
+    
+    <script src="~/js/validations.js" asp-append-version="true"></script>    
+}
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        sortProjects();
+
+    });
+</script>
 

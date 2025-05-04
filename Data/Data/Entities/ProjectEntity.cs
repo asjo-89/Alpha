@@ -51,6 +51,6 @@ public class ProjectEntity
     public virtual ClientEntity Client { get; set; } = null!;
 
 
-    public virtual ICollection<ProjectMemberEntity>? ProjectMembers { get; set; } = [];
+    public virtual ICollection<ProjectMemberEntity> ProjectMembers { get; set; } = [];
     public virtual ICollection<ProjectNoteEntity>? ProjectNotes { get; set; } = [];
 }
