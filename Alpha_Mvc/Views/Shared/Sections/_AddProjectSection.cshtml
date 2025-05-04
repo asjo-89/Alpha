@@ -18,7 +18,7 @@
                     </div>
                 </div>
 
-                <img id="add-proj-image-preview" class="image-preview" src="#" />
+                <img id="add-proj-image-preview" class="image-preview" />
             </div>
 
             <div class="form-inputs-container">
@@ -68,6 +68,7 @@
 
                         <div id="member-results" class="search-results"></div>
                     </div>
+                    <span id="selected-ids-error-add"></span>
                 </div>
                 <div class="input-container">
                     <label class="label" asp-for="Budget">Budget</label>
@@ -82,9 +83,24 @@
     </div>
 </div>
 
-@await Html.PartialAsync("_ValidationScriptsPartial")
 
     <script>
+
+
+    var errorMessages = @Html.Raw(Json.Serialize(ViewData.ModelState));
+
+        const openModalButton = document.querySelector('[data-target="#addProjectModal"]');
+        if (openModalButton) {
+            openModalButton.addEventListener('click', () => {
+                const modal = document.querySelector('#addProjectModal');
+                if (modal && typeof initFormValidation === 'function') {
+                    initFormValidation(modal);
+                }
+            });
+        }
+
+
+
         let preSelectedMembers = [];
 
         initTagSelector({
@@ -99,6 +115,8 @@
             emptyMessage: 'No members found.',
             preSelected: preSelectedMembers
         });
+
+
     
         document.addEventListener("DOMContentLoaded", () => {
             const camera = document.querySelector("#add-camera-project");
@@ -108,7 +126,7 @@
 
             camera.addEventListener("click", () => {
                 imageInput.click();
-                console.log("klick kamera");
+                imageInput.disabled = true;
             });
 
             imageInput.addEventListener("change", (e) => {
@@ -133,13 +151,14 @@
                     circle.classList.add('show');
                     imagePreview.classList.remove('show');
                 }
+
+            imageInput.disabled = false;
             });
 
 
             document.addEventListener('click', (e) => {
                 const modals = document.querySelectorAll('.modal');
                 modals.forEach(modal => {
-                    const modalContainer = modal.querySelector('.modal-container');
                     const exitButton = modal.querySelector('[data-close="true"]');
 
                     if ( exitButton.contains(e.target)) {

@@ -47,7 +47,26 @@ window.setupCountdown = function (id, endDate, startDate) {
     }
 };      
 
+
+// Disable double tap on buttons
+
+
 document.addEventListener('DOMContentLoaded', () => {
+
+    const submitButtons = document.querySelectorAll("button[type='submit']");
+
+    if (submitButtons) {
+        submitButtons.forEach(button => {
+            button.addEventListener('submit', () => {
+                if (button.disabled == true) {
+                    button.disabled = false;
+                }
+                else if (button.disabled == false) {
+                    button.disabled = true;
+                }
+            })
+        })
+    }
 
     // Open edit project modal
     const modalButtons = document.querySelectorAll('[data-modal="true"]');
@@ -86,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (e.target.matches('#edit-project-button')) {
                 clearForm(modal);
+               
                 const projectId = e.target.dataset.projectId;
 
                 fetch(`/Project/EditProject?id=${projectId}`)
@@ -103,6 +123,14 @@ document.addEventListener('DOMContentLoaded', () => {
                             editProjectModal.classList.add('show');
                             circle.classList.remove('show');
                             imagePreview.classList.add('show');
+
+                            if (typeof initFormValidation === 'function') {
+                                console.log("init started");
+                                initFormValidation(editProjectModal);
+                            }
+                            else {
+                                console.error('Function not found');
+                            }
                         }
                         else {
                             console.error('editProjectModal was not found');
@@ -114,6 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearForm(modal);
                 if (modal) {
                     modal.classList.add('show');
+                    if (typeof initFormValidation === 'function') {
+                        console.log("init started");
+                        initFormValidation(modal);
+                    }
+                    else {
+                        console.error('Function not found');
+                    }
                 } else {
                     console.error('Modal not found for target:', target);
                 }
@@ -154,6 +189,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    
+
+
     // Populate fields in modal for edit project
     function populateFields(project) {
         if (!project) {
@@ -172,16 +210,29 @@ document.addEventListener('DOMContentLoaded', () => {
         //console.log('StartDate field:', startDateField);
 
         //console.log(formatDate(project.startDate));
+        const title = editProjectModal.querySelector('#ProjectTitle');
+        const budget = editProjectModal.querySelector('#Budget');
+        const startDate = editProjectModal.querySelector('#StartDate');
+        const endDate = editProjectModal.querySelector('#EndDate');
+        const description = editProjectModal.querySelector('#Description');
+        const client = editProjectModal.querySelector('#ClientName');
+        const url = editProjectModal.querySelector('#current-url');
+        console.log(budget.value);
+        console.log(title.value);
+        console.log(startDate.value);
+        console.log(endDate.value);
+        console.log(description.value);
+        console.log(client.value);
+        console.log(url.value);
 
         editProjectModal.querySelector('[name="Id"]').value = project.id;
-        editProjectModal.querySelector('[name="ProjectTitle"]').value = project.projectTitle;
-        console.error(document.querySelector('[name="ProjectTitle"]').value);
-        editProjectModal.querySelector('[name="Budget"]').value = project.budget;
-        editProjectModal.querySelector('[name="StartDate"]').value = formatDate(project.startDate);
-        editProjectModal.querySelector('[name="EndDate"]').value = formatDate(project.endDate);
-        editProjectModal.querySelector('[name="Description"]').value = project.description;
-        editProjectModal.querySelector('[name="ClientName"]').value = project.clientName;
-        editProjectModal.querySelector('[name="CurrentUrl"]').value = project.imageUrl;
+        title.value = project.projectTitle;
+        budget.value = project.budget;
+        startDate.value = formatDate(project.startDate);
+        endDate.value = formatDate(project.endDate);
+        description.value = project.description;
+        client.value = project.clientName;
+        url.value = project.imageUrl;
         editProjectModal.querySelector('#edit-proj-image-preview').src = project.imageUrl;
     };
 
@@ -214,14 +265,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function clearForm(modal) {
         const form = modal.querySelector('form');
         const inputs = form.querySelectorAll('input, textarea, select');
-        let counter = 1;
+        
         inputs.forEach(input => {
             if (!input.value) {
                 input.value = "";
-                console.log("input cleared", counter);
-
             }
-            counter++;
         });
     }
 });

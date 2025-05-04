@@ -31,7 +31,7 @@ public class ProjectService(IProjectRepository projectRepository, IPictureReposi
 
             var result = await _projectRepository.CreateProjectAsync(entity);
 
-            if (!result.Success)
+            if (!result.Success || result.Data == null)
             {
                 await _projectRepository.RollbackTransactionAsync();
                 return new ProjectResult<Project> { Succeeded = false, StatusCode = result.StatusCode, ErrorMessage = "Failed to create project." };
@@ -39,7 +39,15 @@ public class ProjectService(IProjectRepository projectRepository, IPictureReposi
 
             await _projectRepository.CommitTransactionAsync();
 
-            return new ProjectResult<Project> { Succeeded = true, StatusCode = 201, Data = result.Data != null ? ProjectFactory.CreateModelFromEntity(result.Data) : new Project() };
+            var fullEntity = await _projectRepository.GetProjectAsync(result.Data.Id);
+            if (!fullEntity.Success || fullEntity.Data == null)
+                return new ProjectResult<Project> { Succeeded = false, StatusCode = fullEntity.StatusCode, ErrorMessage = "Failed to get full project." };
+
+            var model = ProjectFactory.CreateModelFromEntity(fullEntity.Data);
+
+            return model != null
+                ? new ProjectResult<Project> { Succeeded = true, StatusCode = 201, Data = model }
+                : new ProjectResult<Project> { Succeeded = false, StatusCode = result.StatusCode, ErrorMessage = result.Error };
         }
         catch (Exception ex)
         {

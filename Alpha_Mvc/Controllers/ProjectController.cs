@@ -55,7 +55,7 @@ namespace Alpha_Mvc.Controllers
                     Text = client.ClientName
                 }).ToList() ?? []
             };
-            
+
             ViewBag.AllMembers = viewModel.AllMembers;
 
             return View(viewModel);
@@ -73,8 +73,8 @@ namespace Alpha_Mvc.Controllers
 
             var viewModel = new
             {
-                Project = new 
-                { 
+                Project = new
+                {
                     result.Data.Id,
                     result.Data.ProjectTitle,
                     result.Data.Client.ClientName,
@@ -96,6 +96,10 @@ namespace Alpha_Mvc.Controllers
             return Json(viewModel);
         }
 
+
+
+
+
         [HttpPost]
         public async Task<IActionResult> AddProject(CreateProjectFormModel model, string? SelectedIds)
         {
@@ -109,23 +113,65 @@ namespace Alpha_Mvc.Controllers
                 {
                     Console.WriteLine($"Key: {error.Key}, Errors: {string.Join(", ", error.Value)}");
                 }
-                return BadRequest(new { success = false, errors });
+
+
+                var membersList = await _memberService.GetMemberUsersAsync();
+                var clientsList = await _clientService.GetClientsAsync();
+                var cardsList = await _projectService.GetProjectCardsAsync();
+
+                var viewModelAdd = new ProjectsViewModel
+                {
+                    Cards = cardsList.Data?.Select(ProjectFactoryMVC.CreateCardFromDomainModel).ToList() ?? [],
+                    AllMembers = membersList.Data?.Select(member => new MySelectListItem
+                    {
+                        Value = member.Id.ToString(),
+                        Text = $"{member.FirstName} {member.LastName}",
+                        ImageUrl = member.ImageUrl
+                    }).ToList() ?? [],
+                    Clients = clientsList.Data?.Select(client => new SelectListItem
+                    {
+                        Value = client.Id.ToString(),
+                        Text = client.ClientName
+                    }).ToList() ?? []
+                };
+
+                ViewBag.ShowModalProject = true;
+                return View("Index", viewModelAdd);
             }
 
-            var relativePath = await _fileService.CreateFile(model.Picture);            
+            var relativePath = await _fileService.CreateFile(model.Picture);
 
             var picture = await _pictureService.CreateAsync(relativePath);
             if (!picture.Succeeded)
                 return BadRequest("Picture could not be created.");
 
-            var client = await _clientService.CreateAsync(model.ClientName);
+            var client = new ClientResult<Client>();
+            var existingClient = await _clientService.GetClientAsync(model.ClientName);
 
-            if (!client.Succeeded)
+            if (!existingClient.Succeeded)
+            {
+                client = await _clientService.CreateAsync(model.ClientName);
+            }
+            else if (!existingClient.Succeeded && !client.Succeeded)
+            {
                 return BadRequest("Client was not created.");
+            }
+            else
+            {
+                client = existingClient;
+            }
 
             var dto = ProjectFactoryMVC.CreateDtoFromCreateForm(model, client.Data.Id);
             dto.PictureId = picture.Data.Id;
-            dto.ClientId = client.Data.Id;
+
+            if (existingClient.Data != null)
+            {
+                dto.ClientId = existingClient.Data?.Id;
+            }
+            else if (existingClient == null && client.Data != null)
+            {
+                dto.ClientId = client.Data?.Id;
+            }
 
             var result = await _projectService.CreateAsync(dto);
             if (!result.Succeeded)
@@ -139,37 +185,40 @@ namespace Alpha_Mvc.Controllers
 
             if (!string.IsNullOrEmpty(SelectedIds))
             {
-                var memberIds = JsonSerializer.Deserialize<List<Guid>>(SelectedIds);
+                //var memberIds = JsonSerializer.Deserialize<List<Guid>>(SelectedIds);
+                var memberIds = SelectedIds
+                        .Split(',', StringSplitOptions.RemoveEmptyEntries)
+                        .Select(Guid.Parse)
+                        .ToList();
                 if (memberIds != null)
                 {
-                    foreach(var member in memberIds)
+                    foreach (var member in memberIds)
                     {
                         await _pmService.AddAsync(new ProjectMemberDto { ProjectId = result.Data.Id, MemberId = member });
                     }
                 }
             }
+            var members = await _memberService.GetMemberUsersAsync();
+            var clients = await _clientService.GetClientsAsync();
+            var cards = await _projectService.GetProjectCardsAsync();
 
-            //var members = await _memberService.GetMemberUsersAsync();
-            //var clients = await _clientService.GetClientsAsync();
-            //var cards = await _projectService.GetProjectCardsAsync();
+            var viewModel = new ProjectsViewModel
+            {
+                Cards = cards.Data?.Select(ProjectFactoryMVC.CreateCardFromDomainModel).ToList() ?? [],
+                AllMembers = members.Data?.Select(member => new MySelectListItem
+                {
+                    Value = member.Id.ToString(),
+                    Text = $"{member.FirstName} {member.LastName}",
+                    ImageUrl = member.ImageUrl
+                }).ToList() ?? [],
+                Clients = clients.Data?.Select(client => new SelectListItem
+                {
+                    Value = client.Id.ToString(),
+                    Text = client.ClientName
+                }).ToList() ?? []
+            };
 
-            //var viewModel = new ProjectsViewModel
-            //{
-            //    Cards = cards.Data?.Select(ProjectFactoryMVC.CreateCardFromDomainModel).ToList() ?? [],
-            //    AllMembers = members.Data?.Select(member => new MySelectListItem
-            //    {
-            //        Value = member.Id.ToString(),
-            //        Text = $"{member.FirstName} {member.LastName}",
-            //    }).ToList() ?? [],
-            //    Clients = clients.Data?.Select(client => new SelectListItem
-            //    {
-            //        Value = client.Id.ToString(),
-            //        Text = client.ClientName
-            //    }).ToList() ?? []
-            //};
-
-            //ModelState.AddModelError("viewModel", "Failed to create member.");
-            return RedirectToAction("Index");            
+            return View("Index", viewModel);
         }
 
         [HttpPost]
@@ -206,10 +255,13 @@ namespace Alpha_Mvc.Controllers
             {
                 client = await _clientService.CreateAsync(model.ClientName);
             }
-
-            if (!existingClient.Succeeded && !client.Succeeded)
+            else if (!existingClient.Succeeded && !client.Succeeded)
             {
                 return BadRequest("Client was not created.");
+            }
+            else
+            {
+                client = existingClient;
             }
 
             if (model.Picture != null)
@@ -236,7 +288,7 @@ namespace Alpha_Mvc.Controllers
                 var dto = ProjectFactoryMVC.CreateDtoFromEditForm(model);
                 dto.PictureId = picture.Data.Id;
 
-                if(existingClient.Data != null)
+                if (existingClient.Data != null)
                 {
                     dto.ClientId = existingClient.Data?.Id;
                 }
@@ -259,7 +311,11 @@ namespace Alpha_Mvc.Controllers
 
                 if (!string.IsNullOrEmpty(SelectedIds))
                 {
-                    var memberIds = JsonSerializer.Deserialize<List<Guid>>(SelectedIds);
+                    //var memberIds = JsonSerializer.Deserialize<List<Guid>>(SelectedIds);
+                    var memberIds = SelectedIds
+                        .Split(',', StringSplitOptions.RemoveEmptyEntries)
+                        .Select(Guid.Parse)
+                        .ToList();
                     if (memberIds != null)
                     {
                         foreach (var member in memberIds)
@@ -301,7 +357,11 @@ namespace Alpha_Mvc.Controllers
 
                 if (!string.IsNullOrEmpty(SelectedIds))
                 {
-                    var memberIds = JsonSerializer.Deserialize<List<Guid>>(SelectedIds);
+                    //var memberIds = JsonSerializer.Deserialize<List<Guid>>(SelectedIds);
+                    var memberIds = SelectedIds
+                        .Split(',', StringSplitOptions.RemoveEmptyEntries)
+                        .Select(Guid.Parse)
+                        .ToList();
                     if (memberIds != null)
                     {
                         foreach (var member in memberIds)
@@ -335,7 +395,6 @@ namespace Alpha_Mvc.Controllers
             ModelState.AddModelError("viewModel", "Failed to update project.");
             return View("Index", viewModel);
         }
-
 
         [HttpPost]
         public async Task<IActionResult> DeleteProject(Guid id)

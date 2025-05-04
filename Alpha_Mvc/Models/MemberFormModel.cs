@@ -24,9 +24,7 @@ public class MemberFormModel
 
     [Required(ErrorMessage = "Phone number is required.")]
     [Display(Name = "Phone number", Prompt = "Enter phone number...")]
-
-    [RegularExpression(@"^(?:(?:\+|00)(?:[1-9]\d{0,2})[ ]?)?(?:\(?\d{1,4}\)?)?(?>[ \-])?(?:\d{1,4})(?>[ ])?(?:\d{1,4})?(?>[ ])?(?:\d{1,9})$", 
-        ErrorMessage = "Invalid phone number.")]
+    [RegularExpression(@"^(?:\+46|0)([ ]?)(\d{1,3})([ -]?)(\d{2,3})([ -]?)(\d{2})([ -]?)(\d{2})$", ErrorMessage = "Invalid phone number.")]
     public string PhoneNumber { get; set; } = null!;
 
 
@@ -42,6 +40,7 @@ public class MemberFormModel
 
     [Required(ErrorMessage = "Postal code is required.")]
     [Display(Name = "Postal Code", Prompt = "Enter postal code...")]
+    [RegularExpression(@"^\d+$", ErrorMessage = "Only digits allowed.")]
     public string PostalCode { get; set; } = null!;
 
 

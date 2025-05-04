@@ -35,32 +35,49 @@ public static class ProjectFactory
         Budget = entity.Budget,
         Created = entity.Created,
         ImageUrl = entity.Picture.ImageUrl,
-        Client = new Client
+        Client = entity.Client != null ? new Client
         {
             Id = entity.Client.Id,
-            ClientName = entity.Client.ClientName,
-            Email = entity.Client.Email,
-            PhoneNumber = entity.Client.PhoneNumber
+            ClientName = entity.Client.ClientName ?? string.Empty,
+            Email = entity.Client.Email ?? string.Empty,
+            PhoneNumber = entity.Client.PhoneNumber,
+        } : new Client
+        {
+            ClientName = string.Empty,
+            Email = string.Empty,
+            PhoneNumber = string.Empty
         },
         StatusName = entity.StatusName,
         ProjectMembers = entity.ProjectMembers.Select(member =>
-            new MemberUser
+            member != null ? new MemberUser
             {
                 Id = member.MemberId,
-                FirstName = member.Member.FirstName ?? "Unknown",
-                LastName = member.Member.LastName ?? "Unknown",
-                JobTitle = member.Member.JobTitle ?? "Unknown",
-                Email = member.Member.Email ?? "Unknown",
-                PhoneNumber = member.Member.PhoneNumber ?? "Unknown",
-                DateOfBirth = member.Member.DateOfBirth,
-                Address = new Address
+                FirstName = member.Member.FirstName ?? string.Empty,
+                LastName = member.Member.LastName ?? string.Empty,
+                JobTitle = member.Member.JobTitle ?? string.Empty,
+                Email = member.Member.Email ?? string.Empty,
+                PhoneNumber = member.Member.PhoneNumber ?? string.Empty,
+                DateOfBirth = member.Member.DateOfBirth ?? null,
+                Address = member.Member.Address != null ? new Address
                 {
-                    Id = member.Member.Address!.Id,
+                    Id = member.Member.Address.Id,
                     StreetAddress = member.Member.Address.StreetAddress,
                     PostalCode = member.Member.Address.PostalCode,
                     City = member.Member.Address.City
-                } ?? new Address()
+                } : new Address
+                {
+                    StreetAddress = string.Empty,
+                    PostalCode= string.Empty,
+                    City = string.Empty
+                }
 
-            }).ToList() ?? []
+            } : new MemberUser
+            {
+                FirstName = string.Empty,
+                LastName = string.Empty,
+                Email = string.Empty,
+                PhoneNumber = string.Empty,
+                JobTitle= string.Empty                
+            }).ToList()
     };
 }

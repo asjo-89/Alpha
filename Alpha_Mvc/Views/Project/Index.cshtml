@@ -42,19 +42,46 @@
     }
 </div>
 
-@* @await Html.PartialAsync("_ValidationScriptsPartial"); *@
-
 
 @section Scripts {
     <script src="~/js/sorting.js" asp-append-version="true"></script>
     
-    <script src="~/js/validations.js" asp-append-version="true"></script>    
+    <script src="~/js/validationModal.js" asp-append-version="true"></script>    
 }
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        
+        // if (typeof initFormValidation === 'function') {
+        //                 console.log("init started");
+        //                 initFormValidation(addModal);
+        //             }
+        //             else {
+        //                 console.error('Function not found');
+        //             }
+
+
         sortProjects();
+
+        const showModalProject = '@(ViewBag.ShowModalProject?.ToString().ToLower())' === 'true';
+        console.log(showModalProject);
+
+            if(showModalProject) {
+                const addModal = document.querySelector('#addProjectModal');
+                console.log(addModal);
+                if (addModal) {
+                    console.log("1");
+                    addModal.classList.add('show');
+
+                    console.log(addModal);
+                    if (typeof initFormValidation === 'function') {
+                        console.log("init started");
+                        initFormValidation(addModal);
+                    }
+                    else {
+                        console.error('Function not found');
+                    }
+                }
+            }
 
     });
 </script>

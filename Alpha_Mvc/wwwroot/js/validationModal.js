@@ -1,18 +1,18 @@
-﻿//document.addEventListener('DOMContentLoaded', () => {
+﻿
     function initFormValidation(modal) {
         console.log("initFormValidation");
         if (!modal) return;
 
-        if (typeof (errorMessages !== 'undefined')) {
-            Object.keys(errorMessages).forEach(key => {
-                let span = modal.querySelector(`[data-valmsg-for='${key}']`);
-                if (span) {
-                    let errorText = errorMessages[key].join(', ');
-                    span.innerText = errorText;
-                    span.classList.add('field-validation-error');
-                }
-            });
-        }
+        //if (typeof (errorMessages !== 'undefined' && errorMessages != null)) {
+        //    Object.keys(errorMessages).forEach(key => {
+        //        let span = modal.querySelector(`[data-valmsg-for='${key}']`);
+        //        if (span) {
+        //            let errorText = Array.isArray(errorMessages) ? errorMessages[key].join(', ') : String(errorMessages[key]);
+        //            span.innerText = errorText;
+        //            span.classList.add('field-validation-error');
+        //        }
+        //    });
+        //}
 
 
         const forms = modal.querySelectorAll('form');
@@ -20,12 +20,20 @@
 
         forms.forEach(form => {
             const inputs = form.querySelectorAll("input[data-val='true']");
+            const textAreas = form.querySelectorAll("textarea[data-val='true']");
 
             if (!inputs) return;
 
             inputs.forEach(input => {
                 input.addEventListener('input', () => {
-                    validateInputs(input);
+                    validateInputs(input, modal);
+                });
+            });
+
+            if (!textAreas) return;
+            textAreas.forEach(area => {
+                area.addEventListener('input', () => {
+                    validateInputs(area, modal);
                 });
             });
 
@@ -70,6 +78,7 @@
                 form.dataset.listenerAttached = 'true';
             }
         });
+        
     };
 
 
@@ -88,8 +97,12 @@
 
 
 
-    function validateInputs(input) {
-        let span = document.querySelector(`span[data-valmsg-for='${input.name}']`);
+function validateInputs(input, modal) {
+
+    console.log("Input name:", input.name);  // Se till att input.name är korrekt
+    console.log("Modal:", modal);  // Kontrollera modalens struktur
+        let span = modal.querySelector(`span[data-valmsg-for='${input.name}']`);
+        console.log(input.name, span)
         if (!span) return;
 
         let errorMessage = "";
@@ -125,4 +138,3 @@
             span.textContent = "";
         }
     };
-//});
